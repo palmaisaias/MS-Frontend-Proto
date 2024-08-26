@@ -1,0 +1,447 @@
+/* Homepage.css */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* ============================================================== */
+/* ============================================================== */
+
+/* Reset default margin and padding */
+    body, html {
+    margin: 0;
+    padding: 0;
+    
+}
+/* ============================================================== */
+/* ============================================================== */
+  /* General Styling */
+    .homepage {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    }
+  
+/* ============================================================== */
+/* ============================================================== */
+  /* Custom Navbar Styling */
+  .navbar-custom {
+    background-color: #6338FD;
+    border-bottom: 2px solid #6338FD;
+    padding: 0; /* Ensure no additional padding */
+    margin: 0; /* Ensure no additional margin */
+    width: 100%; /* Ensure the navbar spans the full width */
+  }
+  
+  .navbar-custom .container {
+    max-width: 100%; /* Override container max-width to ensure full-width */
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .navbar-custom .navbar-brand 
+  .navbar-custom .nav-link {
+    color: #ffffff;
+  }
+  
+  .navbar-custom .navbar-brand:hover,
+  .navbar-custom .nav-link:hover {
+    color: #ffc107;
+  }
+
+  /* Custom styling for the "Sign Up" link */
+    .nav-link-signup {
+    border: 2px solid white !important; /* White border */
+    border-radius: 50px; /* Circular border */
+    padding: 5px 15px; /* Adjust padding for the look you want */
+    color: white; /* Ensure the text color is white */
+    text-align: center;
+    }
+  
+    .nav-link-signup:hover {
+    background-color: rgba(255, 255, 255, 0.374); /* Change background on hover */
+    color: #4a148c !important; /* Text color on hover */
+    }
+
+  /* Custom CSS for Navbar Links */
+    .navbar-custom .navbar-nav {
+    margin-right: 40px !important; /* Aligns to the right */ 
+    margin-top: 50px; /* Lowers the position slightly */
+    font-family: 'Lato';
+    }
+  
+    .navbar-custom .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+    }
+  
+  /* Optional: Further control spacing between links */
+    .navbar-custom .nav-item {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    }
+    .navbar-custom .navbar-brand img:first-child {
+        margin-left: 60px; /* Adjust this value to move the first image to the left */
+      }
+      
+      .navbar-custom .navbar-brand img:last-child {
+        margin-left: 5px; /* Adjust this value to move the second image to the left */
+      }
+  
+
+/* ============================================================== */
+/* ============================================================== */
+
+/* Header Section */
+.header-section {
+    background-color: #F0E6E6; /* Background color as shown in the PDF */
+    color: #000 !important;
+    text-align: left !important;
+    max-height: 550px; /* Limit the maximum height */
+    overflow: hidden; /* Ensure no content overflows beyond 550px */
+  }
+  
+
+  .header-text h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 48.3px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 30px;
+  }
+  
+  .header-text p {
+    font-family: 'Lato', sans-serif; /* Adjust as needed */
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
+  
+  .show-me-btn {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1.2rem !important;
+    border: 2px solid #fff;
+    border-radius: 50px !important;
+    margin-left: 30px;
+    padding: 5px 30px !important;
+    background-color: #6338FD !important;
+  }
+  
+  /* Image styling */
+  .header-section img {
+    width: 100%;
+    max-height: 550px; /* Prevent the image from exceeding 550px */
+    object-fit: cover;
+  }
+  
+  /* Make sure the row is responsive and content-driven */
+  .header-section .row {
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  
+  .header-section img {
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+/* ============================================================== */
+/* ============================================================== */
+  
+  /* Main Content Section */
+  .content-section {
+    font-family: 'Lato', sans-serif; /* Setting the font family for the content sections */
+    padding: 60px 0; /* Add some padding to the top and bottom of each section */
+  }
+  
+  /* Customize text placement for each section if needed */
+  .section-text h3 {
+    font-weight: 900;
+  }
+  .section-text p {
+    font-size: 1.2rem !important;
+  }
+
+  .section-1 .section-text {
+    text-align: left !important;
+  }
+
+  .section-2 .section-text {
+    text-align: right !important;
+  }
+  
+  .section-3 .section-text {
+    text-align: left !important;
+  }
+  
+  /* Image Styling */
+  .section-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .section-text {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+/* ============================================================== */
+/* ============================================================== */
+
+  /* Newsletter Section */
+  .newsletter {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: left;
+  }
+  
+  .newsletter h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+/* ============================================================== */
+/* ============================================================== */
+
+/* Footer Section */
+.footer-section {
+    background-color: #F0E6E6 !important; 
+    padding: 20px 0;
+    font-family: 'Lato';
+  }
+
+  .footer-section h5 {
+    margin-bottom: 15px;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
+  .footer-section .section-links {
+    padding-left: 40px !important; /* Adjust this value as needed */
+  }
+
+  .text-black {
+    font-weight:600
+  }
+  
+  .footer-section .form-control {
+    background-color: #495057;
+    border: none;
+    color: #fff;
+    border-radius: 50px;
+  }
+  
+  .footer-section .form-control::placeholder {
+    color: #ced4da;
+  }
+  
+  .footer-section .btn-light {
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: none;
+  }
+  
+  .footer-section .nav-link {
+    padding: 5px 0;
+  }
+  
+  .footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-section .text-center {
+      text-align: center !important;
+    }
+  
+    .footer-section .text-md-start {
+      text-align: center !important;
+    }
+  }
+/* ============================================================== */
+/* ============================================================== */
+
+  /* General Section Styling */
+.content-section {
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .section-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .section-text p {
+    font-size: 1.2rem;
+  }
+  
+  .section-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+/* ============================================================== */
+/* ============================================================== */
+
+  /* Background Colors for Each Section */
+  .section-1 {
+    color: #EFE4CF !important;
+    background-color: #6338FD; /* Light blue */
+    color: #333;
+  }
+  
+  .section-2 {
+    background-color: #FBB3A8; /* Light pink */
+    color: #333;
+  }
+  
+  .section-3 {
+    color: #EFE4CF !important;
+    background-color: #6338FD; /* Light green */
+    color: #333;
+  }
+  
+  /* Responsive Layout Adjustments */
+  @media (max-width: 768px) {
+    .section-image {
+      margin-top: 20px;
+    }
+  
+    .section-2 .section-image {
+      order: -1;
+    }
+  }
+  
+/* ============================================================== */
+/* ============================================================== */
+
+  .custom-modal .modal-content {
+    overflow: hidden;
+    font-family: 'Lato';
+  }
+
+  .modal-logo-spacing {
+    margin-bottom: 55px;
+  }
+
+  .custom-form-control {
+    border-color: #000 !important;
+    border-radius: 50px !important; /* Change this to your desired border-radius */
+  }
+  
+  .custom-form-control-date {
+    border-color: #000 !important;
+    border-radius: 50px !important; /* Change this to your desired border-radius */
+    width: 125px !important;
+  }
+  
+  .custom-button {
+    border-radius: 50px !important; /* Customize the button border-radius separately if needed */
+    width: 366px;
+    background-color: #6338FD !important;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Centers the button vertically, if needed */
+  }
+
+  .custom-link {
+    text-decoration: none; /* Removes the underline */
+    color: white; /* Ensures the text remains white (optional) */
+    font-size: 1.3rem;
+    font-weight: 700 !important;
+  }
+  
+  .custom-link:hover {
+    text-decoration: underline; /* Optional: Add an underline on hover */
+    color: #f0f0f0; /* Optional: Slight color change on hover */
+  }
+
+  .custom-link {
+    position: relative;
+    text-decoration: none;
+    padding-left: 35px; /* Space for the circle */
+    color: white;
+  }
+  
+  .custom-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Makes it a circle */
+  }
+  
+  /* Specific Colors for Each Circle */
+  .explore-circle::before {
+    background-color: #F2B5A6; /* Example color for Explore */
+  }
+  
+  .curate-circle::before {
+    background-color: #DBF7D6; /* Example color for Curate */
+  }
+  
+  .advocate-circle::before {
+    background-color: #C2B0FF; /* Example color for Advocate */
+  }
+
+  .small-text {
+    font-size: 12px;
+    color: #6c757d;
+  }
+  
+  .small-text a {
+    color: #007bff; /* Custom link color */
+    text-decoration: none;
+  }
+  
+  .small-text a:hover {
+    text-decoration: underline;
+  }
+
+  .close-button {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    font-size: 18px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    text-align: center !important;
+    padding: 0 !important;
+    line-height: 28px !important;
+    cursor: pointer !important;
+    color: #000000 !important;
+  }
+  
+  .close-button:hover {
+    background-color: #f0f0f0 !important;
+    color: #ff0000 !important;
+  }
+  
+  
+  
+  
+  
+
+  
+
+  

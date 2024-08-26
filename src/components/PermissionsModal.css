@@ -1,0 +1,155 @@
+
+.custom-modal .modal-content {
+    overflow: hidden;
+    font-family: 'Lato';
+  }
+
+  .modal-logo-spacing {
+    margin-bottom: 55px;
+  }
+
+  .custom-form-control {
+    border-color: #000 !important;
+    border-radius: 50px !important; /* Change this to your desired border-radius */
+  }
+  
+  .custom-form-control-date {
+    border-color: #000 !important;
+    border-radius: 50px !important; /* Change this to your desired border-radius */
+    width: 125px !important;
+  }
+  
+  .custom-button-continuer {
+    border-radius: 50px !important; /* Customize the button border-radius separately if needed */
+    width: 366px;
+    background-color: #6338FD !important;
+    margin-bottom:100px;
+  }
+
+  .custom-button-skipper {
+    border-radius: 50px !important; /* Customize the button border-radius separately if needed */
+    width: 366px;
+    background-color: #ffffff !important;
+    color: #6338FD !important;
+    border-color: #6338FD !important;
+    margin-top: 30px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    align-items: center; /* Centers the button vertically, if needed */
+  }
+
+  .custom-link {
+    text-decoration: none; /* Removes the underline */
+    color: white; /* Ensures the text remains white (optional) */
+    font-size: 1.3rem;
+    font-weight: 700 !important;
+  }
+  
+  .custom-link:hover {
+    text-decoration: underline; /* Optional: Add an underline on hover */
+    color: #f0f0f0; /* Optional: Slight color change on hover */
+  }
+
+  .custom-link {
+    position: relative;
+    text-decoration: none;
+    padding-left: 35px; /* Space for the circle */
+    color: white;
+  }
+  
+  .custom-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Makes it a circle */
+  }
+  
+  /* Specific Colors for Each Circle */
+  .explore-circle::before {
+    background-color: #F2B5A6; /* Example color for Explore */
+  }
+  
+  .curate-circle::before {
+    background-color: #DBF7D6; /* Example color for Curate */
+  }
+  
+  .advocate-circle::before {
+    background-color: #C2B0FF; /* Example color for Advocate */
+  }
+
+  .small-text {
+    font-size: 12px;
+    color: #6c757d;
+  }
+  
+  .small-text a {
+    color: #007bff; /* Custom link color */
+    text-decoration: none;
+  }
+  
+  .small-text a:hover {
+    text-decoration: underline;
+  }
+
+  .close-button {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    font-size: 18px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    text-align: center !important;
+    padding: 0 !important;
+    line-height: 28px !important;
+    cursor: pointer !important;
+    color: #000000 !important;
+  }
+  
+  .close-button:hover {
+    background-color: #f0f0f0 !important;
+    color: #ff0000 !important;
+  }
+
+/* ============================================ */
+/* CHECKBOXES */
+/* ============================================ */
+/* Targeting the checkbox input directly */
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-checkbox input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 15px;
+  }
+  
+  .custom-checkbox .form-check-label {
+    font-size: 1.2rem;
+    vertical-align: middle;
+    line-height: 1.1; /* Helps keep multi-line labels aligned */
+  }
+  
+  .custom-checkbox-calendar {
+    display: flex;
+    align-items: center;
+    }
+  
+  .custom-checkbox-calendar input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 15px;
+    margin-top: 10px;
+  }
+  
+
