@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import './PermissionsModal.css';
 
-const PermissionsModal = ({ show, handleClose }) => {
+const PermissionsModal = ({ show, handleClose, onSkip, onContinue }) => {
   return (
     <Modal 
       show={show} 
@@ -55,46 +55,46 @@ const PermissionsModal = ({ show, handleClose }) => {
 
           {/* Permission Options */}
           <Form>
-          <Form.Group controlId="formNotifications" className="mt-4 custom-checkbox">
-                <Form.Check
+            <Form.Group controlId="formNotifications" className="mt-4 custom-checkbox">
+              <Form.Check
                 type="checkbox"
                 label={
-                <>
+                  <>
                     <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Notifications</span>
                     <br />
                     <span style={{ fontSize: '1rem' }}>
-                    Allow MS to deliver reminders and proactive messages
+                      Allow MS to deliver reminders and proactive messages
                     </span>
-                </>
+                  </>
                 }
                 className="mb-3"
-                />
+              />
             </Form.Group>
 
-            <Form.Group controlId="formNotifications" className="mt-4 custom-checkbox">
-                <Form.Check
+            <Form.Group controlId="formCalendar" className="mt-4 custom-checkbox">
+              <Form.Check
                 type="checkbox"
                 label={
-                <>
+                  <>
                     <span style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Calendar</span>
                     <br />
                     <span style={{ fontSize: '1rem' }}>
-                    Allows to set reminders for important appointments
+                      Allows to set reminders for important appointments
                     </span>
-                </>
+                  </>
                 }
                 className="mb-3"
-                />
+              />
             </Form.Group>
 
             {/* Buttons */}
             <div className="button-container d-flex flex-column align-items-center">
-                <Button className="custom-button-skipper mb-2 w-100">
-                    Skip
-                </Button>
-                <Button type="submit" className="custom-button-continuer w-100">
-                    Continue
-                </Button>
+              <Button className="custom-button-skipper mb-2 w-100" onClick={onSkip}>
+                Skip
+              </Button>
+              <Button type="button" className="custom-button-continuer w-100" onClick={onContinue}>
+                Continue
+              </Button>
             </div>
 
             {/* Additional Section */}
@@ -103,7 +103,6 @@ const PermissionsModal = ({ show, handleClose }) => {
                 By continuing, you accept the <a href="#terms">Terms of Use</a> and <a href="#privacy">Privacy Policy</a>.
               </p>
             </div>
-
           </Form>
         </div>
       </div>

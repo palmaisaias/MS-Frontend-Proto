@@ -3,24 +3,35 @@ import { Container, Row, Col, Button, Navbar, Nav } from 'react-bootstrap';
 import './Homepage.css';
 import SignUpModal from '../components/SignUpModal'; // Import the sign-up modal component
 import PermissionsModal from '../components/PermissionsModal'; // Import the permissions modal component
+import AccountCreated from '../components/AccountCreated'; // Import the account-created modal component
 
 const Homepage = () => {
-  // State management for both modals
+  // State management for all modals
   const [showSignUp, setShowSignUp] = useState(false);
   const [showPermissions, setShowPermissions] = useState(false);
+  const [showAccountCreated, setShowAccountCreated] = useState(false);
 
   const handleCloseSignUp = () => setShowSignUp(false);
   const handleClosePermissions = () => setShowPermissions(false);
+  const handleCloseAccountCreated = () => setShowAccountCreated(false);
 
   const handleShowSignUp = () => setShowSignUp(true);
 
   // Handle sign-up form submission and show the permissions modal
   const handleSignUpSubmit = () => {
-    // Close the Sign-Up modal
     setShowSignUp(false);
-
-    // Open the Permissions modal
     setShowPermissions(true);
+  };
+
+  // Handle skip or continue actions in the permissions modal
+  const handlePermissionsSkip = () => {
+    setShowPermissions(false);
+    setShowAccountCreated(true);
+  };
+
+  const handlePermissionsContinue = () => {
+    setShowPermissions(false);
+    setShowAccountCreated(true);
   };
 
   return (
@@ -28,7 +39,6 @@ const Homepage = () => {
       {/* Navigation Bar */}
       <Navbar expand="lg" className="navbar-custom w-100">
         <Container fluid className="px-0">
-          {/* Container fluid with no padding */}
           <Navbar.Brand href="#home" className="d-flex align-items-center">
             <img
               src="/Frame.png"
@@ -174,7 +184,18 @@ const Homepage = () => {
       <SignUpModal show={showSignUp} handleClose={handleCloseSignUp} onSubmit={handleSignUpSubmit} />
 
       {/* Permissions Modal */}
-      <PermissionsModal show={showPermissions} handleClose={handleClosePermissions} />
+      <PermissionsModal 
+        show={showPermissions} 
+        handleClose={handleClosePermissions} 
+        onSkip={handlePermissionsSkip}
+        onContinue={handlePermissionsContinue}
+      />
+
+      {/* Account Created Modal */}
+      <AccountCreated 
+        show={showAccountCreated} 
+        handleClose={handleCloseAccountCreated} 
+      />
     </Container>
   );
 };
