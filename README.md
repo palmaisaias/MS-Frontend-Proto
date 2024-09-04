@@ -45,4 +45,4 @@ To run this application locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/the-melanated-sanctuary.git
+   git clone https://github.com/palmaisaias/MS-Frontend-Proto.git
