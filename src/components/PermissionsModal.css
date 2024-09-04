@@ -4,6 +4,13 @@
     font-family: 'Lato';
   }
 
+  .permission-modal {
+    background-color: #643AFD;
+    width: 67%;
+    padding: 2rem;
+    position: relative;
+  }
+
   .modal-logo-spacing {
     margin-bottom: 55px;
   }

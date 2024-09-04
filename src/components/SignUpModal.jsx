@@ -22,28 +22,43 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
         <div
           className="d-flex flex-column align-items-center justify-content-center"
           style={{
-            backgroundColor: "#6338FD", 
+            backgroundColor: "#4823D1",
             width: "33%",
             color: "#fff",
             padding: "2rem",
           }}
         >
-          <img className='modal-logo-spacing' src="/ModalLogo.png" alt="Logo" width="181" height="235" />
+          <img
+            className="modal-logo-spacing"
+            src="/ModalLogo.png"
+            alt="Logo"
+            style={{
+              width: "80%",  // Set to a percentage for responsiveness
+              height: "auto",  // Maintain aspect ratio
+              maxWidth: "100%",  // Ensures it doesn't overflow
+            }}
+          />
           <div className="mt-4">
-            <a href="#link1" className="text-white d-block mb-2 custom-link explore-circle">
-              Explore
-            </a>
-            <a href="#link2" className="text-white d-block mb-2 custom-link curate-circle">
-              Curate
-            </a>
-            <a href="#link3" className="text-white d-block mb-2 custom-link advocate-circle">
-              Advocate
-            </a>
-          </div>
+  <div className="custom-link mb-3">
+    <div className="circle explore-circle"></div>
+    <a href="#link1" className="text-white d-block mb-2">Explore</a>
+  </div>
+  
+  <div className="custom-link mb-3">
+    <div className="circle curate-circle"></div>
+    <a href="#link2" className="text-white d-block mb-2">Curate</a>
+  </div>
+  
+  <div className="custom-link">
+    <div className="circle advocate-circle"></div>
+    <a href="#link3" className="text-white d-block mb-2">Advocate</a>
+  </div>
+</div>
+
         </div>
 
         {/* White Side */}
-        <div style={{ width: "67%", padding: "2rem", position: "relative" }}>
+        <div className='signup-modal-right'>
           {/* Close Button */}
           <Button
             variant="light"
@@ -86,7 +101,21 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
                 
             <Form.Group className="mb-3" controlId="formDueDate">
               <Form.Label>Due Date</Form.Label>
-              <Form.Control type="date" placeholder="MM/DD/YYYY" className="custom-form-control-date" />
+                <Form.Control
+                  type="date"
+                  placeholder="MM/DD/YYYY"
+                  style={{
+                    backgroundColor: "#643AFD",
+                    color: "#ffffff",
+                    border: "2px solid #ffffff",
+                    borderRadius: "50px",
+                    width: "125px",
+                    padding: "0.5rem",
+                    WebkitAppearance: "none",  // Removes default styling in WebKit browsers
+                    MozAppearance: "textfield",  // Removes default styling in Firefox
+                    appearance: "none",  // Removes default styling
+                  }}
+                />
             </Form.Group>
 
             <div className="button-container">

@@ -2,27 +2,64 @@
 .custom-modal .modal-content {
     overflow: hidden;
     font-family: 'Lato';
+    color: white;
+    border: #ffffff;
+  }
+
+  .signup-modal-right {
+    background-color: #643AFD;
+    width: 67%;
+    padding: 2rem;
+    position: relative;
   }
 
   .modal-logo-spacing {
     margin-bottom: 55px;
   }
 
-  .custom-form-control {
-    border-color: #000 !important;
-    border-radius: 50px !important; /* Change this to your desired border-radius */
+  input.custom-form-control,
+  select.custom-form-control {
+    background-color: #643AFD !important;
+    border-color: #ffffff !important;
+    border-radius: 50px !important;
+    color: #ffffff !important; /* Text color */
+    padding: 0.5rem; /* Optional: Add padding for better appearance */
   }
   
+  /* Placeholder styling */
+  input.custom-form-control::placeholder,
+  select.custom-form-control::placeholder {
+    color: #ffffff !important; /* Placeholder text color */
+    opacity: 1; /* Ensures full opacity for placeholder */
+  }
+
+  
   .custom-form-control-date {
-    border-color: #000 !important;
-    border-radius: 50px !important; /* Change this to your desired border-radius */
+    border-radius: 50px !important; /* Adjust border-radius as desired */
     width: 125px !important;
+    background-color: #643AFD !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important; /* Ensure border is solid white */
+    padding: 0.5rem; /* Optional: Add padding for better appearance */
+  }
+  
+  /* Adjust the appearance of the placeholder (for older browsers or support) */
+  .custom-form-control-date::placeholder {
+    color: #ffffff !important; /* Placeholder text color */
+    opacity: 1; /* Ensures full opacity for placeholder */
+  }
+  
+  /* Fix for input elements with a type of 'date' */
+  input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invert color of date picker icon to match white text */
   }
   
   .custom-button {
+    color: #000000 !important;
     border-radius: 50px !important; /* Customize the button border-radius separately if needed */
     width: 366px;
-    background-color: #6338FD !important;
+    background-color: #FBB3A8 !important;
+    border-color: #FBB3A8 !important;
   }
 
   .button-container {
@@ -31,57 +68,48 @@
     align-items: center; /* Centers the button vertically, if needed */
   }
 
-  .custom-link {
-    text-decoration: none; /* Removes the underline */
-    color: white; /* Ensures the text remains white (optional) */
-    font-size: 1.3rem;
-    font-weight: 700 !important;
-  }
-  
-  .custom-link:hover {
-    text-decoration: underline; /* Optional: Add an underline on hover */
-    color: #f0f0f0; /* Optional: Slight color change on hover */
-  }
-
-  .custom-link {
-    position: relative;
-    text-decoration: none;
-    padding-left: 35px; /* Space for the circle */
-    color: white;
-  }
-  
-  .custom-link::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%; /* Makes it a circle */
-  }
-  
   /* Specific Colors for Each Circle */
-  .explore-circle::before {
-    background-color: #F2B5A6; /* Example color for Explore */
+  .text-white {
+    text-decoration: none !important; /* Removes the underline from the links */
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
+  } 
+  .custom-link {
+    display: flex !important; /* Enables flexbox layout */
+    flex-direction: column !important; /* Stacks circle above text */
+    align-items: center !important; /* Centers content horizontally */
+    text-align: center !important; /* Centers the text */
+    margin-bottom: 20px !important; /* Adds space between sections */
+    text-decoration: none !important;
   }
   
-  .curate-circle::before {
-    background-color: #DBF7D6; /* Example color for Curate */
+  .circle {
+    width: 40px !important; /* Width of the circle */
+    height: 40px !important; /* Height of the circle */
+    border-radius: 50% !important; /* Makes the element a circle */
+    margin-bottom: 5px !important; /* Adds space between circle and text */
   }
   
-  .advocate-circle::before {
-    background-color: #C2B0FF; /* Example color for Advocate */
+  .explore-circle {
+    background-color: #DBF7D6 !important; /* Color for Explore */
+  }
+  
+  .curate-circle {
+    background-color: #F2B5A6 !important; /* Color for Curate */
+  }
+  
+  .advocate-circle {
+    background-color: #fff !important; /* Color for Advocate */
   }
 
   .small-text {
     font-size: 12px;
-    color: #6c757d;
+    color: #ffffff !important;
   }
   
   .small-text a {
-    color: #007bff; /* Custom link color */
-    text-decoration: none;
+    color: #ffffff !important; /* Custom link color */
+    text-decoration:dashed !important;
   }
   
   .small-text a:hover {

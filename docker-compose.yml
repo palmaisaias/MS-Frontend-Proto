@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3035:3000"
+    volumes:
+      - ./:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    command: sh -c "npm install && npm run preview"
+
+volumes:
+  node_modules:

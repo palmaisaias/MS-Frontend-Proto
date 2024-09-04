@@ -1,5 +1,6 @@
 /* Homepage.css */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 /* ============================================================== */
 /* ============================================================== */
 
@@ -21,7 +22,7 @@
 /* ============================================================== */
   /* Custom Navbar Styling */
   .navbar-custom {
-    background-color: #6338FD;
+    background-color: #4823D1;
     border-bottom: 2px solid #6338FD;
     padding: 0; /* Ensure no additional padding */
     margin: 0; /* Ensure no additional margin */
@@ -49,7 +50,7 @@
     border: 2px solid white !important; /* White border */
     border-radius: 50px; /* Circular border */
     padding: 5px 15px; /* Adjust padding for the look you want */
-    color: white; /* Ensure the text color is white */
+    color: white !important; /* Ensure the text color is white */
     text-align: center;
     }
   
@@ -63,12 +64,14 @@
     margin-right: 40px !important; /* Aligns to the right */ 
     margin-top: 50px; /* Lowers the position slightly */
     font-family: 'Lato';
+    color: white !important;
     }
   
     .navbar-custom .nav-link {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
     font-size: 1rem;
+    color: white;
     }
   
   /* Optional: Further control spacing between links */
@@ -90,8 +93,8 @@
 
 /* Header Section */
 .header-section {
-    background-color: #F0E6E6; /* Background color as shown in the PDF */
-    color: #000 !important;
+    background-color: #643AFD; /* Background color as shown in the PDF */
+    color: #FBB3A8 !important;
     text-align: left !important;
     max-height: 550px; /* Limit the maximum height */
     overflow: hidden; /* Ensure no content overflows beyond 550px */
@@ -99,9 +102,10 @@
   
 
   .header-text h1 {
+    color: #FBB3A8 !important;
     font-family: 'Lato', sans-serif;
     font-size: 42px;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 48.3px;
     text-align: left;
     margin-bottom: 20px;
@@ -109,6 +113,8 @@
   }
   
   .header-text p {
+    font-weight: 300;
+    color: white !important;
     font-family: 'Lato', sans-serif; /* Adjust as needed */
     font-size: 1.7rem;
     margin-bottom: 30px;
@@ -116,13 +122,14 @@
   }
   
   .show-me-btn {
+    color: #000 !important;
     font-family: 'Lato', sans-serif !important;
     font-size: 1.2rem !important;
-    border: 2px solid #fff;
+    border: 2px solid #FBB3A8 !important;
     border-radius: 50px !important;
     margin-left: 30px;
     padding: 5px 30px !important;
-    background-color: #6338FD !important;
+    background-color: #FBB3A8 !important;
   }
   
   /* Image styling */
@@ -149,8 +156,8 @@
   
   /* Main Content Section */
   .content-section {
-    font-family: 'Lato', sans-serif; /* Setting the font family for the content sections */
-    padding: 60px 0; /* Add some padding to the top and bottom of each section */
+    display: flex; /* Ensure children can align properly */
+    align-items: stretch; /* Make sure columns stretch to fit the row */
   }
   
   /* Customize text placement for each section if needed */
@@ -165,20 +172,45 @@
     text-align: left !important;
   }
 
+  .section-1 .section-text p {
+    color: #000;
+  }
+
   .section-2 .section-text {
-    text-align: right !important;
+    text-align: left !important;
+  }
+
+  .section-2 .section-text p {
+    color: #ffffff;
   }
   
   .section-3 .section-text {
     text-align: left !important;
   }
-  
-  /* Image Styling */
-  .section-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+
+  .section-3 .section-text p {
+    color: #000;
   }
+  
+/* Image Container Styling */
+.section-image {
+  padding: 0 !important;  /* Ensure no padding */
+  margin: 0 !important;   /* Ensure no margin */
+  display: flex; /* Use flexbox to control child element */
+  justify-content: center; /* Center the image */
+  align-items: center; /* Vertically align the image */
+}
+
+/* Image Styling */
+.fixed-size-image {
+  width: 597px !important;   /* Fixed width */
+  height: 534px !important;  /* Fixed height */
+  object-fit: cover !important; /* Cover the entire specified area */
+  flex-shrink: 0 !important; /* Prevent the image from shrinking */
+  display: block !important; /* Remove bottom gap caused by inline-block elements */
+}
+
+
   
   /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
@@ -213,7 +245,7 @@
 
 /* Footer Section */
 .footer-section {
-    background-color: #F0E6E6 !important; 
+    background-color: #643AFD !important; 
     padding: 20px 0;
     font-family: 'Lato';
   }
@@ -222,21 +254,34 @@
     margin-bottom: 15px;
     font-weight: 900;
     font-size: 2rem;
+    font-family: 'Lato';
+    color: #FBB3A8;
+    padding-left: 25px;
   }
 
   .footer-section .section-links {
     padding-left: 40px !important; /* Adjust this value as needed */
   }
 
-  .text-black {
-    font-weight:600
+  .footer-linking {
+    font-weight:600;
+    color: #F0EDFA !important;
+    font-size: 1.1rem !important;
   }
   
   .footer-section .form-control {
-    background-color: #495057;
-    border: none;
+    max-width: 330px;
+    min-width: 200px;
+    background-color: #643AFD;
+    border: 2px w;
     color: #fff;
     border-radius: 50px;
+    font-style: italic;
+    font-weight: 400 !important;
+  }
+
+  .bottom-form-pad {
+    padding-left: 25px;
   }
   
   .footer-section .form-control::placeholder {
@@ -244,9 +289,13 @@
   }
   
   .footer-section .btn-light {
-    background-color: #f8f9fa;
-    color: #343a40;
+    background-color: #FBB3A8;
+    color: #000000;
     border: none;
+    border-radius: 50px;
+    max-width: 300px !important;
+    min-width: 150px !important;
+    
   }
   
   .footer-section .nav-link {
@@ -256,6 +305,7 @@
   .footer-section p {
     font-size: 0.9rem;
     line-height: 1.5;
+    padding-left: 25px;
   }
   
   @media (max-width: 768px) {
@@ -296,20 +346,20 @@
 
   /* Background Colors for Each Section */
   .section-1 {
-    color: #EFE4CF !important;
-    background-color: #6338FD; /* Light blue */
+    color: #643AFD !important;
+    background-color: #FBB3A8; /* Light blue */
     color: #333;
   }
   
   .section-2 {
-    background-color: #FBB3A8; /* Light pink */
-    color: #333;
+    background-color: #643AFD; /* Light pink */
+    color: #FBB3A8;
   }
   
   .section-3 {
     color: #EFE4CF !important;
-    background-color: #6338FD; /* Light green */
-    color: #333;
+    background-color: #FBB3A8; /* Light green */
+    color: #643AFD !important;
   }
   
   /* Responsive Layout Adjustments */
@@ -323,119 +373,7 @@
     }
   }
   
-/* ============================================================== */
-/* ============================================================== */
 
-  .custom-modal .modal-content {
-    overflow: hidden;
-    font-family: 'Lato';
-  }
-
-  .modal-logo-spacing {
-    margin-bottom: 55px;
-  }
-
-  .custom-form-control {
-    border-color: #000 !important;
-    border-radius: 50px !important; /* Change this to your desired border-radius */
-  }
-  
-  .custom-form-control-date {
-    border-color: #000 !important;
-    border-radius: 50px !important; /* Change this to your desired border-radius */
-    width: 125px !important;
-  }
-  
-  .custom-button {
-    border-radius: 50px !important; /* Customize the button border-radius separately if needed */
-    width: 366px;
-    background-color: #6338FD !important;
-  }
-
-  .button-container {
-    display: flex;
-    justify-content: center; /* Centers the button horizontally */
-    align-items: center; /* Centers the button vertically, if needed */
-  }
-
-  .custom-link {
-    text-decoration: none; /* Removes the underline */
-    color: white; /* Ensures the text remains white (optional) */
-    font-size: 1.3rem;
-    font-weight: 700 !important;
-  }
-  
-  .custom-link:hover {
-    text-decoration: underline; /* Optional: Add an underline on hover */
-    color: #f0f0f0; /* Optional: Slight color change on hover */
-  }
-
-  .custom-link {
-    position: relative;
-    text-decoration: none;
-    padding-left: 35px; /* Space for the circle */
-    color: white;
-  }
-  
-  .custom-link::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%; /* Makes it a circle */
-  }
-  
-  /* Specific Colors for Each Circle */
-  .explore-circle::before {
-    background-color: #F2B5A6; /* Example color for Explore */
-  }
-  
-  .curate-circle::before {
-    background-color: #DBF7D6; /* Example color for Curate */
-  }
-  
-  .advocate-circle::before {
-    background-color: #C2B0FF; /* Example color for Advocate */
-  }
-
-  .small-text {
-    font-size: 12px;
-    color: #6c757d;
-  }
-  
-  .small-text a {
-    color: #007bff; /* Custom link color */
-    text-decoration: none;
-  }
-  
-  .small-text a:hover {
-    text-decoration: underline;
-  }
-
-  .close-button {
-    position: absolute !important;
-    top: 10px !important;
-    right: 10px !important;
-    background-color: #ffffff !important;
-    border: none !important;
-    font-size: 18px !important;
-    width: 30px !important;
-    height: 30px !important;
-    border-radius: 50% !important;
-    text-align: center !important;
-    padding: 0 !important;
-    line-height: 28px !important;
-    cursor: pointer !important;
-    color: #000000 !important;
-  }
-  
-  .close-button:hover {
-    background-color: #f0f0f0 !important;
-    color: #ff0000 !important;
-  }
   
   
   

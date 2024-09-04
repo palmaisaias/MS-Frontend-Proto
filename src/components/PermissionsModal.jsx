@@ -37,7 +37,7 @@ const PermissionsModal = ({ show, handleClose, onSkip, onContinue }) => {
         </div>
 
         {/* White Side */}
-        <div style={{ width: "67%", padding: "2rem", position: "relative" }}>
+        <div className='permission-modal-right'>
           {/* Close Button */}
           <Button
             variant="light"
@@ -100,7 +100,8 @@ const PermissionsModal = ({ show, handleClose, onSkip, onContinue }) => {
             {/* Additional Section */}
             <div className="text-center mt-5">
               <p className="small-text mt-3">
-                By continuing, you accept the <a href="#terms">Terms of Use</a> and <a href="#privacy">Privacy Policy</a>.
+                By continuing, you accept the <a href="#terms">Terms of Use</a> and 
+                <a href="#privacy">Privacy Policy</a>.
               </p>
             </div>
           </Form>

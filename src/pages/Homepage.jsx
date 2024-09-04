@@ -43,16 +43,9 @@ const Homepage = () => {
             <img
               src="/Frame.png"
               alt="The Melanated Sanctuary Logo"
-              width="150"
-              height="140"
+              width="394"
+              height="132"
               className="d-inline-block align-top logo-image"
-            />
-            <img
-              src="/MelanatedLogo.png"
-              alt="The Melanated Sanctuary Logo"
-              width="200"
-              height="100"
-              className="d-inline-block align-top"
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -71,7 +64,7 @@ const Homepage = () => {
       {/* Header Section */}
       <Container fluid className="px-0">
         <Row className="header-section mx-0 d-flex align-items-center" style={{ maxHeight: '550px' }}>
-          <Col md={4} className="text-left text-black header-text d-flex align-items-center">
+          <Col md={4} className="text-left footer-linking header-text d-flex align-items-center">
             <div>
               <h1>
                 Black women are <br /> 3 to 4 times more <br /> likely to experience birth complications.
@@ -93,31 +86,34 @@ const Homepage = () => {
 
       {/* Main Content Sections */}
       <Container fluid className="px-0">
-        <Row className="content-section section-1 mx-0">
-          <Col md={6} className="section-image">
-            <img 
-              src="https://images.unsplash.com/photo-1489760176169-fd3d32805239?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Create Profile" 
-              className="img-fluid" />
-          </Col>
-          <Col md={6} className="text-center section-text">
-            <h3>Create your profile</h3>
-            <p>
-              Set up an account on your phone or desktop. It's best to use your name, a
-              photo of yourself, and a short bio that includes the topics you're into.
-            </p>
-          </Col>
-        </Row>
+      <Row className="content-section section-1 mx-0 align-items-stretch">
+        <Col md={6} className="section-image p-0 d-flex align-items-center">
+          <img 
+            src="/first.png" 
+            alt="Create Profile" 
+            className="img-fluid"
+          />
+        </Col>
+        <Col md={6} className="text-center section-text d-flex flex-column justify-content-center">
+          <h3 style={{ fontFamily: "'Lato', serif" }}>Create your profile</h3>
+          <p>
+            Set up an account on your phone or desktop. It's best to use your name, a
+            photo of yourself, and a short bio that includes the topics you're into.
+          </p>
+        </Col>
+      </Row>
+
+
 
         <Row className="content-section section-2 mx-0">
           <Col md={6} className="section-image order-md-last">
             <img 
-              src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Help and Share" 
+              src="/second.png" 
+              alt="Explore" 
               className="img-fluid" />
           </Col>
           <Col md={6} className="text-center section-text">
-            <h3>Explore and Curate</h3>
+            <h3 style={{ fontFamily: "'Lato', serif" }}>Explore and Curate</h3>
             <p>
               Collect content into your own Magazine. It’s an easy way to save and organize articles, videos, photos,
               podcasts, etc. You can create a Magazine for anything you can imagine — like planning a road trip, saving
@@ -129,12 +125,12 @@ const Homepage = () => {
         <Row className="content-section section-3 mx-0">
           <Col md={6} className="section-image">
             <img 
-              src="https://images.unsplash.com/photo-1607454230973-e19abb3fa2bc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Explore & Curate" 
+              src="/third.png" 
+              alt="Help" 
               className="img-fluid" />
           </Col>
           <Col md={6} className="text-center section-text">
-            <h3>Help and share the word</h3>
+            <h3 style={{ fontFamily: "'Lato', serif" }}>Help and share the word</h3>
             <p>
               Set up an account on your phone or desktop. 
               It's best to use your name, a photo of yourself and 
@@ -145,38 +141,40 @@ const Homepage = () => {
       </Container>
 
       {/* Footer Section */}
-      <Container fluid className="footer-section text-black">
+      <Container fluid className="footer-section footer-linking">
         <Row className="py-4">
           {/* Column 1: Newsletter Section */}
           <Col md={4} className="text-center text-md-start">
             <h5>Receive our monthly newsletter</h5>
             <p>Stay updated with our latest news and resources.</p>
-            <form>
+            <form className="d-flex align-items-center bottom-form-pad">
               <input
                 type="email"
-                className="form-control mb-2 custom-link"
+                className="form-control me-2 custom-link"
                 placeholder="Enter your email"
               />
-              <Button variant="light" className="w-100">Subscribe</Button>
+              <Button variant="light" className="flex-shrink-0">Sign Up</Button>
             </form>
-          </Col>
-
-          {/* Column 2 custom-link: Navigation Links */}
-          <Col md={4} className="text-center text-md-start section-links">
-            <Nav className="flex-column">
-              <Nav.Link href="#publishers" className="text-black">Publishers</Nav.Link>
-              <Nav.Link href="#story" className="text-black">Our Story</Nav.Link>
-              <Nav.Link href="#privacy" className="text-black">Privacy Policy</Nav.Link>
-              <Nav.Link href="#help" className="text-black">Help</Nav.Link>
-            </Nav>
           </Col>
 
           {/* Column 3: Disclaimer */}
           <Col md={4} className="text-center text-md-start">
             <p className="mb-0">
-              By using this app, you agree to consult with your healthcare provider for medical advice. This app is designed to provide support and information, not replace professional medical care.
+              
             </p>
           </Col>
+
+          {/* Column 2 custom-link: Navigation Links */}
+          <Col md={4} className="text-center text-md-start section-links">
+            <Nav className="flex-column">
+              <Nav.Link href="#publishers" className="footer-linking">Publishers</Nav.Link>
+              <Nav.Link href="#story" className="footer-linking">Our Story</Nav.Link>
+              <Nav.Link href="#privacy" className="footer-linking">Privacy Policy</Nav.Link>
+              <Nav.Link href="#help" className="footer-linking">Help</Nav.Link>
+            </Nav>
+          </Col>
+
+
         </Row>
       </Container>
 
