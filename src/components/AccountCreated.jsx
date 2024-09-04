@@ -13,11 +13,11 @@ const AccountCreated = ({ show, handleClose }) => {
     >
       <div className="account-created-content">
         {/* Welcome Message */}
-        <h1 className="fade-in-text">Welcome to Your Sanctuary...</h1>
+        <h1 className="fade-in-text">Creating Account...</h1>
         {/* Continue Button */}
-        <Button className="continue-button mt-4" onClick={handleClose}>
+        {/* <Button className="continue-button mt-4" onClick={handleClose}>
           Continue to profile
-        </Button>
+        </Button> */}
       </div>
     </Modal>
   );

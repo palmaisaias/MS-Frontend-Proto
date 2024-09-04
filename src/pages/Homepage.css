@@ -15,7 +15,7 @@
   /* General Styling */
     .homepage {
     background-color: #f4f4f4;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Lato', sans-serif;
     }
   
 /* ============================================================== */
@@ -98,19 +98,24 @@
     text-align: left !important;
     max-height: 550px; /* Limit the maximum height */
     overflow: hidden; /* Ensure no content overflows beyond 550px */
-  }
+    position: relative; /* Allow child elements to use absolute positioning */
+    padding-right: 0; /* Ensure there's no padding that may restrict overflow */
+}
   
 
-  .header-text h1 {
-    color: #FBB3A8 !important;
-    font-family: 'Lato', sans-serif;
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 48.3px;
-    text-align: left;
-    margin-bottom: 20px;
-    margin-left: 30px;
-  }
+.header-text h1 {
+  color: #FBB3A8 !important;
+  font-family: 'Lato', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 48.3px;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 60px; /* Adjust left margin to control initial position */
+  margin-right: -150px; /* Add negative margin to overflow into the next column */
+  position: relative; /* Positioning to handle z-index */
+  z-index: 1; /* Make sure it is above the image */
+}
   
   .header-text p {
     font-weight: 300;
@@ -118,7 +123,10 @@
     font-family: 'Lato', sans-serif; /* Adjust as needed */
     font-size: 1.7rem;
     margin-bottom: 30px;
-    margin-left: 30px;
+    margin-left: 60px;
+    margin-right: -150px; /* Add negative margin to overflow into the next column */
+    position: relative; /* Positioning to handle z-index */
+    z-index: 1; /* Make sure it is above the image */
   }
   
   .show-me-btn {
@@ -127,7 +135,7 @@
     font-size: 1.2rem !important;
     border: 2px solid #FBB3A8 !important;
     border-radius: 50px !important;
-    margin-left: 30px;
+    margin-left: 60px;
     padding: 5px 30px !important;
     background-color: #FBB3A8 !important;
   }
@@ -157,12 +165,15 @@
   /* Main Content Section */
   .content-section {
     display: flex; /* Ensure children can align properly */
-    align-items: stretch; /* Make sure columns stretch to fit the row */
+    align-items: center;
+    /* align-items: stretch; KEPT JUST IN CASE  */
   }
   
   /* Customize text placement for each section if needed */
   .section-text h3 {
     font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
   .section-text p {
     font-size: 1.2rem !important;
@@ -178,6 +189,7 @@
 
   .section-2 .section-text {
     text-align: left !important;
+    padding-left: 100px;
   }
 
   .section-2 .section-text p {
@@ -197,20 +209,17 @@
   padding: 0 !important;  /* Ensure no padding */
   margin: 0 !important;   /* Ensure no margin */
   display: flex; /* Use flexbox to control child element */
-  justify-content: center; /* Center the image */
-  align-items: center; /* Vertically align the image */
+  justify-content: left !important; /* PUSHES THE IMAGE TO WHICHEVER END
+  align-items: center !important; /* Vertically align the image */
 }
 
-/* Image Styling */
-.fixed-size-image {
-  width: 597px !important;   /* Fixed width */
-  height: 534px !important;  /* Fixed height */
-  object-fit: cover !important; /* Cover the entire specified area */
-  flex-shrink: 0 !important; /* Prevent the image from shrinking */
-  display: block !important; /* Remove bottom gap caused by inline-block elements */
+.section-image-middle {
+  padding: 0 !important;  /* Ensure no padding */
+  margin: 0 !important;   /* Ensure no margin */
+  display: flex; /* Use flexbox to control child element */
+  justify-content: right !important; /* PUSHES THE IMAGE TO WHICHEVER END
+  align-items: center !important; /* Vertically align the image */
 }
-
-
   
   /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
@@ -260,7 +269,7 @@
   }
 
   .footer-section .section-links {
-    padding-left: 40px !important; /* Adjust this value as needed */
+    padding-left: 0px !important; /* Adjust this value as needed */
   }
 
   .footer-linking {
@@ -295,6 +304,7 @@
     border-radius: 50px;
     max-width: 300px !important;
     min-width: 150px !important;
+    margin-bottom:20px ;
     
   }
   
@@ -316,29 +326,6 @@
     .footer-section .text-md-start {
       text-align: center !important;
     }
-  }
-/* ============================================================== */
-/* ============================================================== */
-
-  /* General Section Styling */
-.content-section {
-    padding: 60px 20px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .section-text h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .section-text p {
-    font-size: 1.2rem;
-  }
-  
-  .section-image img {
-    max-width: 100%;
-    height: auto;
   }
   
 /* ============================================================== */

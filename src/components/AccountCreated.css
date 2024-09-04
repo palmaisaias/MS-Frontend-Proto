@@ -9,11 +9,11 @@
   }
   
   .account-created-modal .modal-content {
-    background-image: url('/AccountCreated.png'); /* Replace with your image path */
-    background-position: center;
+    background-image: url('/create_acc.png'); /* Replace with your image path */
+    background-position: center -100px !important;
     background-repeat: no-repeat;
-    max-width: 560px !important; /* Adjust width as needed */
-    height: 515px; /* Adjust height as needed */
+    max-width: 570px !important; 
+    height: 560px !important; 
     border: none;
     overflow: hidden;
   }
@@ -22,7 +22,7 @@
     text-align: center;
     position:absolute;
     top: 50%;
-    padding: 0 20px;
+    padding: 0 15px !important;
     box-sizing: border-box !important;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -30,8 +30,8 @@
   }
   
   .fade-in-text {
-    font-size: 2.5rem;
-    color: #fff;
+    font-size: 2.1rem;
+    color: #4823D1;
     font-weight: bold;
     animation: fadeIn 4s ease-in-out;
     font-family: 'Lato';

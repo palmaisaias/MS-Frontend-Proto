@@ -67,15 +67,15 @@ const Homepage = () => {
           <Col md={4} className="text-left footer-linking header-text d-flex align-items-center">
             <div>
               <h1>
-                Black women are <br /> 3 to 4 times more <br /> likely to experience birth complications.
+                Black women are <br /> 3 times more likely to face <br /> perinatal depression and <br /> childbirth complications.
               </h1>
-              <p>Get informed and take control of your pregnancy journey.</p>
+              <p>We see you. We hear you <br />We want you to own your maternal <br />health and confidence</p>
               <Button variant="outline-light" className="show-me-btn">Show me</Button>
             </div>
           </Col>
           <Col md={8} className="px-0 d-flex align-items-center">
             <img
-              src="/Group.png"
+              src="/Group_Home.png"
               alt="A relevant and impactful image"
               className="img-fluid w-100"
               style={{ maxHeight: '550px', objectFit: 'cover' }}
@@ -87,14 +87,14 @@ const Homepage = () => {
       {/* Main Content Sections */}
       <Container fluid className="px-0">
       <Row className="content-section section-1 mx-0 align-items-stretch">
-        <Col md={6} className="section-image p-0 d-flex align-items-center">
+        <Col md={6} className="section-image d-flex">
           <img 
             src="/first.png" 
             alt="Create Profile" 
             className="img-fluid"
           />
         </Col>
-        <Col md={6} className="text-center section-text d-flex flex-column justify-content-center">
+        <Col md={5} className="text-center section-text d-flex flex-column justify-content-center">
           <h3 style={{ fontFamily: "'Lato', serif" }}>Create your profile</h3>
           <p>
             Set up an account on your phone or desktop. It's best to use your name, a
@@ -106,7 +106,7 @@ const Homepage = () => {
 
 
         <Row className="content-section section-2 mx-0">
-          <Col md={6} className="section-image order-md-last">
+          <Col md={6} className="section-image-middle order-md-last">
             <img 
               src="/second.png" 
               alt="Explore" 
@@ -129,7 +129,7 @@ const Homepage = () => {
               alt="Help" 
               className="img-fluid" />
           </Col>
-          <Col md={6} className="text-center section-text">
+          <Col md={5} className="text-center section-text">
             <h3 style={{ fontFamily: "'Lato', serif" }}>Help and share the word</h3>
             <p>
               Set up an account on your phone or desktop. 

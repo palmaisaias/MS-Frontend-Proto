@@ -39,21 +39,21 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
             }}
           />
           <div className="mt-4">
-  <div className="custom-link mb-3">
-    <div className="circle explore-circle"></div>
-    <a href="#link1" className="text-white d-block mb-2">Explore</a>
-  </div>
-  
-  <div className="custom-link mb-3">
-    <div className="circle curate-circle"></div>
-    <a href="#link2" className="text-white d-block mb-2">Curate</a>
-  </div>
-  
-  <div className="custom-link">
-    <div className="circle advocate-circle"></div>
-    <a href="#link3" className="text-white d-block mb-2">Advocate</a>
-  </div>
-</div>
+            <div className="custom-link mb-3">
+              <div className="circle explore-circle"></div>
+              <a href="#link1" className="text-white d-block mb-2">Explore</a>
+            </div>
+            
+            <div className="custom-link mb-3">
+              <div className="circle curate-circle"></div>
+              <a href="#link2" className="text-white d-block mb-2">Curate</a>
+            </div>
+            
+            <div className="custom-link">
+              <div className="circle advocate-circle"></div>
+              <a href="#link3" className="text-white d-block mb-2">Advocate</a>
+            </div>
+          </div>
 
         </div>
 
