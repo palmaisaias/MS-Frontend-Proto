@@ -23,7 +23,7 @@
     border-color: #ffffff !important;
     border-radius: 50px !important;
     color: #ffffff !important; /* Text color */
-    padding: 0.5rem; /* Optional: Add padding for better appearance */
+    padding: 0.5rem; /* Add padding for better appearance */
   }
   
   /* Placeholder styling */
@@ -40,7 +40,7 @@
     background-color: #643AFD !important;
     color: #ffffff !important;
     border: 2px solid #ffffff !important; /* Ensure border is solid white */
-    padding: 0.5rem; /* Optional: Add padding for better appearance */
+    padding: 0.5rem; /* Add padding for better appearance */
   }
   
   /* Adjust the appearance of the placeholder (for older browsers or support) */

@@ -36,6 +36,7 @@ const Homepage = () => {
 
   return (
     <Container fluid className="homepage">
+
       {/* Navigation Bar */}
       <Navbar expand="lg" className="navbar-custom w-100">
         <Container fluid className="px-0">
@@ -86,19 +87,17 @@ const Homepage = () => {
 
       {/* Main Content Sections */}
       <Container fluid className="px-0">
-      <Row className="content-section section-1 mx-0 align-items-stretch">
-        <Col md={6} className="section-image d-flex">
-          <img 
-            src="/first.png" 
-            alt="Create Profile" 
-            className="img-fluid"
-          />
-        </Col>
+      <Row className="content-section section-1 mx-0">
+      <Col md={6} className="section-image">
+            <img 
+              src="/first.png" 
+              alt="Help" 
+              className="img-fluid" />
+          </Col>
         <Col md={5} className="text-center section-text d-flex flex-column justify-content-center">
-          <h3 style={{ fontFamily: "'Lato', serif" }}>Create your profile</h3>
+          <h3 style={{ fontFamily: "'Lato', serif" }}>Enter "The Melanated Sanctuary"</h3>
           <p>
-            Set up an account on your phone or desktop. It's best to use your name, a
-            photo of yourself, and a short bio that includes the topics you're into.
+          A personalized, culturally relevant guide, designed by and for melanated mamas, to navigate this journey with confidence and joy.
           </p>
         </Col>
       </Row>
@@ -113,11 +112,10 @@ const Homepage = () => {
               className="img-fluid" />
           </Col>
           <Col md={6} className="text-center section-text">
-            <h3 style={{ fontFamily: "'Lato', serif" }}>Explore and Curate</h3>
+            <h3 style={{ fontFamily: "'Lato', serif" }}>Explore & Curate</h3>
             <p>
-              Collect content into your own Magazine. It’s an easy way to save and organize articles, videos, photos,
-              podcasts, etc. You can create a Magazine for anything you can imagine — like planning a road trip, saving
-              recipes or sharing industry news.
+            Think of it as your own personal curated vision board for your pregnancy, birth, 
+            and postpartum journey—equipping you to prioritize your holistic well-being throughout.
             </p>
           </Col>
         </Row>
@@ -130,11 +128,10 @@ const Homepage = () => {
               className="img-fluid" />
           </Col>
           <Col md={5} className="text-center section-text">
-            <h3 style={{ fontFamily: "'Lato', serif" }}>Help and share the word</h3>
+            <h3 style={{ fontFamily: "'Lato', serif" }}>Help Spread the Word</h3>
             <p>
-              Set up an account on your phone or desktop. 
-              It's best to use your name, a photo of yourself and 
-              a short bio that includes the topics you're into.
+            We bridge the gap until healthcare and society offer the culturally competent care all mothers deserve. 
+            Together, let's rewrite the narrative and empower you and your community to own your maternal health.
             </p>
           </Col>
         </Row>
@@ -143,6 +140,7 @@ const Homepage = () => {
       {/* Footer Section */}
       <Container fluid className="footer-section footer-linking">
         <Row className="py-4">
+          
           {/* Column 1: Newsletter Section */}
           <Col md={4} className="text-center text-md-start">
             <h5>Receive our monthly newsletter</h5>

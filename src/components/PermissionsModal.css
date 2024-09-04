@@ -10,17 +10,17 @@
 
 .custom-form-control {
   border-color: #000 !important;
-  border-radius: 50px !important; /* Change this to your desired border-radius */
+  border-radius: 50px !important;
 }
 
 .custom-form-control-date {
   border-color: #000 !important;
-  border-radius: 50px !important; /* Change this to your desired border-radius */
+  border-radius: 50px !important;
   width: 125px !important;
 }
 
 .custom-button-continuer {
-  border-radius: 50px !important; /* Customize the button border-radius separately if needed */
+  border-radius: 50px !important;
   width: 366px;
   color: #000 !important;
   background-color: #FBB3A8 !important;
@@ -29,7 +29,7 @@
 }
 
 .custom-button-skipper {
-  border-radius: 50px !important; /* Customize the button border-radius separately if needed */
+  border-radius: 50px !important;
   width: 366px;
   background-color: #643AFD !important;
   color: #ffffff !important;
@@ -45,14 +45,14 @@
 
 .custom-link {
   text-decoration: none; /* Removes the underline */
-  color: white; /* Ensures the text remains white (optional) */
+  color: white; /* Ensures the text remains white (optional :) */
   font-size: 1.3rem;
   font-weight: 700 !important;
 }
 
 .custom-link:hover {
-  text-decoration: underline; /* Optional: Add an underline on hover */
-  color: #f0f0f0; /* Optional: Slight color change on hover */
+  text-decoration: underline; /* Add an underline on hover */
+  color: #f0f0f0; /* Slight color change on hover */
 }
 
 .custom-link {

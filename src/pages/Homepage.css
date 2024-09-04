@@ -171,12 +171,12 @@
   
   /* Customize text placement for each section if needed */
   .section-text h3 {
-    font-weight: 900;
-    font-size: 2rem;
+    font-weight: bold;
+    font-size: 36px;
     margin-bottom: 20px;
   }
   .section-text p {
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
   }
 
   .section-1 .section-text {
@@ -205,20 +205,20 @@
   }
   
 /* Image Container Styling */
+
 .section-image {
+  height: 100% !important;
   padding: 0 !important;  /* Ensure no padding */
   margin: 0 !important;   /* Ensure no margin */
   display: flex; /* Use flexbox to control child element */
-  justify-content: left !important; /* PUSHES THE IMAGE TO WHICHEVER END
-  align-items: center !important; /* Vertically align the image */
+  justify-content: left !important; /* PUSHES THE IMAGE TO WHICHEVER END */
 }
 
 .section-image-middle {
   padding: 0 !important;  /* Ensure no padding */
   margin: 0 !important;   /* Ensure no margin */
   display: flex; /* Use flexbox to control child element */
-  justify-content: right !important; /* PUSHES THE IMAGE TO WHICHEVER END
-  align-items: center !important; /* Vertically align the image */
+  justify-content: right !important; /* PUSHES THE IMAGE TO WHICHEVER END */
 }
   
   /* Media Queries for Responsiveness */

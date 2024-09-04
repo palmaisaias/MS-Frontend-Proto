@@ -59,6 +59,7 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
 
         {/* White Side */}
         <div className='signup-modal-right'>
+          
           {/* Close Button */}
           <Button
             variant="light"

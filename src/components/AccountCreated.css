@@ -9,7 +9,7 @@
   }
   
   .account-created-modal .modal-content {
-    background-image: url('/create_acc.png'); /* Replace with your image path */
+    background-image: url('/create_acc.png');
     background-position: center -100px !important;
     background-repeat: no-repeat;
     max-width: 570px !important; 
@@ -48,7 +48,7 @@
     border: none !important; /* Clean up unnecessary border */
     width: auto !important; /* Set to auto, but consider setting a percentage or fixed width if needed */
     box-sizing: border-box !important;
-    border-radius: 50px !important; /* Consider using pixel values for more predictable radius */
+    border-radius: 50px !important;
     display: inline-block !important; /* Ensures it maintains content-driven width */
 }
   

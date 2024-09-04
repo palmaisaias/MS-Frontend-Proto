@@ -52,7 +52,12 @@ const PermissionsModal = ({ show, handleClose, onSkip, onContinue }) => {
         </div>
 
         {/* White Side */}
-        <div style={{ width: "67%", backgroundColor: "#6338FD", padding: "2rem", position: "relative" }}>
+        <div style={{ 
+              width: "67%", 
+              backgroundColor: "#6338FD", 
+              padding: "2rem", 
+              position: "relative" }}>
+                
           {/* Close Button */}
           <Button
             variant="light"
