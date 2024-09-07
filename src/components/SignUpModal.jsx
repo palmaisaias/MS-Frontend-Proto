@@ -1,22 +1,41 @@
-import React from 'react';
-import { Modal, Button, Form, FormControl } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Modal, Button, Form } from 'react-bootstrap';
+import axios from 'axios'; // Import axios
 import './SignUpModal.css';
 
 const SignUpModal = ({ show, handleClose, onSubmit }) => {
-  // Form submission handler
-  const handleFormSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-    onSubmit(); // Trigger the onSubmit prop passed from the parent component
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    first_name: '',
+    last_name: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Make the API request
+      const response = await axios.post('http://3.138.54.41:5000/register', formData, {
+        headers: { 'Content-Type': 'application/json' }
+      });
+      console.log('Signup successful:', response.data);
+
+      // Close the modal and call the parent onSubmit handler
+      handleClose();
+      onSubmit(); // Proceed to the next step, like UserDetailsModal
+    } catch (error) {
+      console.error('Error during sign up:', error);
+      // Optionally handle errors (show an error message to the user)
+    }
   };
 
   return (
-    <Modal 
-      show={show} 
-      onHide={handleClose}
-      size='lg' 
-      centered
-      dialogClassName="custom-modal"
-    >
+    <Modal show={show} onHide={handleClose} size='lg' centered dialogClassName="custom-modal">
       <div className="d-flex custom-modal-content">
         {/* Purple Side */}
         <div
@@ -28,95 +47,79 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
             padding: "2rem",
           }}
         >
-          <img
-            className="modal-logo-spacing"
-            src="/ModalLogo.png"
-            alt="Logo"
-            style={{
-              width: "80%",  // Set to a percentage for responsiveness
-              height: "auto",  // Maintain aspect ratio
-              maxWidth: "100%",  // Ensures it doesn't overflow
-            }}
-          />
+          <img className="modal-logo-spacing" src="/ModalLogo.png" alt="Logo" style={{ width: "80%", height: "auto", maxWidth: "100%" }} />
           <div className="mt-4">
             <div className="custom-link mb-3">
               <div className="circle explore-circle"></div>
               <a href="#link1" className="text-white d-block mb-2">Explore</a>
             </div>
-            
             <div className="custom-link mb-3">
               <div className="circle curate-circle"></div>
               <a href="#link2" className="text-white d-block mb-2">Curate</a>
             </div>
-            
             <div className="custom-link">
               <div className="circle advocate-circle"></div>
               <a href="#link3" className="text-white d-block mb-2">Advocate</a>
             </div>
           </div>
-
         </div>
 
         {/* White Side */}
         <div className='signup-modal-right'>
-          
           {/* Close Button */}
-          <Button
-            variant="light"
-            className="close-button"
-            onClick={handleClose}
-            aria-label="Close"
-          >
-            &times;
-          </Button>
+          <Button variant="light" className="close-button" onClick={handleClose} aria-label="Close">&times;</Button>
 
           <Form onSubmit={handleFormSubmit}>
-            <Form.Group className="mb-3" controlId="formFullName">
-              <Form.Label>Full Name</Form.Label>
-              <Form.Control type="text" placeholder="Full Name" className="custom-form-control" />
+            {/* First Name Field */}
+            <Form.Group className="mb-3" controlId="formFirstName">
+              <Form.Label>First Name</Form.Label>
+              <Form.Control 
+                type="text" 
+                placeholder="First Name" 
+                className="custom-form-control" 
+                name="first_name"
+                value={formData.first_name}
+                onChange={handleInputChange}
+              />
             </Form.Group>
 
+            {/* Last Name Field */}
+            <Form.Group className="mb-3" controlId="formLastName">
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control 
+                type="text" 
+                placeholder="Last Name" 
+                className="custom-form-control" 
+                name="last_name"
+                value={formData.last_name}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+
+            {/* Email Field */}
             <Form.Group className="mb-3" controlId="formEmail">
               <Form.Label>Email Address</Form.Label>
-              <Form.Control type="email" placeholder="Email" className="custom-form-control" />
+              <Form.Control 
+                type="email" 
+                placeholder="Email" 
+                className="custom-form-control" 
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
             </Form.Group>
 
+            {/* Password Field */}
             <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" className="custom-form-control" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formIdentity">
-                <Form.Label>How do you identify</Form.Label>
-                <Form.Select className="custom-form-control" defaultValue="">
-                    <option value="" disabled>Select one</option>
-                    <option value="American Indian or Alaska native">American Indian or Alaska native</option>
-                    <option value="Asian">Asian</option>
-                    <option value="Black or African American">Black or African American</option>
-                    <option value="Hispanic or Latino">Hispanic or Latino</option>
-                    <option value="Middle Eastern or North African">Middle Eastern or North African</option>
-                    <option value="Native Hawaiian or Pacific Islander">Native Hawaiian or Pacific Islander</option>
-                    <option value="White">White</option>
-                </Form.Select>
-            </Form.Group>
-                
-            <Form.Group className="mb-3" controlId="formDueDate">
-              <Form.Label>Due Date</Form.Label>
-                <Form.Control
-                  type="date"
-                  placeholder="MM/DD/YYYY"
-                  style={{
-                    backgroundColor: "#643AFD",
-                    color: "#ffffff",
-                    border: "2px solid #ffffff",
-                    borderRadius: "50px",
-                    width: "125px",
-                    padding: "0.5rem",
-                    WebkitAppearance: "none",  // Removes default styling in WebKit browsers
-                    MozAppearance: "textfield",  // Removes default styling in Firefox
-                    appearance: "none",  // Removes default styling
-                  }}
-                />
+              <Form.Control 
+                type="password" 
+                placeholder="Password" 
+                className="custom-form-control" 
+                name="password"
+                value={formData.password}
+                onChange={handleInputChange}
+              />
             </Form.Group>
 
             <div className="button-container">

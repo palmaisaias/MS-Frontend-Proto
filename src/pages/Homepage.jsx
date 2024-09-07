@@ -2,41 +2,37 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button, Navbar, Nav } from 'react-bootstrap';
 import './Homepage.css';
 import SignUpModal from '../components/SignUpModal'; // Import the sign-up modal component
-import PermissionsModal from '../components/PermissionsModal'; // Import the permissions modal component
+import UserDetails from '../components/UserDetails'; // Import the user-details modal component
 import AccountCreated from '../components/AccountCreated'; // Import the account-created modal component
 
 const Homepage = () => {
   // State management for all modals
   const [showSignUp, setShowSignUp] = useState(false);
-  const [showPermissions, setShowPermissions] = useState(false);
+  const [showUserDetails, setShowUserDetails] = useState(false);
   const [showAccountCreated, setShowAccountCreated] = useState(false);
 
+  // Handle closing of all modals
   const handleCloseSignUp = () => setShowSignUp(false);
-  const handleClosePermissions = () => setShowPermissions(false);
+  const handleCloseUserDetails = () => setShowUserDetails(false);
   const handleCloseAccountCreated = () => setShowAccountCreated(false);
 
+  // Handle showing of SignUp modal
   const handleShowSignUp = () => setShowSignUp(true);
 
-  // Handle sign-up form submission and show the permissions modal
+  // Handle sign-up form submission and show the user details modal
   const handleSignUpSubmit = () => {
     setShowSignUp(false);
-    setShowPermissions(true);
+    setShowUserDetails(true); // Open UserDetails instead of PermissionsModal
   };
 
-  // Handle skip or continue actions in the permissions modal
-  const handlePermissionsSkip = () => {
-    setShowPermissions(false);
-    setShowAccountCreated(true);
-  };
-
-  const handlePermissionsContinue = () => {
-    setShowPermissions(false);
-    setShowAccountCreated(true);
+  // Handle user details submission and show the account created modal
+  const handleUserDetailsSubmit = () => {
+    setShowUserDetails(false);
+    setShowAccountCreated(true); // Open AccountCreated modal after user details are submitted
   };
 
   return (
     <Container fluid className="homepage">
-
       {/* Navigation Bar */}
       <Navbar expand="lg" className="navbar-custom w-100">
         <Container fluid className="px-0">
@@ -87,22 +83,20 @@ const Homepage = () => {
 
       {/* Main Content Sections */}
       <Container fluid className="px-0">
-      <Row className="content-section section-1 mx-0">
-      <Col md={6} className="section-image">
+        <Row className="content-section section-1 mx-0">
+          <Col md={6} className="section-image">
             <img 
               src="/first.png" 
               alt="Help" 
               className="img-fluid" />
           </Col>
-        <Col md={5} className="text-center section-text d-flex flex-column justify-content-center">
-          <h3 style={{ fontFamily: "'Lato', serif" }}>Enter "The Melanated Sanctuary"</h3>
-          <p>
-          A personalized, culturally relevant guide, designed by and for melanated mamas, to navigate this journey with confidence and joy.
-          </p>
-        </Col>
-      </Row>
-
-
+          <Col md={5} className="text-center section-text d-flex flex-column justify-content-center">
+            <h3 style={{ fontFamily: "'Lato', serif" }}>Enter "The Melanated Sanctuary"</h3>
+            <p>
+              A personalized, culturally relevant guide, designed by and for melanated mamas, to navigate this journey with confidence and joy.
+            </p>
+          </Col>
+        </Row>
 
         <Row className="content-section section-2 mx-0">
           <Col md={6} className="section-image-middle order-md-last">
@@ -114,8 +108,8 @@ const Homepage = () => {
           <Col md={6} className="text-center section-text">
             <h3 style={{ fontFamily: "'Lato', serif" }}>Explore & Curate</h3>
             <p>
-            Think of it as your own personal curated vision board for your pregnancy, birth, 
-            and postpartum journey—equipping you to prioritize your holistic well-being throughout.
+              Think of it as your own personal curated vision board for your pregnancy, birth, 
+              and postpartum journey—equipping you to prioritize your holistic well-being throughout.
             </p>
           </Col>
         </Row>
@@ -130,8 +124,8 @@ const Homepage = () => {
           <Col md={5} className="text-center section-text">
             <h3 style={{ fontFamily: "'Lato', serif" }}>Help Spread the Word</h3>
             <p>
-            We bridge the gap until healthcare and society offer the culturally competent care all mothers deserve. 
-            Together, let's rewrite the narrative and empower you and your community to own your maternal health.
+              We bridge the gap until healthcare and society offer the culturally competent care all mothers deserve. 
+              Together, let's rewrite the narrative and empower you and your community to own your maternal health.
             </p>
           </Col>
         </Row>
@@ -140,7 +134,6 @@ const Homepage = () => {
       {/* Footer Section */}
       <Container fluid className="footer-section footer-linking">
         <Row className="py-4">
-          
           {/* Column 1: Newsletter Section */}
           <Col md={4} className="text-center text-md-start">
             <h5>Receive our monthly newsletter</h5>
@@ -157,9 +150,7 @@ const Homepage = () => {
 
           {/* Column 3: Disclaimer */}
           <Col md={4} className="text-center text-md-start">
-            <p className="mb-0">
-              
-            </p>
+            <p className="mb-0"></p>
           </Col>
 
           {/* Column 2 custom-link: Navigation Links */}
@@ -171,27 +162,17 @@ const Homepage = () => {
               <Nav.Link href="#help" className="footer-linking">Help</Nav.Link>
             </Nav>
           </Col>
-
-
         </Row>
       </Container>
 
       {/* Sign-Up Modal */}
       <SignUpModal show={showSignUp} handleClose={handleCloseSignUp} onSubmit={handleSignUpSubmit} />
 
-      {/* Permissions Modal */}
-      <PermissionsModal 
-        show={showPermissions} 
-        handleClose={handleClosePermissions} 
-        onSkip={handlePermissionsSkip}
-        onContinue={handlePermissionsContinue}
-      />
+      {/* User Details Modal */}
+      <UserDetails show={showUserDetails} handleClose={handleCloseUserDetails} onSubmit={handleUserDetailsSubmit} />
 
       {/* Account Created Modal */}
-      <AccountCreated 
-        show={showAccountCreated} 
-        handleClose={handleCloseAccountCreated} 
-      />
+      <AccountCreated show={showAccountCreated} handleClose={handleCloseAccountCreated} />
     </Container>
   );
 };
