@@ -20,14 +20,25 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
     e.preventDefault();
     try {
       // Make the API request
-      const response = await axios.post('http://3.138.54.41:5000/register', formData, {
+      const response = await axios.post('/api/register', formData, {
         headers: { 'Content-Type': 'application/json' }
       });
+
       console.log('Signup successful:', response.data);
+
+      // Check if token is in the response and store it in localStorage
+      const { token } = response.data;
+      if (token) {
+        localStorage.setItem('authToken', token); // Store the token in localStorage
+        console.log('Token stored successfully:', token);
+      } else {
+        console.error('No token received from the server');
+      }
 
       // Close the modal and call the parent onSubmit handler
       handleClose();
       onSubmit(); // Proceed to the next step, like UserDetailsModal
+
     } catch (error) {
       console.error('Error during sign up:', error);
       // Optionally handle errors (show an error message to the user)

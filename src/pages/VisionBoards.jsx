@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Navbar, Nav, Card } from 'react-bootstrap';
 import './VisionBoards.css'; // Make sure to create a corresponding CSS file
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -61,29 +62,43 @@ const VisionBoards = () => {
         <Row className="vision-board-cards">
           {/* Using React Bootstrap Card for each section */}
           <Col md={4} className="mb-4">
-            <Card className="vision-board-card">
-              <Card.Img variant="top" src="https://cdn.prod.website-files.com/5e83c94c5b5cc52b68f585a8/65563fca28256f73f6032af5_how-to-exercise-safely-when-pregnant-guidelines-tips-precautions-more-lg.webp" alt="Physical Wellness" className="fixed-size-img" />
-              <Card.Body className="purple-overlay">
-                <Card.Title className='title-card-format-pback'>Physical Wellness</Card.Title>
-                <Card.Text className='fixed-height-text-p'>
-                  Prioritizing physical wellness with exercise and proper nutrition can help reduce this risk and improve pregnancy outcomes...
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+                <Link to="/physical-wellness" className="card-link"> {/* Wrap the Card with Link */}
+                    <Card className="vision-board-card">
+                    <Card.Img
+                        variant="top"
+                        src="https://cdn.prod.website-files.com/5e83c94c5b5cc52b68f585a8/65563fca28256f73f6032af5_how-to-exercise-safely-when-pregnant-guidelines-tips-precautions-more-lg.webp"
+                        alt="Physical Wellness"
+                        className="fixed-size-img"
+                    />
+                    <Card.Body className="purple-overlay">
+                        <Card.Title className="title-card-format-pback">Physical Wellness</Card.Title>
+                        <Card.Text className="fixed-height-text-p">
+                        Prioritizing physical wellness with exercise and proper nutrition can help reduce this risk and improve pregnancy outcomes...
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
+                </Link>
+            </Col>
 
           {/* Repeat similar blocks for other categories like Birth Preparation, Emotional Well-Being, etc. */}
           <Col md={4} className="mb-4">
-            <Card className="vision-board-card">
-              <Card.Img variant="top" src="https://bloximages.newyork1.vip.townnews.com/princewilliamtimes.com/content/tncms/assets/v3/editorial/3/e5/3e571658-4951-11ec-9557-7fd639a33ea8/6197c990a7a13.image.png?resize=1776%2C1167" alt="Birth Preparation" className="fixed-size-img" />
-              <Card.Body className="pink-overlay">
-                <Card.Title className='title-card-format'>Birth Preparation</Card.Title>
-                <Card.Text className='fixed-height-text'>
-                  Preparing for birth with the right resources and guidance can help ensure a smoother journey and positive outcome...
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+                <Link to="/birth-preparation" className="card-link"> {/* Wrap the Card with Link */}
+                    <Card className="vision-board-card">
+                    <Card.Img
+                        variant="top"
+                        src="https://bloximages.newyork1.vip.townnews.com/princewilliamtimes.com/content/tncms/assets/v3/editorial/3/e5/3e571658-4951-11ec-9557-7fd639a33ea8/6197c990a7a13.image.png?resize=1776%2C1167"
+                        alt="Birth Preparation"
+                        className="fixed-size-img"
+                    />
+                    <Card.Body className="pink-overlay">
+                        <Card.Title className="title-card-format">Birth Preparation</Card.Title>
+                        <Card.Text className="fixed-height-text">
+                        Preparing for birth with the right resources and guidance can help ensure a smoother journey and positive outcome...
+                        </Card.Text>
+                    </Card.Body>
+                    </Card>
+                </Link>
+            </Col>
 
           <Col md={4} className="mb-4">
             <Card className="vision-board-card">

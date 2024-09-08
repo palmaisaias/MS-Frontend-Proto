@@ -1,15 +1,50 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import axios from 'axios'; // Import axios for making API requests
 import './UserDetails.css';
 
 const UserDetails = ({ show, handleClose, onSubmit }) => {
+  // State for form fields
+  const [sex, setSex] = useState('');
+  const [pronouns, setPronouns] = useState('');
+  const [dueDate, setDueDate] = useState('');
   const [isFirstPregnancy, setIsFirstPregnancy] = useState(false);
+  const [phone, setPhone] = useState('');
   const [receiveTexts, setReceiveTexts] = useState(false);
 
   // Form submission handler
-  const handleFormSubmit = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
-    onSubmit(); // Trigger the onSubmit prop passed from the parent component
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    const userDetails = {
+      sex,
+      pronouns,
+      due_date: dueDate,
+      first_pregnancy: isFirstPregnancy === 'yes',
+      phone,
+      can_receive_texts: receiveTexts,
+    };
+
+    try {
+      // Get the token from localStorage
+      const token = localStorage.getItem('authToken');
+
+      // Make the POST request to create user details with Authorization header
+      const response = await axios.post('api/user_details', userDetails, {
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`  // Including the token in the header
+        }
+      });
+      
+      console.log('User details saved successfully:', response.data);
+
+      handleClose();
+      onSubmit();
+
+    } catch (error) {
+      console.error('Error saving user details:', error);
+    }
   };
 
   return (
@@ -42,16 +77,15 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
             }}
           />
           <div className="mt-4">
+            {/* Links */}
             <div className="custom-link mb-3">
               <div className="circle explore-circle"></div>
               <a href="#link1" className="text-white d-block mb-2">Explore</a>
             </div>
-            
             <div className="custom-link mb-3">
               <div className="circle curate-circle"></div>
               <a href="#link2" className="text-white d-block mb-2">Curate</a>
             </div>
-            
             <div className="custom-link">
               <div className="circle advocate-circle"></div>
               <a href="#link3" className="text-white d-block mb-2">Advocate</a>
@@ -105,13 +139,19 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
               <Form.Control 
                 type="date" 
                 className="custom-form-control" 
+                value={dueDate}
+                onChange={(e) => setDueDate(e.target.value)}
               />
             </Form.Group>
 
             {/* Sex Dropdown */}
             <Form.Group className="mb-3" controlId="formSex">
               <Form.Label>Sex</Form.Label>
-              <Form.Select className="custom-form-control">
+              <Form.Select 
+                className="custom-form-control"
+                value={sex}
+                onChange={(e) => setSex(e.target.value)}
+              >
                 <option value="" disabled>Select one</option>
                 <option value="female">Female</option>
                 <option value="male">Male</option>
@@ -123,7 +163,11 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
             {/* Pronoun Dropdown */}
             <Form.Group className="mb-3" controlId="formPronouns">
                 <Form.Label>Pronouns</Form.Label>
-                <Form.Select className="custom-form-control">
+                <Form.Select 
+                  className="custom-form-control"
+                  value={pronouns}
+                  onChange={(e) => setPronouns(e.target.value)}
+                >
                     <option value="" disabled>Select one</option>
                     <option value="she/her">She/Her</option>
                     <option value="he/him">He/Him</option>
@@ -141,6 +185,8 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
                 type="tel" 
                 placeholder="Phone Number" 
                 className="custom-form-control" 
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
             </Form.Group>
 

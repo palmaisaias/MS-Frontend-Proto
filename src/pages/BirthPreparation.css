@@ -1,68 +1,84 @@
-/* VisionBoards.css */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* General Styling */
+.breadcrumb-container {
+    display: flex;
+  }
+  
+  .breadcrumb-separator {
+    font-size: 1.4rem; /* Adjust size if needed */
+    display: inline-block;
+    line-height: 1.8; /* Ensures it aligns in the middle */
+  }
+  
 .vision-boards {
     background: var(--Gradient, radial-gradient(67.67% 80.23% at 41.04% 35.34%, #FFC2B9 0%, #DFEFB4 47.5%, #FFC2B9 99.04%));
     font-family: 'Lato', sans-serif;
-  }
+}
 
-  .vision-board-card {
+.vision-board-card {
     border-radius: 25px !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow */
-  }
-  
-  .vision-board-card:hover {
+}
+
+.vision-board-card:hover {
     transform: translateY(-10px); /* Raises the card */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-  }
-  
-  .welcome-message {
+}
+
+.welcome-message {
     color: #4823D1;
     font-weight: bold;
     font-size: 2rem;
     margin-top: 20px;
-  }
-  
-  .all-topics-link {
+}
+
+.all-topics-link,
+.current-topic-link {
     color: #000000 !important;
     text-decoration: underline;
     margin-bottom: 20px;
-    display: block;
-  }
+    display: inline-block;
+    margin-right: 10px;
+}
 
-  .fixed-size-img {
+.fixed-size-img {
     border-top-right-radius: 25px !important;
     border-top-left-radius: 25px !important;
     width: 415px; /* Fixed width */
     height: 415px; /* Fixed height */
     object-fit: cover; /* Ensures the image covers the area without distortion */
     overflow: hidden; /* Hides overflow of the image */
-  }
-  
-  /* Fixed height for card text */
-  .fixed-height-text {
-    height: 150px; /* Fixed height */
-    overflow: hidden; /* Hide any overflow content */
-    display: -webkit-box; /* Required for line clamping */
-    -webkit-box-orient: vertical; /* Required for vertical text truncation */
-    -webkit-line-clamp: 7; /* Number of lines to show */
-    text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
-  }
+}
 
-  .fixed-height-text-p {
+/* Fixed height for card text */
+.fixed-height-text {
+    max-height: 150px !important; /* Fixed height */
+    display: -webkit-box !important; /* Required for line clamping */
+    -webkit-box-orient: vertical !important; /* Required for vertical text truncation (WebKit) */
+    box-orient: vertical !important; /* Legacy syntax (non-standard) */
+    -webkit-line-clamp: 4 !important; /* Number of lines to show (WebKit) */
+    line-clamp: 4 !important; /* Standard property (for future use) */
+        text-overflow: ellipsis !important; /* Adds ellipsis (...) for overflowed text */
+        overflow: hidden !important; /* Hide any overflow content */
+}
+
+.fixed-height-text-p {
     color: #FDF7E7;
     height: 150px; /* Fixed height */
     overflow: hidden; /* Hide any overflow content */
     display: -webkit-box; /* Required for line clamping */
-    -webkit-box-orient: vertical; /* Required for vertical text truncation */
-    -webkit-line-clamp: 7; /* Number of lines to show */
-    text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
-  }
-  
-  .card-overlay {
+    -webkit-box-orient: vertical !important; /* Required for vertical text truncation (WebKit) */
+    box-orient: vertical !important; /* Legacy syntax (non-standard) */
+    -webkit-line-clamp: 4 !important; /* Number of lines to show (WebKit) */
+    line-clamp: 4 !important; /* Standard property (for future use) */
+        text-overflow: ellipsis !important; /* Adds ellipsis (...) for overflowed text */
+        overflow: hidden !important; /* Hide any overflow content */
+}
+
+.card-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -71,9 +87,9 @@
     color: white;
     background: rgba(0, 0, 0, 0.6);
     transition: background 0.3s;
-  }
+}
 
-  .title-card-format {
+.title-card-format {
     border-radius: 25px;
     color: var(--Royal-Blue, #4823D1) !important;
     font-family: Lato !important;
@@ -81,9 +97,9 @@
     font-style: normal !important;
     font-weight: 700 !important;
     line-height: 33px !important; /* 82.5% */
-  }
+}
 
-  .title-card-format-pback {
+.title-card-format-pback {
     border-radius: 25px !important;
     color: var(--Royal-Blue, #FDF7E7) !important;
     font-family: Lato !important;
@@ -91,41 +107,43 @@
     font-style: normal !important;
     font-weight: 700 !important;
     line-height: 33px !important; /* 82.5% */
-  }
-  
-  .purple-overlay {
+}
+
+.purple-overlay {
     background-color: #643AFD;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-  }
-  
-  .pink-overlay {
+}
+
+.pink-overlay {
     background-color: #FFC2B9;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-  }
+    max-height:250px ;
+    min-height: 250px;
+}
 
-  .green-overlay {
+.green-overlay {
     background-color: #DBE59A;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-  }
+}
 
-  .card-link {
+.card-link {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit the color from the parent */
-  }
-  
-  /* Navbar Updates =================================== */
-  .search-bar-container {
+}
+
+/* Navbar Updates */
+.search-bar-container {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color:#4823D1; /* Adjust background color as needed */
-  }
-  
-  .search-bar-container input[type="text"] {
+    background-color: #4823D1; /* Adjust background color as needed */
+}
+
+.search-bar-container input[type="text"] {
     width: 400px; /* Adjust width as needed */
     height: 45px; /* Adjust height as needed */
     border: 2px solid white; /* Adjust border color as needed */
@@ -135,9 +153,9 @@
     outline: none; /* Remove default outline */
     background-color: transparent; /* Transparent background */
     color: white; /* Adjust text color as needed */
-  }
-  
-  .submit-button-search {
+}
+
+.submit-button-search {
     border: none; /* Remove default border */
     background: none; /* Transparent background */
     position: relative; /* Positioning for icon */
@@ -150,9 +168,11 @@
     display: flex; /* Center the icon */
     align-items: center; /* Center the icon vertically */
     justify-content: center; /* Center the icon horizontally */
-  }
+}
 
-  .notes-link {
+/* Notes and Profile Links Styling */
+.notes-link,
+.profile-link {
     border: none; /* Remove default border */
     background: none; /* Transparent background */
     position: relative; /* Positioning for icon */
@@ -166,15 +186,14 @@
     align-items: center; /* Center the icon vertically */
     justify-content: center; /* Center the icon horizontally */
     transition: color 0.3s ease; /* Smooth color transition */
-  }
-  
-  /* Hover effect to change icon color */
-  .notes-link:hover {
+}
+
+.notes-link:hover,
+.profile-link:hover {
     color: rgb(200, 200, 200); /* Optional: change icon color on hover */
-  }
-  
-  /* Pseudo-element to display text on hover */
-  .notes-link::after {
+}
+
+.notes-link::after {
     content: 'Your Notes'; /* Text to display */
     position: absolute; /* Absolute positioning */
     bottom: 42px !important; /* Position above the button */
@@ -185,55 +204,38 @@
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
     pointer-events: none; /* Prevent text from interfering with hover */
-  }
-  
-  /* Show text on hover */
-  .notes-link:hover::after {
+}
+
+.notes-link:hover::after {
     opacity: 1; /* Make text visible */
     bottom: 45px !important; /* Move text further up smoothly */
-  }
+}
 
-  .profile-link {
-    border: none; /* Remove default border */
-    background: none; /* Transparent background */
-    position: relative; /* Positioning for icon */
-    right: 45px; /* Position button inside the input */
-    cursor: pointer; /* Cursor pointer for button */
-    color: rgb(255, 255, 255) !important; /* Adjust icon color */
-    font-size: 28px !important; /* Icon size */
-    padding: 0; /* Remove padding */
-    outline: none; /* Remove default outline */
-    display: flex; /* Center the icon */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-  }
-  
-
-  .navbar-custom {
+.navbar-custom {
     padding: 0; /* Ensure no additional padding */
     margin: 0; /* Ensure no additional margin */
-  }
+}
 
-  .navbar-custom .notes-link {
+.navbar-custom .notes-link,
+.navbar-custom .profile-link {
     font-weight: bold;
     color: #fff;
-  }
-  
-  .navbar-custom .profile-link {
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  /* Adjust navbar styles to align with design */
-  .navbar-custom .search-link {
-    margin-right: 20px;
-    color: #fff;
-  }
-  
-  .navbar-custom .notes-link,
-  .navbar-custom .profile-link {
     margin-left: 20px;
     margin-right: 20px;
-    color: #fff;
-  }
-  
+}
+
+/* Footer Section Styling */
+.footer-section {
+    background-color: #f8f9fa; /* Light background color for footer */
+    padding: 20px 0; /* Padding for footer */
+}
+
+.footer-linking {
+    color: #000; /* Footer link color */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 10px; /* Space between links */
+}
+
+.footer-linking:hover {
+    text-decoration: underline; /* Underline on hover */
+}
