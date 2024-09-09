@@ -78,7 +78,7 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
         {/* White Side */}
         <div className='signup-modal-right'>
           {/* Close Button */}
-          <Button variant="light" className="close-button" onClick={handleClose} aria-label="Close">&times;</Button>
+          <Button className="close-button" onClick={handleClose} aria-label="Close">&times;</Button>
 
           <Form onSubmit={handleFormSubmit}>
             {/* First Name Field */}

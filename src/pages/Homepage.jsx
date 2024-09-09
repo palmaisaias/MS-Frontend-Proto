@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Homepage.css';
+import VisionBoards from './VisionBoards';
 import SignUpModal from '../components/SignUpModal'; // Import the sign-up modal component
 import UserDetails from '../components/UserDetails'; // Import the user-details modal component
 import AccountCreated from '../components/AccountCreated'; // Import the account-created modal component
@@ -36,7 +38,7 @@ const Homepage = () => {
       {/* Navigation Bar */}
       <Navbar expand="lg" className="navbar-custom w-100">
         <Container fluid className="px-0">
-          <Navbar.Brand href="#home" className="d-flex align-items-center">
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img
               src="/Frame.png"
               alt="The Melanated Sanctuary Logo"
@@ -48,9 +50,10 @@ const Homepage = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="#about-us">About Us</Nav.Link>
-              <Nav.Link href="#login">Login</Nav.Link>
-              <Nav.Link href="#sign-up" className="nav-link-signup" onClick={handleShowSignUp}>
+              <Nav.Link as={Link} to="/about-us">About Us</Nav.Link>
+              <Nav.Link as={Link} to="/login">Login</Nav.Link>
+              <Nav.Link as={Link} to="/vision-boards">Vision Board Test</Nav.Link>
+              <Nav.Link className="nav-link-signup" onClick={handleShowSignUp}>
                 Sign Up
               </Nav.Link>
             </Nav>
@@ -66,7 +69,7 @@ const Homepage = () => {
               <h1>
                 Black women are <br /> 3 times more likely to face <br /> perinatal depression and <br /> childbirth complications.
               </h1>
-              <p>We see you. We hear you <br />We want you to own your maternal <br />health and confidence</p>
+              <p>We see you. We hear you. <br />We want you to own your maternal <br />health and confidence!</p>
               <Button variant="outline-light" className="show-me-btn">Show me</Button>
             </div>
           </Col>
@@ -137,7 +140,7 @@ const Homepage = () => {
           {/* Column 1: Newsletter Section */}
           <Col md={4} className="text-center text-md-start">
             <h5>Receive our monthly newsletter</h5>
-            <p>Stay updated with our latest news and resources.</p>
+            <p>Your Email</p>
             <form className="d-flex align-items-center bottom-form-pad">
               <input
                 type="email"
