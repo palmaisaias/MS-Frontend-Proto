@@ -55,7 +55,7 @@ const VisionBoards = () => {
 
       {/* Vision Boards Content */}
       <Container fluid className="px-4 vision-boards-content">
-        <h2 className="welcome-message">Welcome Nina,</h2>
+        <h2 className="welcome-message">Welcome Isabel,</h2>
         <p>This is your personal sanctuary, where you’ll find the best articles for your pregnancy journey. <br /> Curate your own collection along the way.</p>
         <Button variant="link" className="all-topics-link">All topics</Button>
 
