@@ -26,11 +26,23 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
 
       console.log('Signup successful:', response.data);
 
-      // Check if token is in the response and store it in localStorage
-      const { token } = response.data;
+      // Check if token and user information is in the response and store them in localStorage
+      const { token, user } = response.data;
       if (token) {
         localStorage.setItem('authToken', token); // Store the token in localStorage
         console.log('Token stored successfully:', token);
+
+        // Store user's name in localStorage
+        if (user && user.first_name) {
+          localStorage.setItem('userName', user.first_name); // Store the user's first name
+          console.log('User name stored successfully:', user.first_name);
+        }
+
+        // Store additional user details like last name or other fields if needed
+        if (user && user.last_name) {
+          localStorage.setItem('userLastName', user.last_name); // Store the user's last name
+          console.log('User last name stored successfully:', user.last_name);
+        }
       } else {
         console.error('No token received from the server');
       }

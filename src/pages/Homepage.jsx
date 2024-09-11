@@ -36,7 +36,7 @@ const Homepage = () => {
   return (
     <Container fluid className="homepage">
       {/* Navigation Bar */}
-      <Navbar expand="lg" className="navbar-custom w-100">
+      <Navbar expand="lg" className="navbar-custom w-100 sticky-top">
         <Container fluid className="px-0">
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img

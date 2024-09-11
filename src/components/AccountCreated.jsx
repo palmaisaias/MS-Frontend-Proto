@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './AccountCreated.css';
 
 const AccountCreated = ({ show, handleClose }) => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  useEffect(() => {
+    if (show) { // Ensure the modal is shown before setting timeout
+      const timer = setTimeout(() => {
+        handleClose(); // Close the modal
+        navigate('/vision-boards'); // Navigate to VisionBoards page
+      }, 4000); // 4 seconds delay
+
+      return () => clearTimeout(timer); // Clean up the timeout
+    }
+  }, [show, handleClose, navigate]); // Dependencies for useEffect
+
   return (
     <Modal 
       show={show} 
@@ -14,10 +28,7 @@ const AccountCreated = ({ show, handleClose }) => {
       <div className="account-created-content">
         {/* Welcome Message */}
         <h1 className="fade-in-text">Creating Account...</h1>
-        {/* Continue Button IF we want to have a button in this portion OR we can just have it fade away and open the new page*/} 
-        {/* <Button className="continue-button mt-4" onClick={handleClose}>
-          Continue to profile
-        </Button> */}
+        {/* You can keep the button if you want user interaction */}
       </div>
     </Modal>
   );

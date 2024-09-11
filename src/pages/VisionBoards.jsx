@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Navbar, Nav, Card } from 'react-bootstrap';
-import './VisionBoards.css'; // Make sure to create a corresponding CSS file
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStickyNote, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import './VisionBoards.css';
 
 const VisionBoards = () => {
+  const [userData, setUserData] = useState(null); // State to store user data
+
+  useEffect(() => {
+    // Retrieve user data from localStorage instead of making an API call
+    const userName = localStorage.getItem('userName'); // Retrieve user's first name from localStorage
+    const userLastName = localStorage.getItem('userLastName'); // Retrieve user's last name from localStorage
+    const dueDate = localStorage.getItem('dueDate'); // Optionally retrieve due date if stored in localStorage
+
+    if (userName) {
+      setUserData({
+        name: `${userName} ${userLastName || ''}`.trim(), // Combine first and last name if available
+        dueDate: dueDate || '', // Add more fields if necessary
+      });
+    }
+  }, []);
+
   // Function to handle note button click
   const handleNotesClick = () => {
-    console.log("Notes clicked");
+    console.log('Notes clicked');
     // Add navigation or logic for notes
   };
 
@@ -29,24 +45,19 @@ const VisionBoards = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto d-flex align-items-center">
-                <Nav.Item className="search-bar-container">
-                    <form className="d-flex" action="#search">
-                        <input
-                        type="text"
-                        placeholder="Search..."
-                        aria-label="Search"
-                        />
-                        <button type="submit" className='submit-button-search'>
-                        <FontAwesomeIcon icon={faSearch} />
-                        </button>
-                    </form>
-                </Nav.Item>
-
+              <Nav.Item className="search-bar-container">
+                <form className="d-flex" action="#search">
+                  <input type="text" placeholder="Search..." aria-label="Search" />
+                  <button type="submit" className="submit-button-search">
+                    <FontAwesomeIcon icon={faSearch} />
+                  </button>
+                </form>
+              </Nav.Item>
               <Nav.Link href="#notes" onClick={handleNotesClick} className="notes-link">
-              <FontAwesomeIcon icon={faStickyNote} />
+                <FontAwesomeIcon icon={faStickyNote} />
               </Nav.Link>
               <Nav.Link href="#profile" className="profile-link">
-              <FontAwesomeIcon icon={faUserCircle} />
+                <FontAwesomeIcon icon={faUserCircle} />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
@@ -55,9 +66,23 @@ const VisionBoards = () => {
 
       {/* Vision Boards Content */}
       <Container fluid className="px-4 vision-boards-content">
-        <h2 className="welcome-message">Welcome Isabel,</h2>
-        <p>This is your personal sanctuary, where you’ll find the best articles for your pregnancy journey. <br /> Curate your own collection along the way.</p>
-        <Button variant="link" className="all-topics-link">All topics</Button>
+        {userData ? ( // Check if userData is loaded
+          <>
+            <h2 className="welcome-message">Welcome {userData.name},</h2>
+            <p>
+              This is your personal sanctuary, where you’ll find the best articles for your pregnancy journey.
+              <br /> Curate your own collection along the way.
+            </p>
+            <p>
+              Your due date is: <strong>{userData.dueDate}</strong>
+            </p>
+            <Button variant="link" className="all-topics-link">
+              All topics
+            </Button>
+          </>
+        ) : (
+          <p>Loading...</p> // Show loading state while fetching data
+        )}
 
         <Row className="vision-board-cards">
           {/* Using React Bootstrap Card for each section */}
