@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Navbar, Nav, Card } from 'react-bootstrap';
-import './BirthPreparation.css'; // Reuse the same CSS file for consistent styling
+import './BirthPreparation.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStickyNote, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,7 +17,8 @@ const BirthPreparation = () => {
       {/* Navigation Bar */}
       <Navbar expand="lg" className="navbar-custom w-100">
         <Container fluid className="px-0">
-          <Navbar.Brand href="#home" className="d-flex align-items-center">
+          {/* Use Link component for client-side navigation. Standard. */}
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img
               src="/Frame.png"
               alt="The Melanated Sanctuary Logo"

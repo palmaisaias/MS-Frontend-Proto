@@ -33,7 +33,8 @@ const VisionBoards = () => {
       {/* Navigation Bar */}
       <Navbar expand="lg" className="navbar-custom w-100">
         <Container fluid className="px-0">
-          <Navbar.Brand href="#home" className="d-flex align-items-center">
+          {/* Use Link component for client-side navigation */}
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
             <img
               src="/Frame.png"
               alt="The Melanated Sanctuary Logo"
