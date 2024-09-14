@@ -4,7 +4,7 @@ import { Navbar, Container, Nav, Row, Col, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStickyNote, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import './birthPlan.css';
+import './BirthPlan.css';
 import axiosInstance from '../services/axiosInstance';
 
 const BirthPlan = () => {
