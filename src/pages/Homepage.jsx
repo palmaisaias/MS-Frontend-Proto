@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button, Navbar, Nav } from 'react-bootstrap';
+import { Container, Row, Col, Button, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Homepage.css';
 import VisionBoards from './VisionBoards';
 import SignUpModal from '../components/SignUpModal'; // Import the sign-up modal component
 import UserDetails from '../components/UserDetails'; // Import the user-details modal component
 import AccountCreated from '../components/AccountCreated'; // Import the account-created modal component
+import NavBar from '../components/NavBar'; // Import the reusable NavBar component
+import Footer from '../components/Footer'; // Import the reusable Footer component
+
 
 const Homepage = () => {
   // State management for all modals
@@ -35,31 +38,8 @@ const Homepage = () => {
 
   return (
     <Container fluid className="homepage">
-      {/* Navigation Bar */}
-      <Navbar expand="lg" className="navbar-custom w-100 sticky-top">
-        <Container fluid className="px-0">
-          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-            <img
-              src="/Frame.png"
-              alt="The Melanated Sanctuary Logo"
-              width="394"
-              height="132"
-              className="d-inline-block align-top logo-image"
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link as={Link} to="/about-us">About Us</Nav.Link>
-              <Nav.Link as={Link} to="/login">Login</Nav.Link>
-              <Nav.Link as={Link} to="/vision-boards">Vision Board Test</Nav.Link>
-              <Nav.Link className="nav-link-signup" onClick={handleShowSignUp}>
-                Sign Up
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      {/* Use the reusable NavBar component */}
+      <NavBar handleShowSignUp={handleShowSignUp} />
 
       {/* Header Section */}
       <Container fluid className="px-0">
@@ -133,40 +113,7 @@ const Homepage = () => {
           </Col>
         </Row>
       </Container>
-
-      {/* Footer Section */}
-      <Container fluid className="footer-section footer-linking">
-        <Row className="py-4">
-          {/* Column 1: Newsletter Section */}
-          <Col md={4} className="text-center text-md-start">
-            <h5>Receive our monthly newsletter</h5>
-            <p>Your Email</p>
-            <form className="d-flex align-items-center bottom-form-pad">
-              <input
-                type="email"
-                className="form-control me-2 custom-link"
-                placeholder="Enter your email"
-              />
-              <Button variant="light" className="flex-shrink-0">Sign Up</Button>
-            </form>
-          </Col>
-
-          {/* Column 3: Disclaimer */}
-          <Col md={4} className="text-center text-md-start">
-            <p className="mb-0"></p>
-          </Col>
-
-          {/* Column 2 custom-link: Navigation Links */}
-          <Col md={4} className="text-center text-md-start section-links">
-            <Nav className="flex-column">
-              <Nav.Link href="#publishers" className="footer-linking">Publishers</Nav.Link>
-              <Nav.Link href="#story" className="footer-linking">Our Story</Nav.Link>
-              <Nav.Link href="#privacy" className="footer-linking">Privacy Policy</Nav.Link>
-              <Nav.Link href="#help" className="footer-linking">Help</Nav.Link>
-            </Nav>
-          </Col>
-        </Row>
-      </Container>
+      <Footer />
 
       {/* Sign-Up Modal */}
       <SignUpModal show={showSignUp} handleClose={handleCloseSignUp} onSubmit={handleSignUpSubmit} />

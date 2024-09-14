@@ -1,0 +1,60 @@
+/* Footer.css */
+.footer-section {
+    background-color: #643AFD !important; 
+    padding: 20px 0;
+    font-family: 'Lato';
+    max-height: 318px;
+  }
+  
+  .footer-section h5 {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 42px;
+    font-family: 'Lato';
+    color: #FBB3A8;
+    margin-left: 80px;
+  }
+  
+  .footer-section .section-links {
+    padding-left: 80px !important; /* Adjust this value as needed */
+  }
+  
+  .footer-linking {
+    font-weight: 600;
+    color: #F0EDFA !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .footer-section .form-control {
+    max-width: 330px;
+    min-width: 200px;
+    min-height: 44px;
+    background-color: #643AFD;
+    border: 2px w;
+    color: #fff;
+    border-radius: 50px;
+    font-style: italic;
+    font-weight: 400 !important;
+    margin-left: 56px;
+  }
+  
+  .bottom-form-pad {
+    padding-left: 25px;
+  }
+  
+  .footer-section .form-control::placeholder {
+    color: #fdf7e7;
+    font-size: 18px;
+  }
+  
+  .footer-section .btn-light {
+    background-color: #FBB3A8;
+    color: #000000;
+    border: none;
+    border-radius: 50px;
+    max-width: 300px !important;
+    min-width: 150px !important;
+    margin-bottom: 20px;
+    height: 44px;
+  }
+  

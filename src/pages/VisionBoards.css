@@ -115,6 +115,9 @@
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit the color from the parent */
   }
+  .card-body {
+    min-height: 150px !important;
+  }
   
   /* Navbar Updates =================================== */
   .search-bar-container {

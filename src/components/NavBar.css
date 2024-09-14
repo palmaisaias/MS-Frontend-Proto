@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Custom Navbar Styling */
+.navbar-custom {
+  background-color: #4823D1;
+  border-bottom: 2px solid #6338FD;
+  padding: 0; /* Ensure no additional padding */
+  margin: 0; /* Ensure no additional margin */
+  width: 100%; /* Ensure the navbar spans the full width */
+  height: 170px !important;
+}
+
+.logo-image {
+  height: 140px !important;
+  width: 400px !important;
+  margin-left: 20px !important;
+}
+
+.navbar-custom .container {
+  max-width: 100%; /* Override container max-width to ensure full-width */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Navbar Links Styling */
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #ffffff;
+}
+
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .nav-link:hover {
+  color: #ffc107;
+}
+
+/* Custom styling for the "Sign Up" link */
+.nav-link-signup {
+  border: 2px solid white !important; /* White border */
+  border-radius: 50px; /* Circular border */
+  padding: 5px 15px; /* Adjust padding for the look you want */
+  color: white !important; /* Ensure the text color is white */
+  text-align: center;
+}
+
+.nav-link-signup:hover {
+  background-color: rgba(255, 255, 255, 0.374); /* Change background on hover */
+  color: #4a148c !important; /* Text color on hover */
+}
+
+/* Navbar Navigation Links */
+.navbar-custom .navbar-nav {
+  margin-right: 40px !important; /* Aligns to the right */ 
+  margin-top: 20px; /* Lowers the position slightly */
+  font-family: 'Lato', sans-serif;
+  color: white !important;
+}
+
+.navbar-custom .nav-link {
+  margin-right: 1.5rem;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  font-size: 1rem;
+  color: #fdf7e7;
+}
+
+/* Control spacing between links */
+.navbar-custom .nav-item {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* Logo positioning */
+.navbar-custom .navbar-brand img:first-child {
+  margin-left: 60px; /* Adjust this value to move the first image to the left */
+}
+
+.navbar-custom .navbar-brand img:last-child {
+  margin-left: 5px; /* Adjust this value to move the second image to the left */
+}
