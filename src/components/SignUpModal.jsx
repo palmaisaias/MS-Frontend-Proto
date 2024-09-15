@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import axios from 'axios'; // Import axios
 import './SignUpModal.css';
+import axiosInstance from '../services/axiosInstance';
 
 const SignUpModal = ({ show, handleClose, onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -18,39 +19,39 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+  
     try {
-      // Make the API request
-      const response = await axios.post('/api/register', formData, {
-        headers: { 'Content-Type': 'application/json' }
+      // Make the API request using axiosInstance
+      const response = await axiosInstance.post('/register', formData, {
+        headers: { 'Content-Type': 'application/json' },
       });
-
+  
       console.log('Signup successful:', response.data);
-
+  
       // Check if token and user information is in the response and store them in localStorage
       const { token, user } = response.data;
       if (token) {
         localStorage.setItem('authToken', token); // Store the token in localStorage
         console.log('Token stored successfully:', token);
-
+  
         // Store user's name in localStorage
         if (user && user.first_name) {
           localStorage.setItem('userName', user.first_name); // Store the user's first name
           console.log('User name stored successfully:', user.first_name);
         }
-
+  
         // Store additional user details like last name or other fields if needed
         if (user && user.last_name) {
           localStorage.setItem('userLastName', user.last_name); // Store the user's last name
           console.log('User last name stored successfully:', user.last_name);
         }
+  
+        // Proceed to the next step, like closing the modal or redirecting
+        handleClose();
+        onSubmit();
       } else {
         console.error('No token received from the server');
       }
-
-      // Close the modal and call the parent onSubmit handler
-      handleClose();
-      onSubmit(); // Proceed to the next step, like UserDetailsModal
-
     } catch (error) {
       console.error('Error during sign up:', error);
       // Optionally handle errors (show an error message to the user)
