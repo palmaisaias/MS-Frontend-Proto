@@ -27,10 +27,11 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
 
     try {
       // Get the token from localStorage
-      const token = localStorage.getItem('authToken');
+      const token = localStorage.getItem('authToken'); // Confirm the key 'authToken'
+      console.log('Retrieved token:', token);
 
       // Make the POST request to create user details with Authorization header
-      const response = await axios.post('api/user_details', userDetails, {
+      const response = await axios.post('/api/user_details', userDetails, {
         headers: { 
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`  // Including the token in the header
@@ -44,6 +45,14 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
 
     } catch (error) {
       console.error('Error saving user details:', error);
+      if (error.response) {
+        console.error('Server responded with status:', error.response.status);
+        console.error('Response data:', error.response.data);
+      } else if (error.request) {
+        console.error('No response received:', error.request);
+      } else {
+        console.error('Error setting up request:', error.message);
+      }
     }
   };
 
