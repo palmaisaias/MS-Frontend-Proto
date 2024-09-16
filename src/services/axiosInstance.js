@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Set the base URL conditionally
 const baseURL = process.env.NODE_ENV === 'production'
-  ? 'http://backend.melanatedsanctuary.com:5000' // Your live backend API URL
+  ? 'https://backend.melanatedsanctuary.com:5000' // Your live backend API URL
   : '/api'; // Proxy URL for development
 
 const axiosInstance = axios.create({

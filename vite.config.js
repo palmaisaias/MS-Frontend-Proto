@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://backend.melanatedsanctuary.com:5000/', // Your backend API URL
+        target: 'https://backend.melanatedsanctuary.com:5000/', // Your backend API URL
         changeOrigin: true, // Change the origin of the request to match the target URL
         rewrite: (path) => path.replace(/^\/api/, ''), // Remove /api prefix when forwarding the request
       },

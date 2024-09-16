@@ -1,0 +1,152 @@
+.custom-modal .modal-content {
+    overflow: hidden;
+    font-family: 'Lato';
+    color: white;
+    border: #ffffff;
+  }
+  
+  .login-modal-right {
+    background-color: #643AFD;
+    width: 67%;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .modal-logo-spacing {
+    margin-bottom: 55px;
+  }
+  
+  input.custom-form-control,
+  select.custom-form-control {
+    background-color: #643AFD !important;
+    border-color: #ffffff !important;
+    border-radius: 50px !important;
+    color: #ffffff !important;
+    padding: 0.5rem;
+  }
+  
+  /* Placeholder styling */
+  input.custom-form-control::placeholder,
+  select.custom-form-control::placeholder {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+  
+  .custom-button {
+    color: #000000 !important;
+    border-radius: 50px !important;
+    width: 366px;
+    background-color: #FBB3A8 !important;
+    border-color: #FBB3A8 !important;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Specific Colors for Each Circle */
+  .text-white {
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
+  } 
+  .custom-link {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    text-decoration: none !important;
+  }
+  
+  .circle {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    margin-bottom: 5px !important;
+    background-color: transparent !important;
+  }
+  
+  .explore-circle {
+    background-color: #DBF7D6 !important;
+  }
+  
+  .curate-circle {
+    background-color: #F2B5A6 !important;
+  }
+  
+  .advocate-circle {
+    background-color: #fff !important;
+  }
+  
+  .small-text {
+    font-size: 12px;
+    color: #ffffff !important;
+  }
+  
+  .small-text a {
+    color: #ffffff !important;
+    text-decoration: dashed !important;
+  }
+  
+  .small-text a:hover {
+    text-decoration: underline;
+  }
+  
+  .close-button {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background-color: #ffffff00 !important; /* Adjust transparency as needed */
+    border: none !important;
+    font-size: 18px !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    text-align: center !important;
+    padding: 0 !important;
+    line-height: 28px !important;
+    cursor: pointer !important;
+    color: #ffffff !important;
+  }
+  
+  .close-button:hover {
+    background-color: #f0f0f000 !important;
+    color: #ff0000 !important;
+  }
+  
+  /* Highlight invalid input fields */
+.custom-form-control.is-invalid {
+    border-color: #dc3545 !important; /* Bootstrap's danger color */
+    background-color: #f5c6cb !important; /* Light red background */
+    color: #000000 !important;
+  }
+  
+  /* Style for the error messages */
+  .invalid-feedback {
+    color: #f5c6cb !important;
+  }
+  
+  /* Style for the form error message */
+  .error-message {
+    color: #f5c6cb !important;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Shake animation */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .shake {
+    animation: shake 0.5s;
+  }
+  

@@ -3,43 +3,52 @@ import { Container, Row, Col, Button, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Homepage.css';
 import VisionBoards from './VisionBoards';
-import SignUpModal from '../components/SignUpModal'; // Import the sign-up modal component
-import UserDetails from '../components/UserDetails'; // Import the user-details modal component
-import AccountCreated from '../components/AccountCreated'; // Import the account-created modal component
-import NavBar from '../components/NavBar'; // Import the reusable NavBar component
-import Footer from '../components/Footer'; // Import the reusable Footer component
-
+import SignUpModal from '../components/SignUpModal';
+import LoginModal from '../components/LoginModal'; // Import the login modal component
+import UserDetails from '../components/UserDetails';
+import AccountCreated from '../components/AccountCreated';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const Homepage = () => {
   // State management for all modals
   const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogin, setShowLogin] = useState(false); // State for login modal
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [showAccountCreated, setShowAccountCreated] = useState(false);
 
   // Handle closing of all modals
   const handleCloseSignUp = () => setShowSignUp(false);
+  const handleCloseLogin = () => setShowLogin(false); // Close login modal
   const handleCloseUserDetails = () => setShowUserDetails(false);
   const handleCloseAccountCreated = () => setShowAccountCreated(false);
 
-  // Handle showing of SignUp modal
+  // Handle showing of SignUp and Login modals
   const handleShowSignUp = () => setShowSignUp(true);
+  const handleShowLogin = () => setShowLogin(true); // Show login modal
 
   // Handle sign-up form submission and show the user details modal
   const handleSignUpSubmit = () => {
     setShowSignUp(false);
-    setShowUserDetails(true); // Open UserDetails instead of PermissionsModal
+    setShowUserDetails(true);
+  };
+
+  // Handle login form submission
+  const handleLoginSubmit = () => {
+    // Perform any actions after login, e.g., fetch user data, redirect, etc.
+    setShowLogin(false);
   };
 
   // Handle user details submission and show the account created modal
   const handleUserDetailsSubmit = () => {
     setShowUserDetails(false);
-    setShowAccountCreated(true); // Open AccountCreated modal after user details are submitted
+    setShowAccountCreated(true);
   };
 
   return (
     <Container fluid className="homepage">
       {/* Use the reusable NavBar component */}
-      <NavBar handleShowSignUp={handleShowSignUp} />
+      <NavBar handleShowSignUp={handleShowSignUp} handleShowLogin={handleShowLogin} />
 
       {/* Header Section */}
       <Container fluid className="px-0">
@@ -117,6 +126,9 @@ const Homepage = () => {
 
       {/* Sign-Up Modal */}
       <SignUpModal show={showSignUp} handleClose={handleCloseSignUp} onSubmit={handleSignUpSubmit} />
+
+      {/* Login Modal */}
+      <LoginModal show={showLogin} handleClose={handleCloseLogin} onSubmit={handleLoginSubmit} />
 
       {/* User Details Modal */}
       <UserDetails show={showUserDetails} handleClose={handleCloseUserDetails} onSubmit={handleUserDetailsSubmit} />

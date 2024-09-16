@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axiosInstance from '../services/axiosInstance';
-import { Container, Row, Col, Card, Button, Nav } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Nav, Modal } from 'react-bootstrap';
 import './VisionBoardDetail.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStickyNote, faUserCircle } from '@fortawesome/free-solid-svg-icons';
@@ -10,10 +10,12 @@ import Footer from '../components/Footer'; // Import the reusable Footer compone
 
 
 const VisionBoardDetail = () => {
-  const { id } = useParams();
-  const [visionBoards, setVisionBoards] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const { id } = useParams();
+    const [visionBoards, setVisionBoards] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedVisionBoard, setSelectedVisionBoard] = useState(null);
 
   useEffect(() => {
     axiosInstance.get(`/vision-boards/${id}/content`)
@@ -28,6 +30,13 @@ const VisionBoardDetail = () => {
         setLoading(false);
       });
   }, [id]);
+
+  const handleCloseModal = () => setShowModal(false);
+
+  const handleShowModal = (visionBoard) => {
+    setSelectedVisionBoard(visionBoard);
+    setShowModal(true);
+  };
 
   if (loading) {
     return <p>Loading vision board...</p>;
@@ -53,25 +62,23 @@ const VisionBoardDetail = () => {
       <NavBar />
 
       <Container fluid className="mt-4">
-        <Link to="/vision-boards" className="back-link">← Back to Vision Boards</Link>
-        
+        <Link to="/vision-boards" className="back-link">
+          ← Back to Vision Boards
+        </Link>
+
         {/* Iterate over the array to display each vision board content */}
         <Row className="vision-board-cards">
           {visionBoards.map((visionBoard) => {
             // Determine the image source to use
-            const imageUrl = visionBoard.main_image_url && visionBoard.main_image_url.trim() !== ""
-              ? visionBoard.main_image_url
-              : "https://www.aiseesoft.com/images/tutorial/jpg-to-url/jpg-to-url.jpg";
-            
+            const imageUrl =
+              visionBoard.main_image_url && visionBoard.main_image_url.trim() !== ''
+                ? visionBoard.main_image_url
+                : 'https://www.aiseesoft.com/images/tutorial/jpg-to-url/jpg-to-url.jpg';
+
             return (
               <Col key={visionBoard.id} md={4} className="mb-4">
-                <Card className="vision-board-card">
-                  <Card.Img
-                    variant="top"
-                    src={imageUrl}
-                    alt={visionBoard.title}
-                    className="fixed-size-img"
-                  />
+                <Card className="vision-board-card" onClick={() => handleShowModal(visionBoard)}>
+                  <Card.Img variant="top" src={imageUrl} alt={visionBoard.title} className="fixed-size-img" />
                   <Card.Body>
                     <Card.Title className="title-card-format">{visionBoard.title}</Card.Title>
                     <Card.Text className="fixed-height-text">{visionBoard.description}</Card.Text>
@@ -82,6 +89,34 @@ const VisionBoardDetail = () => {
           })}
         </Row>
       </Container>
+
+      {/* Modal to display expanded content */}
+      {selectedVisionBoard && (
+        <Modal show={showModal} onHide={handleCloseModal} size="lg" centered>
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedVisionBoard.title}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <img
+              src={
+                selectedVisionBoard.main_image_url && selectedVisionBoard.main_image_url.trim() !== ''
+                  ? selectedVisionBoard.main_image_url
+                  : 'https://www.aiseesoft.com/images/tutorial/jpg-to-url/jpg-to-url.jpg'
+              }
+              alt={selectedVisionBoard.title}
+              className="img-fluid mb-3"
+            />
+            <p>{selectedVisionBoard.description}</p>
+            {/* Add any additional content you wish to display */}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
+
       <Footer />
     </div>
   );
