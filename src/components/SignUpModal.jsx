@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form, CloseButton } from 'react-bootstrap';
 import axios from 'axios'; // Import axios
 import './SignUpModal.css';
 import axiosInstance from '../services/axiosInstance';
@@ -21,7 +21,7 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
     e.preventDefault();
   
     try {
-      // Make the API request using axiosInstance
+      // Make the API request using axiosInstance. I set this up to make the recurring necessity for authToken much easier to handle
       const response = await axiosInstance.post('/register', formData, {
         headers: { 'Content-Type': 'application/json' },
       });
@@ -34,19 +34,17 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
         localStorage.setItem('authToken', token); // Store the token in localStorage
         console.log('Token stored successfully:', token);
   
-        // Store user's name in localStorage
+        // Store user's name in localStorage. We end up using this for the welcome message
         if (user && user.first_name) {
           localStorage.setItem('userName', user.first_name); // Store the user's first name
           console.log('User name stored successfully:', user.first_name);
         }
   
-        // Store additional user details like last name or other fields if needed
         if (user && user.last_name) {
           localStorage.setItem('userLastName', user.last_name); // Store the user's last name
           console.log('User last name stored successfully:', user.last_name);
         }
   
-        // Proceed to the next step, like closing the modal or redirecting
         handleClose();
         onSubmit();
       } else {
@@ -54,14 +52,13 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
       }
     } catch (error) {
       console.error('Error during sign up:', error);
-      // Optionally handle errors (show an error message to the user)
     }
   };
 
   return (
     <Modal show={show} onHide={handleClose} size='lg' centered dialogClassName="custom-modal">
       <div className="d-flex custom-modal-content">
-        {/* Purple Side */}
+        {/* Left Side */}
         <div
           className="d-flex flex-column align-items-center justify-content-center"
           style={{
@@ -88,13 +85,12 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
           </div>
         </div>
 
-        {/* White Side */}
+        {/* Right Side */}
         <div className='signup-modal-right'>
-          {/* Close Button */}
-          <Button className="close-button" onClick={handleClose} aria-label="Close">&times;</Button>
+          <CloseButton aria-label="Close" onClick={handleClose} className="close-button-one" />
 
           <Form onSubmit={handleFormSubmit}>
-            {/* First Name Field */}
+            {/* First Name */}
             <Form.Group className="mb-3" controlId="formFirstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control 
@@ -107,7 +103,7 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
               />
             </Form.Group>
 
-            {/* Last Name Field */}
+            {/* Last Name */}
             <Form.Group className="mb-3" controlId="formLastName">
               <Form.Label>Last Name</Form.Label>
               <Form.Control 
@@ -120,7 +116,7 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
               />
             </Form.Group>
 
-            {/* Email Field */}
+            {/* Email */}
             <Form.Group className="mb-3" controlId="formEmail">
               <Form.Label>Email Address</Form.Label>
               <Form.Control 
@@ -133,7 +129,7 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
               />
             </Form.Group>
 
-            {/* Password Field */}
+            {/* Password */}
             <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control 
@@ -152,7 +148,7 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
               </Button>
             </div>
 
-            {/* Additional Section */}
+            {/* Google and Privacy Terms*/}
             <div className="text-center mt-5">
               <p>or sign up with</p>
               <img src="/google-logo.png" alt="Google Sign Up" width="50" height="50" className="mb-3" />

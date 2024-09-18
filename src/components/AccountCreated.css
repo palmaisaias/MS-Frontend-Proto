@@ -26,7 +26,7 @@
     box-sizing: border-box !important;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100% !important; /* Adjust to control content width inside the modal */
+    width: 100% !important; 
   }
   
   .fade-in-text {
@@ -42,14 +42,14 @@
     font-family: 'Lato' !important;
     margin-top: 50px !important;
     padding: 0.5rem 1.5rem !important; /* Adjust padding for height and width control */
-    font-size: 1rem !important; /* Controls text size */
+    font-size: 1rem !important; /* Although the text size has a specific px size in the wireframes, it is not necessarily conducive when thinking about the responsive needs */
     background-color: #4823D1 !important;
     color: #fff !important;
-    border: none !important; /* Clean up unnecessary border */
-    width: auto !important; /* Set to auto, but consider setting a percentage or fixed width if needed */
+    border: none !important;
+    width: auto !important; /*maybe play with a percentage here*/
     box-sizing: border-box !important;
     border-radius: 50px !important;
-    display: inline-block !important; /* Ensures it maintains content-driven width */
+    display: inline-block !important;
 }
   
 @keyframes fadeIn {

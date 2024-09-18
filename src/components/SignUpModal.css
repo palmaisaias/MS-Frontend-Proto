@@ -1,140 +1,138 @@
-
 .custom-modal .modal-content {
-    overflow: hidden;
-    font-family: 'Lato';
-    color: white;
-    border: #ffffff;
-  }
+  overflow: hidden;
+  font-family: "Lato";
+  color: white;
+  border: #ffffff;
+}
 
-  .signup-modal-right {
-    background-color: #643AFD;
-    width: 67%;
-    padding: 2rem;
-    position: relative;
-  }
+.signup-modal-right {
+  background-color: #643afd;
+  width: 67%;
+  padding: 2rem;
+  position: relative;
+}
 
-  .modal-logo-spacing {
-    margin-bottom: 55px;
-  }
+.modal-logo-spacing {
+  margin-bottom: 55px;
+}
 
-  input.custom-form-control,
-  select.custom-form-control {
-    background-color: #643AFD !important;
-    border-color: #ffffff !important;
-    border-radius: 50px !important;
-    color: #ffffff !important; /* Text color */
-    padding: 0.5rem; /* Add padding for better appearance */
-  }
-  
-  /* Placeholder styling */
-  input.custom-form-control::placeholder,
-  select.custom-form-control::placeholder {
-    color: #ffffff !important; /* Placeholder text color */
-    opacity: 1; /* Ensures full opacity for placeholder */
-  }
+input.custom-form-control,
+select.custom-form-control {
+  background-color: #643afd !important;
+  border-color: #ffffff !important;
+  border-radius: 50px !important;
+  color: #ffffff !important; /* Text color */
+  padding: 0.5rem; /* Add padding for better appearance */
+}
 
-  
-  .custom-form-control-date {
-    border-radius: 50px !important; /* Adjust border-radius as desired */
-    width: 125px !important;
-    background-color: #643AFD !important;
-    color: #ffffff !important;
-    border: 2px solid #ffffff !important; /* Ensure border is solid white */
-    padding: 0.5rem; /* Add padding for better appearance */
-  }
-  
-  /* Adjust the appearance of the placeholder (for older browsers or support) */
-  .custom-form-control-date::placeholder {
-    color: #ffffff !important; /* Placeholder text color */
-    opacity: 1; /* Ensures full opacity for placeholder */
-  }
-  
-  /* Fix for input elements with a type of 'date' */
-  input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
-    filter: invert(1); /* Invert color of date picker icon to match white text */
-  }
-  
-  .custom-button {
-    color: #000000 !important;
-    border-radius: 50px !important; /* Customize the button border-radius separately if needed */
-    width: 366px;
-    background-color: #FBB3A8 !important;
-    border-color: #FBB3A8 !important;
-  }
+/* Placeholder styling */
+input.custom-form-control::placeholder,
+select.custom-form-control::placeholder {
+  color: #ffffff !important; /* Placeholder text color */
+  opacity: 1; /* Ensures full opacity for placeholder */
+}
 
-  .button-container {
-    display: flex;
-    justify-content: center; /* Centers the button horizontally */
-    align-items: center; /* Centers the button vertically, if needed */
-  }
+.custom-form-control-date {
+  border-radius: 50px !important; /* Adjust border-radius as desired */
+  width: 125px !important;
+  background-color: #643afd !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important; /* Ensure border is solid white */
+  padding: 0.5rem; /* Add padding for better appearance */
+}
 
-  /* Specific Colors for Each Circle */
-  .text-white {
-    text-decoration: none !important; /* Removes the underline from the links */
-    font-size: 1.2rem !important;
-    font-weight: 400 !important;
-  } 
-  .custom-link {
-    display: flex !important; /* Enables flexbox layout */
-    flex-direction: column !important; /* Stacks circle above text */
-    align-items: center !important; /* Centers content horizontally */
-    text-align: center !important; /* Centers the text */
-    margin-bottom: 20px !important; /* Adds space between sections */
-    text-decoration: none !important;
-  }
-  
-  .circle {
-    width: 40px !important; /* Width of the circle */
-    height: 40px !important; /* Height of the circle */
-    border-radius: 50% !important; /* Makes the element a circle */
-    margin-bottom: 5px !important; /* Adds space between circle and text */
-    background-color: transparent !important;
-  }
-  
-  .explore-circle {
-    background-color: #DBF7D6 !important; /* Color for Explore */
-  }
-  
-  .curate-circle {
-    background-color: #F2B5A6 !important; /* Color for Curate */
-  }
-  
-  .advocate-circle {
-    background-color: #fff !important; /* Color for Advocate */
-  }
+/* Adjust the appearance of the placeholder (for older browsers or support) */
+.custom-form-control-date::placeholder {
+  color: #ffffff !important; /* Placeholder text color */
+  opacity: 1; /* Ensures full opacity for placeholder */
+}
 
-  .small-text {
-    font-size: 12px;
-    color: #ffffff !important;
-  }
-  
-  .small-text a {
-    color: #ffffff !important; /* Custom link color */
-    text-decoration:dashed !important;
-  }
-  
-  .small-text a:hover {
-    text-decoration: underline;
-  }
+/* Fix for input elements with a type of 'date' */
+input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* Invert color of date picker icon to match white text */
+}
 
-  .close-button {
-    position: absolute !important;
-    top: 10px !important;
-    right: 10px !important;
-    background-color:#ffffff !important; /* there has to be a transparencu here */
-    border: none !important;
-    font-size: 18px !important;
-    width: 30px !important;
-    height: 30px !important;
-    border-radius: 50% !important;
-    text-align: center !important;
-    padding: 0 !important;
-    line-height: 28px !important;
-    cursor: pointer !important;
-    color: #ffffff !important;
-  }
-  
-  .close-button:hover {
-    background-color: #f0f0f000 !important;
-    color: #ff0000 !important;
-  }
+.custom-button {
+  color: #000000 !important;
+  border-radius: 50px !important; /* Customize the button border-radius separately if needed */
+  width: 366px;
+  background-color: #fbb3a8 !important;
+  border-color: #fbb3a8 !important;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center; /* Centers the button vertically, if needed */
+}
+
+/* Specific Colors for Each Circle */
+.text-white {
+  text-decoration: none !important; /* Removes the underline from the links */
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+}
+.custom-link {
+  display: flex !important; /* Enables flexbox layout */
+  flex-direction: column !important; /* Stacks circle above text */
+  align-items: center !important; /* Centers content horizontally */
+  text-align: center !important; /* Centers the text */
+  margin-bottom: 20px !important; /* Adds space between sections */
+  text-decoration: none !important;
+}
+
+.circle {
+  width: 40px !important; /* Width of the circle */
+  height: 40px !important; /* Height of the circle */
+  border-radius: 50% !important; /* Makes the element a circle */
+  margin-bottom: 5px !important; /* Adds space between circle and text */
+  background-color: transparent !important;
+}
+
+.explore-circle {
+  background-color: #dbf7d6 !important; /* Color for Explore */
+}
+
+.curate-circle {
+  background-color: #f2b5a6 !important; /* Color for Curate */
+}
+
+.advocate-circle {
+  background-color: #fff !important; /* Color for Advocate */
+}
+
+.small-text {
+  font-size: 12px;
+  color: #ffffff !important;
+}
+
+.small-text a {
+  color: #ffffff !important; /* Custom link color */
+  text-decoration: dashed !important;
+}
+
+.small-text a:hover {
+  text-decoration: underline;
+}
+
+.close-button {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  background-color: #ffffff !important; /* there has to be a transparencu here */
+  border: none !important;
+  font-size: 18px !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  text-align: center !important;
+  padding: 0 !important;
+  line-height: 28px !important;
+  cursor: pointer !important;
+  color: #ffffff !important;
+}
+
+.close-button:hover {
+  background-color: #f0f0f000 !important;
+  color: #ff0000 !important;
+}

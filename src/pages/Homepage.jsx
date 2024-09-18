@@ -53,12 +53,12 @@ const Homepage = () => {
       {/* Header Section */}
       <Container fluid className="px-0">
         <Row className="header-section mx-0 d-flex align-items-center" style={{ maxHeight: '550px' }}>
-          <Col md={4} className="text-left footer-linking header-text d-flex align-items-center">
+          <Col md={4} className="text-left header-text d-flex align-items-center">
             <div>
-              <h1>
-                Black women are <br /> 3 times more likely to face <br /> perinatal depression and <br /> childbirth complications.
+              <h1 className='un-link'>
+                Black women are 3 times more likely to face perinatal depression and childbirth complications.
               </h1>
-              <p>We see you. We hear you. <br />We want you to own your maternal <br />health and confidence!</p>
+              <p className='un-link'>We see you. We hear you. We want you to own your maternal health and confidence!</p>
               <Button variant="outline-light" className="show-me-btn">Show me</Button>
             </div>
           </Col>

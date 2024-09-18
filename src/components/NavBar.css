@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 /* Custom Navbar Styling */
 .navbar-custom {
-  background-color: #4823D1;
-  border-bottom: 2px solid #6338FD;
-  padding: 0; /* Ensure no additional padding */
-  margin: 0; /* Ensure no additional margin */
-  width: 100%; /* Ensure the navbar spans the full width */
+  background-color: #4823d1;
+  border-bottom: 2px solid #6338fd;
+  padding: 0 !important; /* Ensure no additional padding */
+  margin: 0 !important; /* Ensure no additional margin */
+  width: 100% !important; /* Ensure the navbar spans the full width */
   height: 170px !important;
 }
 
@@ -17,9 +17,9 @@
 }
 
 .navbar-custom .container {
-  max-width: 100%; /* Override container max-width to ensure full-width */
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 100% !important; /* Override container max-width to ensure full-width */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Navbar Links Styling */
@@ -49,9 +49,9 @@
 
 /* Navbar Navigation Links */
 .navbar-custom .navbar-nav {
-  margin-right: 40px !important; /* Aligns to the right */ 
+  margin-right: 40px !important; /* Aligns to the right */
   margin-top: 20px; /* Lowers the position slightly */
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: white !important;
 }
 
@@ -76,4 +76,86 @@
 
 .navbar-custom .navbar-brand img:last-child {
   margin-left: 5px; /* Adjust this value to move the second image to the left */
+}
+
+/* Responsive Adjustments for Mobile Devices */
+
+/* Tablet Devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .navbar-custom {
+    height: 150px !important; /* Reduce height */
+  }
+
+  .logo-image {
+    height: 120px !important; /* Reduce logo size */
+    width: 300px !important; /* Adjust width */
+    margin-left: 10px !important; /* Reduce left margin */
+  }
+
+  .navbar-custom .navbar-nav {
+    margin-right: 20px !important; /* Reduce right margin */
+  }
+
+  .nav-link-signup {
+    padding: 4px 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+/* Large Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar-custom {
+    height: auto; /* Allow height to be dynamic */
+    padding: 10px 0; /* Add some vertical padding */
+  }
+
+  .navbar-custom .navbar-nav {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center-align links */
+    margin-right: 0 !important; /* Remove right margin */
+    margin-top: 10px; /* Reduce top margin */
+  }
+
+  .navbar-custom .nav-item {
+    margin: 5px 0; /* Reduce spacing between items */
+  }
+
+  .nav-link-signup {
+    display: block; /* Make the sign-up button full-width */
+    width: 90%; /* Almost full-width */
+    margin: 10px auto; /* Center-align */
+  }
+
+  .logo-image {
+    height: 100px !important; /* Smaller logo height */
+    width: 250px !important; /* Adjust width */
+    margin-left: 0 !important; /* Center the logo */
+  }
+}
+
+/* Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .navbar-custom {
+    height: auto; /* Dynamic height */
+    padding: 5px 0; /* Further reduce padding */
+  }
+
+  .navbar-custom .navbar-nav {
+    margin-top: 5px; /* Further reduce top margin */
+  }
+
+  .nav-link-signup {
+    width: 100%; /* Full-width button */
+    margin: 5px 0; /* Adjust margin */
+  }
+
+  .logo-image {
+    height: 80px !important; /* Even smaller logo height */
+    width: 200px !important; /* Adjust width */
+    margin: 0 auto; /* Center the logo */
+  }
+
+  .navbar-custom .nav-link {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    padding: 8px 10px !important; /* Reduce padding */
+  }
 }

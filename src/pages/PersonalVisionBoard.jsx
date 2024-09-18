@@ -1,0 +1,269 @@
+import React, {useState, useEffect} from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
+import './PersonalVisionBoard.css';
+import Footer from '../components/Footer'; // Import the reusable Footer component
+import ActiveUserNav from '../components/ActiveUserNav';
+import axiosInstance from '../services/axiosInstance';
+import CreateBoardModal from '../components/CreateBoardModal';
+
+const PersonalVisionBoard = () => {
+  const location = useLocation();
+  const visionBoard = location.state?.visionBoard; // Access the passed vision board data
+  console.log('Passed Vision Board Data From the ADDING TO BOARD button:', visionBoard);
+
+  const [boards, setBoards] = useState([]); // State to manage existing boards
+  const [newBoardName, setNewBoardName] = useState('');
+  const [newBoardDescription, setNewBoardDescription] = useState('');
+  const [currentUserId, setCurrentUserId] = useState(null);
+  const [showCreateBoardModal, setShowCreateBoardModal] = useState(false);
+  const [newBoardTitle, setNewBoardTitle] = useState('');
+  const [isArticleAdded, setIsArticleAdded] = useState(false);
+  const [newBoardId, setNewBoardId] = useState(null);
+  const navigate = useNavigate();
+
+  // Check if there are existing boards; if not, prompt user to create one
+  // Fetch the current user ID from the /user_details endpoint
+  useEffect(() => {
+    const fetchCurrentUser = async () => {
+      try {
+        // Make an API call to get the current user's details
+        const response = await axiosInstance.get('/user_details');
+        const userId = response.data.user_id; // Extract the user_id from the response
+        setCurrentUserId(userId); // Set the current user ID
+        console.log('Fetched User ID:', userId); // Debugging log
+      } catch (error) {
+        console.error("Error fetching current user details:", error);
+      }
+    };
+
+    fetchCurrentUser();
+  }, []);
+
+  // Fetch and filter boards created by the current user
+  useEffect(() => {
+    const fetchBoards = async () => {
+      try {
+        // Fetch subscribed vision boards from the backend
+        const response = await axiosInstance.get('/users/vision-boards/subscribed');
+        console.log('Fetched Vision BOARDS:', response.data);
+
+        // Filter boards that were created by the current user
+        const createdBoards = response.data.filter(board => 
+          typeof board.created_by === 'number' && board.created_by === currentUserId
+        );
+
+        // Log only the filtered boards that belong to the current user
+        // HERE. IF THE USER HAS BOARDS THAT WERE CREATED BY THEMSELVES. THE LOGIC WILL SPLIT HERE
+        console.log('Boards Created by Current User (Filtered):', createdBoards);
+
+        // Set the state with filtered boards created by the current user
+        setBoards(createdBoards);
+
+      } catch (error) {
+        console.error("Error fetching boards:", error);
+      }
+    };
+
+    // Fetch boards only when the currentUserId is available
+    if (currentUserId !== null) {
+      fetchBoards();
+    }
+  }, [currentUserId]);
+
+  const handleCreateBoard = async () => {
+    try {
+      // Step 1: Create the new board
+      const response = await axiosInstance.post('/vision-boards', {
+        name: newBoardName,
+        description: newBoardDescription,
+      });
+  
+      if (response.status === 201) {
+        const newBoard = response.data;
+        const newBoardId = newBoard.id;
+        setNewBoardTitle(newBoard.name);
+        setNewBoardId(newBoardId); // Store the newBoardId in state
+  
+        // Step 2: Add content to the newly created board
+        if (visionBoard) {
+          const contentResponse = await axiosInstance.post(`/vision-boards/${newBoardId}/content`, {
+            content_url: visionBoard.content_url,
+            content_type: visionBoard.content_type,
+          });
+  
+          if (contentResponse.status === 201) {
+            console.log("Content added successfully:", contentResponse.data);
+            setShowCreateBoardModal(false);
+            setIsArticleAdded(true);
+          }
+        }
+  
+        // Step 3: Update state with the new board
+        setBoards((prevBoards) => [...prevBoards, newBoard]);
+      }
+    } catch (error) {
+      console.error("Error creating a new board or adding content:", error);
+      // Handle error cases
+    }
+  };
+
+  const handleBoardSelection = async (boardId) => {
+    try {
+      const contentResponse = await axiosInstance.post(`/vision-boards/${boardId}/content`, {
+        content_url: visionBoard.content_url,
+        content_type: visionBoard.content_type,
+      });
+  
+      if (contentResponse.status === 201) {
+        console.log("Content added successfully:", contentResponse.data);
+        setIsArticleAdded(true);
+        setNewBoardId(boardId); // Store the selected boardId in state
+        const selectedBoard = boards.find((board) => board.id === boardId);
+        setNewBoardTitle(selectedBoard.name);
+      }
+    } catch (error) {
+      console.error("Error adding content to the board:", error);
+      // Handle error
+    }
+  };
+
+  const navigateToBoard = (boardId) => {
+    console.log('Navigating to board with id:', boardId); // Debugging
+    navigate(`/vision-board/${boardId}`, { state: { boardId } });
+  };
+
+  const handleShowCreateBoardModal = () => setShowCreateBoardModal(true);
+  const handleCloseCreateBoardModal = () => setShowCreateBoardModal(false);
+
+
+  return (
+    <Container fluid className="vision-board-detail-page">
+      <ActiveUserNav />
+  
+      <Container fluid className="mt-4 flex-grow-1">
+        {/* {newBoardTitle && <h2>{newBoardTitle}</h2>} */}
+  
+        {isArticleAdded ? (
+          // Success message after article is added
+          <Row className="justify-content-center">
+            <Col md={4}>
+              <Card className="vision-board-carding">
+              <Card.Img
+                      variant="top"
+                      src={
+                        visionBoard.main_image_url && visionBoard.main_image_url.trim() !== ''
+                          ? visionBoard.main_image_url
+                          : 'https://www.aiseesoft.com/images/tutorial/jpg-to-url/jpg-to-url.jpg'
+                      }
+                      alt={visionBoard.title}
+                      className="fixed-size-imgs"
+                    />
+                <Card.Body>
+                  <Card.Title>Great choice!</Card.Title>
+                  <Card.Text>
+                    Article added successfully to "{newBoardTitle}"!
+                  </Card.Text>
+                  <Button variant="primary" onClick={() => navigateToBoard(newBoardId)}>
+                    Explore Your Board
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        ) : boards.length === 0 ? (
+          // User has no existing boards; prompt to create one
+          <Row className="justify-content-left">
+            <Col md={4}>
+              <Card className="text-center create-board-card" onClick={handleShowCreateBoardModal} style={{ cursor: 'pointer' }}>
+                <Card.Body>
+                  <Card.Title>Start Your Creative Journey</Card.Title>
+                  <Card.Text>Tap here to create your very first vision board and begin shaping your ideas.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        ) : (
+          // User has existing boards; display them for selection
+          <>
+            {/* Display the article the user wants to add
+            {visionBoard && (
+            <Row className="vision-board-cards mb-4">
+            <Col md={4} className="mb-4">
+              <Card className="vision-board-card">
+                <Card.Img
+                  variant="top"
+                  src={
+                    visionBoard.main_image_url && visionBoard.main_image_url.trim() !== ''
+                      ? visionBoard.main_image_url
+                      : 'https://www.aiseesoft.com/images/tutorial/jpg-to-url/jpg-to-url.jpg'
+                  }
+                  alt={visionBoard.title}
+                  className="fixed-size-img"
+                />
+                <Card.Body>
+                  <Card.Title className="title-card-format">{visionBoard.title}</Card.Title>
+                  <Card.Text className="fixed-height-text">{visionBoard.description}</Card.Text>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Button
+                      variant="outline-primary"
+                      size="sm"
+                      onClick={() => window.open(visionBoard.content_url, '_blank')}
+                    >
+                      View More
+                    </Button>
+                    <small className="text-muted">
+                      Published on:{' '}
+                      {visionBoard.published_date
+                        ? new Date(visionBoard.published_date).toLocaleDateString()
+                        : 'N/A'}
+                    </small>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        )} */}
+  
+            <h2 className='welcome-message'>Choose a Board to Save This Article:</h2>
+            <Row className='g-2'>
+              {boards.map((board) => (
+                <Col key={board.id} md={4} className="mb-4">
+                  <Card className="existing-board-card" onClick={() => handleBoardSelection(board.id)} style={{ cursor: 'pointer' }}>
+                    <Card.Body>
+                      <Card.Title>{board.name}</Card.Title>
+                      <Card.Text>{board.description}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+              {/* Include a card to create a new board */}
+              <Col md={4} className="mb-4">
+                <Card className="text-center create-board-card" onClick={handleShowCreateBoardModal} style={{ cursor: 'pointer' }}>
+                  <Card.Body>
+                    <Card.Title>Create a NEW Board</Card.Title>
+                    <Card.Text>Click here to make a new board</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          </>
+        )}
+      </Container>
+  
+      {/* CreateBoardModal component */}
+      <CreateBoardModal
+        show={showCreateBoardModal}
+        handleClose={handleCloseCreateBoardModal}
+        newBoardName={newBoardName}
+        setNewBoardName={setNewBoardName}
+        newBoardDescription={newBoardDescription}
+        setNewBoardDescription={setNewBoardDescription}
+        handleCreateBoard={handleCreateBoard}
+      />
+      <Footer />
+    </Container>
+  );
+};
+
+export default PersonalVisionBoard;

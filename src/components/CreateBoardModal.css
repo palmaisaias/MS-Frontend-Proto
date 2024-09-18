@@ -1,0 +1,96 @@
+/* CreateBoardModal.css */
+
+/* Modal Header Styling */
+.modal-header {
+    background-color: #4823D1 !important; /* Header background color */
+    color: white !important; /* Text color */
+  }
+  
+  /* Modal Title Styling */
+  .modal-title {
+    font-weight: bold !important;
+    font-size: 1.5rem !important;
+    font-family: 'Lato';
+  }
+  
+  /* Modal Body Styling */
+  .modal-body {
+    padding: 20px !important;
+  }
+  
+  /* Input Styling */
+  .form-control {
+    border-radius: 8px !important; /* Rounded input fields */
+    border: 1px solid #ddd !important; /* Border styling */
+    box-shadow: none !important; /* Remove default shadow */
+    transition: border-color 0.2s ease-in-out !important; /* Smooth transition on focus */
+  }
+  
+  .form-control:focus {
+    border-color: #4823D1 !important; /* Border color on focus */
+    box-shadow: 0 0 5px rgba(72, 35, 209, 0.5) !important; /* Subtle shadow on focus */
+  }
+  
+  /* Modal Footer Styling */
+  .modal-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 15px 30px !important;
+  }
+  
+  /* Button Styling */
+  .btn-primary {
+    background-color: #4823D1 !important; /* Primary button color */
+    border: none !important;
+    padding: 8px 16px !important;
+    font-size: 1rem !important;
+  }
+  
+  .btn-primary:hover {
+    background-color: #331B96 !important; /* Hover color for primary button */
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    font-size: 1rem !important;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268 !important; /* Hover color for secondary button */
+  }
+
+.cool-mood-modality {
+  background-color: #4e4c55d2;
+}
+
+.new-boarder-bod {
+  background-color: #4823D1;
+}
+
+.new-boarder-footer {
+  background-color: #4823D1 !important;
+  border-top: none !important;
+  padding-top: 0 !important;
+  padding-bottom: 30px !important;
+}
+
+.haymaker-button {
+  font-family: 'Lato' !important;
+  color: #242424 !important;
+  background-color: #fbb3a8 !important; /* Change the background color */
+  border-radius: 25px !important; /* Change the border radius */
+  padding: 10px 20px !important; /* Adjust padding for button size */
+  font-size: 1rem !important; /* Adjust font size */
+  border: none !important; /* Remove the default border */
+}
+
+.haymaker-button:hover {
+  background-color: #fbc2b9 !important; /* Change the color on hover */
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-style: italic;
+}

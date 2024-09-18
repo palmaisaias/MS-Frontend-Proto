@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/* Navbar Styling */
+.navbar-custom {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Search Bar Styling */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #4823D1;
+}
+
+.search-bar-container input[type="text"] {
+    width: 400px;
+    height: 45px;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 0 50px 0 20px; 
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+    color: white;
+}
+
+.submit-button-search {
+    border: none;
+    background: none;
+    position: relative;
+    right: 45px; 
+    cursor: pointer;
+    color: rgb(255, 255, 255) !important;
+    font-size: 18px;
+    padding: 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Notes and Profile Links Styling */
+.notes-link,
+.profile-link,
+.folder-link {
+    border: none; /* Remove default border */
+    background: none; /* Transparent background */
+    cursor: pointer; /* Cursor pointer for button */
+    color: rgb(255, 255, 255) !important; /* Adjust icon color */
+    font-size: 28px !important; /* Icon size */
+    padding: 0; /* Remove padding */
+    outline: none; /* Remove default outline */
+    display: flex; /* Center the icon */
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    transition: color 0.3s ease; /* Smooth color transition */
+    position: relative; /* Positioning for hover text */
+}
+
+.notes-link:hover,
+.profile-link:hover,
+.folder-link:hover {
+    color: rgb(200, 200, 200); /* Change icon color on hover */
+}
+
+.notes-link::after {
+    content: 'Your Notes'; /* Text to display */
+    position: absolute; /* Absolute positioning */
+    bottom: 42px !important; /* Position above the button */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center adjustment */
+    font-size: 14px; /* Text size */
+    color: rgb(255, 255, 255); /* Text color */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
+    pointer-events: none; /* Prevent text from interfering with hover */
+}
+
+.folder-link::after {
+    content: 'Your Library'; /* Text to display */
+    position: absolute; /* Absolute positioning */
+    bottom: 42px !important; /* Position above the button */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center adjustment */
+    font-size: 14px; /* Text size */
+    color: rgb(255, 255, 255); /* Text color */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
+    pointer-events: none; /* Prevent text from interfering with hover */
+}
+
+.notes-link:hover::after {
+    opacity: 1; /* Make text visible */
+    bottom: 45px !important; /* Move text further up smoothly */
+}
+
+.folder-link:hover::after {
+    opacity: 1; /* Make text visible */
+    bottom: 45px !important; /* Move text further up smoothly */
+}
+
+.navbar-custom .notes-link,
+.navbar-custom .profile-link,
+.navbar-custom .folder-link {
+    font-weight: bold;
+    color: #fff;
+    margin-left: 20px;
+    margin-right: 20px;
+}

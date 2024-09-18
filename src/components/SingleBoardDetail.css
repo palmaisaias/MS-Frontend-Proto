@@ -1,0 +1,5 @@
+.fixed-size-img-single {
+  object-fit: cover;
+  width: 415px;
+  height: 415px;
+}

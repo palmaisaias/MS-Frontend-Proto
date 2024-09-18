@@ -1,222 +1,129 @@
 /* Homepage.css */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-/* ============================================================== */
-/* ============================================================== */
 
 /* Reset default margin and padding */
-    body, html {
-    margin: 0;
-    padding: 0;
-    
+body, html {
+  margin: 0;
+  padding: 0;
 }
-/* ============================================================== */
-/* ============================================================== */
-  /* General Styling */
-    .homepage {
-    background-color: #f4f4f4;
-    font-family: 'Lato', sans-serif;
-    }
-  
-/* ============================================================== */
-/* ============================================================== */
-  /* Custom Navbar Styling */
-  .navbar-custom {
-    background-color: #4823D1;
-    border-bottom: 2px solid #6338FD;
-    padding: 0; /* Ensure no additional padding */
-    margin: 0; /* Ensure no additional margin */
-    width: 100%; /* Ensure the navbar spans the full width */
-    height: 170px !important;
-  }
 
-  .logo-image {
-    height: 140px !important;
-    width: 400px !important;
-    margin-left: 20px !important;
-  }
-  
-  .navbar-custom .container {
-    max-width: 100%; /* Override container max-width to ensure full-width */
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
-  .navbar-custom .navbar-brand 
-  .navbar-custom .nav-link {
-    color: #ffffff;
-  }
-  
-  .navbar-custom .navbar-brand:hover,
-  .navbar-custom .nav-link:hover {
-    color: #ffc107;
-  }
-
-  /* Custom styling for the "Sign Up" link */
-    .nav-link-signup {
-    border: 2px solid white !important; /* White border */
-    border-radius: 50px; /* Circular border */
-    padding: 5px 15px; /* Adjust padding for the look you want */
-    color: white !important; /* Ensure the text color is white */
-    text-align: center;
-    }
-  
-    .nav-link-signup:hover {
-    background-color: rgba(255, 255, 255, 0.374); /* Change background on hover */
-    color: #4a148c !important; /* Text color on hover */
-    }
-
-  /* Custom CSS for Navbar Links */
-    .navbar-custom .navbar-nav {
-    margin-right: 40px !important; /* Aligns to the right */ 
-    margin-top: 20px; /* Lowers the position slightly */
-    font-family: 'Lato';
-    color: white !important;
-    }
-  
-    .navbar-custom .nav-link {
-    margin-right: 1.5rem ;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    font-size: 1rem;
-    color: #fdf7e7;
-     }
-  
-  /* Optional: Further control spacing between links */
-    .navbar-custom .nav-item {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    }
-    .navbar-custom .navbar-brand img:first-child {
-        margin-left: 60px; /* Adjust this value to move the first image to the left */
-      }
-      
-      .navbar-custom .navbar-brand img:last-child {
-        margin-left: 5px; /* Adjust this value to move the second image to the left */
-      }
-  
-
-/* ============================================================== */
-/* ============================================================== */
+/* General Styling */
+.homepage {
+  background-color: #f4f4f4;
+  font-family: 'Lato', sans-serif;
+  padding: 0 !important;
+}
 
 /* Header Section */
 .header-section {
-    background-color: #643AFD; /* Background color as shown in the PDF */
-    color: #FBB3A8 !important;
-    text-align: left !important;
-    max-height: 550px; /* Limit the maximum height */
-    overflow: hidden; /* Ensure no content overflows beyond 550px */
-    position: relative; /* Allow child elements to use absolute positioning */
-    padding-right: 0; /* Ensure there's no padding that may restrict overflow */
+  background-color: #643AFD; /* Background color as shown in the PDF */
+  color: #FBB3A8 !important;
+  text-align: left !important;
+  max-height: 550px; /* Limit the maximum height */
+  overflow: hidden; /* Ensure no content overflows beyond 550px */
+  position: relative; /* Allow child elements to use absolute positioning */
+  padding-right: 0; /* Ensure there's no padding that may restrict overflow */
 }
-  
 
-.header-text h1 {
+.header-text h1,
+.header-text p {
   color: #FBB3A8 !important;
   font-family: 'Lato', sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 115%;
-  text-align: left;
-  margin-bottom: 20px;
-  margin-left: 60px; /* Adjust left margin to control initial position */
-  margin-right: -150px; /* Add negative margin to overflow into the next column */
+  margin-left: 20px; /* Adjust left margin for better responsiveness */
+  margin-right: 20px; /* Adjust right margin for better responsiveness */
+  max-width: calc(100% - 40px); /* Ensure text stays within bounds */
+  word-wrap: break-word; /* Wrap text properly */
   position: relative; /* Positioning to handle z-index */
   z-index: 1; /* Make sure it is above the image */
 }
-  
-  .header-text p {
-    font-weight:lighter;
-    color: #fdf7e7 !important;
-    font-family: 'Lato', sans-serif; /* Adjust as needed */
-    font-size: 1.7rem;
-    margin-bottom: 30px;
-    margin-left: 60px;
-    margin-right: -150px; /* Add negative margin to overflow into the next column */
-    position: relative; /* Positioning to handle z-index */
-    z-index: 1; /* Make sure it is above the image */
-  }
-  
-  .show-me-btn {
-    color: #000 !important;
-    font-family: 'Lato', sans-serif !important;
-    font-size: 1.2rem !important;
-    border: 2px solid #FBB3A8 !important;
-    border-radius: 50px !important;
-    margin-left: 60px;
-    padding: 5px 30px !important;
-    background-color: #FBB3A8 !important;
-  }
-  
-  /* Image styling */
-  .header-section img {
-    width: 100%;
-    max-height: 550px; /* Prevent the image from exceeding 550px */
-    object-fit: cover;
-  }
-  
-  /* Make sure the row is responsive and content-driven */
-  .header-section .row {
-    flex-wrap: wrap;
-    align-items: stretch;
-  }
-  
-  .header-section img {
-    max-height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
 
-/* ============================================================== */
-/* ============================================================== */
-  /* MAKE SURE THT MARGINS ARE 80PX */
-  /* MAKE SURE THAT LINE HEIGHT IS 41 */
-  /* Main Content Section */
-  .content-section {
-    display: flex; /* Ensure children can align properly */
-    align-items: center;
-    /* align-items: stretch; KEPT JUST IN CASE  */
-  }
-  
-  /* Customize text placement for each section if needed */
-  .section-text h3 {
-    font-weight: bold;
-    font-size: 42px;
-    margin-bottom: 20px;
-  }
-  .section-text p {
-    font-size: 28px !important;
-    color: #242424;
-    line-height: 41px;
-  }
+.header-text h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 115%;
+  margin-bottom: 20px;
+}
 
-  .section-1 .section-text {
-    text-align: left !important;
-  }
+.header-text p {
+  font-weight: lighter;
+  font-size: 1.7rem;
+  margin-bottom: 30px;
+}
 
-  .section-1 .section-text p {
-    color: #242424;
-  }
+.show-me-btn {
+  color: #000 !important;
+  font-family: 'Lato', sans-serif !important;
+  font-size: 1.2rem !important;
+  border: 2px solid #FBB3A8 !important;
+  border-radius: 50px !important;
+  margin-left: 20px; /* Match margin with text */
+  margin-right: 20px;
+  padding: 10px 30px !important; /* Adjust padding */
+  background-color: #FBB3A8 !important;
+}
 
-  .section-2 .section-text {
-    text-align: left !important;
-    padding-left: 100px;
-  }
+/* Image styling */
+.header-section img {
+  width: 100%;
+  max-height: 550px; /* Prevent the image from exceeding 550px */
+  object-fit: cover;
+}
 
-  .section-2 .section-text p {
-    color: #fdf7e7;
-  }
-  
-  .section-3 .section-text {
-    text-align: left !important;
-  }
+/* Ensure Row is Responsive */
+.header-section .row {
+  flex-wrap: wrap;
+  align-items: stretch;
+  padding: 0 20px; /* Padding to prevent content from touching edges */
+  margin: 0 auto; /* Center row content */
+  max-width: 100%; /* Prevent overflow */
+}
 
-  .section-3 .section-text p {
-    color: #242424;
-  }
-  
+/* Main Content Section */
+.content-section {
+  display: flex; /* Ensure children can align properly */
+  align-items: center;
+}
+
+/* Customize text placement for each section if needed */
+.section-text h3 {
+  font-weight: bold;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.section-text p {
+  font-size: 28px !important;
+  color: #242424;
+  line-height: 41px;
+}
+
+.section-1 .section-text {
+  text-align: left !important;
+}
+
+.section-1 .section-text p {
+  color: #242424;
+}
+
+.section-2 .section-text {
+  text-align: left !important;
+  padding-left: 100px;
+}
+
+.section-2 .section-text p {
+  color: #fdf7e7;
+}
+
+.section-3 .section-text {
+  text-align: left !important;
+}
+
+.section-3 .section-text p {
+  color: #242424;
+}
+
 /* Image Container Styling */
-
 .section-image {
   height: 100% !important;
   padding: 0 !important;  /* Ensure no padding */
@@ -231,159 +138,177 @@
   display: flex; /* Use flexbox to control child element */
   justify-content: right !important; /* PUSHES THE IMAGE TO WHICHEVER END */
 }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-    .section-text {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-  }
-/* ============================================================== */
-/* ============================================================== */
 
-  /* Newsletter Section */
-  .newsletter {
-    background-color: #333;
-    color: #fff;
-    padding: 40px 20px;
-    text-align: left;
-  }
-  
-  .newsletter h4 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .newsletter-form {
-    display: flex;
-    gap: 10px;
-  }
-  
-/* ============================================================== */
-/* ============================================================== */
-
-/* Footer Section */
-.footer-section {
-    background-color: #643AFD !important; 
-    padding: 20px 0;
-    font-family: 'Lato';
-    max-height: 318px ;
+/* Media Queries for Responsiveness */
+@media (max-width: 1180px) {
+  .header-text h1,
+  .header-text p {
+    font-size: 1.5rem; /* Adjust font size to prevent overflow */
+    margin-left: 10px; /* Reduce margins on smaller screens */
+    margin-right: 10px;
   }
 
-  .footer-section h5 {
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 42PX;
-    font-family: 'Lato';
-    color: #FBB3A8;
-    margin-left: 80px;
+  .show-me-btn {
+    margin-left: 10px; /* Match button margin */
+    margin-right: 10px;
+    padding: 8px 20px !important; /* Adjust padding for better fit */
+  }
+}
+
+@media (max-width: 768px) {
+  .header-section .row {
+    flex-direction: column; /* Stack items vertically */
+    padding: 10px; /* Add some padding around the row */
   }
 
-  .footer-section .section-links {
-    padding-left: 80px !important; /* Adjust this value as needed */
+  .header-text h1 {
+    font-size: 1.2rem; /* Further reduce font size */
+    margin: 0 auto; /* Center align */
   }
 
-  .footer-linking {
-    font-weight:600;
-    color: #F0EDFA !important;
-    font-size: 1.1rem !important;
-  }
-  
-  .footer-section .form-control {
-    max-width: 330px;
-    min-width: 200px;
-    min-height: 44px;
-    background-color: #643AFD;
-    border: 2px w;
-    color: #fff;
-    border-radius: 50px;
-    font-style: italic;
-    font-weight: 400 !important;
-    margin-left: 56px;
+  .header-text p {
+    font-size: 1rem; /* Reduce font size for paragraph */
+    margin: 0 auto; /* Center align */
   }
 
-  .bottom-form-pad {
-    padding-left: 25px;
+  .show-me-btn {
+    width: 100%; /* Make button full-width */
+    margin: 10px 0; /* Adjust margin for better spacing */
+    padding: 10px; /* Ensure adequate padding */
   }
-  
-  .footer-section .form-control::placeholder {
-    color: #fdf7e7;
-    font-size: 18px;
-  
-  }
-  
-  .footer-section .btn-light {
-    background-color: #FBB3A8;
-    color: #000000;
-    border: none;
-    border-radius: 50px;
-    max-width: 300px !important;
-    min-width: 150px !important;
-    margin-bottom:20px ;
-    height: 44px;
-    
-  }
-  
-  .footer-section .nav-link {
-    padding: 5px 0;
-  }
-  
-  .footer-section p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-left: 80px;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-section .text-center {
-      text-align: center !important;
-    }
-  
-    .footer-section .text-md-start {
-      text-align: center !important;
-    }
-  }
-  
-/* ============================================================== */
-/* ============================================================== */
+}
 
-  /* Background Colors for Each Section */
-  .section-1 {
-    color: #643AFD !important;
-    background-color: #FBB3A8; /* Light blue */
-    color: #333;
-  }
-  
-  .section-2 {
-    background-color: #643AFD; /* Light pink */
-    color: #FBB3A8;
-  }
-  
-  .section-3 {
-    color: #EFE4CF !important;
-    background-color: #FBB3A8; /* Light green */
-    color: #643AFD !important;
-  }
-  
-  /* Responsive Layout Adjustments */
-  @media (max-width: 768px) {
-    .section-image {
-      margin-top: 20px;
-    }
-  
-    .section-2 .section-image {
-      order: -1;
-    }
-  }
-  
+/* Background Colors for Each Section */
+.section-1 {
+  color: #643AFD !important;
+  background-color: #FBB3A8; /* Light blue */
+  color: #333;
+}
 
-  
-  
-  
-  
-  
+.section-2 {
+  background-color: #643AFD; /* Light pink */
+  color: #FBB3A8;
+}
 
-  
+.section-3 {
+  color: #EFE4CF !important;
+  background-color: #FBB3A8; /* Light green */
+  color: #643AFD !important;
+}
 
-  
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+  .section-image {
+    margin-top: 20px;
+  }
+
+  .section-2 .section-image {
+    order: -1;
+  }
+}
+
+.un-link {
+  text-decoration: none !important;
+}
+
+@media (max-width: 1024px) {
+  .header-text h1,
+  .header-text p {
+    font-size: 1.4rem; /* Adjust font size for large tablets */
+    margin-left: 5px; /* Further reduce margins */
+    margin-right: 5px;
+    line-height: 1.3; /* Adjust line height for readability */
+  }
+
+  .show-me-btn {
+    margin-left: 5px; /* Adjust button margins */
+    margin-right: 5px;
+    padding: 8px 16px !important; /* Adjust padding */
+  }
+
+  .header-section .row {
+    padding: 0 15px; /* Adjust padding for the row */
+  }
+}
+
+@media (max-width: 640px) {
+  .header-text h1,
+  .header-text p {
+    font-size: 1.1rem; /* Further reduce font size */
+    margin-left: 10px; /* Slight padding for small screens */
+    margin-right: 10px;
+  }
+
+  .show-me-btn {
+    width: 90%; /* Almost full-width button */
+    margin: 10px auto; /* Center button with auto margins */
+    padding: 10px 15px !important; /* Reduce padding slightly */
+  }
+
+  .header-section .row {
+    flex-direction: column; /* Stack items vertically */
+    padding: 10px; /* Consistent padding around the row */
+  }
+}
+
+@media (max-width: 480px) {
+  .header-text h1,
+  .header-text p {
+    font-size: 1rem; /* Small font size for small devices */
+    text-align: center; /* Center text alignment */
+    margin: 0 auto; /* Center margin */
+  }
+
+  .show-me-btn {
+    width: 100%; /* Full-width button */
+    padding: 12px 10px !important; /* Adjust padding for tap targets */
+    margin: 15px auto; /* More margin to separate button */
+  }
+
+  .header-section {
+    padding: 0 5px; /* Reduce padding to fit the screen */
+  }
+
+  .header-section .row {
+    padding: 5px; /* Consistent smaller padding */
+    margin: 0; /* Remove any margin to maximize space */
+  }
+}
+
+@media (max-width: 1366px) {
+  .header-text h1,
+  .header-text p {
+    font-size: 1.6rem; /* Slightly larger font size for medium desktops */
+    margin-left: 15px; /* Adjust margins for better spacing */
+    margin-right: 15px;
+  }
+
+  .show-me-btn {
+    margin-left: 15px; /* Adjust button margins */
+    margin-right: 15px;
+    padding: 10px 25px !important; /* Slightly larger padding */
+  }
+
+  .header-section .row {
+    padding: 0 30px; /* Increase padding around the row */
+  }
+}
+
+@media (max-width: 1440px) {
+  .header-text h1,
+  .header-text p {
+    font-size: 1.8rem; /* Increase font size for larger desktops */
+    margin-left: 20px; /* Adjust margins to provide more space */
+    margin-right: 20px;
+  }
+
+  .show-me-btn {
+    margin-left: 20px; /* Adjust button margins */
+    margin-right: 20px;
+    padding: 12px 30px !important; /* Increase padding for better appearance */
+  }
+
+  .header-section .row {
+    padding: 0 40px; /* Further increase padding around the row */
+  }
+}

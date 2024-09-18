@@ -6,6 +6,7 @@
 .vision-boards {
     background: var(--Gradient, radial-gradient(67.67% 80.23% at 41.04% 35.34%, #FFC2B9 0%, #DFEFB4 47.5%, #FFC2B9 99.04%));
     font-family: 'Lato', sans-serif;
+    padding: 0 !important;
   }
 
   .vision-board-card {
@@ -43,12 +44,15 @@
   }
   
   /* Fixed height for card text */
-  .fixed-height-text {
+  .fixed-height-texting {
+    text-align: left;
+    font-size: 16px;
+    color: #242424;
     height: 150px; /* Fixed height */
     overflow: hidden; /* Hide any overflow content */
     display: -webkit-box; /* Required for line clamping */
     -webkit-box-orient: vertical; /* Required for vertical text truncation */
-    -webkit-line-clamp: 7; /* Number of lines to show */
+    -webkit-line-clamp: 5; /* Number of lines to show */
     text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
   }
 
@@ -68,19 +72,19 @@
     left: 0;
     right: 0;
     padding: 20px;
-    color: white;
+    color: #FDF7E7;
     background: rgba(0, 0, 0, 0.6);
     transition: background 0.3s;
   }
 
-  .title-card-format {
+  .title-card-formats {
     border-radius: 25px;
-    color: var(--Royal-Blue, #4823D1) !important;
     font-family: Lato !important;
     font-size: 40px !important;
     font-style: normal !important;
     font-weight: 700 !important;
     line-height: 33px !important; /* 82.5% */
+    text-align: left;
   }
 
   .title-card-format-pback {
@@ -97,18 +101,21 @@
     background-color: #643AFD;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    color: #FDF7E7 !important;
   }
   
   .pink-overlay {
     background-color: #FFC2B9;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    color: #643AFD !important;
   }
 
   .green-overlay {
     background-color: #DBE59A;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    color: #643AFD !important;
   }
 
   .card-link {
@@ -119,124 +126,4 @@
     min-height: 150px !important;
   }
   
-  /* Navbar Updates =================================== */
-  .search-bar-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color:#4823D1; /* Adjust background color as needed */
-  }
-  
-  .search-bar-container input[type="text"] {
-    width: 400px; /* Adjust width as needed */
-    height: 45px; /* Adjust height as needed */
-    border: 2px solid white; /* Adjust border color as needed */
-    border-radius: 30px; /* Rounded corners */
-    padding: 0 50px 0 20px; /* Adjust padding for spacing */
-    font-size: 16px; /* Font size for input text */
-    outline: none; /* Remove default outline */
-    background-color: transparent; /* Transparent background */
-    color: white; /* Adjust text color as needed */
-  }
-  
-  .submit-button-search {
-    border: none; /* Remove default border */
-    background: none; /* Transparent background */
-    position: relative; /* Positioning for icon */
-    right: 45px; /* Position button inside the input */
-    cursor: pointer; /* Cursor pointer for button */
-    color: rgb(255, 255, 255) !important; /* Adjust icon color */
-    font-size: 18px; /* Icon size */
-    padding: 0; /* Remove padding */
-    outline: none; /* Remove default outline */
-    display: flex; /* Center the icon */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-  }
-
-  .notes-link {
-    border: none; /* Remove default border */
-    background: none; /* Transparent background */
-    position: relative; /* Positioning for icon */
-    right: 45px; /* Position button inside the input */
-    cursor: pointer; /* Cursor pointer for button */
-    color: rgb(255, 255, 255) !important; /* Adjust icon color */
-    font-size: 28px !important; /* Icon size */
-    padding: 0; /* Remove padding */
-    outline: none; /* Remove default outline */
-    display: flex; /* Center the icon */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-    transition: color 0.3s ease; /* Smooth color transition */
-  }
-  
-  /* Hover effect to change icon color */
-  .notes-link:hover {
-    color: rgb(200, 200, 200); /* Optional: change icon color on hover */
-  }
-  
-  /* Pseudo-element to display text on hover */
-  .notes-link::after {
-    content: 'Your Notes'; /* Text to display */
-    position: absolute; /* Absolute positioning */
-    bottom: 42px !important; /* Position above the button */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center adjustment */
-    font-size: 14px; /* Text size */
-    color: rgb(255, 255, 255); /* Text color */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
-    pointer-events: none; /* Prevent text from interfering with hover */
-  }
-  
-  /* Show text on hover */
-  .notes-link:hover::after {
-    opacity: 1; /* Make text visible */
-    bottom: 45px !important; /* Move text further up smoothly */
-  }
-
-  .profile-link {
-    border: none; /* Remove default border */
-    background: none; /* Transparent background */
-    position: relative; /* Positioning for icon */
-    right: 45px; /* Position button inside the input */
-    cursor: pointer; /* Cursor pointer for button */
-    color: rgb(255, 255, 255) !important; /* Adjust icon color */
-    font-size: 28px !important; /* Icon size */
-    padding: 0; /* Remove padding */
-    outline: none; /* Remove default outline */
-    display: flex; /* Center the icon */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-  }
-  
-
-  .navbar-custom {
-    padding: 0; /* Ensure no additional padding */
-    margin: 0; /* Ensure no additional margin */
-  }
-
-  .navbar-custom .notes-link {
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  .navbar-custom .profile-link {
-    font-weight: bold;
-    color: #fff;
-  }
-  
-  /* Adjust navbar styles to align with design */
-  .navbar-custom .search-link {
-    margin-right: 20px;
-    color: #fff;
-  }
-  
-  .navbar-custom .notes-link,
-  .navbar-custom .profile-link {
-    margin-left: 20px;
-    margin-right: 20px;
-    color: #fff;
-  }
   

@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* General Styling for Vision Board Page */
+.vision-board-detail-page {
+  background: var(
+    --Gradient,
+    radial-gradient(
+      67.67% 80.23% at 41.04% 35.34%,
+      #ffc2b9 0%,
+      #dfefb4 47.5%,
+      #ffc2b9 99.04%
+    )
+  );
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Styling for the 'Create a New Board' Section */
+.create-board-section {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.create-board-section h2 {
+  color: #4823d1;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.create-board-section input[type="text"] {
+  width: calc(50% - 10px);
+  margin: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.create-board-section button {
+  background-color: #4823d1;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.create-board-section button:hover {
+  background-color: #331b96; /* Darken button color on hover */
+}
+
+/* Card Styling for Vision Board Cards */
+.vision-board-card {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensures that content doesn't overflow card boundaries */
+}
+
+.vision-board-carding {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+}
+
+.vision-board-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.fixed-size-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+}
+
+/* Styling for the Card Content */
+.card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.title-card-format {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: #4823d1;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fixed-height-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Action Button and Metadata Styling */
+.card-body .d-flex {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.card-body .btn-outline-primary {
+  color: #4823d1;
+  border-color: #4823d1;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.card-body .btn-outline-primary:hover {
+  background-color: #4823d1;
+  color: #fff;
+}
+
+/* Styling for Empty State */
+.empty-state {
+  text-align: center;
+  margin: 40px 0;
+  color: #555;
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Custom Link Styling */
+.back-link,
+.all-topics-link {
+  color: #4823d1;
+  text-decoration: none;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.back-link:hover,
+.all-topics-link:hover {
+  text-decoration: underline;
+}
+
+/* CSS for the "Create Board" card */
+.create-board-card {
+  position: relative !important; /* Position relative to enable absolute positioning of the plus sign */
+  border: 1px solid #4823d1 !important; /* Dashed border to make it stand out */
+  background: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Smooth hover effect */
+  cursor: pointer !important; /* Cursor changes to pointer on hover */
+  border-radius: 15px !important; /* Rounded corners */
+  height: 450px !important; /* Fixed height */
+  max-width: 400px;
+  display: flex !important; /* Flexbox for center alignment */
+  align-items: center !important; /* Center vertically */
+  justify-content: center !important; /* Center horizontally */
+  overflow: hidden !important; /* Hide overflow for the plus sign */
+  z-index: 1;
+  margin-left: 60px;
+}
+
+.create-board-card::before {
+  content: ""; /* Necessary for pseudo-element */
+  position: absolute; /* Overlay positioning */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://mamiverse.com/wp-content/uploads/2014/07/Huggies1.jpg);
+  background-position: center; /* Center the background image */
+  background-size: cover; /* Ensure the image covers the entire card */
+  background-repeat: no-repeat; /* Prevent image repeat */
+  opacity: 0.2; /* Adjust the opacity of the background image */
+  z-index: -1; /* Place behind content */
+  border-radius: 15px; /* Make sure the background has rounded corners */
+}
+
+.create-board-card:hover {
+  transform: translateY(
+    -10px
+  ) !important; /* Slightly lifts the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* Add a subtle shadow effect */
+  border-color: #331b96 !important; /* Darken border on hover */
+}
+
+/* Plus sign on hover */
+.create-board-card::before {
+  content: "+" !important; /* Plus sign content */
+  position: absolute !important; /* Position absolute to center it */
+  font-size: 6rem !important; /* Large font size for the plus sign */
+  color: rgba(72, 35, 209, 0) !important; /* Initial transparent color */
+  transition: color 0.3s ease !important; /* Transition effect for the plus sign */
+  z-index: 4 !important; /* Send it behind the card content */
+}
+
+.create-board-card:hover::before {
+  color: rgba(72, 35, 209, 0.2) !important; /* Slightly faded color on hover */
+  opacity: 0.1; /* Set opacity to full on hover */
+}
+
+/* Ensure content appears above the plus sign */
+.create-board-card .card-body {
+  position: relative !important; /* Ensure card content stays above the plus sign */
+  z-index: 1 !important; /* Higher z-index than the plus sign */
+}
+
+.create-board-card .card-title {
+  font-family: "Lato";
+  font-size: 1.5rem !important; /* Larger font size for the title */
+  font-weight: bold !important; /* Bold font for emphasis */
+  color: #4823d1 !important; /* Primary color for the title */
+  margin-bottom: 5px !important; /* Margin below the title */
+  position: relative !important; /* Ensure proper layering */
+  z-index: 1 !important; /* Higher z-index to be above the plus sign */
+  margin-top: 0;
+}
+
+.create-board-card .card-text {
+  font-size: 1.1rem !important; /* Slightly larger font size for the text */
+  color: #333 !important; /* Dark color for the text */
+  margin-bottom: 0 !important; /* No margin below the text */
+  position: relative !important; /* Ensure proper layering */
+  z-index: 1 !important; /* Higher z-index to be above the plus sign */
+}
+
+.unique-vision-card {
+  text-align: center !important; /* Center text */
+  border: none !important; /* Remove default border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow for a clean effect */
+  padding: 20px !important; /* Add padding for spacing */
+  border-radius: 10px !important; /* Rounded corners for a modern look */
+  transition: transform 0.2s ease !important; /* Smooth transform on hover */
+}
+
+.unique-vision-card:hover {
+  transform: translateY(-5px) !important; /* Slight lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important; /* Enhance shadow on hover */
+}
+
+.unique-vision-card .card-body {
+  padding: 0 !important; /* Remove padding from Card.Body to center content better */
+}
+
+.unique-vision-card-title {
+  font-size: 1.8rem !important; /* Make the title more imposing */
+  font-weight: 700 !important; /* Bold title */
+  margin-bottom: 15px !important; /* Space below the title */
+  color: #333 !important; /* Darker color for emphasis */
+}
+
+.unique-vision-card-text {
+  font-size: 1rem !important; /* Smaller font size for the description */
+  color: #666 !important; /* Lighter color for a subtle appearance */
+  margin-bottom: 0 !important; /* Remove default bottom margin */
+}
+
+.custom-cardy {
+  min-height: 500px !important; /* Set the minimum height for the card */
+  height: auto !important; /* Let the content define additional height */
+}
+
+/* CSS for the "Create Board" card */
+.existing-board-card {
+  position: relative !important; /* Position relative to enable absolute positioning of the plus sign */
+  border: 1px solid #4823d1 !important; /* Dashed border to make it stand out */
+  background: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Smooth hover effect */
+  cursor: pointer !important; /* Cursor changes to pointer on hover */
+  border-radius: 15px !important; /* Rounded corners */
+  height: 450px !important; /* Fixed height */
+  max-width: 400px;
+  display: flex !important; /* Flexbox for center alignment */
+  align-items: center !important; /* Center vertically */
+  justify-content: center !important; /* Center horizontally */
+  overflow: hidden !important; /* Hide overflow for the plus sign */
+  z-index: 1;
+  margin-left: 60px;
+}
+
+.existing-board-card::before {
+  content: ""; /* Necessary for pseudo-element */
+  position: absolute; /* Overlay positioning */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center; /* Center the background image */
+  background-size: cover; /* Ensure the image covers the entire card */
+  background-repeat: no-repeat; /* Prevent image repeat */
+  opacity: 0.2; /* Adjust the opacity of the background image */
+  z-index: -1; /* Place behind content */
+  border-radius: 15px; /* Make sure the background has rounded corners */
+}
+
+.existing-board-card:hover {
+  transform: translateY(
+    -10px
+  ) !important; /* Slightly lifts the card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* Add a subtle shadow effect */
+  border-color: #331b96 !important; /* Darken border on hover */
+}
+
+/* Plus sign on hover */
+.existing-board-card::before {
+  content: "+" !important; /* Plus sign content */
+  position: absolute !important; /* Position absolute to center it */
+  font-size: 6rem !important; /* Large font size for the plus sign */
+  color: rgba(72, 35, 209, 0) !important; /* Initial transparent color */
+  transition: color 0.3s ease !important; /* Transition effect for the plus sign */
+  z-index: 4 !important; /* Send it behind the card content */
+}
+
+.existing-board-card:hover::before {
+  color: rgba(72, 35, 209, 0.2) !important; /* Slightly faded color on hover */
+  opacity: 0.1; /* Set opacity to full on hover */
+}
+
+/* Ensure content appears above the plus sign */
+.existing-board-card .card-body {
+  position: relative !important; /* Ensure card content stays above the plus sign */
+  z-index: 1 !important; /* Higher z-index than the plus sign */
+}
+
+.existing-board-card .card-title {
+  font-family: "Lato";
+  font-size: 1.5rem !important; /* Larger font size for the title */
+  font-weight: bold !important; /* Bold font for emphasis */
+  color: #4823d1 !important; /* Primary color for the title */
+  margin-bottom: 5px !important; /* Margin below the title */
+  position: relative !important; /* Ensure proper layering */
+  z-index: 1 !important; /* Higher z-index to be above the plus sign */
+  margin-top: 0;
+}
+
+.existing-board-card .card-text {
+  font-size: 1.1rem !important; /* Slightly larger font size for the text */
+  color: #333 !important; /* Dark color for the text */
+  margin-bottom: 0 !important; /* No margin below the text */
+  position: relative !important; /* Ensure proper layering */
+  z-index: 1 !important; /* Higher z-index to be above the plus sign */
+}

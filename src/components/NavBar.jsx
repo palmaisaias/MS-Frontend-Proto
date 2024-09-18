@@ -1,7 +1,7 @@
-import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
-import './NavBar.css'; // Import the extracted CSS for the navbar
+import React from "react";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./NavBar.css";
 
 const NavBar = ({ handleShowSignUp, handleShowLogin }) => {
   return (
@@ -17,8 +17,9 @@ const NavBar = ({ handleShowSignUp, handleShowLogin }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/about-us">About Us</Nav.Link>
-            {/* Remove 'to' prop and add onClick handler for Login */}
+            <Nav.Link as={Link} to="/about-us">
+              About Us
+            </Nav.Link>
             <Nav.Link className="nav-link-login" onClick={handleShowLogin}>
               Login
             </Nav.Link>
