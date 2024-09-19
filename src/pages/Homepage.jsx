@@ -63,14 +63,14 @@ const Homepage = () => {
             md={4}
             className="text-left header-text d-flex align-items-center"
           >
-            <div style={{ paddingLeft: '50px' }}>
+            <div style={{ paddingLeft: "50px" }}>
               <h1 className="un-link">
-                Black women are 3 times more likely to face perinatal depression
-                and childbirth complications.
+                While Black women are 3x more likely to experience child-birth
+                related complications, up to 85% of them are preventable!
               </h1>
               <p className="un-link">
-                We see you. We hear you. We want you to own your maternal health
-                and confidence!
+                Our goal is to equip you to advocate for your maternal health,
+                one resource at a time.
               </p>
               <Button variant="outline-light" className="show-me-btn">
                 Show me
