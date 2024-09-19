@@ -70,7 +70,7 @@ const Sanctuary = () => {
         ) : (
           <Row>
             {boards.map((board) => (
-              <Col key={board.id} md={4} className="mb-4" style={{ paddingLeft: '50px' }}>
+              <Col key={board.id} md={4} className="mb-4" style={{ paddingLeft: '50px', paddingRight: '50px' }}>
                 <Card className="vision-board-card" onClick={() => navigateToBoard(board.id)} style={{ cursor: 'pointer' }}>
                   <Card.Body className='pink-overlay padded-body'>
                     <Card.Title className='title-card-formatz'>{board.name}</Card.Title>

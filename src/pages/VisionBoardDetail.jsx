@@ -33,6 +33,7 @@ const VisionBoardDetail = () => {
   const [selectedVisionBoard, setSelectedVisionBoard] = useState(null);
   const [boardName, setBoardName] = useState(""); // Initialize state for board name
   const [boardDescription, setBoardDescription] = useState(""); // Initialize state for board description
+  const [selectedImageUrl, setSelectedImageUrl] = useState("");
   const navigate = useNavigate();
 
   // Consolidated useEffect to handle fetching both content and board details
@@ -73,11 +74,13 @@ const VisionBoardDetail = () => {
     }); // Navigate with data
   };
 
-  const handleShowModal = (visionBoard) => {
+  const handleShowModal = (visionBoard, imageUrl) => {
     setSelectedVisionBoard(visionBoard);
+    setSelectedImageUrl(imageUrl); // Store the image URL being used
     setShowModal(true);
   };
 
+  // Conditional rendering based on loading, error, or visionBoards state
   if (loading) {
     return <p>Loading vision board...</p>;
   }
@@ -147,7 +150,7 @@ const VisionBoardDetail = () => {
               <Col key={visionBoard.id} md={4} className="mb-4">
                 <Card
                   className="vision-board-card"
-                  onClick={() => handleShowModal(visionBoard)}
+                  onClick={() => handleShowModal(visionBoard, imageUrl)} // Pass imageUrl to the handler
                 >
                   <Card.Img
                     variant="top"
@@ -155,11 +158,13 @@ const VisionBoardDetail = () => {
                     alt={visionBoard.title}
                     className="fixed-size-img"
                     onError={(e) => {
-                      // Rotate through placeholders if an image error occurs
-                      e.target.src =
-                        placeholderImages[
-                          (index + 1) % placeholderImages.length
-                        ];
+                      e.target.onerror = null; // Prevent infinite loop if fallback fails
+                      const currentIndex = placeholderImages.indexOf(
+                        e.target.src
+                      );
+                      const nextIndex =
+                        (currentIndex + 1) % placeholderImages.length;
+                      e.target.src = placeholderImages[nextIndex]; // Cycle through the placeholder images
                     }}
                   />
                   <Card.Body className="pink-overlay">
@@ -188,14 +193,18 @@ const VisionBoardDetail = () => {
         >
           <Modal.Body className="p-0">
             <img
-              src={
-                selectedVisionBoard.main_image_url &&
-                selectedVisionBoard.main_image_url.trim() !== ""
-                  ? selectedVisionBoard.main_image_url
-                  : "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              }
+              src={selectedImageUrl} // Use the selected image URL from state
               alt={selectedVisionBoard.title}
               className="fixed-size-img-mod mb-3"
+              onError={(e) => {
+                // Find the index of the current selected image URL in the placeholder images array
+                const currentIndex = placeholderImages.indexOf(e.target.src);
+                // Set the next placeholder image if the current one fails
+                e.target.src =
+                  placeholderImages[
+                    (currentIndex + 1) % placeholderImages.length
+                  ];
+              }}
             />
             <Modal.Title className="p-2 colorific">
               {selectedVisionBoard.title}
