@@ -8,6 +8,10 @@ body, html {
   padding: 0;
 }
 
+.custom-bg {
+  background-color: #643AFD !important; /* Replace with your desired color */
+}
+
 /* General Styling */
 .homepage {
   background-color: #f4f4f4;
@@ -61,6 +65,7 @@ body, html {
   margin-right: 20px;
   padding: 10px 30px !important; /* Adjust padding */
   background-color: #FBB3A8 !important;
+  margin-bottom: 20px !important;
 }
 
 /* Image styling */
@@ -209,6 +214,7 @@ body, html {
 
 .un-link {
   text-decoration: none !important;
+  margin-top: 20px !important;
 }
 
 @media (max-width: 1024px) {

@@ -1,0 +1,57 @@
+"filename", "language", "JavaScript", "JavaScript JSX", "CSS", "XML", "JSON", "YAML", "Markdown", "TypeScript", "HTML", "Docker", "comment", "blank", "total"
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/Dockerfile", "Docker", 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 24
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 27, 0, 0, 0, 0, 22, 49
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/.config/project-config.json", "JSON", 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 17
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 2, 9
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/backend-config.json", "JSON", 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 8
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/hosting/S3AndCloudFront/parameters.json", "JSON", 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 3
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/hosting/S3AndCloudFront/template.json", "JSON", 0, 0, 0, 0, 273, 0, 0, 0, 0, 0, 0, 0, 273
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/tags.json", "JSON", 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 10
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/types/amplify-dependent-resources-ref.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 0, 14
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/cli.json", "JSON", 0, 0, 0, 0, 64, 0, 0, 0, 0, 0, 0, 0, 64
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/hooks/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 4, 8
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/team-provider-info.json", "JSON", 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 20
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/docker-compose.yml", "YAML", 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 2, 14
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/eslint.config.js", "JavaScript", 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 39
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 1, 14
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/package-lock.json", "JSON", 0, 0, 0, 0, 4597, 0, 0, 0, 0, 0, 0, 1, 4598
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/package.json", "JSON", 0, 0, 0, 0, 39, 0, 0, 0, 0, 0, 0, 1, 40
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/App.css", "CSS", 0, 0, 47, 0, 0, 0, 0, 0, 0, 0, 8, 13, 68
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/App.jsx", "JavaScript JSX", 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 35
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/assets/react.svg", "XML", 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/AccountCreated.css", "CSS", 0, 0, 56, 0, 0, 0, 0, 0, 0, 0, 0, 7, 63
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/AccountCreated.jsx", "JavaScript JSX", 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 38
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/ActiveUserNav.css", "CSS", 0, 0, 116, 0, 0, 0, 0, 0, 0, 0, 1, 11, 128
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/ActiveUserNav.jsx", "JavaScript JSX", 0, 87, 0, 0, 0, 0, 0, 0, 0, 0, 6, 11, 104
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/BirthPlan.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/BirthPlan.jsx", "JavaScript JSX", 0, 107, 0, 0, 0, 0, 0, 0, 0, 0, 11, 10, 128
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/CreateBoardModal.css", "CSS", 0, 0, 69, 0, 0, 0, 0, 0, 0, 0, 7, 16, 92
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/CreateBoardModal.jsx", "JavaScript JSX", 0, 52, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 55
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/Footer.css", "CSS", 0, 0, 52, 0, 0, 0, 0, 0, 0, 0, 1, 8, 61
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/Footer.jsx", "JavaScript JSX", 0, 44, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 54
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/LoginModal.css", "CSS", 0, 0, 135, 0, 0, 0, 0, 0, 0, 0, 6, 22, 163
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/LoginModal.jsx", "JavaScript JSX", 0, 177, 0, 0, 0, 0, 0, 0, 0, 0, 12, 25, 214
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/NavBar.css", "CSS", 0, 0, 124, 0, 0, 0, 0, 0, 0, 0, 10, 28, 162
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/NavBar.jsx", "JavaScript JSX", 0, 34, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 37
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/Sanctuary.css", "CSS", 0, 0, 176, 0, 0, 0, 0, 0, 0, 0, 10, 34, 220
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/Sanctuary.jsx", "JavaScript JSX", 0, 74, 0, 0, 0, 0, 0, 0, 0, 0, 4, 14, 92
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/SignUpModal.css", "CSS", 0, 0, 115, 0, 0, 0, 0, 0, 0, 0, 4, 20, 139
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/SignUpModal.jsx", "JavaScript JSX", 0, 144, 0, 0, 0, 0, 0, 0, 0, 0, 11, 21, 176
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/SingleBoardDetail.css", "CSS", 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 3, 25
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/SingleBoardDetail.jsx", "JavaScript JSX", 0, 86, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12, 99
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/UserDetails.css", "CSS", 0, 0, 123, 0, 0, 0, 0, 0, 0, 0, 6, 22, 151
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/UserDetails.jsx", "JavaScript JSX", 0, 195, 0, 0, 0, 0, 0, 0, 0, 0, 14, 19, 228
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/main.jsx", "JavaScript JSX", 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3, 14
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/BirthPreparation.css", "CSS", 0, 0, 116, 0, 0, 0, 0, 0, 0, 0, 2, 23, 141
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/BirthPreparation.jsx", "JavaScript JSX", 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 16, 15, 231
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/Homepage.css", "CSS", 0, 0, 254, 0, 0, 0, 0, 0, 0, 0, 12, 49, 315
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/Homepage.jsx", "JavaScript JSX", 0, 112, 0, 0, 0, 0, 0, 0, 0, 0, 14, 17, 143
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/PersonalVisionBoard.css", "CSS", 0, 0, 330, 0, 0, 0, 0, 0, 0, 0, 14, 48, 392
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/PersonalVisionBoard.jsx", "JavaScript JSX", 0, 184, 0, 0, 0, 0, 0, 0, 0, 0, 59, 27, 270
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/VisionBoardDetail.css", "CSS", 0, 0, 223, 0, 0, 0, 0, 0, 0, 0, 11, 34, 268
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/VisionBoardDetail.jsx", "JavaScript JSX", 0, 126, 0, 0, 0, 0, 0, 0, 0, 0, 14, 23, 163
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/VisionBoards.css", "CSS", 0, 0, 114, 0, 0, 0, 0, 0, 0, 0, 3, 19, 136
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/VisionBoards.jsx", "JavaScript JSX", 0, 114, 0, 0, 0, 0, 0, 0, 0, 0, 7, 11, 132
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/services/axiosInstance.js", "JavaScript", 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 8, 39
+"/Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/vite.config.js", "JavaScript", 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 18
+"Total", "-", 75, 1803, 2072, 1, 5031, 12, 38, 14, 13, 8, 290, 643, 10000
