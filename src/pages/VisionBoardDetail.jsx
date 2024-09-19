@@ -97,7 +97,7 @@ const VisionBoardDetail = () => {
     </Breadcrumb>
 
         {/* Iterate over the array to display each vision board content */}
-        <Row className="vision-board-cards">
+        <Row className="vision-board-cards" style={{ paddingLeft: '50px', paddingRight: '50px' }}>
           {visionBoards.map((visionBoard) => {
             // Determine the image source to use
             const imageUrl =

@@ -49,21 +49,22 @@ const Sanctuary = () => {
   };
 
   return (
-    <div className="sanctuary-page">
+    <Container fluid className="vision-board-detail-page"> {/*Inheriting from VisionBoardDetail */}
       <ActiveUserNav />
 
-      <Container fluid className="mt-4">
-        <h2>Your Vision Boards</h2>
+      <Container fluid className="mt-4" style={{ paddingLeft: '30px' }}>
+        <h1 className='board-title-message'>Your Vision Boards</h1>
+        <p className='sanct-message'>This is your personal sanctuary...</p>
         {boards.length === 0 ? (
-          <p>You don't have any boards yet. Start by creating one!</p>
+          <p className='sanct-message'>As you craft your sanctuary, your boards will start to take shape here!</p>
         ) : (
           <Row>
             {boards.map((board) => (
-              <Col key={board.id} md={4} className="mb-4">
+              <Col key={board.id} md={4} className="mb-4" style={{ paddingLeft: '50px' }}>
                 <Card className="vision-board-card" onClick={() => navigateToBoard(board.id)} style={{ cursor: 'pointer' }}>
-                  <Card.Body>
-                    <Card.Title>{board.name}</Card.Title>
-                    <Card.Text>{board.description}</Card.Text>
+                  <Card.Body className='pink-overlay padded-body'>
+                    <Card.Title className='title-card-formatz'>{board.name}</Card.Title>
+                    <Card.Text className='fixed-height-textz'>{board.description}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
@@ -73,7 +74,7 @@ const Sanctuary = () => {
       </Container>
 
       <Footer />
-    </div>
+    </Container>
   );
 };
 

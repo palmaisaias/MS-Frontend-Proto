@@ -25,6 +25,11 @@
     font-weight: bold;
     font-size: 2rem;
     margin-top: 20px;
+    padding-left: 50px;
+  }
+
+  .rec-info {
+    padding-left: 50px;
   }
   
   .all-topics-link {
@@ -32,6 +37,7 @@
     text-decoration: underline;
     margin-bottom: 20px;
     display: block;
+    padding-left: 50px !important;
   }
 
   .fixed-size-img {

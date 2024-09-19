@@ -3,3 +3,13 @@
   width: 415px;
   height: 415px;
 }
+
+.welcome-message-single {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.board-desc-single {
+  margin-top: 0 !important;
+  padding-top: 0;
+}

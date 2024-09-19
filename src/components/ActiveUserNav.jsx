@@ -6,11 +6,14 @@ import {
   faSearch,
   faStickyNote,
   faUserCircle,
+  faFolder,
+  faBook,
 } from "@fortawesome/free-solid-svg-icons";
+import "./ActiveUserNav.css";
 
 const ActiveUserNav = ({ handleNotesClick }) => {
   return (
-    <Navbar expand="lg" className="navbar-custom w-100">
+    <Navbar expand="lg" className="navbar-custom active-user-nav w-100">
       <Container fluid className="px-0">
         {/* Use Link component for client-side navigation*/}
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
@@ -24,7 +27,7 @@ const ActiveUserNav = ({ handleNotesClick }) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto d-flex align-items-center">
+          <Nav className="ms-auto d-flex align-items-center justify-content-between">
             <Nav.Item className="search-bar-container">
               <form className="d-flex" action="#search">
                 <input
@@ -42,10 +45,25 @@ const ActiveUserNav = ({ handleNotesClick }) => {
               onClick={handleNotesClick}
               className="notes-link"
             >
-              <FontAwesomeIcon icon={faStickyNote} />
+              <FontAwesomeIcon
+                icon={faStickyNote}
+                style={{ fontSize: "28px" }}
+              />
             </Nav.Link>
+
+            <Nav.Link as={Link} to="/sanctuary" className="folder-link">
+              <FontAwesomeIcon icon={faFolder} style={{ fontSize: "28px" }} />
+            </Nav.Link>
+
+            <Nav.Link as={Link} to="/vision-boards" className="library-link">
+              <FontAwesomeIcon icon={faBook} style={{ fontSize: "28px" }} />{" "}
+            </Nav.Link>
+
             <Nav.Link href="#profile" className="profile-link">
-              <FontAwesomeIcon icon={faUserCircle} />
+              <FontAwesomeIcon
+                icon={faUserCircle}
+                style={{ fontSize: "28px" }}
+              />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

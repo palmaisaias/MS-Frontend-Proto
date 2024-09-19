@@ -42,9 +42,9 @@ const SingleBoardDetail = () => {
     <div className="vision-board-detail-page">
       <ActiveUserNav />
 
-      <Container fluid className="mt-4">
-        <h2 className='welcome-message'>{board.name}</h2>
-        <p>{board.description}</p>
+      <Container fluid className="mt-4" style={{ paddingLeft: '80px' }}>
+        <h2 className='welcome-message-single'>{board.name}</h2>
+        <p className='board-desc-single'>{board.description}</p>
 
         <Row>
           {content.map((item, index) => (

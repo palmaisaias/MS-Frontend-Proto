@@ -28,7 +28,9 @@
     color: #4823D1;
     font-weight: bold;
     font-size: 2rem;
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    padding-left: 50px;
   }
 
   .all-topics-link a {
@@ -42,7 +44,7 @@
 .vision-board-detail-page {
     background: var(--Gradient, radial-gradient(67.67% 80.23% at 41.04% 35.34%, #FFC2B9 0%, #DFEFB4 47.5%, #FFC2B9 99.04%));
     font-family: 'Lato', sans-serif;
-    padding: 0 !important;
+    padding-left: 0 !important;
     margin: 0;
 }
 
@@ -52,6 +54,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow */
 }
+
 
 .vision-board-card:hover {
     transform: translateY(-10px); /* Raises the card */
@@ -64,6 +67,12 @@
     font-weight: bold;
     font-size: 2rem;
     margin-top: 20px;
+}
+
+.sanct-message {
+  padding-left: 50px;
+  padding-top: 0px !important;
+  padding-bottom: 20px;
 }
 
 /* Link Styling */
@@ -199,7 +208,13 @@
   text-align: right; /* Align content to the right */
 }
 
+.mt-4 {
+  flex: 1; /* This makes the content take the remaining space */
+}
 
+footer {
+  margin-top: auto;
+}
 
 
   

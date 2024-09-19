@@ -156,6 +156,6 @@
 
   .navbar-custom .nav-link {
     font-size: 0.9rem; /* Slightly smaller font size */
-    padding: 8px 10px !important; /* Reduce padding */
+    padding: 8px 10px ; /* Reduce padding */
   }
 }
