@@ -23,35 +23,43 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    // Clear any existing tokens and user information before login
+    localStorage.removeItem("authToken");
+    sessionStorage.removeItem("authToken"); // Optional: if using session storage
+    localStorage.removeItem("userName"); // Clear stored first name
+    localStorage.removeItem("userLastName"); // Clear stored last name
+
+    console.log('Previous auth and name cleared');
+
     try {
       // Send login request to the backend
       console.log("Sending data to backend:", formData);
       const response = await axiosInstance.post("/login", formData, {
         headers: { "Content-Type": "application/json" },
       });
-    
+
       console.log("Login successful:", response.data);
-    
+
       // Store the authToken in localStorage
       const { token, first_name, last_name } = response.data; // Directly access first_name and last_name
       if (token) {
         localStorage.setItem("authToken", token);
         console.log("Token stored successfully:", token);
-    
+
         // Store the user's first and last name in localStorage
         if (first_name) {
           localStorage.setItem("userName", first_name); // Store first name
           console.log("User name stored successfully:", first_name);
         }
-    
+
         if (last_name) {
           localStorage.setItem("userLastName", last_name); // Store last name
           console.log("User last name stored successfully:", last_name);
         }
-    
+
         // Clear any previous error messages
         setErrorMessage("");
-    
+
         // Close the modal and navigate to vision boards
         handleClose();
         onSubmit(); // If we need to add any more actions upon the submittal of the form
@@ -62,7 +70,7 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
       }
     } catch (error) {
       console.error("Error during login:", error);
-    
+
       setErrors({
         email: " ",
         password: " ",

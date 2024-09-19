@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form, CloseButton } from 'react-bootstrap';
-import axios from 'axios'; // Import axios
-import './SignUpModal.css';
 import axiosInstance from '../services/axiosInstance';
+import './SignUpModal.css';
 
 const SignUpModal = ({ show, handleClose, onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -19,32 +18,40 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-  
+
+    // Clear any existing tokens before sign-up
+    localStorage.removeItem('authToken');
+    sessionStorage.removeItem('authToken'); // Optional: if using session storage as well
+    localStorage.removeItem('userName'); // Clear the stored first name
+    localStorage.removeItem('userLastName'); // Clear the stored last name
+
+    console.log('Previous auth and name cleared');
+
     try {
-      // Make the API request using axiosInstance. I set this up to make the recurring necessity for authToken much easier to handle
+      // Make the API request using axiosInstance
       const response = await axiosInstance.post('/register', formData, {
         headers: { 'Content-Type': 'application/json' },
       });
-  
+
       console.log('Signup successful:', response.data);
-  
+
       // Check if token and user information is in the response and store them in localStorage
       const { token, user } = response.data;
       if (token) {
         localStorage.setItem('authToken', token); // Store the token in localStorage
         console.log('Token stored successfully:', token);
-  
+
         // Store user's name in localStorage. We end up using this for the welcome message
         if (user && user.first_name) {
           localStorage.setItem('userName', user.first_name); // Store the user's first name
           console.log('User name stored successfully:', user.first_name);
         }
-  
+
         if (user && user.last_name) {
           localStorage.setItem('userLastName', user.last_name); // Store the user's last name
           console.log('User last name stored successfully:', user.last_name);
         }
-  
+
         handleClose();
         onSubmit();
       } else {
