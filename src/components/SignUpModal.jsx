@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { Modal, Button, Form, CloseButton } from 'react-bootstrap';
-import axiosInstance, {setAxiosInterceptor} from '../services/axiosInstance';
-import './SignUpModal.css';
+import React, { useState } from "react";
+import { Modal, Button, Form, CloseButton } from "react-bootstrap";
+import axiosInstance, { setAxiosInterceptor } from "../services/axiosInstance";
+import "./SignUpModal.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faFilter, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
 
 const SignUpModal = ({ show, handleClose, onSubmit }) => {
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    first_name: '',
-    last_name: ''
+    email: "",
+    password: "",
+    first_name: "",
+    last_name: "",
   });
 
   const handleInputChange = (e) => {
@@ -20,52 +22,58 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
     e.preventDefault();
 
     // Clear any existing tokens before sign-up
-    localStorage.removeItem('authToken');
-    sessionStorage.removeItem('authToken'); // Optional: if using session storage as well
-    localStorage.removeItem('userName'); // Clear the stored first name
-    localStorage.removeItem('userLastName'); // Clear the stored last name
+    localStorage.removeItem("authToken");
+    sessionStorage.removeItem("authToken"); // Optional: if using session storage as well
+    localStorage.removeItem("userName"); // Clear the stored first name
+    localStorage.removeItem("userLastName"); // Clear the stored last name
 
-    console.log('Previous auth and name cleared');
+    console.log("Previous auth and name cleared");
     setAxiosInterceptor();
-    console.log('Interceptor Clear');
+    console.log("Interceptor Clear");
 
     try {
       // Make the API request using axiosInstance
-      const response = await axiosInstance.post('/register', formData, {
-        headers: { 'Content-Type': 'application/json' },
+      const response = await axiosInstance.post("/register", formData, {
+        headers: { "Content-Type": "application/json" },
       });
 
-      console.log('Signup successful:', response.data);
+      console.log("Signup successful:", response.data);
 
       // Check if token and user information is in the response and store them in localStorage
       const { token, user } = response.data;
       if (token) {
-        localStorage.setItem('authToken', token); // Store the token in localStorage
-        console.log('Token stored successfully:', token);
+        localStorage.setItem("authToken", token); // Store the token in localStorage
+        console.log("Token stored successfully:", token);
 
         // Store user's name in localStorage. We end up using this for the welcome message
         if (user && user.first_name) {
-          localStorage.setItem('userName', user.first_name); // Store the user's first name
-          console.log('User name stored successfully:', user.first_name);
+          localStorage.setItem("userName", user.first_name); // Store the user's first name
+          console.log("User name stored successfully:", user.first_name);
         }
 
         if (user && user.last_name) {
-          localStorage.setItem('userLastName', user.last_name); // Store the user's last name
-          console.log('User last name stored successfully:', user.last_name);
+          localStorage.setItem("userLastName", user.last_name); // Store the user's last name
+          console.log("User last name stored successfully:", user.last_name);
         }
 
         handleClose();
         onSubmit();
       } else {
-        console.error('No token received from the server');
+        console.error("No token received from the server");
       }
     } catch (error) {
-      console.error('Error during sign up:', error);
+      console.error("Error during sign up:", error);
     }
   };
 
   return (
-    <Modal show={show} onHide={handleClose} size='lg' centered dialogClassName="custom-modal">
+    <Modal
+      show={show}
+      onHide={handleClose}
+      size="lg"
+      centered
+      dialogClassName="custom-modal"
+    >
       <div className="d-flex custom-modal-content">
         {/* Left Side */}
         <div
@@ -77,35 +85,59 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
             padding: "2rem",
           }}
         >
-          <img className="modal-logo-spacing" src="/ModalLogo.png" alt="Logo" style={{ width: "80%", height: "auto", maxWidth: "100%" }} />
+          <img
+            className="modal-logo-spacing"
+            src="/ModalLogo.png"
+            alt="Logo"
+            style={{ width: "80%", height: "auto", maxWidth: "100%" }}
+          />
           <div className="mt-4">
             <div className="custom-link mb-3">
-              <div className="circle explore-circle"></div>
-              <a href="#link1" className="text-white d-block mb-2">Explore</a>
+              <div className="circle explore-circle d-flex justify-content-center align-items-center">
+                <FontAwesomeIcon icon={faSearch} style={{ color: "#4823d1" }} />
+              </div>
+              <a href="#link1" className="text-white d-block mb-2">
+                Explore
+              </a>
             </div>
             <div className="custom-link mb-3">
-              <div className="circle curate-circle"></div>
-              <a href="#link2" className="text-white d-block mb-2">Curate</a>
+              <div className="circle curate-circle d-flex justify-content-center align-items-center">
+                <FontAwesomeIcon icon={faFilter} style={{ color: "#4823d1" }} />
+              </div>
+              <a href="#link2" className="text-white d-block mb-2">
+                Curate
+              </a>
             </div>
             <div className="custom-link">
-              <div className="circle advocate-circle"></div>
-              <a href="#link3" className="text-white d-block mb-2">Advocate</a>
+              <div className="circle advocate-circle d-flex justify-content-center align-items-center">
+                <FontAwesomeIcon
+                  icon={faHandHoldingHeart}
+                  style={{ color: "#4823d1" }}
+                />
+              </div>
+              <a href="#link3" className="text-white d-block mb-2">
+                Advocate
+              </a>
             </div>
           </div>
         </div>
 
         {/* Right Side */}
-        <div className='signup-modal-right'>
-          <CloseButton aria-label="Close" onClick={handleClose} className="close-button-one" />
+        <div className="signup-modal-right">
+          <CloseButton
+            aria-label="Close"
+            onClick={handleClose}
+            className="close-button-one"
+          />
 
           <Form onSubmit={handleFormSubmit}>
             {/* First Name */}
             <Form.Group className="mb-3" controlId="formFirstName">
               <Form.Label>First Name</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="First Name" 
-                className="custom-form-control" 
+              <Form.Control
+                type="text"
+                placeholder="First Name"
+                className="custom-form-control"
                 name="first_name"
                 value={formData.first_name}
                 onChange={handleInputChange}
@@ -115,10 +147,10 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
             {/* Last Name */}
             <Form.Group className="mb-3" controlId="formLastName">
               <Form.Label>Last Name</Form.Label>
-              <Form.Control 
-                type="text" 
-                placeholder="Last Name" 
-                className="custom-form-control" 
+              <Form.Control
+                type="text"
+                placeholder="Last Name"
+                className="custom-form-control"
                 name="last_name"
                 value={formData.last_name}
                 onChange={handleInputChange}
@@ -128,10 +160,10 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
             {/* Email */}
             <Form.Group className="mb-3" controlId="formEmail">
               <Form.Label>Email Address</Form.Label>
-              <Form.Control 
-                type="email" 
-                placeholder="Email" 
-                className="custom-form-control" 
+              <Form.Control
+                type="email"
+                placeholder="Email"
+                className="custom-form-control"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
@@ -141,10 +173,10 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
             {/* Password */}
             <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control 
-                type="password" 
-                placeholder="Password" 
-                className="custom-form-control" 
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                className="custom-form-control"
                 name="password"
                 value={formData.password}
                 onChange={handleInputChange}
@@ -159,10 +191,17 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
 
             {/* Google and Privacy Terms*/}
             <div className="text-center mt-5">
-            <p style={{ color: 'white' }}>or sign up with</p>
-            <img src="/google-logo.png" alt="Google Sign Up" width="50" height="50" className="mb-3" />
+              <p style={{ color: "white" }}>or sign up with</p>
+              <img
+                src="/google-logo.png"
+                alt="Google Sign Up"
+                width="50"
+                height="50"
+                className="mb-3"
+              />
               <p className="small-text mt-3">
-                By continuing, you accept the <a href="#terms">Terms of Use</a> and <a href="#privacy">Privacy Policy</a>.
+                By continuing, you accept the <a href="#terms">Terms of Use</a>{" "}
+                and <a href="#privacy">Privacy Policy</a>.
               </p>
             </div>
           </Form>
