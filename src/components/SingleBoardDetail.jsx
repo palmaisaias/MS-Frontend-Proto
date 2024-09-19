@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import axiosInstance from '../services/axiosInstance';
-import ActiveUserNav from '../components/ActiveUserNav';
-import Footer from '../components/Footer';
-import './SingleBoardDetail.css'
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import axiosInstance from "../services/axiosInstance";
+import ActiveUserNav from "../components/ActiveUserNav";
+import Footer from "../components/Footer";
+import "./SingleBoardDetail.css";
 
 const SingleBoardDetail = () => {
   const { boardId } = useParams();
@@ -23,7 +23,9 @@ const SingleBoardDetail = () => {
 
     const fetchBoardContent = async () => {
       try {
-        const response = await axiosInstance.get(`/vision-boards/${boardId}/content`);
+        const response = await axiosInstance.get(
+          `/vision-boards/${boardId}/content`
+        );
         setContent(response.data);
       } catch (error) {
         console.error("Error fetching board content:", error);
@@ -42,27 +44,36 @@ const SingleBoardDetail = () => {
     <div className="vision-board-detail-page">
       <ActiveUserNav />
 
-      <Container fluid className="mt-4" style={{ paddingLeft: '80px' }}>
-        <h2 className='welcome-message-single'>{board.name}</h2>
-        <p className='board-desc-single'>{board.description}</p>
+      <Container fluid className="mt-4" style={{ paddingLeft: "80px" }}>
+        <h2 className="welcome-message-single">{board.name}</h2>
+        <p className="board-desc-single">{board.description}</p>
 
         <Row>
           {content.map((item, index) => (
             <Col key={index} md={4} className="mb-4">
               <Card className="vision-board-card">
-              <Card.Img
-                      variant="top"
-                      src={
-                        item.main_image_url && item.main_image_url.trim() !== ''
-                          ? item.main_image_url
-                          : 'https://www.aiseesoft.com/images/tutorial/jpg-to-url/jpg-to-url.jpg'
-                      }
-                      alt={item.title}
-                      className="fixed-size-img-single"
-                    />
+                <Card.Img
+                  variant="top"
+                  src={
+                    item.main_image_url && item.main_image_url.trim() !== ""
+                      ? item.main_image_url
+                      : "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  }
+                  alt={item.title}
+                  className="fixed-size-img-single"
+                  onError={(e) => {
+                    e.target.onerror = null; // Prevent infinite loop if fallback fails
+                    e.target.src =
+                      "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Alternate image URL
+                  }}
+                />
                 <Card.Body>
-                  <Card.Title className='title-card-formatz'>{item.title}</Card.Title>
-                  <Card.Text className='fixed-height-textz'>{item.description}</Card.Text>
+                  <Card.Title className="title-card-formatz">
+                    {item.title}
+                  </Card.Title>
+                  <Card.Text className="fixed-height-textz">
+                    {item.description}
+                  </Card.Text>
                   {/* Add more fields as necessary */}
                 </Card.Body>
               </Card>
@@ -72,7 +83,9 @@ const SingleBoardDetail = () => {
 
         <div className="d-flex justify-content-center mt-4">
           <Link to="/vision-boards">
-            <Button variant="primary" style={{ margin: '20px' }}>Keep Exploring</Button>
+            <Button className="keep-exploring" style={{ margin: "20px" }}>
+              Keep Exploring
+            </Button>
           </Link>
         </div>
       </Container>

@@ -143,15 +143,15 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
             </Form.Group>
 
             <div className="button-container">
-              <Button type="submit" className="custom-button">
+              <Button type="submit" className="sign-up-button">
                 Sign Up
               </Button>
             </div>
 
             {/* Google and Privacy Terms*/}
             <div className="text-center mt-5">
-              <p>or sign up with</p>
-              <img src="/google-logo.png" alt="Google Sign Up" width="50" height="50" className="mb-3" />
+            <p style={{ color: 'white' }}>or sign up with</p>
+            <img src="/google-logo.png" alt="Google Sign Up" width="50" height="50" className="mb-3" />
               <p className="small-text mt-3">
                 By continuing, you accept the <a href="#terms">Terms of Use</a> and <a href="#privacy">Privacy Policy</a>.
               </p>

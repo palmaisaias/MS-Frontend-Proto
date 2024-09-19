@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, CloseButton } from "react-bootstrap";
 import axios from "axios"; //If time allows, come back and replace this with axiosInstance
 import "./UserDetails.css";
 
@@ -109,15 +109,7 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
 
         {/* Right Side */}
         <div className="signup-modal-right">
-
-          <Button
-            variant="light"
-            className="close-button"
-            onClick={handleClose}
-            aria-label="Close"
-          >
-            &times;
-          </Button>
+        <CloseButton aria-label="Close" onClick={handleClose} className="close-button-one" />
 
           <Form onSubmit={handleFormSubmit}>
             {/* Toggle for First Pregnancy */}

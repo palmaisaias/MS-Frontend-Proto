@@ -154,17 +154,17 @@ const PersonalVisionBoard = () => {
                       src={
                         visionBoard.main_image_url && visionBoard.main_image_url.trim() !== ''
                           ? visionBoard.main_image_url
-                          : 'https://www.aiseesoft.com/images/tutorial/jpg-to-url/jpg-to-url.jpg'
+                          : 'https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                       }
                       alt={visionBoard.title}
                       className="fixed-size-imgs"
                     />
                 <Card.Body>
-                  <Card.Title>Great choice!</Card.Title>
+                <Card.Title style={{ fontSize: '25px', fontWeight: 'Bold' }}>Great choice!</Card.Title>
                   <Card.Text>
                     Article added successfully to "{newBoardTitle}"!
                   </Card.Text>
-                  <Button variant="primary" onClick={() => navigateToBoard(newBoardId)}>
+                  <Button className='explore-your-board' onClick={() => navigateToBoard(newBoardId)}>
                     Explore Your Board
                   </Button>
                 </Card.Body>
@@ -239,7 +239,7 @@ const PersonalVisionBoard = () => {
               ))}
               {/* Include a card to create a new board */}
               <Col md={4} className="mb-4">
-                <Card className="text-center create-board-card" onClick={handleShowCreateBoardModal} style={{ cursor: 'pointer' }}>
+                <Card className="text-center newer-board-card" onClick={handleShowCreateBoardModal} style={{ cursor: 'pointer' }}>
                   <Card.Body>
                     <Card.Title>Create a NEW Board</Card.Title>
                     <Card.Text>Click here to make a new board</Card.Text>

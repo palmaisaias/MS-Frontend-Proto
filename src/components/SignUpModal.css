@@ -52,8 +52,8 @@ input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
   filter: invert(1); /* Invert color of date picker icon to match white text */
 }
 
-.custom-button {
-  color: #000000 !important;
+.sign-up-button {
+  color: #242424 !important;
   border-radius: 50px !important; /* Customize the button border-radius separately if needed */
   width: 366px;
   background-color: #fbb3a8 !important;

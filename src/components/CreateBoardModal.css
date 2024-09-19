@@ -40,14 +40,9 @@
   
   /* Button Styling */
   .btn-primary {
-    background-color: #4823D1 !important; /* Primary button color */
     border: none !important;
     padding: 8px 16px !important;
     font-size: 1rem !important;
-  }
-  
-  .btn-primary:hover {
-    background-color: #331B96 !important; /* Hover color for primary button */
   }
   
   .btn-secondary {

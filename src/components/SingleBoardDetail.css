@@ -15,3 +15,11 @@
   margin-top: 0 !important;
   padding-top: 0;
 }
+
+.keep-exploring {
+  border-radius: 25px !important;
+  background-color: #643afd !important;
+  font-size: larger !important;
+  font-family: 'Lato' !important;
+  font-weight: 300 !important;
+}
