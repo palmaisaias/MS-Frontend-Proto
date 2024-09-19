@@ -21,7 +21,9 @@ export const setAxiosInterceptor = () => {
   requestInterceptor = axiosInstance.interceptors.request.use(
     (config) => {
       const token = localStorage.getItem('authToken'); // Retrieve the token
-      if (token) {
+      // Exclude certain endpoints from having the Authorization header
+      const excludedEndpoints = ['/register', '/login'];
+      if (token && !excludedEndpoints.includes(config.url)) {
         config.headers['Authorization'] = `Bearer ${token}`;
       }
       return config;

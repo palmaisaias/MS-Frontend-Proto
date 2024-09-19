@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Modal, Button, Form, CloseButton } from "react-bootstrap";
 import axios from "axios"; //If time allows, come back and replace this with axiosInstance
 import "./UserDetails.css";
+import axiosInstance from "../services/axiosInstance";
 
 const UserDetails = ({ show, handleClose, onSubmit }) => {
   // State for form fields
@@ -15,7 +16,7 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
   // Form submission handler
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+  
     const userDetails = {
       sex,
       pronouns,
@@ -24,22 +25,16 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
       phone,
       can_receive_texts: receiveTexts,
     };
-
+  
     try {
-      // Get the token from localStorage
-      const token = localStorage.getItem("authToken"); // Confirm the key 'authToken'
-      console.log("Retrieved token:", token);
-
-      // Make the POST request to create user details with Authorization header
-      const response = await axios.post("/api/user_details", userDetails, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // Including the token in the header
-        },
-      });
-
+      // Since axiosInstance handles the baseURL and interceptors, you don't need to manually set headers or the token
+      console.log("Submitting user details:", userDetails);
+  
+      // Make the POST request using axiosInstance
+      const response = await axiosInstance.post("/user_details", userDetails);
+  
       console.log("User details saved successfully:", response.data);
-
+  
       handleClose();
       onSubmit();
     } catch (error) {
