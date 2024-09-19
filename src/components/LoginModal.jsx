@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, CloseButton } from "react-bootstrap";
-import axiosInstance from "../services/axiosInstance";
+import axiosInstance, {setAxiosInterceptor} from "../services/axiosInstance";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./LoginModal.css";
 
@@ -30,6 +30,8 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
     localStorage.removeItem("userLastName"); // Clear stored last name
 
     console.log('Previous auth and name cleared');
+    setAxiosInterceptor();
+    console.log('Interceptor Clear');
 
     try {
       // Send login request to the backend

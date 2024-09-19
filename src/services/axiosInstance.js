@@ -10,16 +10,29 @@ const axiosInstance = axios.create({
   baseURL, // Use the determined base URL
 });
 
-// Add a request interceptor to include the auth token if it exists
-axiosInstance.interceptors.request.use(
-  (config) => {
-    const token = localStorage.getItem('authToken'); // Retrieve the token
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`;
-    }
-    return config;
-  },
-  (error) => Promise.reject(error)
-);
+let requestInterceptor; // Variable to store the interceptor ID
+
+// Function to set up or reset the interceptor
+export const setAxiosInterceptor = () => {
+  // Eject the previous interceptor if it exists
+  if (requestInterceptor !== undefined) {
+    axiosInstance.interceptors.request.eject(requestInterceptor);
+  }
+
+  // Add a new request interceptor
+  requestInterceptor = axiosInstance.interceptors.request.use(
+    (config) => {
+      const token = localStorage.getItem('authToken'); // Retrieve the token
+      if (token) {
+        config.headers['Authorization'] = `Bearer ${token}`;
+      }
+      return config;
+    },
+    (error) => Promise.reject(error)
+  );
+};
+
+// Set the interceptor when the axios instance is first created
+setAxiosInterceptor();
 
 export default axiosInstance;
