@@ -175,7 +175,7 @@ const PersonalVisionBoard = () => {
           // User has no existing boards; prompt to create one
           <Row className="justify-content-left">
             <Col md={4}>
-              <Card className="text-center create-board-cardigan" onClick={handleShowCreateBoardModal} style={{ cursor: 'pointer'}}>
+              <Card className="text-center newer-board-card" onClick={handleShowCreateBoardModal} style={{ cursor: 'pointer'}}>
                 <Card.Body>
                   <Card.Title>Start Your Creative Journey</Card.Title>
                   <Card.Text>Tap here to create your very first vision board and begin shaping your ideas.</Card.Text>

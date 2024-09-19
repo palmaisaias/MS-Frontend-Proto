@@ -355,7 +355,7 @@
 
 .newer-board-card:hover::before {
   color: rgba(72, 35, 209, 0.2) !important; /* Slightly faded color on hover */
-  opacity: 0.1; /* Set opacity to full on hover */
+  opacity: 0.5; /* Set opacity to full on hover */
 }
 
 /* Ensure content appears above the plus sign */
@@ -387,5 +387,6 @@
   border-radius: 25px !important;
   font-family: 'Lato' !important;
   background-color: #643AFD !important;
+  font-weight: 300 !important;
 
 }
