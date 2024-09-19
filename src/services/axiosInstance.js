@@ -1,13 +1,11 @@
 // axiosInstance.js
 import axios from 'axios';
 
-// Set the base URL conditionally
-const baseURL = process.env.NODE_ENV === 'production'
-  ? 'https://backend.melanatedsanctuary.com:5000' // Your live backend API URL
-  : '/api'; // Proxy URL for development
+// **Hardcode the base URL to your live backend URL**
+const baseURL = 'https://backend.melanatedsanctuary.com:5000';
 
 const axiosInstance = axios.create({
-  baseURL, // Use the determined base URL
+  baseURL,
 });
 
 let requestInterceptor; // Variable to store the interceptor ID
