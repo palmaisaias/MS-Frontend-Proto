@@ -10,7 +10,6 @@ import CreateBoardModal from '../components/CreateBoardModal';
 const PersonalVisionBoard = () => {
   const location = useLocation();
   const visionBoard = location.state?.visionBoard; // Access the passed vision board data
-  console.log('Passed Vision Board Data From the ADDING TO BOARD button:', visionBoard);
 
   const [boards, setBoards] = useState([]); // State to manage existing boards
   const [newBoardName, setNewBoardName] = useState('');
@@ -29,6 +28,7 @@ const PersonalVisionBoard = () => {
       try {
         // Make an API call to get the current user's details
         const response = await axiosInstance.get('/user_details');
+        console.log('USER DETAIL RESPONSE:', response); // Debugging log
         const userId = response.data.user_id; // Extract the user_id from the response
         setCurrentUserId(userId); // Set the current user ID
         console.log('Fetched User ID:', userId); // Debugging log
@@ -175,7 +175,7 @@ const PersonalVisionBoard = () => {
           // User has no existing boards; prompt to create one
           <Row className="justify-content-left">
             <Col md={4}>
-              <Card className="text-center create-board-card" onClick={handleShowCreateBoardModal} style={{ cursor: 'pointer' }}>
+              <Card className="text-center create-board-cardigan" onClick={handleShowCreateBoardModal} style={{ cursor: 'pointer'}}>
                 <Card.Body>
                   <Card.Title>Start Your Creative Journey</Card.Title>
                   <Card.Text>Tap here to create your very first vision board and begin shaping your ideas.</Card.Text>

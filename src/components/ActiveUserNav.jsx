@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -8,14 +8,33 @@ import {
   faUserCircle,
   faFolder,
   faBook,
+  faSignOutAlt, // Add this for the logout icon
 } from "@fortawesome/free-solid-svg-icons";
 import "./ActiveUserNav.css";
 
 const ActiveUserNav = ({ handleNotesClick }) => {
+  const navigate = useNavigate(); // Initialize navigate
+
+  // Handle logout function
+  const handleLogout = () => {
+    // Log the token and user info before clearing
+    console.log("Clearing auth token:", localStorage.getItem('authToken'));
+    console.log("Clearing user first name:", localStorage.getItem('userName'));
+    console.log("Clearing user last name:", localStorage.getItem('userLastName'));
+  
+    // Clear the token and user from local storage
+    localStorage.removeItem('authToken'); // Remove auth token
+    localStorage.removeItem('userName');  // Remove user's first name
+    localStorage.removeItem('userLastName'); // Remove user's last name
+  
+    // Redirect the user to the login page
+    navigate("/");
+  };
+
   return (
     <Navbar expand="lg" className="navbar-custom active-user-nav w-100">
       <Container fluid className="px-0">
-        {/* Use Link component for client-side navigation*/}
+        {/* Use Link component for client-side navigation */}
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img
             src="/Frame.png"
@@ -64,6 +83,15 @@ const ActiveUserNav = ({ handleNotesClick }) => {
                 icon={faUserCircle}
                 style={{ fontSize: "28px" }}
               />
+            </Nav.Link>
+
+            {/* Add the Logout button */}
+            <Nav.Link onClick={handleLogout} className="logout-link">
+              <FontAwesomeIcon
+                icon={faSignOutAlt} // Logout icon
+                style={{ fontSize: "28px" }}
+              />
+              <span className="ms-2">Logout</span>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

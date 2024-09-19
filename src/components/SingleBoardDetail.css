@@ -7,6 +7,8 @@
 .welcome-message-single {
   padding-left: 0;
   margin-bottom: 0;
+  color: #4823d1 !important;
+  font-weight: bold !important;
 }
 
 .board-desc-single {

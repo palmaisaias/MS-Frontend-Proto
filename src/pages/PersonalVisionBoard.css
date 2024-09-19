@@ -162,7 +162,7 @@
 }
 
 /* CSS for the "Create Board" card */
-.create-board-card {
+.create-board-cardigan {
   position: relative !important; /* Position relative to enable absolute positioning of the plus sign */
   border: 1px solid #4823d1 !important; /* Dashed border to make it stand out */
   background: none;
@@ -176,7 +176,8 @@
   justify-content: center !important; /* Center horizontally */
   overflow: hidden !important; /* Hide overflow for the plus sign */
   z-index: 1;
-  margin-left: 60px;
+  margin-left: 40px;
+  padding-bottom: 15px !important;
 }
 
 .create-board-card::before {

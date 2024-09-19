@@ -29,24 +29,29 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
       const response = await axiosInstance.post("/login", formData, {
         headers: { "Content-Type": "application/json" },
       });
-
+    
       console.log("Login successful:", response.data);
-
+    
       // Store the authToken in localStorage
-      const { token, user } = response.data;
+      const { token, first_name, last_name } = response.data; // Directly access first_name and last_name
       if (token) {
         localStorage.setItem("authToken", token);
         console.log("Token stored successfully:", token);
-
-        // We can store more info here if necessary
-        if (user && user.first_name) {
-          localStorage.setItem("userName", user.first_name);
-          console.log("User name stored successfully:", user.first_name);
+    
+        // Store the user's first and last name in localStorage
+        if (first_name) {
+          localStorage.setItem("userName", first_name); // Store first name
+          console.log("User name stored successfully:", first_name);
         }
-
+    
+        if (last_name) {
+          localStorage.setItem("userLastName", last_name); // Store last name
+          console.log("User last name stored successfully:", last_name);
+        }
+    
         // Clear any previous error messages
         setErrorMessage("");
-
+    
         // Close the modal and navigate to vision boards
         handleClose();
         onSubmit(); // If we need to add any more actions upon the submittal of the form
@@ -57,7 +62,7 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
       }
     } catch (error) {
       console.error("Error during login:", error);
-
+    
       setErrors({
         email: " ",
         password: " ",

@@ -15,15 +15,25 @@ const Sanctuary = () => {
   // Pull user id from the user_details endpoint
   useEffect(() => {
     const fetchCurrentUser = async () => {
+      const authToken = localStorage.getItem("authToken");
+  
+      if (!authToken) {
+        // Redirect to login if no token is found
+        navigate("/login");
+        return;
+      }
+  
       try {
-        const response = await axiosInstance.get('/user_details');
+        // Proceed with the API call if token exists
+        const response = await axiosInstance.get("/user_details");
+        console.log("User details response:", response); // Debugging log
         const userId = response.data.user_id;
         setCurrentUserId(userId);
       } catch (error) {
         console.error("Error fetching current user details:", error);
       }
     };
-
+  
     fetchCurrentUser();
   }, []);
 
