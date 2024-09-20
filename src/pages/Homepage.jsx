@@ -65,12 +65,12 @@ const Homepage = () => {
           >
             <div style={{ paddingLeft: "50px" }}>
               <h1 className="un-link">
-                While Black women are 3x more likely to experience child-birth
-                related complications, up to 85% of them are preventable!
+                Black women are 3x more likely to experience childbirth
+                complications, yet up to 85% are preventable!
               </h1>
               <p className="un-link">
-                Our goal is to equip you to advocate for your maternal health,
-                one resource at a time.
+                Our mission is to equip you to advocate for your maternal
+                health, one resource at a time.
               </p>
               <Button variant="outline-light" className="show-me-btn">
                 Show me

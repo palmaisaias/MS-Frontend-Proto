@@ -184,47 +184,8 @@ const PersonalVisionBoard = () => {
             </Col>
           </Row>
         ) : (
-          // User has existing boards; display them for selection
+          // ----------------------- User has existing boards; display them for selection ------------------------------------
           <>
-            {/* Display the article the user wants to add
-            {visionBoard && (
-            <Row className="vision-board-cards mb-4">
-            <Col md={4} className="mb-4">
-              <Card className="vision-board-card">
-                <Card.Img
-                  variant="top"
-                  src={
-                    visionBoard.main_image_url && visionBoard.main_image_url.trim() !== ''
-                      ? visionBoard.main_image_url
-                      : 'https://www.aiseesoft.com/images/tutorial/jpg-to-url/jpg-to-url.jpg'
-                  }
-                  alt={visionBoard.title}
-                  className="fixed-size-img"
-                />
-                <Card.Body>
-                  <Card.Title className="title-card-format">{visionBoard.title}</Card.Title>
-                  <Card.Text className="fixed-height-text">{visionBoard.description}</Card.Text>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <Button
-                      variant="outline-primary"
-                      size="sm"
-                      onClick={() => window.open(visionBoard.content_url, '_blank')}
-                    >
-                      View More
-                    </Button>
-                    <small className="text-muted">
-                      Published on:{' '}
-                      {visionBoard.published_date
-                        ? new Date(visionBoard.published_date).toLocaleDateString()
-                        : 'N/A'}
-                    </small>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        )} */}
-  
             <h2 className='welcome-message'>Choose a Board to Save This Article:</h2>
             <Row className='g-2'>
               {boards.map((board) => (

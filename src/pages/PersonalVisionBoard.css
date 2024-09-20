@@ -343,16 +343,6 @@
   border-color: #331b96 !important; /* Darken border on hover */
 }
 
-/* Plus sign on hover */
-.newer-board-card::before {
-  content: "+" !important; /* Plus sign content */
-  position: absolute !important; /* Position absolute to center it */
-  font-size: 6rem !important; /* Large font size for the plus sign */
-  color: rgba(72, 35, 209, 0) !important; /* Initial transparent color */
-  transition: color 0.3s ease !important; /* Transition effect for the plus sign */
-  z-index: 4 !important; /* Send it behind the card content */
-}
-
 .newer-board-card:hover::before {
   color: rgba(72, 35, 209, 0.2) !important; /* Slightly faded color on hover */
   opacity: 0.5; /* Set opacity to full on hover */
