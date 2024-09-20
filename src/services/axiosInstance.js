@@ -25,6 +25,7 @@ export const setAxiosInterceptor = () => {
       const excludedEndpoints = ['/register', '/login'];
       if (token && !excludedEndpoints.includes(config.url)) {
         config.headers['Authorization'] = `Bearer ${token}`;
+        console.log('Token being passed:', token);
       }
       return config;
     },

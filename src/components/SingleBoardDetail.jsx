@@ -51,32 +51,38 @@ const SingleBoardDetail = () => {
         <Row>
           {content.map((item, index) => (
             <Col key={index} md={4} className="mb-4">
-              <Card className="vision-board-card">
-                <Card.Img
-                  variant="top"
-                  src={
-                    item.main_image_url && item.main_image_url.trim() !== ""
-                      ? item.main_image_url
-                      : "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                  alt={item.title}
-                  className="fixed-size-img-single"
-                  onError={(e) => {
-                    e.target.onerror = null; // Prevent infinite loop if fallback fails
-                    e.target.src =
-                      "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Alternate image URL
-                  }}
-                />
-                <Card.Body>
-                  <Card.Title className="title-card-formatz">
-                    {item.title}
-                  </Card.Title>
-                  <Card.Text className="fixed-height-textz">
-                    {item.description}
-                  </Card.Text>
-                  {/* Add more fields as necessary */}
-                </Card.Body>
-              </Card>
+              <a
+                href={item.content_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <Card className="vision-board-card">
+                  <Card.Img
+                    variant="top"
+                    src={
+                      item.main_image_url && item.main_image_url.trim() !== ""
+                        ? item.main_image_url
+                        : "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    }
+                    alt={item.title}
+                    className="fixed-size-img-single"
+                    onError={(e) => {
+                      e.target.onerror = null; // Prevent infinite loop if fallback fails
+                      e.target.src =
+                        "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Alternate image URL
+                    }}
+                  />
+                  <Card.Body>
+                    <Card.Title className="title-card-formatz">
+                      {item.title}
+                    </Card.Title>
+                    <Card.Text className="fixed-height-textz">
+                      {item.description}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </a>
             </Col>
           ))}
         </Row>
