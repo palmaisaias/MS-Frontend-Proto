@@ -8,7 +8,8 @@ import {
   faUserCircle,
   faFolder,
   faBook,
-  faSignOutAlt, // Add this for the logout icon
+  faSeedling,
+  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import "./ActiveUserNav.css";
 
@@ -71,7 +72,7 @@ const ActiveUserNav = ({ handleNotesClick }) => {
             </Nav.Link>
 
             <Nav.Link as={Link} to="/sanctuary" className="folder-link">
-              <FontAwesomeIcon icon={faFolder} style={{ fontSize: "28px" }} />
+              <FontAwesomeIcon icon={faSeedling} style={{ fontSize: "28px" }} />
             </Nav.Link>
 
             <Nav.Link as={Link} to="/vision-boards" className="library-link">
