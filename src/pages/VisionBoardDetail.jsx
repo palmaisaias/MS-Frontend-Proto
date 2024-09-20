@@ -44,7 +44,10 @@ const VisionBoardDetail = () => {
         const contentResponse = await axiosInstance.get(
           `/vision-boards/${id}/content`
         );
-        console.log("Fetched vision board content data:", contentResponse.data);
+        console.log(
+          "Fetched vision board content data. Make sure the content_url is here:",
+          contentResponse.data
+        );
         setVisionBoards(contentResponse.data);
 
         // Fetch vision board details (name and description)
@@ -74,9 +77,10 @@ const VisionBoardDetail = () => {
     }); // Navigate with data
   };
 
-  const handleShowModal = (visionBoard, imageUrl) => {
-    setSelectedVisionBoard(visionBoard);
-    setSelectedImageUrl(imageUrl); // Store the image URL being used
+  const handleShowModal = (visionBoard, imageUrl, contentUrl) => {
+    // Set visionBoard with contentUrl directly into selectedVisionBoard state
+    setSelectedVisionBoard({ ...visionBoard, contentUrl });
+    setSelectedImageUrl(imageUrl);
     setShowModal(true);
   };
 
@@ -150,7 +154,14 @@ const VisionBoardDetail = () => {
               <Col key={visionBoard.id} md={4} className="mb-4">
                 <Card
                   className="vision-board-card"
-                  onClick={() => handleShowModal(visionBoard, imageUrl)} // Pass imageUrl to the handler
+                  onClick={
+                    () =>
+                      handleShowModal(
+                        visionBoard,
+                        imageUrl,
+                        visionBoard.content_url
+                      ) // Pass contentUrl
+                  } // Pass imageUrl to the handler
                 >
                   <Card.Img
                     variant="top"
@@ -210,6 +221,18 @@ const VisionBoardDetail = () => {
               {selectedVisionBoard.title}
             </Modal.Title>
             <p className="p-2 colorific">{selectedVisionBoard.description}</p>
+            {selectedVisionBoard.contentUrl && (
+              <div className="content-url-container">
+              <a
+                href={selectedVisionBoard.contentUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 content-url-link"
+              >
+                Take a Closer Look
+              </a>
+              </div>
+            )}
             {/* Add any additional content you wish to display */}
           </Modal.Body>
           <Modal.Footer className="justify-content-start">

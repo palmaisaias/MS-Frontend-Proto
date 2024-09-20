@@ -265,3 +265,25 @@
   color: #242424 !important;
   background-color: #fbb3a8 !important;
 }
+
+.content-url-container {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: flex-end; /* Push the link to the right */
+  margin-top: 20px; /* Add some spacing from the top if needed */
+}
+
+.content-url-link {
+  color: #4823d1;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.content-url-link:hover {
+  color: #643afd;
+  transform: translateY(-2px);
+}
