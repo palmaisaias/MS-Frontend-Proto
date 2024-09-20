@@ -10,6 +10,7 @@ import {
   Nav,
   Modal,
   Breadcrumb,
+  CloseButton,
 } from "react-bootstrap";
 import "./VisionBoardDetail.css";
 import Footer from "../components/Footer"; // Import the reusable Footer component
@@ -202,7 +203,12 @@ const VisionBoardDetail = () => {
           size="lg"
           centered
         >
-          <Modal.Body className="p-0">
+          <Modal.Body className="p-0 position-relative">
+            <CloseButton
+              className="close-buttoneer"
+              onClick={handleCloseModal}
+              aria-label="Close"
+            />
             <img
               src={selectedImageUrl} // Use the selected image URL from state
               alt={selectedVisionBoard.title}
@@ -223,14 +229,14 @@ const VisionBoardDetail = () => {
             <p className="p-2 colorific">{selectedVisionBoard.description}</p>
             {selectedVisionBoard.contentUrl && (
               <div className="content-url-container">
-              <a
-                href={selectedVisionBoard.contentUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 content-url-link"
-              >
-                Take a Closer Look
-              </a>
+                <a
+                  href={selectedVisionBoard.contentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 content-url-link"
+                >
+                  Take a Closer Look
+                </a>
               </div>
             )}
             {/* Add any additional content you wish to display */}
