@@ -7,11 +7,15 @@ import { useNavigate } from "react-router-dom";
 import "./Sanctuary.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import CreateBoardModal from "./CreateBoardModal";
 
 const Sanctuary = () => {
   const [boards, setBoards] = useState([]);
   const [currentUserId, setCurrentUserId] = useState(null);
   const navigate = useNavigate();
+  const [showCreateBoardModal, setShowCreateBoardModal] = useState(false);
+  const [newBoardName, setNewBoardName] = useState("");
+  const [newBoardDescription, setNewBoardDescription] = useState("");
 
   // Pull user id from the user_details endpoint
   useEffect(() => {
@@ -80,6 +84,37 @@ const Sanctuary = () => {
     }
   };
 
+  const handleCreateBoard = async () => {
+    try {
+      // Log the data being passed
+      console.log("Data being passed:", {
+        name: newBoardName,
+        description: newBoardDescription,
+      });
+
+      console.log('Token being passed:', axiosInstance.defaults.headers.common['Authorization']);
+      // Step 1: Create the new board
+      const response = await axiosInstance.post("/vision-boards", {
+        name: newBoardName,
+        description: newBoardDescription,
+      });
+
+      if (response.status === 201) {
+        const newBoard = response.data;
+
+        // Step 2: Update state with the new board
+        setBoards((prevBoards) => [...prevBoards, newBoard]);
+        handleCloseCreateBoardModal();
+      }
+    } catch (error) {
+      console.error("Error creating a new board or adding content:", error);
+      // Handle error cases
+    }
+  };
+
+  const handleShowCreateBoardModal = () => setShowCreateBoardModal(true);
+  const handleCloseCreateBoardModal = () => setShowCreateBoardModal(false);
+
   return (
     <Container fluid className="vision-board-detail-page">
       {" "}
@@ -135,7 +170,7 @@ const Sanctuary = () => {
             >
               <Card
                 className="vision-board-card"
-                // onClick={() => navigateToBoard(board.id)} LOGIC MUST BE DEFINED HERE
+                onClick={handleShowCreateBoardModal}
                 style={{ cursor: "pointer" }}
               >
                 <Card.Body className="newbie-board-card">
@@ -151,6 +186,16 @@ const Sanctuary = () => {
           </Row>
         )}
       </Container>
+
+      <CreateBoardModal
+        show={showCreateBoardModal}
+        handleClose={handleCloseCreateBoardModal}
+        newBoardName={newBoardName}
+        setNewBoardName={setNewBoardName}
+        newBoardDescription={newBoardDescription}
+        setNewBoardDescription={setNewBoardDescription}
+        handleCreateBoard={handleCreateBoard}
+      />
       <Footer />
     </Container>
   );

@@ -198,6 +198,8 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
                 width="50"
                 height="50"
                 className="mb-3"
+                style={{ cursor: 'pointer' }}
+                onClick={() => window.location.href = "https://backend.melanatedsanctuary.com:5000/login/google"}
               />
               <p className="small-text mt-3">
                 By continuing, you accept the <a href="#terms">Terms of Use</a>{" "}

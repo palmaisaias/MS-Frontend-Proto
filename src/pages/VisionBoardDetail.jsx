@@ -73,6 +73,10 @@ const VisionBoardDetail = () => {
 
   const handleAddToBoard = () => {
     setShowModal(false); // Close the modal
+
+    // Log the data being navigated with
+    console.log("Navigating with data:", { visionBoard: selectedVisionBoard });
+
     navigate("/personal-vision-board", {
       state: { visionBoard: selectedVisionBoard },
     }); // Navigate with data
@@ -80,7 +84,11 @@ const VisionBoardDetail = () => {
 
   const handleShowModal = (visionBoard, imageUrl, contentUrl) => {
     // Set visionBoard with contentUrl directly into selectedVisionBoard state
-    setSelectedVisionBoard({ ...visionBoard, contentUrl });
+    setSelectedVisionBoard({
+      ...visionBoard,
+      contentUrl,
+      main_image_url: imageUrl,
+    });
     setSelectedImageUrl(imageUrl);
     setShowModal(true);
   };
@@ -105,7 +113,6 @@ const VisionBoardDetail = () => {
   };
 
   const placeholderImages = [
-    "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://www.parents.com/thmb/4kfYp_tcQH3vCpetvtT8VN1LGjo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1168925316-2000-63530182baee40cd8234c2a76019d833.jpg",
     "https://kffhealthnews.org/wp-content/uploads/sites/2/2023/12/OLaysha_Davis004.jpg",
     "https://s3-prod.crainsnewyork.com/s3fs-public/CN_20220411p19_pregnant%20black%20woman_iStock_i.jpg",
@@ -146,10 +153,12 @@ const VisionBoardDetail = () => {
           {visionBoards.map((visionBoard, index) => {
             // Determine the image source to use
             const imageUrl =
-              visionBoard.main_image_url &&
-              visionBoard.main_image_url.trim() !== ""
-                ? visionBoard.main_image_url
-                : placeholderImages[index % placeholderImages.length];
+            visionBoard.main_image_url &&
+            visionBoard.main_image_url.trim() !== ""
+              ? visionBoard.main_image_url
+              : index === 0
+              ? "https://vakids.org/wp-content/uploads/2022/02/Untitled-design-2.jpg" // Replace with your specific default image URL
+              : placeholderImages[index % placeholderImages.length];
 
             return (
               <Col key={visionBoard.id} md={4} className="mb-4">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
 import "./PersonalVisionBoard.css";
-import Footer from "../components/Footer"; // Import the reusable Footer component
+import Footer from "../components/Footer";
 import ActiveUserNav from "../components/ActiveUserNav";
 import axiosInstance from "../services/axiosInstance";
 import CreateBoardModal from "../components/CreateBoardModal";
@@ -10,6 +10,7 @@ import CreateBoardModal from "../components/CreateBoardModal";
 const PersonalVisionBoard = () => {
   const location = useLocation();
   const visionBoard = location.state?.visionBoard; // Access the passed vision board data
+  const imageUrl = visionBoard?.main_image_url;
 
   const [boards, setBoards] = useState([]); // State to manage existing boards
   const [newBoardName, setNewBoardName] = useState("");
@@ -85,7 +86,10 @@ const PersonalVisionBoard = () => {
         description: newBoardDescription,
       });
 
-      console.log('Token being passed:', axiosInstance.defaults.headers.common['Authorization']);
+      console.log(
+        "Token being passed:",
+        axiosInstance.defaults.headers.common["Authorization"]
+      );
       // Step 1: Create the new board
       const response = await axiosInstance.post("/vision-boards", {
         name: newBoardName,
@@ -105,11 +109,15 @@ const PersonalVisionBoard = () => {
             {
               content_url: visionBoard.content_url,
               content_type: visionBoard.content_type,
+              main_image_url: imageUrl,
             }
           );
 
           if (contentResponse.status === 201) {
-            console.log("Content added successfully:", contentResponse.data);
+            console.log(
+              "Content added successfully onto NEW board:",
+              contentResponse.data
+            );
             setShowCreateBoardModal(false);
             setIsArticleAdded(true);
           }
@@ -126,6 +134,12 @@ const PersonalVisionBoard = () => {
 
   const handleBoardSelection = async (boardId) => {
     try {
+      // Log the data being sent to the backend
+      console.log("Data being sent to /vision-boards/content:", {
+        content_url: visionBoard.content_url,
+        content_type: visionBoard.content_type,
+        main_image_url: visionBoard.main_image_url,
+      });
       const contentResponse = await axiosInstance.post(
         `/vision-boards/${boardId}/content`,
         {
@@ -135,7 +149,10 @@ const PersonalVisionBoard = () => {
       );
 
       if (contentResponse.status === 201) {
-        console.log("Content added successfully:", contentResponse.data);
+        console.log(
+          "Content added successfully onto EXISTING board:",
+          contentResponse.data
+        );
         setIsArticleAdded(true);
         setNewBoardId(boardId); // Store the selected boardId in state
         const selectedBoard = boards.find((board) => board.id === boardId);
@@ -147,9 +164,16 @@ const PersonalVisionBoard = () => {
     }
   };
 
-  const navigateToBoard = (boardId) => {
-    console.log("Navigating to board with id:", boardId); // Debugging
-    navigate(`/vision-board/${boardId}`, { state: { boardId } });
+  const navigateToBoard = (boardId, visionBoard) => {
+    console.log("Navigating to board with data:", {
+      boardId,
+      main_image_url: imageUrl, // Log to ensure it's included
+    });
+
+    // Navigate and pass the entire visionBoard object or necessary properties
+    navigate(`/vision-board/${boardId}`, {
+      state: { visionBoard }, // Passing the full visionBoard with the image URL
+    });
   };
 
   const handleShowCreateBoardModal = () => setShowCreateBoardModal(true);
@@ -187,7 +211,8 @@ const PersonalVisionBoard = () => {
                   </Card.Text>
                   <Button
                     className="explore-your-board"
-                    onClick={() => navigateToBoard(newBoardId)}
+                    onClick={() => navigateToBoard(newBoardId, visionBoard)}
+                    // Pass both newBoardId and selectedVisionBoard
                   >
                     Explore Your Board
                   </Button>

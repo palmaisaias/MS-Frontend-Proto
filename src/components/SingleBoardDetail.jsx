@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import axiosInstance from "../services/axiosInstance";
 import ActiveUserNav from "../components/ActiveUserNav";
@@ -10,29 +10,49 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const SingleBoardDetail = () => {
   const { boardId } = useParams();
+  const location = useLocation(); // Use useLocation to access passed state
+  const visionBoard = location.state?.visionBoard; // Access visionBoard data
   const [board, setBoard] = useState(null);
   const [content, setContent] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMoreContent, setHasMoreContent] = useState(true);
 
+  const mainImageUrl = visionBoard?.main_image_url || "https://images.unsplash.com/photo-1608039649006-df579ad70c64?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJhYnklMjBmZWV0fGVufDB8fDB8fHww"; // Use a fallback if needed
+
   useEffect(() => {
     const fetchBoardDetails = async () => {
       try {
+        // Make the GET request to fetch board details
         const response = await axiosInstance.get(`/vision-boards/${boardId}`);
+  
+        // Log the received data to inspect what is being returned from the API
+        console.log("Received board details data:", response.data);
+  
+        // Set the received data to state
         setBoard(response.data);
       } catch (error) {
-        console.error("Error fetching board details:", error);
+        // Log the error to understand what went wrong
+        console.error("Error fetching board details in Sanctuary:", error);
       }
     };
 
     const fetchBoardContent = async (page) => {
       try {
+        // Make the GET request to fetch board content
         const response = await axiosInstance.get(
           `/vision-boards/${boardId}/content?page=${page}&limit=10`
         );
-        setContent(response.data); // Reset content with new items
-        setHasMoreContent(response.data.length === 10); // Check if more content is available
+    
+        // Log the received data to inspect what is being returned from the API
+        console.log("Received board content data inside the SANCT:", response.data);
+    
+        // Reset content with new items
+        setContent(response.data);
+    
+        // Check if more content is available
+        setHasMoreContent(response.data.length === 10);
       } catch (error) {
+        // Log the error to understand what went wrong
         console.error("Error fetching board content:", error);
       }
     };
@@ -78,7 +98,7 @@ const SingleBoardDetail = () => {
 
       <Container fluid className="mt-4" style={{ paddingLeft: "80px" }}>
         <Link to="/sanctuary" className="sanctuary-return-link">
-        ← Back To Your Sanctuary
+          ← Back To Your Sanctuary
         </Link>
         <h2 className="welcome-message-single">{board.name}</h2>
         <p className="board-desc-single">{board.description}</p>
@@ -93,6 +113,7 @@ const SingleBoardDetail = () => {
                   rel="noopener noreferrer"
                   style={{ textDecoration: "none" }}
                 >
+                  {console.log("Image URL being used:", item.main_image_url)}
                   <Card.Img
                     variant="top"
                     src={
@@ -103,7 +124,8 @@ const SingleBoardDetail = () => {
                     alt={item.title}
                     className="fixed-size-img-single"
                     onError={(e) => {
-                      e.target.onerror = null;
+                      e.target.onerror = null; // Prevent loop in case of broken fallback URL
+                      console.log("Error loading image, fallback triggered."); // Log error
                       e.target.src =
                         "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
                     }}
