@@ -92,7 +92,7 @@ const Homepage = () => {
               <iframe
                 width="730"
                 height="480"
-                src="https://www.youtube.com/embed/eGCs9b90IaQ?si=FJxl7UeK3C-fbZnG&amp;controls=0&autoplay=1&controls=1&rel=0&mute=1&cc_load_policy=1"
+                src="https://www.youtube.com/embed/eGCs9b90IaQ?si=FJxl7UeK3C-fbZnG&amp;controls=1&autoplay=1&controls=1&mute=1&rel=0&cc_load_policy=1"
                 title="YouTube video player"
                 style={{ border: "none", display: "block" }}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
