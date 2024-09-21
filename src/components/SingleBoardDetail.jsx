@@ -12,6 +12,8 @@ const SingleBoardDetail = () => {
   const { boardId } = useParams();
   const [board, setBoard] = useState(null);
   const [content, setContent] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [hasMoreContent, setHasMoreContent] = useState(true);
 
   useEffect(() => {
     const fetchBoardDetails = async () => {
@@ -23,20 +25,21 @@ const SingleBoardDetail = () => {
       }
     };
 
-    const fetchBoardContent = async () => {
+    const fetchBoardContent = async (page) => {
       try {
         const response = await axiosInstance.get(
-          `/vision-boards/${boardId}/content`
+          `/vision-boards/${boardId}/content?page=${page}&limit=10`
         );
-        setContent(response.data);
+        setContent(response.data); // Reset content with new items
+        setHasMoreContent(response.data.length === 10); // Check if more content is available
       } catch (error) {
         console.error("Error fetching board content:", error);
       }
     };
 
     fetchBoardDetails();
-    fetchBoardContent();
-  }, [boardId]);
+    fetchBoardContent(currentPage);
+  }, [boardId, currentPage]);
 
   if (!board) {
     return <p>Loading...</p>;
@@ -50,7 +53,6 @@ const SingleBoardDetail = () => {
 
     try {
       await axiosInstance.delete(`/vision-boards/content/${contentItemId}`);
-      // Update the content state to reflect the deleted item
       setContent((prevContent) =>
         prevContent.filter((item) => item.id !== contentItemId)
       );
@@ -60,11 +62,24 @@ const SingleBoardDetail = () => {
     }
   };
 
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
+  };
+
   return (
     <div className="vision-board-detail-page">
       <ActiveUserNav />
 
       <Container fluid className="mt-4" style={{ paddingLeft: "80px" }}>
+        <Link to="/sanctuary" className="sanctuary-return-link">
+        ← Back To Your Sanctuary
+        </Link>
         <h2 className="welcome-message-single">{board.name}</h2>
         <p className="board-desc-single">{board.description}</p>
 
@@ -88,9 +103,9 @@ const SingleBoardDetail = () => {
                     alt={item.title}
                     className="fixed-size-img-single"
                     onError={(e) => {
-                      e.target.onerror = null; // Prevent infinite loop if fallback fails
+                      e.target.onerror = null;
                       e.target.src =
-                        "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Alternate image URL
+                        "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
                     }}
                   />
                 </a>
@@ -101,8 +116,8 @@ const SingleBoardDetail = () => {
                     aria-label="Delete Content"
                     title="Delete Content"
                     onClick={(e) => {
-                      e.stopPropagation(); // Prevent the anchor's click behavior
-                      handleDeleteContent(item.id); // Ensure correct deletion function is called
+                      e.stopPropagation();
+                      handleDeleteContent(item.id);
                     }}
                   />
                   <Card.Title className="title-card-formatz">
@@ -118,11 +133,23 @@ const SingleBoardDetail = () => {
         </Row>
 
         <div className="d-flex justify-content-center mt-4">
-          <Link to="/vision-boards">
-            <Button className="keep-exploring" style={{ margin: "20px" }}>
-              Keep Exploring
+          <Button
+            onClick={handlePreviousPage}
+            className="keep-exploring"
+            style={{ margin: "20px" }}
+            disabled={currentPage === 1} // Disable on the first page
+          >
+            ← Previous Page
+          </Button>
+          {hasMoreContent && (
+            <Button
+              onClick={handleNextPage}
+              className="keep-exploring"
+              style={{ margin: "20px" }}
+            >
+              Next Page →
             </Button>
-          </Link>
+          )}
         </div>
       </Container>
 
