@@ -1,0 +1,82 @@
+Date : 2024-09-20 20:10:05
+Directory : /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app
+Total : 36 files,  5751 codes, -15 comments, 64 blanks, all 5800 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          9 |      5,031 |          0 |          2 |      5,033 |
+| JavaScript JSX |         11 |        438 |        -28 |          1 |        411 |
+| CSS            |          6 |        145 |          3 |         18 |        166 |
+| JavaScript     |          3 |         52 |          2 |          4 |         58 |
+| Markdown       |          3 |         38 |          0 |         28 |         66 |
+| TypeScript     |          1 |         14 |          0 |          0 |         14 |
+| HTML           |          1 |         13 |          0 |          1 |         14 |
+| YAML           |          1 |         12 |          0 |          2 |         14 |
+| Docker         |          1 |          8 |          8 |          8 |         24 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                   |         36 |      5,751 |        -15 |         64 |      5,800 |
+| . (Files)                                                                                                                           |          8 |      4,747 |         10 |         39 |      4,796 |
+| amplify                                                                                                                             |         10 |        420 |          0 |          6 |        426 |
+| amplify (Files)                                                                                                                     |          3 |         91 |          0 |          2 |         93 |
+| amplify/.config                                                                                                                     |          1 |         17 |          0 |          0 |         17 |
+| amplify/backend                                                                                                                     |          5 |        308 |          0 |          0 |        308 |
+| amplify/backend (Files)                                                                                                             |          2 |         18 |          0 |          0 |         18 |
+| amplify/backend/hosting                                                                                                             |          2 |        276 |          0 |          0 |        276 |
+| amplify/backend/hosting/S3AndCloudFront                                                                                             |          2 |        276 |          0 |          0 |        276 |
+| amplify/backend/types                                                                                                               |          1 |         14 |          0 |          0 |         14 |
+| amplify/hooks                                                                                                                       |          1 |          4 |          0 |          4 |          8 |
+| src                                                                                                                                 |         18 |        584 |        -25 |         19 |        578 |
+| src/components                                                                                                                      |         11 |        355 |          7 |         21 |        383 |
+| src/pages                                                                                                                           |          6 |        228 |        -32 |         -2 |        194 |
+| src/services                                                                                                                        |          1 |          1 |          0 |          0 |          1 |
++-------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                                            | language       | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/Dockerfile                                                 | Docker         |          8 |          8 |          8 |         24 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/README.md                                                  | Markdown       |         27 |          0 |         22 |         49 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/.config/project-config.json                        | JSON           |         17 |          0 |          0 |         17 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/README.md                                          | Markdown       |          7 |          0 |          2 |          9 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/backend-config.json                        | JSON           |          8 |          0 |          0 |          8 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/hosting/S3AndCloudFront/parameters.json    | JSON           |          3 |          0 |          0 |          3 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/hosting/S3AndCloudFront/template.json      | JSON           |        273 |          0 |          0 |        273 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/tags.json                                  | JSON           |         10 |          0 |          0 |         10 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/backend/types/amplify-dependent-resources-ref.d.ts | TypeScript     |         14 |          0 |          0 |         14 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/cli.json                                           | JSON           |         64 |          0 |          0 |         64 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/hooks/README.md                                    | Markdown       |          4 |          0 |          4 |          8 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/amplify/team-provider-info.json                            | JSON           |         20 |          0 |          0 |         20 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/docker-compose.yml                                         | YAML           |         12 |          0 |          2 |         14 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/eslint.config.js                                           | JavaScript     |         37 |          0 |          2 |         39 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/index.html                                                 | HTML           |         13 |          0 |          1 |         14 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/package-lock.json                                          | JSON           |      4,597 |          0 |          1 |      4,598 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/package.json                                               | JSON           |         39 |          0 |          1 |         40 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/CreateBoardModal.jsx                        | JavaScript JSX |          7 |          0 |          1 |          8 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/Footer.jsx                                  | JavaScript JSX |          6 |          0 |         -1 |          5 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/LoginModal.jsx                              | JavaScript JSX |         15 |          0 |          0 |         15 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/NotepadModal.css                            | CSS            |         70 |          2 |         11 |         83 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/NotepadModal.jsx                            | JavaScript JSX |         29 |          2 |          3 |         34 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/Sanctuary.css                               | CSS            |         47 |          2 |          3 |         52 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/Sanctuary.jsx                               | JavaScript JSX |         67 |          2 |         -1 |         68 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/SignUpModal.jsx                             | JavaScript JSX |         39 |          0 |          0 |         39 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/SingleBoardDetail.css                       | CSS            |          4 |          0 |          1 |          5 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/SingleBoardDetail.jsx                       | JavaScript JSX |         60 |         -1 |          4 |         63 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/components/UserDetails.jsx                             | JavaScript JSX |         11 |          0 |          0 |         11 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/Homepage.css                                     | CSS            |          5 |          0 |          1 |          6 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/Homepage.jsx                                     | JavaScript JSX |         48 |          0 |          0 |         48 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/PersonalVisionBoard.css                          | CSS            |         -8 |         -1 |         -1 |        -10 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/PersonalVisionBoard.jsx                          | JavaScript JSX |         41 |        -37 |         -2 |          2 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/VisionBoardDetail.css                            | CSS            |         27 |          0 |          3 |         30 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/pages/VisionBoardDetail.jsx                            | JavaScript JSX |        115 |          6 |         -3 |        118 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/src/services/axiosInstance.js                              | JavaScript     |          1 |          0 |          0 |          1 |
+| /Users/isaiaspalma/Documents/Professional/Work/CoLab/mvp-demo/my-mvp-app/vite.config.js                                             | JavaScript     |         14 |          2 |          2 |         18 |
+| Total                                                                                                                               |                |      5,751 |        -15 |         64 |      5,800 |
++-------------------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
