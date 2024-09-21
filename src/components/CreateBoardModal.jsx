@@ -2,6 +2,14 @@ import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./CreateBoardModal.css";
 
+const toTitleCase = (str) => {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
+
 const CreateBoardModal = ({
   show,
   handleClose,
@@ -27,7 +35,7 @@ const CreateBoardModal = ({
           type="text"
           placeholder="Give your board a meaningful title"
           value={newBoardName}
-          onChange={(e) => setNewBoardName(e.target.value)}
+          onChange={(e) => setNewBoardName(toTitleCase(e.target.value))}
           className="form-control mb-3"
         />
         <textarea

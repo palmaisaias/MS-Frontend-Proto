@@ -3,6 +3,8 @@ import { Modal, Button, Form, CloseButton } from "react-bootstrap";
 import axios from "axios"; //If time allows, come back and replace this with axiosInstance
 import "./UserDetails.css";
 import axiosInstance from "../services/axiosInstance";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faFilter, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
 
 const UserDetails = ({ show, handleClose, onSubmit }) => {
   // State for form fields
@@ -82,19 +84,28 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
           <div className="mt-4">
             {/* Links. These need icons on top of them. */}
             <div className="custom-link mb-3">
-              <div className="circle explore-circle"></div>
+            <div className="circle explore-circle d-flex justify-content-center align-items-center">
+                <FontAwesomeIcon icon={faSearch} style={{ color: "#4823d1" }} />
+              </div>
               <a href="#link1" className="text-white d-block mb-2">
                 Explore
               </a>
             </div>
             <div className="custom-link mb-3">
-              <div className="circle curate-circle"></div>
+            <div className="circle curate-circle d-flex justify-content-center align-items-center">
+                <FontAwesomeIcon icon={faFilter} style={{ color: "#4823d1" }} />
+              </div>
               <a href="#link2" className="text-white d-block mb-2">
                 Curate
               </a>
             </div>
             <div className="custom-link">
-              <div className="circle advocate-circle"></div>
+            <div className="circle advocate-circle d-flex justify-content-center align-items-center">
+                <FontAwesomeIcon
+                  icon={faHandHoldingHeart}
+                  style={{ color: "#4823d1" }}
+                />
+              </div>
               <a href="#link3" className="text-white d-block mb-2">
                 Advocate
               </a>

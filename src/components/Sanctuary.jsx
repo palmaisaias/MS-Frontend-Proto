@@ -64,12 +64,16 @@ const Sanctuary = () => {
   };
 
   const handleDelete = async (boardId) => {
-    const confirmDelete = window.confirm("Are you sure you want to delete this board?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this board?"
+    );
     if (!confirmDelete) return;
 
     try {
       await axiosInstance.delete(`/users/vision-boards/${boardId}`);
-      setBoards((prevBoards) => prevBoards.filter((board) => board.id !== boardId));
+      setBoards((prevBoards) =>
+        prevBoards.filter((board) => board.id !== boardId)
+      );
     } catch (error) {
       console.error("Error deleting the board:", error);
       alert("Failed to delete the board. Please try again.");
@@ -124,6 +128,26 @@ const Sanctuary = () => {
                 </Card>
               </Col>
             ))}
+            <Col
+              md={4}
+              className="mb-4"
+              style={{ paddingLeft: "50px", paddingRight: "50px" }}
+            >
+              <Card
+                className="vision-board-card"
+                // onClick={() => navigateToBoard(board.id)} LOGIC MUST BE DEFINED HERE
+                style={{ cursor: "pointer" }}
+              >
+                <Card.Body className="newbie-board-card">
+                  <Card.Title>
+                    Create NEW Board
+                  </Card.Title>
+                  <Card.Text>
+                    Click Here to Make a New Board
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
           </Row>
         )}
       </Container>

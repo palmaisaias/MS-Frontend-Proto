@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./ActiveUserNav.css";
 
-const ActiveUserNav = ({ handleNotesClick }) => {
+const ActiveUserNav = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   // Handle logout function
@@ -62,7 +62,6 @@ const ActiveUserNav = ({ handleNotesClick }) => {
             </Nav.Item>
             <Nav.Link
               href="#notes"
-              onClick={handleNotesClick}
               className="notes-link"
             >
               <FontAwesomeIcon
