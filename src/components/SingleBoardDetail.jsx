@@ -5,6 +5,8 @@ import axiosInstance from "../services/axiosInstance";
 import ActiveUserNav from "../components/ActiveUserNav";
 import Footer from "../components/Footer";
 import "./SingleBoardDetail.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const SingleBoardDetail = () => {
   const { boardId } = useParams();
@@ -40,6 +42,24 @@ const SingleBoardDetail = () => {
     return <p>Loading...</p>;
   }
 
+  const handleDeleteContent = async (contentItemId) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this content item?"
+    );
+    if (!confirmDelete) return;
+
+    try {
+      await axiosInstance.delete(`/vision-boards/content/${contentItemId}`);
+      // Update the content state to reflect the deleted item
+      setContent((prevContent) =>
+        prevContent.filter((item) => item.id !== contentItemId)
+      );
+    } catch (error) {
+      console.error("Error deleting the content item:", error);
+      alert("Failed to delete the content item. Please try again.");
+    }
+  };
+
   return (
     <div className="vision-board-detail-page">
       <ActiveUserNav />
@@ -51,13 +71,13 @@ const SingleBoardDetail = () => {
         <Row>
           {content.map((item, index) => (
             <Col key={index} md={4} className="mb-4">
-              <a
-                href={item.content_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ textDecoration: "none" }}
-              >
-                <Card className="vision-board-card">
+              <Card className="vision-board-card">
+                <a
+                  href={item.content_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
                   <Card.Img
                     variant="top"
                     src={
@@ -73,16 +93,26 @@ const SingleBoardDetail = () => {
                         "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"; // Alternate image URL
                     }}
                   />
-                  <Card.Body>
-                    <Card.Title className="title-card-formatz">
-                      {item.title}
-                    </Card.Title>
-                    <Card.Text className="fixed-height-textz">
-                      {item.description}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </a>
+                </a>
+                <Card.Body>
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    className="delete-icon"
+                    aria-label="Delete Content"
+                    title="Delete Content"
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent the anchor's click behavior
+                      handleDeleteContent(item.id); // Ensure correct deletion function is called
+                    }}
+                  />
+                  <Card.Title className="title-card-formatz">
+                    {item.title}
+                  </Card.Title>
+                  <Card.Text className="fixed-height-textz">
+                    {item.description}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
             </Col>
           ))}
         </Row>
