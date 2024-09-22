@@ -329,6 +329,12 @@ body, html {
     text-align: left !important;
     padding-left: 20px;
   }
+
+  .with-style p {
+    font-size: 26px !important;
+    font-weight: 300 !important;
+  }
+
 }
 
 @media (max-width: 1366px) {
