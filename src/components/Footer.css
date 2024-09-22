@@ -58,3 +58,74 @@
   margin-bottom: 20px;
   height: 44px;
 }
+/* ========================================================= */
+/*==================== MOBILE ==============================*/
+
+@media (max-width: 480px) {
+  .footer-section {
+    background-color: #643afd !important;
+    padding: 10px 15px; /* Adjust padding to create space on mobile */
+    font-family: "Lato", sans-serif;
+    max-height: auto !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    text-align: center; /* Center align for a cleaner look on small screens */
+  }
+
+  .footer-section h5 {
+    margin-bottom: 10px; /* Reduce margin for better spacing */
+    font-weight: bold;
+    font-size: 28px; /* Decrease font size to fit smaller screens */
+    font-family: "Lato", sans-serif;
+    color: #fbb3a8;
+    margin-left: 0; /* Align text properly */
+  }
+
+  .footer-section .section-links {
+    padding-left: 20px !important; /* Reduced padding for smaller screens */
+    padding-right: 20px !important;
+  }
+
+  .footer-linking {
+    font-weight: 600;
+    color: #f0edfa !important;
+    font-size: 1rem !important; /* Adjust font size for readability */
+  }
+
+  .footer-section .form-control {
+    max-width: 100%; /* Ensure the form control fits the screen */
+    min-width: auto;
+    min-height: 40px;
+    background-color: #643afd;
+    border: 2px solid transparent;
+    color: #fff;
+    border-radius: 25px; /* Slightly reduce border radius */
+    font-style: italic;
+    font-weight: 400 !important;
+    margin: 10px auto; /* Center form on mobile screens */
+  }
+
+  .bottom-form-pad {
+    padding-left: 10px; /* Adjust for more balanced padding */
+    padding-right: 10px;
+  }
+
+  .footer-section .form-control::placeholder {
+    color: #fdf7e7;
+    font-size: 16px; /* Smaller placeholder text for better fit */
+  }
+
+  .footer-section .btn-light {
+    background-color: #fbb3a8;
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    width: 80%; /* Make button width responsive */
+    margin: 10px auto; /* Center the button on mobile */
+    height: 40px;
+  }
+
+  .limitless-position {
+    position: relative;
+  }
+}

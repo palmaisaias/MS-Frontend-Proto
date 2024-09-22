@@ -81,7 +81,7 @@ const Homepage = () => {
             md={8}
             className="px-0 d-flex justify-content-center align-items-center"
           >
-            <div
+            <div className="vid-box"
               style={{
                 border: "5px solid #ccc",
                 borderRadius: "15px",
@@ -89,7 +89,7 @@ const Homepage = () => {
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <iframe
+              <iframe className="youtube-vid"
                 width="730"
                 height="480"
                 src="https://www.youtube.com/embed/eGCs9b90IaQ?si=FJxl7UeK3C-fbZnG&amp;controls=1&autoplay=1&controls=1&mute=1&rel=0&cc_load_policy=1"

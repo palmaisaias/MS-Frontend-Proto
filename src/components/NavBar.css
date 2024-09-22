@@ -7,7 +7,7 @@
   padding: 0 !important; /* Ensure no additional padding */
   margin: 0 !important; /* Ensure no additional margin */
   width: 100% !important; /* Ensure the navbar spans the full width */
-  height: 170px !important;
+  min-height: 170px !important;
 }
 
 .logo-image {
@@ -83,7 +83,7 @@
 /* Tablet Devices (max-width: 1024px) */
 @media (max-width: 1024px) {
   .navbar-custom {
-    height: 150px !important; /* Reduce height */
+    height: auto !important; /* Reduce height */
   }
 
   .logo-image {
@@ -129,6 +129,43 @@
     height: 100px !important; /* Smaller logo height */
     width: 250px !important; /* Adjust width */
     margin-left: 0 !important; /* Center the logo */
+  }
+}
+
+/* For screens 430px width */
+@media (max-width: 430px) {
+  .navbar-custom {
+    height: auto; /* Allow dynamic height */
+    padding: 5px 0; /* Reduce vertical padding */
+  }
+
+  .navbar-custom .navbar-nav {
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center-align links */
+    margin-right: 0 !important; /* Remove right margin */
+    margin-top: 5px; /* Reduce top margin */
+  }
+
+  .navbar-custom .nav-item {
+    margin: 5px 0; /* Reduce spacing between items */
+  }
+
+  .nav-link-signup {
+    display: block; /* Make the sign-up button full-width */
+    width: 50% !important; /* Almost full-width */
+    margin: 5px auto; /* Center-align */
+  }
+
+  .logo-image {
+    height: 80px !important; /* Smaller logo height */
+    width: 200px !important; /* Adjust width */
+    margin: 20 auto !important; /* Center the logo */
+    padding: 5px !important;
+  }
+
+  .navbar-custom .nav-link {
+    font-size: 0.9rem; /* Slightly smaller font size */
+    padding: 8px 10px; /* Reduce padding */
   }
 }
 

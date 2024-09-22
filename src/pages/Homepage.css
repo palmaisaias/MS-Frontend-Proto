@@ -113,7 +113,7 @@ body, html {
 
 .section-2 .section-text {
   text-align: left !important;
-  padding-left: 100px;
+  padding-left: 80px;
 }
 
 .section-2 .section-text p {
@@ -261,12 +261,12 @@ body, html {
   .header-text h1,
   .header-text p {
     font-size: 1rem; /* Small font size for small devices */
-    text-align: center; /* Center text alignment */
+    text-align: left; /* Center text alignment */
     margin: 0 auto; /* Center margin */
   }
 
   .show-me-btn {
-    width: 100%; /* Full-width button */
+    width: 50%; /* Full-width button */
     padding: 12px 10px !important; /* Adjust padding for tap targets */
     margin: 15px auto; /* More margin to separate button */
   }
@@ -278,6 +278,45 @@ body, html {
   .header-section .row {
     padding: 5px; /* Consistent smaller padding */
     margin: 0; /* Remove any margin to maximize space */
+  }
+
+  .header-section {
+    background-color: #643AFD; /* Background color as shown in the PDF */
+    color: #FBB3A8 !important;
+    text-align: left !important;
+    max-height: 950px; /* Limit the maximum height */
+    overflow: hidden; /* Ensure no content overflows beyond 550px */
+    position: relative; /* Allow child elements to use absolute positioning */
+    padding-right: 0; /* Ensure there's no padding that may restrict overflow */
+  }
+
+  .youtube-vid {
+    width: 380px;
+    height: 350px;
+  }
+
+  .vid-box {
+    margin-bottom: 15px !important;
+  }
+
+  .section-text h3 {
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  .section-text p {
+    font-size: 25px !important;
+    color: #242424;
+    line-height: 41px !important;
+    text-align: center !important;
+  }
+
+  .section-2 .section-text {
+    text-align: left !important;
+    padding-left: 20px;
   }
 }
 
