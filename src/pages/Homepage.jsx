@@ -63,7 +63,7 @@ const Homepage = () => {
             md={4}
             className="text-left header-text d-flex align-items-center"
           >
-            <div style={{ paddingLeft: "50px" }}>
+            <div className="with-style" style={{ paddingLeft: "50px" }}>
               <h1 className="un-link">
                 Black women are 3x more likely to experience childbirth
                 complications, yet up to 85% are preventable!

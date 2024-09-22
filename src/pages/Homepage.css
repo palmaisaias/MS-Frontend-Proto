@@ -258,10 +258,14 @@ body, html {
 }
 
 @media (max-width: 480px) {
+  .with-style {
+    padding-left: 0px !important;
+  }
+
   .header-text h1,
   .header-text p {
     font-size: 1rem; /* Small font size for small devices */
-    text-align: left; /* Center text alignment */
+    text-align: center; /* Center text alignment */
     margin: 0 auto; /* Center margin */
   }
 
@@ -269,6 +273,13 @@ body, html {
     width: 50%; /* Full-width button */
     padding: 12px 10px !important; /* Adjust padding for tap targets */
     margin: 15px auto; /* More margin to separate button */
+  }
+
+  .with-style {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all child elements within the div */
   }
 
   .header-section {

@@ -167,6 +167,10 @@
     font-size: 0.9rem; /* Slightly smaller font size */
     padding: 8px 10px; /* Reduce padding */
   }
+
+  .navbar-toggler {
+    margin-right: 15px !important;
+  }
 }
 
 /* Small Mobile Devices (max-width: 480px) */
