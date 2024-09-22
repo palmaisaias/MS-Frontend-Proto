@@ -1,0 +1,81 @@
+/* Modal Header Styling */
+.modal-header {
+    background-color: #4823D1 !important; /* Header background color */
+    color: white !important; /* Text color */
+  }
+  
+  /* Modal Title Styling */
+  .modal-title {
+    font-weight: bold !important;
+    font-size: 1.5rem !important;
+    font-family: 'Lato';
+  }
+  
+  /* Modal Body Styling */
+  .new-article-bod {
+    padding: 20px !important;
+    background-color: #4823D1; /* Custom body background */
+  }
+  
+  /* Input Styling */
+  .form-control {
+    border-radius: 8px !important; /* Rounded input fields */
+    border: 1px solid #ddd !important; /* Border styling */
+    box-shadow: none !important; /* Remove default shadow */
+    transition: border-color 0.2s ease-in-out !important; /* Smooth transition on focus */
+    color: #000 !important; /* Ensure text is visible */
+    background-color: #fff !important; /* Ensure the background is white for contrast */
+  }
+  
+  /* Ensure placeholder styling does not interfere with user input */
+  .form-control::placeholder {
+    color: #6c757d !important; /* Placeholder color */
+    opacity: 1 !important; /* Ensure placeholder is visible but doesn't override text */
+  }
+  
+  /* Adjust focus styling to ensure clarity */
+  .form-control:focus {
+    border-color: #4823D1 !important; /* Border color on focus */
+    box-shadow: 0 0 5px rgba(72, 35, 209, 0.5) !important; /* Subtle shadow on focus */
+    outline: none !important; /* Remove outline */
+  }
+  
+  /* Modal Footer Styling */
+  .new-article-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 15px 30px !important;
+    background-color: #4823D1 !important; /* Footer background color */
+    border-top: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 30px !important;
+  }
+  
+  /* Button Styling */
+  .haymaker-button {
+    font-family: 'Lato' !important;
+    color: #242424 !important;
+    background-color: #fbb3a8 !important; /* Change the background color */
+    border-radius: 25px !important; /* Change the border radius */
+    padding: 10px 20px !important; /* Adjust padding for button size */
+    font-size: 1rem !important; /* Adjust font size */
+    border: none !important; /* Remove the default border */
+  }
+  
+  .haymaker-button:hover {
+    background-color: #fbc2b9 !important; /* Change the color on hover */
+  }
+  
+  /* Specific Modal Styling */
+  .cool-mood-modality {
+    background-color: #4e4c55d2; /* Overlay color */
+  }
+  
+  /* Ensure placeholders are styled correctly */
+  input::placeholder,
+  textarea::placeholder {
+    font-style: italic;
+    color: #6c757d !important; /* Subtle placeholder color */
+    opacity: 0.8 !important; /* Opacity to ensure it's less dominant than user input */
+  }
+  

@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import "./SingleBoardDetail.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import ArticleAdd from "./ArticleAdd";
 
 const SingleBoardDetail = () => {
   const { boardId } = useParams();
@@ -16,18 +17,19 @@ const SingleBoardDetail = () => {
   const [content, setContent] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMoreContent, setHasMoreContent] = useState(true);
-
-  const mainImageUrl = visionBoard?.main_image_url || "https://images.unsplash.com/photo-1608039649006-df579ad70c64?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJhYnklMjBmZWV0fGVufDB8fDB8fHww"; // Use a fallback if needed
+  const [showArticleModal, setShowArticleModal] = useState(false);
+  const [articleType, setArticleType] = useState(""); // State for the article type
+  const [articleURL, setArticleURL] = useState(""); // State for the article URL
 
   useEffect(() => {
     const fetchBoardDetails = async () => {
       try {
         // Make the GET request to fetch board details
         const response = await axiosInstance.get(`/vision-boards/${boardId}`);
-  
+
         // Log the received data to inspect what is being returned from the API
         console.log("Received board details data:", response.data);
-  
+
         // Set the received data to state
         setBoard(response.data);
       } catch (error) {
@@ -42,13 +44,16 @@ const SingleBoardDetail = () => {
         const response = await axiosInstance.get(
           `/vision-boards/${boardId}/content?page=${page}&limit=10`
         );
-    
+
         // Log the received data to inspect what is being returned from the API
-        console.log("Received board content data inside the SANCT:", response.data);
-    
+        console.log(
+          "Received board content data inside the SANCT:",
+          response.data
+        );
+
         // Reset content with new items
         setContent(response.data);
-    
+
         // Check if more content is available
         setHasMoreContent(response.data.length === 10);
       } catch (error) {
@@ -64,6 +69,41 @@ const SingleBoardDetail = () => {
   if (!board) {
     return <p>Loading...</p>;
   }
+
+  const handleSubmitArticle = async () => {
+    try {
+      const data = {
+        content_type: articleType,
+        content_url: articleURL,
+        title: `New ${
+          articleType.charAt(0).toUpperCase() + articleType.slice(1)
+        }`,
+      };
+
+      // Log the data being sent to the API
+      console.log("Data being sent to API:", data);
+
+      const response = await axiosInstance.post(
+        `/vision-boards/${boardId}/content`,
+        data
+      );
+
+      // Update content state with new item
+      setContent([...content, response.data]);
+
+      // Close modal first before resetting states
+      handleCloseModal();
+
+      // Delay the state reset to ensure the modal closes first
+      setTimeout(() => {
+        setArticleType("");
+        setArticleURL("");
+      }, 300); // Adjust the timeout as necessary
+    } catch (error) {
+      console.error("Error adding article:", error);
+      alert("Failed to add the article. Please try again.");
+    }
+  };
 
   const handleDeleteContent = async (contentItemId) => {
     const confirmDelete = window.confirm(
@@ -91,6 +131,20 @@ const SingleBoardDetail = () => {
       setCurrentPage((prevPage) => prevPage - 1);
     }
   };
+
+  // Function to handle the opening of the modal
+  const handleAddArticle = () => {
+    setShowArticleModal(true);
+  };
+
+  // Function to handle closing the modal
+  const handleCloseModal = () => {
+    setShowArticleModal(false);
+  };
+
+  if (!board) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="vision-board-detail-page">
@@ -152,6 +206,23 @@ const SingleBoardDetail = () => {
               </Card>
             </Col>
           ))}
+          <Col
+            md={4}
+            className="mb-4"
+            style={{ paddingLeft: "50px", paddingRight: "50px" }}
+          >
+            <Card
+              className="vision-board-card"
+              style={{ cursor: "pointer" }}
+              onClick={handleAddArticle}
+            >
+              <Card.Body>
+                <Card.Title className="title-card-formatz">
+                  Add Custom Article
+                </Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
 
         <div className="d-flex justify-content-center mt-4">
@@ -174,7 +245,15 @@ const SingleBoardDetail = () => {
           )}
         </div>
       </Container>
-
+      <ArticleAdd
+        show={showArticleModal}
+        handleClose={handleCloseModal}
+        articleType={articleType} // Use your state variable
+        setArticleType={setArticleType} // Use your setter function
+        articleURL={articleURL} // Use your state variable
+        setArticleURL={setArticleURL} // Use your setter function
+        handleAddArticle={handleSubmitArticle}
+      />
       <Footer />
     </div>
   );
