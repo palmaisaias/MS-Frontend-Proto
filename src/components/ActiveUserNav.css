@@ -1,128 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 /* Active User Navbar Styling */
 .active-user-navbar {
-    padding: 0 !important;
-    margin: 0 !important;
-    background-color: #4823D1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #4823d1 !important;
 }
 
 .active-user-logo-image {
-    height: 140px !important;
-    width: 394px !important;
-    margin-left: 20px !important;
+  height: 140px !important;
+  width: 394px !important;
+  margin-left: 20px !important;
 }
 
 .search-bar-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #4823D1; /* Adjust background color as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #4823d1; /* Adjust background color as needed */
 }
 
 .search-bar-container input[type="text"] {
-    width: 400px; /* Adjust width as needed */
-    height: 45px; /* Adjust height as needed */
-    border: 2px solid white; /* Adjust border color as needed */
-    border-radius: 30px; /* Rounded corners */
-    padding: 0 50px 0 20px; /* Adjust padding for spacing */
-    font-size: 16px; /* Font size for input text */
-    outline: none; /* Remove default outline */
-    background-color: transparent; /* Transparent background */
-    color: white; /* Adjust text color as needed */
+  width: 400px; /* Adjust width as needed */
+  height: 45px; /* Adjust height as needed */
+  border: 2px solid white; /* Adjust border color as needed */
+  border-radius: 30px; /* Rounded corners */
+  padding: 0 50px 0 20px; /* Adjust padding for spacing */
+  font-size: 16px; /* Font size for input text */
+  outline: none; /* Remove default outline */
+  background-color: transparent; /* Transparent background */
+  color: white; /* Adjust text color as needed */
 }
 
 .submit-button-search {
-    border: none; /* Remove default border */
-    background: none; /* Transparent background */
-    position: relative; /* Positioning for icon */
-    right: 45px; /* Position button inside the input */
-    cursor: pointer; /* Cursor pointer for button */
-    color: rgb(255, 255, 255) !important; /* Adjust icon color */
-    font-size: 18px; /* Icon size */
-    padding: 0; /* Remove padding */
-    outline: none; /* Remove default outline */
-    display: flex; /* Center the icon */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
+  border: none; /* Remove default border */
+  background: none; /* Transparent background */
+  position: relative; /* Positioning for icon */
+  right: 45px; /* Position button inside the input */
+  cursor: pointer; /* Cursor pointer for button */
+  color: rgb(255, 255, 255) !important; /* Adjust icon color */
+  font-size: 18px; /* Icon size */
+  padding: 0; /* Remove padding */
+  outline: none; /* Remove default outline */
+  display: flex; /* Center the icon */
+  align-items: center; /* Center the icon vertically */
+  justify-content: center; /* Center the icon horizontally */
 }
 
 .notes-link,
 .profile-link,
 .folder-link,
 .library-link {
-    border: none; /* Remove default border */
-    background: none; /* Transparent background */
-    position:relative; /* Positioning for icon */
-    right: 17px; /* Position button inside the input */
-    cursor: pointer; /* Cursor pointer for button */
-    color: rgb(255, 255, 255) !important; /* Adjust icon color */
-    font-size: 28px !important; /* Icon size */
-    padding: 0; /* Remove padding */
-    outline: none; /* Remove default outline */
-    display: flex; /* Center the icon */
-    align-items: center; /* Center the icon vertically */
-    justify-content: center; /* Center the icon horizontally */
-    transition: color 0.3s ease; /* Smooth color transition */
-    padding-top: 11px !important;
-    margin: 15px;
+  border: none; /* Remove default border */
+  background: none; /* Transparent background */
+  position: relative; /* Positioning for icon */
+  right: 17px; /* Position button inside the input */
+  cursor: pointer; /* Cursor pointer for button */
+  color: rgb(255, 255, 255) !important; /* Adjust icon color */
+  font-size: 28px !important; /* Icon size */
+  padding: 0; /* Remove padding */
+  outline: none; /* Remove default outline */
+  display: flex; /* Center the icon */
+  align-items: center; /* Center the icon vertically */
+  justify-content: center; /* Center the icon horizontally */
+  transition: color 0.3s ease; /* Smooth color transition */
+  padding-top: 11px !important;
+  margin: 15px;
 }
 
 .notes-link::after {
-    text-align: center;
-    content: 'Your Notes'; /* Text to display */
-    position: absolute; /* Absolute positioning */
-    bottom: 42px !important; /* Position above the button */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center adjustment */
-    font-size: 14px; /* Text size */
-    color: rgb(255, 255, 255); /* Text color */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
-    pointer-events: none; /* Prevent text from interfering with hover */
+  text-align: center;
+  content: "Your Notes"; /* Text to display */
+  position: absolute; /* Absolute positioning */
+  bottom: 42px !important; /* Position above the button */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center adjustment */
+  font-size: 14px; /* Text size */
+  color: rgb(255, 255, 255); /* Text color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
+  pointer-events: none; /* Prevent text from interfering with hover */
 }
 
 .folder-link::after {
-    text-align: center;
-    content: 'Your Sanctuary'; /* Text to display */
-    position: absolute; /* Absolute positioning */
-    bottom: 42px !important; /* Position above the button */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center adjustment */
-    font-size: 14px; /* Text size */
-    color: rgb(255, 255, 255); /* Text color */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
-    pointer-events: none; /* Prevent text from interfering with hover */
+  text-align: center;
+  content: "Your Sanctuary"; /* Text to display */
+  position: absolute; /* Absolute positioning */
+  bottom: 42px !important; /* Position above the button */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center adjustment */
+  font-size: 14px; /* Text size */
+  color: rgb(255, 255, 255); /* Text color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
+  pointer-events: none; /* Prevent text from interfering with hover */
 }
 
 .library-link::after {
-    text-align: center;
-    content: 'Resource Library'; /* Text to display */
-    position: absolute; /* Absolute positioning */
-    bottom: 42px !important; /* Position above the button */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center adjustment */
-    font-size: 14px; /* Text size */
-    color: rgb(255, 255, 255); /* Text color */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
-    pointer-events: none; /* Prevent text from interfering with hover */
+  text-align: center;
+  content: "Resource Library"; /* Text to display */
+  position: absolute; /* Absolute positioning */
+  bottom: 42px !important; /* Position above the button */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center adjustment */
+  font-size: 14px; /* Text size */
+  color: rgb(255, 255, 255); /* Text color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
+  pointer-events: none; /* Prevent text from interfering with hover */
 }
 
 .notes-link:hover::after,
 .folder-link:hover::after,
 .library-link:hover::after {
-    opacity: 1; /* Make text visible */
-    bottom: 55px !important; /* Move text further up smoothly */
+  opacity: 1; /* Make text visible */
+  bottom: 55px !important; /* Move text further up smoothly */
 }
 
 .navbar-custom .notes-link,
 .navbar-custom .profile-link,
 .navbar-custom .folder-link {
-    font-weight: bold;
-    color: #fff;
-    margin-left: 15px !important;
-    margin-right: 25px !important;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 15px !important;
+  margin-right: 25px !important;
+}
+
+.hamburger-font {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .seedling,
+  .bookling,
+  .logging {
+    display: none !important; /* Hides icons within the toggler on small screens */
+  }
+
+  .hamburger-font {
+    display: block !important; /* Show the text when the screen is 480px or smaller */
+    margin-left: 5px; /* Optional: Add spacing */
+
+  }
+
+  .library-link,
+  .folder-link {
+    margin: 5px;
+  }
 }

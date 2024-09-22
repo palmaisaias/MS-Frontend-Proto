@@ -19,22 +19,25 @@ const ActiveUserNav = () => {
   // Handle logout function
   const handleLogout = () => {
     // Log the token and user info before clearing
-    console.log("Clearing auth token:", localStorage.getItem('authToken'));
-    console.log("Clearing user first name:", localStorage.getItem('userName'));
-    console.log("Clearing user last name:", localStorage.getItem('userLastName'));
-  
+    console.log("Clearing auth token:", localStorage.getItem("authToken"));
+    console.log("Clearing user first name:", localStorage.getItem("userName"));
+    console.log(
+      "Clearing user last name:",
+      localStorage.getItem("userLastName")
+    );
+
     // Clear the token and user from local storage
-    localStorage.removeItem('authToken'); // Remove auth token
-    localStorage.removeItem('userName');  // Remove user's first name
-    localStorage.removeItem('userLastName'); // Remove user's last name
-  
+    localStorage.removeItem("authToken"); // Remove auth token
+    localStorage.removeItem("userName"); // Remove user's first name
+    localStorage.removeItem("userLastName"); // Remove user's last name
+
     // Redirect the user to the login page
     navigate("/");
   };
 
   return (
     <Navbar expand="lg" className="navbar-custom active-user-nav w-100">
-      <Container fluid className="px-0">
+      <Container fluid className="px-0 drop-bar-contain">
         {/* Use Link component for client-side navigation */}
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img
@@ -60,38 +63,37 @@ const ActiveUserNav = () => {
                 </button>
               </form>
             </Nav.Item>
-            <Nav.Link
-              href="#notes"
-              className="notes-link"
-            >
+            <Nav.Link as={Link} to="/sanctuary" className="folder-link">
               <FontAwesomeIcon
-                icon={faStickyNote}
+                className="seedling"
+                icon={faSeedling}
                 style={{ fontSize: "28px" }}
               />
-            </Nav.Link>
-
-            <Nav.Link as={Link} to="/sanctuary" className="folder-link">
-              <FontAwesomeIcon icon={faSeedling} style={{ fontSize: "28px" }} />
+              <h4 className="hamburger-font">Your Sanctuary</h4>
             </Nav.Link>
 
             <Nav.Link as={Link} to="/vision-boards" className="library-link">
-              <FontAwesomeIcon icon={faBook} style={{ fontSize: "28px" }} />{" "}
+              <FontAwesomeIcon
+                className="bookling"
+                icon={faBook}
+                style={{ fontSize: "28px" }}
+              />{" "}
+              <h4 className="hamburger-font">Resource Library</h4>
             </Nav.Link>
-
-            <Nav.Link href="#profile" className="profile-link">
+            {/* <Nav.Link href="#profile" className="profile-link">
               <FontAwesomeIcon
                 icon={faUserCircle}
                 style={{ fontSize: "28px" }}
               />
-            </Nav.Link>
-
+            </Nav.Link> */}
             {/* Add the Logout button */}
-            <Nav.Link onClick={handleLogout} className="logout-link">
+            <Nav.Link onClick={handleLogout} className="library-link">
               <FontAwesomeIcon
+                className="logging"
                 icon={faSignOutAlt} // Logout icon
                 style={{ fontSize: "28px" }}
               />
-              <span className="ms-2">Logout</span>
+              <h4 className="hamburger-font">Log Out</h4>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
