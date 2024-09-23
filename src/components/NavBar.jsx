@@ -11,13 +11,13 @@ const NavBar = ({ handleShowSignUp, handleShowLogin }) => {
           <img
             src="/Frame.png"
             alt="The Melanated Sanctuary Logo"
-            className="d-inline-block align-top logo-image"
+            className="d-inline-block align-top logo-image-home"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/about-us">
+          <Nav className="ms-auto home-links">
+            <Nav.Link className="nav-link-aboutus" as={Link} to="/about-us">
               About Us
             </Nav.Link>
             <Nav.Link className="nav-link-login" onClick={handleShowLogin}>

@@ -12,10 +12,10 @@ const Footer = () => {
           <form className="d-flex align-items-center bottom-form-pad">
             <input
               type="email"
-              className="form-control me-2 custom-link"
+              className="me-2 form-control-news"
               placeholder="Enter your email"
             />
-            <Button variant="light" className="flex-shrink-0">
+            <Button variant="light" className="second-sign-bottom">
               Sign Up
             </Button>
           </form>
@@ -31,18 +31,21 @@ const Footer = () => {
           md={4}
           className="text-center text-md-start section-links limitless-position"
         >
-          <Nav className="flex-column">
+          <Nav className="flex-column link-pos-slider">
             <Nav.Link href="#publishers" className="footer-linking">
-              Publishers
-            </Nav.Link>
-            <Nav.Link href="#story" className="footer-linking">
               Our Story
             </Nav.Link>
+            <Nav.Link href="#story" className="footer-linking">
+              Help
+            </Nav.Link>
             <Nav.Link href="#privacy" className="footer-linking">
-              Privacy Policy
+              Contact Us
             </Nav.Link>
             <Nav.Link href="#help" className="footer-linking">
-              Help
+              Privacy Policy
+            </Nav.Link>
+            <Nav.Link href="#TandC" className="footer-linking">
+              Terms and Conditions
             </Nav.Link>
           </Nav>
           <img

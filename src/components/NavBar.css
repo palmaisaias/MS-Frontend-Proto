@@ -9,10 +9,14 @@
   min-height: 170px !important;
 }
 
-.logo-image {
+.logo-image-home {
   height: 140px !important;
   width: 400px !important;
-  margin-left: 20px !important;
+  margin-left: 40px !important;
+}
+
+.home-links {
+  padding-right: 20px;
 }
 
 .navbar-custom .container {
@@ -35,12 +39,46 @@
   border: 2px solid white !important;
   border-radius: 50px;
   padding: 5px 15px;
-  color: white !important;
+  color: #242424 !important;
   text-align: center;
+  background-color: #ffc2b9 !important;
+  width: 110px;
+  height: 44px;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+}
+
+.nav-link-login {
+  border: 2px solid white !important;
+  border-radius: 50px;
+  padding: 5px 15px;
+  color: #fdf7e7 !important;
+  text-align: center;
+  background-color: #4823d1 !important;
+  width: 110px;
+  height: 44px;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
+}
+
+.nav-link-aboutus {
+  border: none;
+  border-radius: 50px;
+  padding: 5px 15px;
+  color: #fdf7e7 !important;
+  text-align: center;
+  background-color: #4823d1 !important;
+  width: 120px;
+  height: 44px;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  font-weight: 400 !important;
 }
 
 .nav-link-signup:hover {
-  background-color: rgba(255, 255, 255, 0.374);
+  background-color: rgba(255, 255, 255, 0.374) !important;
   color: #4a148c !important;
 }
 
