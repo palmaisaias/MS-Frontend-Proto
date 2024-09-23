@@ -264,3 +264,37 @@ footer {
   position: relative !important;
   z-index: 1 !important;
 }
+
+@media (max-width: 480px)
+{
+  .board-title-message{
+    padding-left: 10px !important;
+  }
+
+  .sanct-message {
+    padding-left: 10px;
+  }
+  .mobile-v {
+    padding-left: 20px !important;
+    padding-right: 35px !important;
+
+  }
+
+  .padded-body {
+    display: grid;
+    text-align: center;
+  }
+
+  .single-title-drop {
+    align-self: end;
+  }
+
+  .card-text {
+    text-align: center;
+  }
+
+  .mobile-new {
+    padding-left: 20px !important;
+    padding-right: 35px !important;
+  }
+}

@@ -131,7 +131,7 @@ const Sanctuary = () => {
               <Col
                 key={board.id}
                 md={4}
-                className="mb-4"
+                className="mb-4 mobile-v"
                 style={{ paddingLeft: "50px", paddingRight: "50px" }}
               >
                 <Card
@@ -140,7 +140,7 @@ const Sanctuary = () => {
                   style={{ cursor: "pointer" }}
                 >
                   <Card.Body className="pink-overlay padded-body">
-                    <Card.Title className="title-card-formatz">
+                    <Card.Title className="title-card-formatz single-title-drop">
                       <FontAwesomeIcon
                         icon={faTrash}
                         className="delete-icon"
@@ -162,7 +162,7 @@ const Sanctuary = () => {
             ))}
             <Col
               md={4}
-              className="mb-4"
+              className="mb-4 mobile-new"
               style={{ paddingLeft: "50px", paddingRight: "50px" }}
             >
               <Card
