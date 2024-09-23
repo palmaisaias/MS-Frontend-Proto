@@ -5,8 +5,6 @@ import {
   Row,
   Col,
   Button,
-  Navbar,
-  Nav,
   Card,
 } from "react-bootstrap";
 import "./VisionBoards.css";
@@ -39,7 +37,7 @@ const VisionBoards = () => {
     axiosInstance
       .get("/users/vision-boards/all")
       .then((response) => {
-        // Filter boards with created_by value of null
+        // Filter boards with created_by value of null since this is the value of all the admin created boards
         const filteredBoards = response.data.filter(
           (board) => board.created_by === null
         );
@@ -53,10 +51,9 @@ const VisionBoards = () => {
       });
   }, []);
 
-  // Function to handle note button click
+  // Function to handle note button click. Not in use.
   const handleNotesClick = () => {
     console.log("Notes clicked");
-    // Add navigation or logic for notes
   };
 
   const overlayClasses = ["purple-overlay", "pink-overlay", "green-overlay"];
@@ -67,16 +64,16 @@ const VisionBoards = () => {
 
       {/* Vision Boards Content */}
       <Container fluid className="px-4 vision-boards-content">
-        {userData ? ( // Check if userData is loaded
+        {userData ? (
           <>
-            <h2 className="welcome-message">Welcome {userData.name},</h2>
+            <h2 className="welcome-message">Welcome, {userData.name}</h2>
             <p className="rec-info">This is your resource library...</p>
             <Button variant="link" className="all-topics-link">
               All topics
             </Button>
           </>
         ) : (
-          <p>Loading...</p> // Show loading state while fetching data
+          <p>Loading...</p>
         )}
 
         <Row
