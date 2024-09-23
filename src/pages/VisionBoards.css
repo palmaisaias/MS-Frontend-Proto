@@ -2,15 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
 .vision-boards {
-  background: var(
-    --Gradient,
-    radial-gradient(
-      67.67% 80.23% at 41.04% 35.34%,
-      #ffc2b9 0%,
-      #dfefb4 47.5%,
-      #ffc2b9 99.04%
-    )
-  );
+  background: #fdf7e7;
   font-family: "Lato", sans-serif;
   padding: 0 !important;
 }

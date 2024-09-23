@@ -43,15 +43,7 @@
 
 /* General Styling */
 .vision-board-detail-page {
-  background: var(
-    --Gradient,
-    radial-gradient(
-      67.67% 80.23% at 41.04% 35.34%,
-      #ffc2b9 0%,
-      #dfefb4 47.5%,
-      #ffc2b9 99.04%
-    )
-  );
+  background:#F9EFD6 !important;
   font-family: "Lato", sans-serif;
   padding: 0 !important;
   margin: 0;
