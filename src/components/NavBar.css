@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
-/* Custom Navbar Styling */
 .navbar-custom {
   background-color: #4823d1;
   border-bottom: 2px solid #6338fd;
-  padding: 0 !important; /* Ensure no additional padding */
-  margin: 0 !important; /* Ensure no additional margin */
-  width: 100% !important; /* Ensure the navbar spans the full width */
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
   min-height: 170px !important;
 }
 
@@ -17,12 +16,11 @@
 }
 
 .navbar-custom .container {
-  max-width: 100% !important; /* Override container max-width to ensure full-width */
+  max-width: 100% !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* Navbar Links Styling */
 .navbar-custom .navbar-brand,
 .navbar-custom .nav-link {
   color: #ffffff;
@@ -33,24 +31,22 @@
   color: #ffc107;
 }
 
-/* Custom styling for the "Sign Up" link */
 .nav-link-signup {
-  border: 2px solid white !important; /* White border */
-  border-radius: 50px; /* Circular border */
-  padding: 5px 15px; /* Adjust padding for the look you want */
-  color: white !important; /* Ensure the text color is white */
+  border: 2px solid white !important;
+  border-radius: 50px;
+  padding: 5px 15px;
+  color: white !important;
   text-align: center;
 }
 
 .nav-link-signup:hover {
-  background-color: rgba(255, 255, 255, 0.374); /* Change background on hover */
-  color: #4a148c !important; /* Text color on hover */
+  background-color: rgba(255, 255, 255, 0.374);
+  color: #4a148c !important;
 }
 
-/* Navbar Navigation Links */
 .navbar-custom .navbar-nav {
-  margin-right: 40px !important; /* Aligns to the right */
-  margin-top: 20px; /* Lowers the position slightly */
+  margin-right: 40px !important;
+  margin-top: 20px;
   font-family: "Lato", sans-serif;
   color: white !important;
 }
@@ -63,109 +59,102 @@
   color: #fdf7e7;
 }
 
-/* Control spacing between links */
 .navbar-custom .nav-item {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
-/* Logo positioning */
 .navbar-custom .navbar-brand img:first-child {
-  margin-left: 60px; /* Adjust this value to move the first image to the left */
+  margin-left: 60px;
 }
 
 .navbar-custom .navbar-brand img:last-child {
-  margin-left: 5px; /* Adjust this value to move the second image to the left */
+  margin-left: 5px;
 }
 
-/* Responsive Adjustments for Mobile Devices */
-
-/* Tablet Devices (max-width: 1024px) */
 @media (max-width: 1024px) {
   .navbar-custom {
-    height: auto !important; /* Reduce height */
+    height: auto !important;
   }
 
   .logo-image {
-    height: 120px !important; /* Reduce logo size */
-    width: 300px !important; /* Adjust width */
-    margin-left: 10px !important; /* Reduce left margin */
+    height: 120px !important;
+    width: 300px !important;
+    margin-left: 10px !important;
   }
 
   .navbar-custom .navbar-nav {
-    margin-right: 20px !important; /* Reduce right margin */
+    margin-right: 20px !important;
   }
 
   .nav-link-signup {
-    padding: 4px 10px; /* Reduce padding for smaller screens */
+    padding: 4px 10px;
   }
 }
 
-/* Large Mobile Devices (max-width: 768px) */
 @media (max-width: 768px) {
   .navbar-custom {
-    height: auto; /* Allow height to be dynamic */
-    padding: 10px 0; /* Add some vertical padding */
+    height: auto;
+    padding: 10px 0;
   }
 
   .navbar-custom .navbar-nav {
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center-align links */
-    margin-right: 0 !important; /* Remove right margin */
-    margin-top: 10px; /* Reduce top margin */
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0 !important;
+    margin-top: 10px;
   }
 
   .navbar-custom .nav-item {
-    margin: 5px 0; /* Reduce spacing between items */
+    margin: 5px 0;
   }
 
   .nav-link-signup {
-    display: block; /* Make the sign-up button full-width */
-    width: 90%; /* Almost full-width */
-    margin: 10px auto; /* Center-align */
+    display: block;
+    width: 90%;
+    margin: 10px auto;
   }
 
   .logo-image {
-    height: 100px !important; /* Smaller logo height */
-    width: 250px !important; /* Adjust width */
-    margin-left: 0 !important; /* Center the logo */
+    height: 100px !important;
+    width: 250px !important;
+    margin-left: 0 !important;
   }
 }
 
-/* For screens 430px width */
 @media (max-width: 430px) {
   .navbar-custom {
-    height: auto; /* Allow dynamic height */
-    padding: 5px 0; /* Reduce vertical padding */
+    height: auto;
+    padding: 5px 0;
   }
 
   .navbar-custom .navbar-nav {
-    flex-direction: column; /* Stack links vertically */
-    align-items: center; /* Center-align links */
-    margin-right: 0 !important; /* Remove right margin */
-    margin-top: 5px; /* Reduce top margin */
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0 !important;
+    margin-top: 5px;
   }
 
   .navbar-custom .nav-item {
-    margin: 5px 0; /* Reduce spacing between items */
+    margin: 5px 0;
   }
 
   .nav-link-signup {
-    display: block; /* Make the sign-up button full-width */
-    width: 50% !important; /* Almost full-width */
-    margin: 5px auto; /* Center-align */
+    display: block;
+    width: 50% !important;
+    margin: 5px auto;
   }
 
   .logo-image {
-    height: 80px !important; /* Smaller logo height */
-    width: 200px !important; /* Adjust width */
-    margin: 20 auto !important; /* Center the logo */
+    height: 80px !important;
+    width: 200px !important;
+    margin: 20 auto !important;
     padding: 5px !important;
   }
 
   .navbar-custom .nav-link {
-    font-size: 0.9rem; /* Slightly smaller font size */
-    padding: 8px 10px; /* Reduce padding */
+    font-size: 0.9rem;
+    padding: 8px 10px;
   }
 
   .navbar-toggler {
@@ -173,30 +162,29 @@
   }
 }
 
-/* Small Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
   .navbar-custom {
-    height: auto; /* Dynamic height */
-    padding: 5px 0; /* Further reduce padding */
+    height: auto;
+    padding: 5px 0;
   }
 
   .navbar-custom .navbar-nav {
-    margin-top: 5px; /* Further reduce top margin */
+    margin-top: 5px;
   }
 
   .nav-link-signup {
-    width: 100%; /* Full-width button */
-    margin: 5px 0; /* Adjust margin */
+    width: 100%;
+    margin: 5px 0;
   }
 
   .logo-image {
-    height: 80px !important; /* Even smaller logo height */
-    width: 200px !important; /* Adjust width */
-    margin: 0 auto; /* Center the logo */
+    height: 80px !important;
+    width: 200px !important;
+    margin: 0 auto;
   }
 
   .navbar-custom .nav-link {
-    font-size: 0.9rem; /* Slightly smaller font size */
-    padding: 8px 10px ; /* Reduce padding */
+    font-size: 0.9rem;
+    padding: 8px 10px;
   }
 }

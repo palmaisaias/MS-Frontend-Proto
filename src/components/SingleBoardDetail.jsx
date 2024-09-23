@@ -11,53 +11,45 @@ import ArticleAdd from "./ArticleAdd";
 
 const SingleBoardDetail = () => {
   const { boardId } = useParams();
-  const location = useLocation(); // Use useLocation to access passed state
-  const visionBoard = location.state?.visionBoard; // Access visionBoard data
   const [board, setBoard] = useState(null);
   const [content, setContent] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMoreContent, setHasMoreContent] = useState(true);
   const [showArticleModal, setShowArticleModal] = useState(false);
-  const [articleType, setArticleType] = useState(""); // State for the article type
-  const [articleURL, setArticleURL] = useState(""); // State for the article URL
+  const [articleType, setArticleType] = useState("");
+  const [articleURL, setArticleURL] = useState("");
 
   useEffect(() => {
     const fetchBoardDetails = async () => {
       try {
-        // Make the GET request to fetch board details
+        // Request for board. Uses the board id from the url using params
         const response = await axiosInstance.get(`/vision-boards/${boardId}`);
 
-        // Log the received data to inspect what is being returned from the API
-        console.log("Received board details data:", response.data);
+        console.log("Received board details data:", response.data); // for troubleshooting. making sure the intended data is received
 
-        // Set the received data to state
         setBoard(response.data);
       } catch (error) {
-        // Log the error to understand what went wrong
+        // Some of these error logs can be cleared. Will wait until we decide if we will push this project further
         console.error("Error fetching board details in Sanctuary:", error);
       }
     };
 
     const fetchBoardContent = async (page) => {
       try {
-        // Make the GET request to fetch board content
+        // Paginated request. Works nicely
         const response = await axiosInstance.get(
           `/vision-boards/${boardId}/content?page=${page}&limit=10`
         );
 
-        // Log the received data to inspect what is being returned from the API
         console.log(
           "Received board content data inside the SANCT:",
           response.data
         );
 
-        // Reset content with new items
         setContent(response.data);
 
-        // Check if more content is available
-        setHasMoreContent(response.data.length === 10);
+        setHasMoreContent(response.data.length === 10); // for pagination
       } catch (error) {
-        // Log the error to understand what went wrong
         console.error("Error fetching board content:", error);
       }
     };
@@ -80,25 +72,23 @@ const SingleBoardDetail = () => {
         }`,
       };
 
-      // Log the data being sent to the API
-      console.log("Data being sent to API:", data);
+      console.log("Data being sent to API:", data); // troubleshooting log
 
       const response = await axiosInstance.post(
         `/vision-boards/${boardId}/content`,
         data
       );
 
-      // Update content state with new item
       setContent([...content, response.data]);
 
-      // Close modal first before resetting states
       handleCloseModal();
 
-      // Delay the state reset to ensure the modal closes first
+      // Delay the state reset to ensure the modal closes first. This is for troubleshooting the display of the entered data.
+      // I beleive the issue ended up being in the proper items being passed to the modal but will come back to this.
       setTimeout(() => {
         setArticleType("");
         setArticleURL("");
-      }, 300); // Adjust the timeout as necessary
+      }, 300);
     } catch (error) {
       console.error("Error adding article:", error);
       alert("Failed to add the article. Please try again.");
@@ -132,12 +122,10 @@ const SingleBoardDetail = () => {
     }
   };
 
-  // Function to handle the opening of the modal
   const handleAddArticle = () => {
     setShowArticleModal(true);
   };
 
-  // Function to handle closing the modal
   const handleCloseModal = () => {
     setShowArticleModal(false);
   };
@@ -150,7 +138,11 @@ const SingleBoardDetail = () => {
     <div className="vision-board-detail-page">
       <ActiveUserNav />
 
-      <Container fluid className="mt-4" style={{ paddingLeft: "80px" }}>
+      <Container
+        fluid
+        className="mt-4 custom-padding"
+        style={{ paddingLeft: "80px", paddingRight: "80px" }}
+      >
         <Link to="/sanctuary" className="sanctuary-return-link">
           ← Back To Your Sanctuary
         </Link>
@@ -178,8 +170,8 @@ const SingleBoardDetail = () => {
                     alt={item.title}
                     className="fixed-size-img-single"
                     onError={(e) => {
-                      e.target.onerror = null; // Prevent loop in case of broken fallback URL
-                      console.log("Error loading image, fallback triggered."); // Log error
+                      e.target.onerror = null; // Prevent loop in case of broken fallback URL. IMPORTANT
+                      console.log("Error loading image, fallback triggered.");
                       e.target.src =
                         "https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
                     }}
@@ -206,19 +198,15 @@ const SingleBoardDetail = () => {
               </Card>
             </Col>
           ))}
-          <Col
-            md={4}
-            className="mb-4"
-            style={{ paddingLeft: "50px", paddingRight: "50px" }}
-          >
+          <Col md={4} className="mb-4">
             <Card
               className="vision-board-card"
               style={{ cursor: "pointer" }}
               onClick={handleAddArticle}
             >
-              <Card.Body>
+              <Card.Body className="custom-add-art">
                 <Card.Title className="title-card-formatz">
-                  Add Custom Article
+                  Add Custom Resource
                 </Card.Title>
               </Card.Body>
             </Card>
@@ -230,7 +218,7 @@ const SingleBoardDetail = () => {
             onClick={handlePreviousPage}
             className="keep-exploring"
             style={{ margin: "20px" }}
-            disabled={currentPage === 1} // Disable on the first page
+            disabled={currentPage === 1}
           >
             ← Previous Page
           </Button>
@@ -248,10 +236,10 @@ const SingleBoardDetail = () => {
       <ArticleAdd
         show={showArticleModal}
         handleClose={handleCloseModal}
-        articleType={articleType} // Use your state variable
-        setArticleType={setArticleType} // Use your setter function
-        articleURL={articleURL} // Use your state variable
-        setArticleURL={setArticleURL} // Use your setter function
+        articleType={articleType}
+        setArticleType={setArticleType}
+        articleURL={articleURL}
+        setArticleURL={setArticleURL}
         handleAddArticle={handleSubmitArticle}
       />
       <Footer />

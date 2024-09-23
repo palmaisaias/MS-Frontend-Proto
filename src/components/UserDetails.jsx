@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faFilter, faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
 
 const UserDetails = ({ show, handleClose, onSubmit }) => {
-  // State for form fields
   const [sex, setSex] = useState("");
   const [pronouns, setPronouns] = useState("");
   const [dueDate, setDueDate] = useState("");
@@ -15,7 +14,6 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
   const [phone, setPhone] = useState("");
   const [receiveTexts, setReceiveTexts] = useState(false);
 
-  // Form submission handler
   const handleFormSubmit = async (e) => {
     e.preventDefault();
   
@@ -32,7 +30,6 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
       // Since axiosInstance handles the baseURL and interceptors, you don't need to manually set headers or the token
       console.log("Submitting user details:", userDetails);
   
-      // Make the POST request using axiosInstance
       const response = await axiosInstance.post("/user_details", userDetails);
   
       console.log("User details saved successfully:", response.data);
@@ -76,7 +73,7 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
             src="/ModalLogo.png"
             alt="Logo"
             style={{
-              width: "80%", // Set to a percentage for responsiveness
+              width: "80%",
               height: "auto",
               maxWidth: "100%",
             }}
@@ -118,7 +115,7 @@ const UserDetails = ({ show, handleClose, onSubmit }) => {
         <CloseButton aria-label="Close" onClick={handleClose} className="close-button-one" />
 
           <Form onSubmit={handleFormSubmit}>
-            {/* Toggle for First Pregnancy */}
+            {/* Radio Buttons First Pregnancy */}
             <Form.Group className="mb-3" controlId="formFirstPregnancy">
               <Form.Label>Is this your first pregnancy?</Form.Label>
               <div className="d-flex">

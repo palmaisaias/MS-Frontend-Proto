@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, CloseButton } from "react-bootstrap";
 import axiosInstance, { setAxiosInterceptor } from "../services/axiosInstance";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "./LoginModal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -29,11 +29,13 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    // Clear any existing tokens and user information before login
+    // Clear any existing tokens and user information before login. Super important. 
+    // This gave me a lot of trouble because requests were being crossed and previous 
+    // names were being stored locally as well. Good learning.
     localStorage.removeItem("authToken");
-    sessionStorage.removeItem("authToken"); // Optional: if using session storage
-    localStorage.removeItem("userName"); // Clear stored first name
-    localStorage.removeItem("userLastName"); // Clear stored last name
+    sessionStorage.removeItem("authToken");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userLastName");
 
     console.log("Previous auth and name cleared");
     setAxiosInterceptor();
@@ -212,8 +214,11 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
                 width="50"
                 height="50"
                 className="mb-3"
-                style={{ cursor: 'pointer' }}
-                onClick={() => window.location.href = "https://backend.melanatedsanctuary.com:5000/login/google"}
+                style={{ cursor: "pointer" }}
+                onClick={() =>
+                  (window.location.href =
+                    "https://backend.melanatedsanctuary.com:5000/login/google")
+                }
               />
               <p className="small-text-one mt-3">
                 By continuing, you accept the <a href="#terms">Terms of Use</a>{" "}

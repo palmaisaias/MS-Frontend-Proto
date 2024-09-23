@@ -21,38 +21,36 @@ const SignUpModal = ({ show, handleClose, onSubmit }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    // Clear any existing tokens before sign-up
+    // Clear any existing tokens before sign-up!
     localStorage.removeItem("authToken");
-    sessionStorage.removeItem("authToken"); // Optional: if using session storage as well
-    localStorage.removeItem("userName"); // Clear the stored first name
-    localStorage.removeItem("userLastName"); // Clear the stored last name
+    sessionStorage.removeItem("authToken");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userLastName");
 
     console.log("Previous auth and name cleared");
     setAxiosInterceptor();
-    console.log("Interceptor Clear");
+    console.log("Interceptor Clear"); // this is for the axiosInstance 
 
     try {
-      // Make the API request using axiosInstance
       const response = await axiosInstance.post("/register", formData, {
         headers: { "Content-Type": "application/json" },
       });
 
       console.log("Signup successful:", response.data);
 
-      // Check if token and user information is in the response and store them in localStorage
       const { token, user } = response.data;
       if (token) {
-        localStorage.setItem("authToken", token); // Store the token in localStorage
+        localStorage.setItem("authToken", token);
         console.log("Token stored successfully:", token);
 
         // Store user's name in localStorage. We end up using this for the welcome message
         if (user && user.first_name) {
-          localStorage.setItem("userName", user.first_name); // Store the user's first name
+          localStorage.setItem("userName", user.first_name);
           console.log("User name stored successfully:", user.first_name);
         }
 
         if (user && user.last_name) {
-          localStorage.setItem("userLastName", user.last_name); // Store the user's last name
+          localStorage.setItem("userLastName", user.last_name);
           console.log("User last name stored successfully:", user.last_name);
         }
 

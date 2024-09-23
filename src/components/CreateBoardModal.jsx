@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./CreateBoardModal.css";
 
+// User entry is converted to title case. Makes the boards look better
 const toTitleCase = (str) => {
   return str
     .toLowerCase()
@@ -43,7 +44,7 @@ const CreateBoardModal = ({
           value={newBoardDescription}
           onChange={(e) => setNewBoardDescription(e.target.value)}
           className="form-control mb-3"
-          rows={4} // Adjust the number of rows here. Not sure how Isabel will want it.
+          rows={4}
         />
       </Modal.Body>
       <Modal.Footer className="new-boarder-footer">

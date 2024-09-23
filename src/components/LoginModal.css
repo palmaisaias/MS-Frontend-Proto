@@ -26,7 +26,6 @@ select.custom-form-control {
   padding: 0.5rem;
 }
 
-/* Placeholder styling */
 input.custom-form-control::placeholder,
 select.custom-form-control::placeholder {
   color: #ffffff !important;
@@ -47,7 +46,6 @@ select.custom-form-control::placeholder {
   align-items: center;
 }
 
-/* Specific Colors for Each Circle */
 .text-white {
   text-decoration: none !important;
   font-size: 1.2rem !important;
@@ -119,27 +117,24 @@ select.custom-form-control::placeholder {
   color: #ff0000 !important;
 }
 
-/* Highlight invalid input fields */
 .custom-form-control.is-invalid {
   border-color: #dc3545 !important; /* Bootstrap's danger color */
   background-color: #f5c6cb !important; /* Light red background */
   color: #000000 !important;
 }
 
-/* Style for the error messages */
 .invalid-feedback {
   color: #f5c6cb !important;
 }
 
-/* Style for the form error message */
+
 .error-message {
   color: #f5c6cb !important;
   text-align: center;
   margin-bottom: 1rem;
   font-weight: bold;
 }
-
-/* Shake animation */
+/* a little shaky shake action on the errors */
 @keyframes shake {
   0% {
     transform: translateX(0);

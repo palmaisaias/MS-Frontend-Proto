@@ -17,21 +17,21 @@ const Sanctuary = () => {
   const [newBoardName, setNewBoardName] = useState("");
   const [newBoardDescription, setNewBoardDescription] = useState("");
 
-  // Pull user id from the user_details endpoint
+  //this is to get the user ID
   useEffect(() => {
     const fetchCurrentUser = async () => {
       const authToken = localStorage.getItem("authToken");
 
       if (!authToken) {
-        // Redirect to login if no token is found
+        // if no token is found the user gets kicked to the homepage. 
+        // Need to add a message that prompts 'please log-in'
         navigate("/login");
         return;
       }
 
       try {
-        // Proceed with the API call if token exists
         const response = await axiosInstance.get("/user_details");
-        console.log("User details response:", response); // Debugging log
+        console.log("User details response:", response);
         const userId = response.data.user_id;
         setCurrentUserId(userId);
       } catch (error) {
@@ -42,7 +42,6 @@ const Sanctuary = () => {
     fetchCurrentUser();
   }, []);
 
-  // Pull all of the boards and filter them
   useEffect(() => {
     const fetchBoards = async () => {
       try {
@@ -86,14 +85,13 @@ const Sanctuary = () => {
 
   const handleCreateBoard = async () => {
     try {
-      // Log the data being passed
       console.log("Data being passed:", {
         name: newBoardName,
         description: newBoardDescription,
       });
 
       console.log('Token being passed:', axiosInstance.defaults.headers.common['Authorization']);
-      // Step 1: Create the new board
+
       const response = await axiosInstance.post("/vision-boards", {
         name: newBoardName,
         description: newBoardDescription,
@@ -102,13 +100,12 @@ const Sanctuary = () => {
       if (response.status === 201) {
         const newBoard = response.data;
 
-        // Step 2: Update state with the new board
+        // update state with the new board
         setBoards((prevBoards) => [...prevBoards, newBoard]);
         handleCloseCreateBoardModal();
       }
     } catch (error) {
       console.error("Error creating a new board or adding content:", error);
-      // Handle error cases
     }
   };
 
@@ -118,7 +115,7 @@ const Sanctuary = () => {
   return (
     <Container fluid className="vision-board-detail-page">
       {" "}
-      {/*Inheriting from VisionBoardDetail */}
+      {/*Inheriting some CSS from VisionBoardDetail. Messy but out of time */}
       <ActiveUserNav />
       <Container fluid className="mt-4" style={{ paddingLeft: "30px" }}>
         <h1 className="board-title-message">Your Vision Boards</h1>
@@ -150,7 +147,7 @@ const Sanctuary = () => {
                         aria-label="Delete Board"
                         title="Delete Board"
                         onClick={(e) => {
-                          e.stopPropagation(); // Prevent triggering navigateToBoard
+                          e.stopPropagation(); // this prevents the triggering of the page linked to the board since they live in the same space
                           handleDelete(board.id);
                         }}
                       />

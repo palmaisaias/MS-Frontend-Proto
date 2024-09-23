@@ -20,11 +20,28 @@
   border-radius: 25px !important;
   background-color: #643afd !important;
   font-size: larger !important;
-  font-family: 'Lato' !important;
+  font-family: "Lato" !important;
   font-weight: 300 !important;
 }
 
 .sanctuary-return-link {
   text-decoration: none !important;
   color: #242424 !important;
+}
+
+@media (max-width: 480px) {
+  .custom-padding {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+  }
+
+  .custom-add-art {
+    display: grid;
+    place-items: center;
+    text-align: center; 
+  }
+
+  .title-card-formatz {
+    text-align: center;
+  }
 }

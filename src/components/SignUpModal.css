@@ -21,40 +21,37 @@ select.custom-form-control {
   background-color: #643afd !important;
   border-color: #ffffff !important;
   border-radius: 50px !important;
-  color: #ffffff !important; /* Text color */
-  padding: 0.5rem; /* Add padding for better appearance */
+  color: #ffffff !important;
+  padding: 0.5rem;
 }
 
-/* Placeholder styling */
 input.custom-form-control::placeholder,
 select.custom-form-control::placeholder {
-  color: #ffffff !important; /* Placeholder text color */
-  opacity: 1; /* Ensures full opacity for placeholder */
+  color: #ffffff !important;
+  opacity: 1;
 }
 
 .custom-form-control-date {
-  border-radius: 50px !important; /* Adjust border-radius as desired */
+  border-radius: 50px !important;
   width: 125px !important;
   background-color: #643afd !important;
   color: #ffffff !important;
-  border: 2px solid #ffffff !important; /* Ensure border is solid white */
-  padding: 0.5rem; /* Add padding for better appearance */
+  border: 2px solid #ffffff !important;
+  padding: 0.5rem;
 }
 
-/* Adjust the appearance of the placeholder (for older browsers or support) */
 .custom-form-control-date::placeholder {
-  color: #ffffff !important; /* Placeholder text color */
-  opacity: 1; /* Ensures full opacity for placeholder */
+  color: #ffffff !important;
+  opacity: 1;
 }
 
-/* Fix for input elements with a type of 'date' */
 input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
-  filter: invert(1); /* Invert color of date picker icon to match white text */
+  filter: invert(1);
 }
 
 .sign-up-button {
   color: #242424 !important;
-  border-radius: 50px !important; /* Customize the button border-radius separately if needed */
+  border-radius: 50px !important;
   width: 366px;
   background-color: #fbb3a8 !important;
   border-color: #fbb3a8 !important;
@@ -62,43 +59,42 @@ input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
 
 .button-container {
   display: flex;
-  justify-content: center; /* Centers the button horizontally */
-  align-items: center; /* Centers the button vertically, if needed */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Specific Colors for Each Circle */
 .text-white {
-  text-decoration: none !important; /* Removes the underline from the links */
+  text-decoration: none !important;
   font-size: 1.2rem !important;
   font-weight: 400 !important;
 }
 .custom-link {
-  display: flex !important; /* Enables flexbox layout */
-  flex-direction: column !important; /* Stacks circle above text */
-  align-items: center !important; /* Centers content horizontally */
-  text-align: center !important; /* Centers the text */
-  margin-bottom: 20px !important; /* Adds space between sections */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin-bottom: 20px !important;
   text-decoration: none !important;
 }
 
 .circle {
-  width: 40px !important; /* Width of the circle */
-  height: 40px !important; /* Height of the circle */
-  border-radius: 50% !important; /* Makes the element a circle */
-  margin-bottom: 5px !important; /* Adds space between circle and text */
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  margin-bottom: 5px !important;
   background-color: transparent !important;
 }
 
 .explore-circle {
-  background-color: #dbf7d6 !important; /* Color for Explore */
+  background-color: #dbf7d6 !important;
 }
 
 .curate-circle {
-  background-color: #f2b5a6 !important; /* Color for Curate */
+  background-color: #f2b5a6 !important;
 }
 
 .advocate-circle {
-  background-color: #fff !important; /* Color for Advocate */
+  background-color: #fff !important;
 }
 
 .small-text {
@@ -107,7 +103,7 @@ input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
 }
 
 .small-text a {
-  color: #ffffff !important; /* Custom link color */
+  color: #ffffff !important;
   text-decoration: dashed !important;
 }
 
@@ -119,7 +115,7 @@ input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
   position: absolute !important;
   top: 10px !important;
   right: 10px !important;
-  background-color: #ffffff !important; /* there has to be a transparencu here */
+  background-color: #ffffff !important;
   border: none !important;
   font-size: 18px !important;
   width: 30px !important;

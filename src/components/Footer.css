@@ -64,55 +64,55 @@
 @media (max-width: 480px) {
   .footer-section {
     background-color: #643afd !important;
-    padding: 10px 15px; /* Adjust padding to create space on mobile */
+    padding: 10px 15px;
     font-family: "Lato", sans-serif;
     max-height: auto !important;
     margin: 0 !important;
     overflow: hidden !important;
-    text-align: center; /* Center align for a cleaner look on small screens */
+    text-align: center;
   }
 
   .footer-section h5 {
-    margin-bottom: 10px; /* Reduce margin for better spacing */
+    margin-bottom: 10px;
     font-weight: bold;
-    font-size: 28px; /* Decrease font size to fit smaller screens */
+    font-size: 28px;
     font-family: "Lato", sans-serif;
     color: #fbb3a8;
-    margin-left: 0; /* Align text properly */
+    margin-left: 0;
   }
 
   .footer-section .section-links {
-    padding-left: 20px !important; /* Reduced padding for smaller screens */
+    padding-left: 20px !important;
     padding-right: 20px !important;
   }
 
   .footer-linking {
     font-weight: 600;
     color: #f0edfa !important;
-    font-size: 1rem !important; /* Adjust font size for readability */
+    font-size: 1rem !important;
   }
 
   .footer-section .form-control {
-    max-width: 100%; /* Ensure the form control fits the screen */
+    max-width: 100%;
     min-width: auto;
     min-height: 40px;
     background-color: #643afd;
     border: 2px solid transparent;
     color: #fff;
-    border-radius: 25px; /* Slightly reduce border radius */
+    border-radius: 25px;
     font-style: italic;
     font-weight: 400 !important;
-    margin: 10px auto; /* Center form on mobile screens */
+    margin: 10px auto;
   }
 
   .bottom-form-pad {
-    padding-left: 10px; /* Adjust for more balanced padding */
+    padding-left: 10px;
     padding-right: 10px;
   }
 
   .footer-section .form-control::placeholder {
     color: #fdf7e7;
-    font-size: 16px; /* Smaller placeholder text for better fit */
+    font-size: 16px;
   }
 
   .footer-section .btn-light {
@@ -120,8 +120,8 @@
     color: #000;
     border: none;
     border-radius: 25px;
-    width: 80%; /* Make button width responsive */
-    margin: 10px auto; /* Center the button on mobile */
+    width: 80%;
+    margin: 10px auto;
     height: 40px;
   }
 

@@ -1,13 +1,12 @@
-// src/components/Footer.jsx
 import React from "react";
 import { Container, Row, Col, Button, Nav } from "react-bootstrap";
-import "./Footer.css"; // Make sure to create and link the corresponding CSS file
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <Container fluid className="footer-section footer-linking">
       <Row className="py-4 position-relative">
-        {/* Column 1: Newsletter Section. This will not be active but I want to leave it as a RTA */}
+        {/* Column 1: Newsletter Section. This will not be active but I want to leave it as a future innitiative */}
         <Col md={4} className="text-center text-md-start">
           <h5>Receive our monthly newsletter</h5>
           <form className="d-flex align-items-center bottom-form-pad">
@@ -28,7 +27,10 @@ const Footer = () => {
         </Col>
 
         {/* Column 2 custom-link: Navigation Links. We may have to add some dummy data to these. */}
-        <Col md={4} className="text-center text-md-start section-links limitless-position">
+        <Col
+          md={4}
+          className="text-center text-md-start section-links limitless-position"
+        >
           <Nav className="flex-column">
             <Nav.Link href="#publishers" className="footer-linking">
               Publishers
@@ -44,11 +46,19 @@ const Footer = () => {
             </Nav.Link>
           </Nav>
           <img
-          src="/footer.png"
-          alt="Background"
-          className="limitless-position"
-          style={{ position: 'absolute', bottom: '-20px', right: 0, zIndex: 1, opacity: 0.5, maxWidth: '100%', maxHeight: '115%' }}
-        />
+            src="/footer.png"
+            alt="Background"
+            className="limitless-position"
+            style={{
+              position: "absolute",
+              bottom: "-20px",
+              right: 0,
+              zIndex: 1,
+              opacity: 0.5,
+              maxWidth: "100%",
+              maxHeight: "115%",
+            }}
+          />
         </Col>
       </Row>
     </Container>

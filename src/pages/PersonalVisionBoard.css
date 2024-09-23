@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 
-/* General Styling for Vision Board Page */
 .vision-board-detail-page {
   background: var(
     --Gradient,
@@ -18,7 +17,6 @@
   min-height: 100vh;
 }
 
-/* Styling for the 'Create a New Board' Section */
 .create-board-section {
   background-color: #f8f9fa;
   padding: 20px;
@@ -55,7 +53,7 @@
 }
 
 .create-board-section button:hover {
-  background-color: #331b96; /* Darken button color on hover */
+  background-color: #331b96;
 }
 
 /* Card Styling for Vision Board Cards */
@@ -93,7 +91,6 @@
   object-fit: cover;
 }
 
-/* Styling for the Card Content */
 .card-body {
   padding: 20px;
   text-align: center;
@@ -122,7 +119,6 @@
   text-overflow: ellipsis;
 }
 
-/* Action Button and Metadata Styling */
 .card-body .d-flex {
   justify-content: space-between;
   align-items: center;
@@ -141,7 +137,6 @@
   color: #fff;
 }
 
-/* Styling for Empty State */
 .empty-state {
   text-align: center;
   margin: 40px 0;
@@ -153,7 +148,6 @@
   margin-top: 10px;
 }
 
-/* Custom Link Styling */
 .back-link,
 .all-topics-link {
   color: #4823d1;
@@ -167,210 +161,160 @@
   text-decoration: underline;
 }
 
-/* Plus sign on hover */
-.create-board-card::before {
-  content: "+" !important; /* Plus sign content */
-  position: absolute !important; /* Position absolute to center it */
-  font-size: 6rem !important; /* Large font size for the plus sign */
-  color: rgba(72, 35, 209, 0) !important; /* Initial transparent color */
-  transition: color 0.3s ease !important; /* Transition effect for the plus sign */
-  z-index: 4 !important; /* Send it behind the card content */
-}
-
-.create-board-card:hover::before {
-  color: rgba(72, 35, 209, 0.2) !important; /* Slightly faded color on hover */
-  opacity: 0.1; /* Set opacity to full on hover */
-}
-
-.unique-vision-card {
-  text-align: center !important; /* Center text */
-  border: none !important; /* Remove default border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow for a clean effect */
-  padding: 20px !important; /* Add padding for spacing */
-  border-radius: 10px !important; /* Rounded corners for a modern look */
-  transition: transform 0.2s ease !important; /* Smooth transform on hover */
-}
-
-.unique-vision-card:hover {
-  transform: translateY(-5px) !important; /* Slight lift effect on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important; /* Enhance shadow on hover */
-}
-
-.unique-vision-card .card-body {
-  padding: 0 !important; /* Remove padding from Card.Body to center content better */
-}
-
-.unique-vision-card-title {
-  font-size: 1.8rem !important; /* Make the title more imposing */
-  font-weight: 700 !important; /* Bold title */
-  margin-bottom: 15px !important; /* Space below the title */
-  color: #333 !important; /* Darker color for emphasis */
-}
-
-.unique-vision-card-text {
-  font-size: 1rem !important; /* Smaller font size for the description */
-  color: #666 !important; /* Lighter color for a subtle appearance */
-  margin-bottom: 0 !important; /* Remove default bottom margin */
-}
-
-.custom-cardy {
-  min-height: 500px !important; /* Set the minimum height for the card */
-  height: auto !important; /* Let the content define additional height */
-}
 
 /* CSS for the "EXISTING" card */
 .existing-board-card {
-  position: relative !important; /* Position relative to enable absolute positioning of the plus sign */
-  border: 1px solid #4823d1 !important; /* Dashed border to make it stand out */
+  position: relative !important;
+  border: 1px solid #4823d1 !important;
   background: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Smooth hover effect */
-  cursor: pointer !important; /* Cursor changes to pointer on hover */
-  border-radius: 15px !important; /* Rounded corners */
-  height: 450px !important; /* Fixed height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+  border-radius: 15px !important;
+  height: 450px !important;
   max-width: 400px;
-  display: flex !important; /* Flexbox for center alignment */
-  align-items: center !important; /* Center vertically */
-  justify-content: center !important; /* Center horizontally */
-  overflow: hidden !important; /* Hide overflow for the plus sign */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
   z-index: 1 !important;
   margin-left: 60px !important;
 }
 
+/* I want to set this to cycle through images but I havent researched the logic yet */
 .existing-board-card::before {
-  content: ""; /* Necessary for pseudo-element */
-  position: absolute; /* Overlay positioning */
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: url(https://images.unsplash.com/photo-1635358276648-eb4dad62513f?q=80&w=2487&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-  background-position: center; /* Center the background image */
-  background-size: cover; /* Ensure the image covers the entire card */
-  background-repeat: no-repeat; /* Prevent image repeat */
-  opacity: 0.2; /* Adjust the opacity of the background image */
-  z-index: -1; /* Place behind content */
-  border-radius: 15px; /* Make sure the background has rounded corners */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 15px;
 }
 
 .existing-board-card:hover {
   transform: translateY(
     -10px
-  ) !important; /* Slightly lifts the card on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* Add a subtle shadow effect */
-  border-color: #331b96 !important; /* Darken border on hover */
+  ) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+  border-color: #331b96 !important;
 }
 
-/* Plus sign on hover */
 .existing-board-card::before {
-  content: "+" !important; /* Plus sign content */
-  position: absolute !important; /* Position absolute to center it */
-  font-size: 6rem !important; /* Large font size for the plus sign */
-  color: rgba(72, 35, 209, 0) !important; /* Initial transparent color */
-  transition: color 0.3s ease !important; /* Transition effect for the plus sign */
-  z-index: 4 !important; /* Send it behind the card content */
+  content: "+" !important;
+  position: absolute !important;
+  font-size: 6rem !important;
+  color: rgba(72, 35, 209, 0) !important;
+  transition: color 0.3s ease !important;
+  z-index: 4 !important;
 }
 
 .existing-board-card:hover::before {
-  color: rgba(72, 35, 209, 0.2) !important; /* Slightly faded color on hover */
-  opacity: 0.1; /* Set opacity to full on hover */
+  color: rgba(72, 35, 209, 0.2) !important;
+  opacity: 0.1;
 }
 
 /* Ensure content appears above the plus sign */
 .existing-board-card .card-body {
-  position: relative !important; /* Ensure card content stays above the plus sign */
-  z-index: 1 !important; /* Higher z-index than the plus sign */
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .existing-board-card .card-title {
   font-family: "Lato";
-  font-size: 1.5rem !important; /* Larger font size for the title */
-  font-weight: bold !important; /* Bold font for emphasis */
-  color: #4823d1 !important; /* Primary color for the title */
-  margin-bottom: 5px !important; /* Margin below the title */
-  position: relative !important; /* Ensure proper layering */
-  z-index: 1 !important; /* Higher z-index to be above the plus sign */
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  color: #4823d1 !important;
+  margin-bottom: 5px !important;
+  position: relative !important;
+  z-index: 1 !important;
   margin-top: 0;
 }
 
 .existing-board-card .card-text {
-  font-size: 1.1rem !important; /* Slightly larger font size for the text */
-  color: #333 !important; /* Dark color for the text */
-  margin-bottom: 0 !important; /* No margin below the text */
-  position: relative !important; /* Ensure proper layering */
-  z-index: 1 !important; /* Higher z-index to be above the plus sign */
+  font-size: 1.1rem !important;
+  color: #333 !important;
+  margin-bottom: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 
 /* CSS for the "CREATE NEW" card */
 .newer-board-card {
-  position: relative !important; /* Position relative to enable absolute positioning of the plus sign */
-  border: 1px solid #4823d1 !important; /* Dashed border to make it stand out */
+  position: relative !important;
+  border: 1px solid #4823d1 !important;
   background: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Smooth hover effect */
-  cursor: pointer !important; /* Cursor changes to pointer on hover */
-  border-radius: 15px !important; /* Rounded corners */
-  height: 450px !important; /* Fixed height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: pointer !important;
+  border-radius: 15px !important;
+  height: 450px !important;
   max-width: 400px;
-  display: flex !important; /* Flexbox for center alignment */
-  align-items: center !important; /* Center vertically */
-  justify-content: center !important; /* Center horizontally */
-  overflow: hidden !important; /* Hide overflow for the plus sign */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
   z-index: 1 !important;
   margin-left: 60px !important;
 }
 
 .newer-board-card::before {
-  content: ""; /* Necessary for pseudo-element */
-  position: absolute; /* Overlay positioning */
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plus_symbol.svg/1200px-Plus_symbol.svg.png);
-  background-position: center; /* Center the background image */
-  background-size: cover; /* Ensure the image covers the entire card */
-  background-repeat: no-repeat; /* Prevent image repeat */
-  opacity: 0.2; /* Adjust the opacity of the background image */
-  z-index: -1; /* Place behind content */
-  border-radius: 15px; /* Make sure the background has rounded corners */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: -1;
+  border-radius: 15px;
 }
 
 .newer-board-card:hover {
   transform: translateY(
     -10px
-  ) !important; /* Slightly lifts the card on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* Add a subtle shadow effect */
-  border-color: #331b96 !important; /* Darken border on hover */
+  ) !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+  border-color: #331b96 !important;
 }
 
 .newer-board-card:hover::before {
-  color: rgba(72, 35, 209, 0.2) !important; /* Slightly faded color on hover */
-  opacity: 0.5; /* Set opacity to full on hover */
+  color: rgba(72, 35, 209, 0.2) !important;
+  opacity: 0.5;
 }
 
 /* Ensure content appears above the plus sign */
 .newer-board-card .card-body {
-  position: relative !important; /* Ensure card content stays above the plus sign */
-  z-index: 1 !important; /* Higher z-index than the plus sign */
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .newer-board-card .card-title {
   font-family: "Lato";
-  font-size: 1.5rem !important; /* Larger font size for the title */
-  font-weight: bold !important; /* Bold font for emphasis */
-  color: #4823d1 !important; /* Primary color for the title */
-  margin-bottom: 5px !important; /* Margin below the title */
-  position: relative !important; /* Ensure proper layering */
-  z-index: 1 !important; /* Higher z-index to be above the plus sign */
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  color: #4823d1 !important;
+  margin-bottom: 5px !important;
+  position: relative !important;
+  z-index: 1 !important;
   margin-top: 0;
 }
 
 .newer-board-card .card-text {
-  font-size: 1.1rem !important; /* Slightly larger font size for the text */
-  color: #333 !important; /* Dark color for the text */
-  margin-bottom: 0 !important; /* No margin below the text */
-  position: relative !important; /* Ensure proper layering */
-  z-index: 1 !important; /* Higher z-index to be above the plus sign */
+  font-size: 1.1rem !important;
+  color: #333 !important;
+  margin-bottom: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .explore-your-board {
@@ -378,5 +322,61 @@
   font-family: 'Lato' !important;
   background-color: #643AFD !important;
   font-weight: 300 !important;
+
+}
+
+@media (max-width: 480px) {
+  .existing-board-card {
+    position: relative !important;
+    border: 1px solid #4823d1 !important;
+    background: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer !important;
+    border-radius: 15px !important;
+    height: 450px !important;
+    max-width: 400px;
+    display: flex !important;
+    align-items: center !important; 
+    justify-content: center !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .newer-board-card {
+    position: relative !important;
+    border: 1px solid #4823d1 !important;
+    background: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer !important;
+    border-radius: 15px !important;
+    height: 450px !important;
+    max-width: 400px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .existing-board-card .card-title {
+    font-size: 2.5rem !important;
+  }
+
+  .newer-board-card .card-title {
+    font-size: 2.5rem !important;
+  }
+
+  .existing-board-card .card-text {
+    font-size: 1.5rem !important;
+  }
+
+  .newer-board-card .card-text {
+    font-size: 1.5rem !important;
+  }
+
 
 }

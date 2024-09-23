@@ -1,25 +1,22 @@
 /* Homepage.css */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-/* Reset default margin and padding */
+/* reset the margins */
 body, html {
   margin: 0;
   padding: 0;
 }
 
 .custom-bg {
-  background-color: #643AFD !important; /* Replace with your desired color */
+  background-color: #643AFD !important;
 }
 
-/* General Styling */
 .homepage {
   background-color: #f4f4f4;
   font-family: 'Lato', sans-serif;
   padding: 0 !important;
 }
 
-/* Header Section */
 .header-section {
   background-color: #643AFD; /* Background color as shown in the PDF */
   color: #FBB3A8 !important;
@@ -61,36 +58,33 @@ body, html {
   font-size: 1.2rem !important;
   border: 2px solid #FBB3A8 !important;
   border-radius: 50px !important;
-  margin-left: 20px; /* Match margin with text */
+  margin-left: 20px;
   margin-right: 20px;
-  padding: 10px 30px !important; /* Adjust padding */
+  padding: 10px 30px !important;
   background-color: #FBB3A8 !important;
   margin-bottom: 20px !important;
 }
 
-/* Image styling */
 .header-section img {
   width: 100%;
-  max-height: 550px; /* Prevent the image from exceeding 550px */
+  max-height: 550px;
   object-fit: cover;
 }
 
-/* Ensure Row is Responsive */
+
 .header-section .row {
   flex-wrap: wrap;
   align-items: stretch;
-  padding: 0 20px; /* Padding to prevent content from touching edges */
-  margin: 0 auto; /* Center row content */
-  max-width: 100%; /* Prevent overflow */
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
-/* Main Content Section */
 .content-section {
-  display: flex; /* Ensure children can align properly */
+  display: flex;
   align-items: center;
 }
 
-/* Customize text placement for each section if needed */
 .section-text h3 {
   font-weight: bold;
   font-size: 42px;
@@ -128,80 +122,76 @@ body, html {
   color: #242424;
 }
 
-/* Image Container Styling */
 .section-image {
   height: 100% !important;
-  padding: 0 !important;  /* Ensure no padding */
-  margin: 0 !important;   /* Ensure no margin */
-  display: flex; /* Use flexbox to control child element */
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
   justify-content: left !important; /* PUSHES THE IMAGE TO WHICHEVER END */
 }
 
 .section-image-middle {
-  padding: 0 !important;  /* Ensure no padding */
-  margin: 0 !important;   /* Ensure no margin */
-  display: flex; /* Use flexbox to control child element */
-  justify-content: right !important; /* PUSHES THE IMAGE TO WHICHEVER END */
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: right !important;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 1180px) {
   .header-text h1,
   .header-text p {
-    font-size: 1.5rem; /* Adjust font size to prevent overflow */
-    margin-left: 10px; /* Reduce margins on smaller screens */
+    font-size: 1.5rem;
+    margin-left: 10px;
     margin-right: 10px;
   }
 
   .show-me-btn {
-    margin-left: 10px; /* Match button margin */
+    margin-left: 10px;
     margin-right: 10px;
-    padding: 8px 20px !important; /* Adjust padding for better fit */
+    padding: 8px 20px !important;
   }
 }
 
 @media (max-width: 768px) {
   .header-section .row {
-    flex-direction: column; /* Stack items vertically */
-    padding: 10px; /* Add some padding around the row */
+    flex-direction: column;
+    padding: 10px;
   }
 
   .header-text h1 {
-    font-size: 1.2rem; /* Further reduce font size */
-    margin: 0 auto; /* Center align */
+    font-size: 1.2rem;
+    margin: 0 auto;
   }
 
   .header-text p {
-    font-size: 1rem; /* Reduce font size for paragraph */
-    margin: 0 auto; /* Center align */
+    font-size: 1rem;
+    margin: 0 auto;
   }
 
   .show-me-btn {
-    width: 100%; /* Make button full-width */
-    margin: 10px 0; /* Adjust margin for better spacing */
-    padding: 10px; /* Ensure adequate padding */
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
   }
 }
 
-/* Background Colors for Each Section */
 .section-1 {
   color: #643AFD !important;
-  background-color: #FBB3A8; /* Light blue */
+  background-color: #FBB3A8;
   color: #333;
 }
 
 .section-2 {
-  background-color: #643AFD; /* Light pink */
+  background-color: #643AFD;
   color: #FBB3A8;
 }
 
 .section-3 {
   color: #EFE4CF !important;
-  background-color: #FBB3A8; /* Light green */
+  background-color: #FBB3A8;
   color: #643AFD !important;
 }
 
-/* Responsive Layout Adjustments */
 @media (max-width: 768px) {
   .section-image {
     margin-top: 20px;
@@ -220,40 +210,40 @@ body, html {
 @media (max-width: 1024px) {
   .header-text h1,
   .header-text p {
-    font-size: 1.4rem; /* Adjust font size for large tablets */
-    margin-left: 5px; /* Further reduce margins */
+    font-size: 1.4rem;
+    margin-left: 5px;
     margin-right: 5px;
-    line-height: 1.3; /* Adjust line height for readability */
+    line-height: 1.3;
   }
 
   .show-me-btn {
-    margin-left: 5px; /* Adjust button margins */
+    margin-left: 5px;
     margin-right: 5px;
-    padding: 8px 16px !important; /* Adjust padding */
+    padding: 8px 16px !important;
   }
 
   .header-section .row {
-    padding: 0 15px; /* Adjust padding for the row */
+    padding: 0 15px;
   }
 }
 
 @media (max-width: 640px) {
   .header-text h1,
   .header-text p {
-    font-size: 1.1rem; /* Further reduce font size */
-    margin-left: 10px; /* Slight padding for small screens */
+    font-size: 1.1rem;
+    margin-left: 10px;
     margin-right: 10px;
   }
 
   .show-me-btn {
-    width: 90%; /* Almost full-width button */
-    margin: 10px auto; /* Center button with auto margins */
-    padding: 10px 15px !important; /* Reduce padding slightly */
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px 15px !important;
   }
 
   .header-section .row {
-    flex-direction: column; /* Stack items vertically */
-    padding: 10px; /* Consistent padding around the row */
+    flex-direction: column;
+    padding: 10px;
   }
 }
 
@@ -264,41 +254,41 @@ body, html {
 
   .header-text h1,
   .header-text p {
-    font-size: 1rem; /* Small font size for small devices */
-    text-align: center; /* Center text alignment */
-    margin: 0 auto; /* Center margin */
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .show-me-btn {
-    width: 50%; /* Full-width button */
-    padding: 12px 10px !important; /* Adjust padding for tap targets */
-    margin: 15px auto; /* More margin to separate button */
+    width: 50%;
+    padding: 12px 10px !important;
+    margin: 15px auto;
   }
 
   .with-style {
     padding-left: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center all child elements within the div */
+    align-items: center;
   }
 
   .header-section {
-    padding: 0 5px; /* Reduce padding to fit the screen */
+    padding: 0 5px;
   }
 
   .header-section .row {
-    padding: 5px; /* Consistent smaller padding */
-    margin: 0; /* Remove any margin to maximize space */
+    padding: 5px;
+    margin: 0;
   }
 
   .header-section {
-    background-color: #643AFD; /* Background color as shown in the PDF */
+    background-color: #643AFD;
     color: #FBB3A8 !important;
     text-align: left !important;
-    max-height: 950px; /* Limit the maximum height */
-    overflow: hidden; /* Ensure no content overflows beyond 550px */
-    position: relative; /* Allow child elements to use absolute positioning */
-    padding-right: 0; /* Ensure there's no padding that may restrict overflow */
+    max-height: 950px;
+    overflow: hidden;
+    position: relative;
+    padding-right: 0;
   }
 
   .youtube-vid {
@@ -340,37 +330,37 @@ body, html {
 @media (max-width: 1366px) {
   .header-text h1,
   .header-text p {
-    font-size: 1.6rem; /* Slightly larger font size for medium desktops */
-    margin-left: 15px; /* Adjust margins for better spacing */
+    font-size: 1.6rem;
+    margin-left: 15px;
     margin-right: 15px;
   }
 
   .show-me-btn {
-    margin-left: 15px; /* Adjust button margins */
+    margin-left: 15px;
     margin-right: 15px;
-    padding: 10px 25px !important; /* Slightly larger padding */
+    padding: 10px 25px !important;
   }
 
   .header-section .row {
-    padding: 0 30px; /* Increase padding around the row */
+    padding: 0 30px;
   }
 }
 
 @media (max-width: 1440px) {
   .header-text h1,
   .header-text p {
-    font-size: 1.8rem; /* Increase font size for larger desktops */
-    margin-left: 20px; /* Adjust margins to provide more space */
+    font-size: 1.8rem;
+    margin-left: 20px;
     margin-right: 20px;
   }
 
   .show-me-btn {
-    margin-left: 20px; /* Adjust button margins */
+    margin-left: 20px;
     margin-right: 20px;
-    padding: 12px 30px !important; /* Increase padding for better appearance */
+    padding: 12px 30px !important;
   }
 
   .header-section .row {
-    padding: 0 40px; /* Further increase padding around the row */
+    padding: 0 40px;
   }
 }

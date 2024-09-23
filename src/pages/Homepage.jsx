@@ -10,36 +10,34 @@ import AccountCreated from "../components/AccountCreated";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-const Homepage = () => {
-  // State management for all modals
+// modal states
+const Homepage = () => { 
   const [showSignUp, setShowSignUp] = useState(false);
   const [showLogin, setShowLogin] = useState(false); // State for login modal
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [showAccountCreated, setShowAccountCreated] = useState(false);
 
-  // Handle closing of all modals
   const handleCloseSignUp = () => setShowSignUp(false);
   const handleCloseLogin = () => setShowLogin(false); // Close login modal
   const handleCloseUserDetails = () => setShowUserDetails(false);
   const handleCloseAccountCreated = () => setShowAccountCreated(false);
 
-  // Handle showing of SignUp and Login modals
+  //showing of SignUp and Login modals
   const handleShowSignUp = () => setShowSignUp(true);
   const handleShowLogin = () => setShowLogin(true); // Show login modal
 
-  // Handle sign-up form submission and show the user details modal
+  //sign-up form submission and show the user details modal
   const handleSignUpSubmit = () => {
     setShowSignUp(false);
     setShowUserDetails(true);
   };
 
-  // Handle login form submission
+  //login form submission
   const handleLoginSubmit = () => {
-    // Perform any actions after login, e.g., fetch user data, redirect, etc.
     setShowLogin(false);
   };
 
-  // Handle user details submission and show the account created modal
+  //user details submission and show the account created modal
   const handleUserDetailsSubmit = () => {
     setShowUserDetails(false);
     setShowAccountCreated(true);
@@ -47,7 +45,6 @@ const Homepage = () => {
 
   return (
     <Container fluid className="homepage">
-      {/* Use the reusable NavBar component */}
       <NavBar
         handleShowSignUp={handleShowSignUp}
         handleShowLogin={handleShowLogin}

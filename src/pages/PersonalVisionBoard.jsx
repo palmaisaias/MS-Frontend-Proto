@@ -9,10 +9,10 @@ import CreateBoardModal from "../components/CreateBoardModal";
 
 const PersonalVisionBoard = () => {
   const location = useLocation();
-  const visionBoard = location.state?.visionBoard; // Access the passed vision board data
+  const visionBoard = location.state?.visionBoard;
   const imageUrl = visionBoard?.main_image_url;
 
-  const [boards, setBoards] = useState([]); // State to manage existing boards
+  const [boards, setBoards] = useState([]);
   const [newBoardName, setNewBoardName] = useState("");
   const [newBoardDescription, setNewBoardDescription] = useState("");
   const [currentUserId, setCurrentUserId] = useState(null);
@@ -27,7 +27,6 @@ const PersonalVisionBoard = () => {
   useEffect(() => {
     const fetchCurrentUser = async () => {
       try {
-        // Make an API call to get the current user's details
         const response = await axiosInstance.get("/user_details");
         console.log("USER DETAIL RESPONSE:", response); // Debugging log
         const userId = response.data.user_id; // Extract the user_id from the response
@@ -40,8 +39,6 @@ const PersonalVisionBoard = () => {
 
     fetchCurrentUser();
   }, []);
-
-  // Fetch and filter boards created by the current user
   useEffect(() => {
     const fetchBoards = async () => {
       try {
@@ -51,7 +48,7 @@ const PersonalVisionBoard = () => {
         );
         console.log("Fetched Vision BOARDS:", response.data);
 
-        // Filter boards that were created by the current user
+        // Filter boards that were created by the current user. User id is an int so it has to be number
         const createdBoards = response.data.filter(
           (board) =>
             typeof board.created_by === "number" &&
@@ -64,14 +61,12 @@ const PersonalVisionBoard = () => {
           "Boards Created by Current User (Filtered):",
           createdBoards
         );
-
         // Set the state with filtered boards created by the current user
         setBoards(createdBoards);
       } catch (error) {
         console.error("Error fetching boards:", error);
       }
     };
-
     // Fetch boards only when the currentUserId is available
     if (currentUserId !== null) {
       fetchBoards();
@@ -80,17 +75,12 @@ const PersonalVisionBoard = () => {
 
   const handleCreateBoard = async () => {
     try {
-      // Log the data being passed
       console.log("Data being passed:", {
         name: newBoardName,
         description: newBoardDescription,
       });
 
-      console.log(
-        "Token being passed:",
-        axiosInstance.defaults.headers.common["Authorization"]
-      );
-      // Step 1: Create the new board
+      // create the new board
       const response = await axiosInstance.post("/vision-boards", {
         name: newBoardName,
         description: newBoardDescription,
@@ -102,7 +92,7 @@ const PersonalVisionBoard = () => {
         setNewBoardTitle(newBoard.name);
         setNewBoardId(newBoardId); // Store the newBoardId in state
 
-        // Step 2: Add content to the newly created board
+        // add content to the newly created board
         if (visionBoard) {
           const contentResponse = await axiosInstance.post(
             `/vision-boards/${newBoardId}/content`,
@@ -123,23 +113,16 @@ const PersonalVisionBoard = () => {
           }
         }
 
-        // Step 3: Update state with the new board
+        // update state with the new board
         setBoards((prevBoards) => [...prevBoards, newBoard]);
       }
     } catch (error) {
       console.error("Error creating a new board or adding content:", error);
-      // Handle error cases
     }
   };
 
   const handleBoardSelection = async (boardId) => {
     try {
-      // Log the data being sent to the backend
-      console.log("Data being sent to /vision-boards/content:", {
-        content_url: visionBoard.content_url,
-        content_type: visionBoard.content_type,
-        main_image_url: visionBoard.main_image_url,
-      });
       const contentResponse = await axiosInstance.post(
         `/vision-boards/${boardId}/content`,
         {
@@ -154,13 +137,12 @@ const PersonalVisionBoard = () => {
           contentResponse.data
         );
         setIsArticleAdded(true);
-        setNewBoardId(boardId); // Store the selected boardId in state
+        setNewBoardId(boardId); // store the selected boardId in state
         const selectedBoard = boards.find((board) => board.id === boardId);
         setNewBoardTitle(selectedBoard.name);
       }
     } catch (error) {
       console.error("Error adding content to the board:", error);
-      // Handle error
     }
   };
 
@@ -170,7 +152,7 @@ const PersonalVisionBoard = () => {
       main_image_url: imageUrl, // Log to ensure it's included
     });
 
-    // Navigate and pass the entire visionBoard object or necessary properties
+    // I did this here in an attempt to keep the images consistent but it will have to wait until we can fix the scraper from BeautifulSoup
     navigate(`/vision-board/${boardId}`, {
       state: { visionBoard }, // Passing the full visionBoard with the image URL
     });
@@ -184,10 +166,7 @@ const PersonalVisionBoard = () => {
       <ActiveUserNav />
 
       <Container fluid className="mt-4 flex-grow-1">
-        {/* {newBoardTitle && <h2>{newBoardTitle}</h2>} */}
-
         {isArticleAdded ? (
-          // Success message after article is added
           <Row className="justify-content-center">
             <Col md={4}>
               <Card className="vision-board-carding">
@@ -212,7 +191,7 @@ const PersonalVisionBoard = () => {
                   <Button
                     className="explore-your-board"
                     onClick={() => navigateToBoard(newBoardId, visionBoard)}
-                    // Pass both newBoardId and selectedVisionBoard
+                    // pass both newBoardId and selectedVisionBoard
                   >
                     Explore Your Board
                   </Button>
@@ -221,7 +200,7 @@ const PersonalVisionBoard = () => {
             </Col>
           </Row>
         ) : boards.length === 0 ? (
-          // User has no existing boards; prompt to create one
+          // User has no existing boards...prompt to create one
           <Row className="justify-content-left">
             <Col md={4}>
               <Card
@@ -260,7 +239,7 @@ const PersonalVisionBoard = () => {
                   </Card>
                 </Col>
               ))}
-              {/* Include a card to create a new board */}
+              {/* ------card tp create new board-------*/}
               <Col md={4} className="mb-4">
                 <Card
                   className="text-center newer-board-card"
