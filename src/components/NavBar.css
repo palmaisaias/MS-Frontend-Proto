@@ -107,7 +107,8 @@
 }
 
 .navbar-custom .navbar-brand img:last-child {
-  margin-left: 5px;
+  margin-left: 40px;
+
 }
 
 @media (max-width: 1024px) {
@@ -167,8 +168,8 @@
   }
 
   .logo-image-home {
-    height: 80px !important;
-    width: 200px !important;
+    height: 100px !important;
+    width: 250px !important;
     margin-left: 0 !important;
     margin: 0 auto !important;
     padding: 5px !important;
