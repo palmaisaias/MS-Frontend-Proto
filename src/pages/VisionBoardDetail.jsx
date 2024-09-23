@@ -235,7 +235,7 @@ const VisionBoardDetail = () => {
             <Modal.Title className="p-2 colorific">
               {selectedVisionBoard.title}
             </Modal.Title>
-            <p className="p-2 colorific">{selectedVisionBoard.description}</p>
+            <p className="p-2 modal-clarity">{selectedVisionBoard.description}</p>
             {selectedVisionBoard.contentUrl && (
               <div className="content-url-container">
                 <a
@@ -244,7 +244,7 @@ const VisionBoardDetail = () => {
                   rel="noopener noreferrer"
                   className="p-2 content-url-link"
                 >
-                  Take a Closer Look
+                  Read full article
                 </a>
               </div>
             )}

@@ -43,7 +43,7 @@
 
 /* General Styling */
 .vision-board-detail-page {
-  background:#F9EFD6 !important;
+  background: #f9efd6 !important;
   font-family: "Lato", sans-serif;
   padding: 0 !important;
   margin: 0;
@@ -258,14 +258,42 @@
   background-color: #fbb3a8 !important;
 }
 
+.colorific.modal-title.h4 {
+  color: var(--Royal-Blue, #4823d1) !important;
+  font-size: 48px !important;
+  padding-left: 25px !important;
+}
+
+.p-2.modal-clarity {
+  color: var(--Black, #242424);
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 160% */
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  overflow: hidden; /* Hide any overflow content */
+  display: -webkit-box; /* Required for line clamping */
+  -webkit-box-orient: vertical; /* Required for vertical text truncation */
+  -webkit-line-clamp: 5; /* Limit to 2 lines */
+  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+}
+
 .content-url-container {
   display: flex; /* Use flexbox for alignment */
-  justify-content: flex-end; /* Push the link to the right */
+  justify-content: flex-start; /* Push the link to the right */
   margin-top: 20px; /* Add some spacing from the top if needed */
+  font-family: Lato;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 160% */
+  padding-left: 25px !important;
 }
 
 .content-url-link {
-  color: #4823d1;
+  color: #242424;
   font-weight: bold;
   font-size: 1.1rem;
   text-decoration: none;
@@ -285,13 +313,13 @@
   top: 10px;
   right: 10px;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.8); 
-  border: none; 
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
 }
 
 @media (max-width: 480px) {
   .board-title-message,
-  .board-desc-message{
+  .board-desc-message {
     padding-left: 10px !important;
   }
 
@@ -321,6 +349,27 @@
     -webkit-box-orient: vertical; /* Required for vertical text truncation */
     -webkit-line-clamp: 4; /* Limit to 2 lines */
     text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+  }
+
+  .p-2.modal-clarity {
+    color: var(--Black, #242424);
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 160% */
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    overflow: hidden; /* Hide any overflow content */
+    display: -webkit-box; /* Required for line clamping */
+    -webkit-box-orient: vertical; /* Required for vertical text truncation */
+    -webkit-line-clamp: 5; /* Limit to 2 lines */
+    text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+  }
+
+  .cool-mood-modal {
+    background-color: #4823d1;
+    padding-right: 15px;
   }
 
 }
