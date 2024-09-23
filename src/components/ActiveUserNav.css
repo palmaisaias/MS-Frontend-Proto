@@ -170,4 +170,10 @@
     margin: 0 auto !important;
     padding: 5px !important;
   }
+
+  .logout-link::after,
+  .library-link::after,
+  .folder-link::after {
+    display: none;
+  }
 }
