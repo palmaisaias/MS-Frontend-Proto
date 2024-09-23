@@ -37,11 +37,10 @@
 }
 
 .all-topics-link a {
-  color: black !important; /* Make text black */
-  text-decoration: none !important; /* Remove underline */
+  color: #242424 !important;
+  text-decoration: none !important;
 }
 
-/* General Styling */
 .vision-board-detail-page {
   background: #f9efd6 !important;
   font-family: "Lato", sans-serif;
@@ -49,19 +48,17 @@
   margin: 0;
 }
 
-/* Card Styling */
 .vision-board-card {
   border-radius: 25px !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .vision-board-card:hover {
-  transform: translateY(-10px); /* Raises the card */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Welcome Message */
 .welcome-message {
   color: #4823d1;
   font-weight: bold;
@@ -70,7 +67,6 @@
   margin-bottom: 20px;
 }
 
-/* Link Styling */
 .all-topics-link {
   color: #000000 !important;
   text-decoration: underline;
@@ -78,53 +74,50 @@
   display: block;
 }
 
-/* Image Styling */
 .fixed-size-img {
   border-top-right-radius: 25px !important;
   border-top-left-radius: 25px !important;
-  width: 415px; /* Fixed width */
-  height: 415px; /* Fixed height */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  overflow: hidden; /* Hides overflow of the image */
-  display: block; /* Ensures image is displayed as a block element */
-  margin: 0 auto; /* Centers the image */
+  width: 415px;
+  height: 415px;
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
 }
 
 .fixed-size-img-mod {
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
-  width: 100%; /* Fixed width */
-  height: 415px; /* Fixed height */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  overflow: hidden; /* Hides overflow of the image */
-  display: block; /* Ensures image is displayed as a block element */
-  margin: 0 auto !important; /* Centers the image */
+  width: 100%;
+  height: 415px;
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto !important;
 }
 
-/* Text Styling */
 .fixed-height-textz {
   text-align: left;
   font-size: 16px;
   color: #242424;
-  max-height: 48px; /* Fixed height */
-  overflow: hidden; /* Hide any overflow content */
-  display: -webkit-box; /* Required for line clamping */
-  -webkit-box-orient: vertical; /* Required for vertical text truncation */
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
-  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+  max-height: 48px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
 }
 
 .fixed-height-text-p {
   color: #fdf7e7;
-  height: 150px !important; /* Fixed height */
-  overflow: hidden; /* Hide any overflow content */
-  display: -webkit-box; /* Required for line clamping */
-  -webkit-box-orient: vertical; /* Required for vertical text truncation */
-  -webkit-line-clamp: 5; /* Number of lines to show */
-  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+  height: 150px !important;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; 
+  text-overflow: ellipsis; 
 }
 
-/* Overlay Styling */
 .card-overlay {
   position: absolute;
   bottom: 0;
@@ -136,7 +129,7 @@
   transition: background 0.3s;
 }
 
-/* Title Styling */
+
 .title-card-formatz {
   color: #4823d1 !important;
   border-radius: 25px;
@@ -144,7 +137,7 @@
   font-size: 40px !important;
   font-style: normal !important;
   font-weight: 700 !important;
-  line-height: 38px !important; /* 82.5% */
+  line-height: 38px !important; 
   text-align: left;
 }
 
@@ -155,10 +148,10 @@
   font-size: 40px !important;
   font-style: normal !important;
   font-weight: 700 !important;
-  line-height: 33px !important; /* 82.5% */
+  line-height: 33px !important; 
 }
 
-/* Overlay Background Colors */
+
 .purple-overlay {
   background-color: #643afd;
   border-bottom-left-radius: 25px;
@@ -177,17 +170,17 @@
   border-bottom-right-radius: 25px;
 }
 
-/* Link Styling */
+
 .card-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit the color from the parent */
+  text-decoration: none; 
+  color: inherit;
 }
 
 .card-body {
   min-height: 250px !important;
-  max-height: 250px !important; /* Sets a maximum height */
-  overflow: hidden !important; /* Hides any overflow content */
-  text-overflow: ellipsis !important; /* Adds ellipsis (...) for overflowing text */
+  max-height: 250px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 .vision-board-cards {
@@ -195,55 +188,55 @@
 }
 
 .drop-check-button {
-  padding: 10px 20px; /* Adjust the padding as needed */
-  margin: 10px; /* Adjust the margin as needed */
-  font-size: 18px; /* Adjust the font size for button text */
-  width: 200px; /* Adjust width as needed */
-  height: 50px; /* Adjust height as needed */
+  padding: 10px 20px;
+  margin: 10px; 
+  font-size: 18px;
+  width: 200px; 
+  height: 50px; 
   display: inline-block;
 }
 
 .custom-button-mover {
-  text-align: right; /* Align content to the right */
+  text-align: right; 
 }
 
 .icon-button-wrapper {
-  position: relative; /* Position relative to parent for absolute positioning of the tooltip */
-  display: inline-flex; /* Inline-flex to align items horizontally */
-  align-items: center; /* Center align items */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
 .icon-button {
-  background: none; /* Remove default button background */
-  border: none; /* Remove default button border */
-  padding: 0; /* Remove padding */
-  cursor: pointer; /* Show pointer cursor on hover */
-  display: inline-flex; /* Align icon like a flex item */
-  align-items: center; /* Center align the icon */
-  justify-content: center; /* Center align the icon */
-  position: relative; /* Relative positioning for stacking context */
+  background: none;
+  border: none;
+  padding: 0; 
+  cursor: pointer; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .icon-button:hover + .tooltip-text {
   /* Show tooltip on hover */
-  opacity: 1; /* Make it visible */
-  transform: translateX(7px); /* Slide out directly to the right */
+  opacity: 1;
+  transform: translateX(7px);
 }
 
 .tooltip-text {
-  visibility: visible; /* Start hidden */
-  opacity: 0; /* Start transparent */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for visibility and position */
-  position: absolute; /* Position tooltip absolutely */
-  left: 100%; /* Position it directly to the right of the icon */
-  transform: translateY(-50%) translateX(-10px); /* Center vertically and position slightly to the left initially */
-  background-color: #fbb3a8; /* Tooltip background color */
-  color: #242424; /* Tooltip text color */
-  padding: 5px 10px; /* Add some padding */
-  border-radius: 4px; /* Rounded corners */
-  white-space: nowrap; /* Prevent text wrapping */
-  pointer-events: none; /* Ignore mouse events */
-  z-index: 10; /* Ensure tooltip is above other elements */
+  visibility: visible;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  left: 100%;
+  transform: translateY(-50%) translateX(-10px);
+  background-color: #fbb3a8;
+  color: #242424;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .cool-mood-modal {
@@ -251,9 +244,9 @@
 }
 
 .modal-content {
-  border-top-left-radius: 14px !important; /* Set top left border radius */
-  border-top-right-radius: 14px !important; /* Set top right border radius */
-  overflow: hidden; /* Ensure content stays within the rounded corners */
+  border-top-left-radius: 14px !important;
+  border-top-right-radius: 14px !important;
+  overflow: hidden;
   color: #242424 !important;
   background-color: #fbb3a8 !important;
 }
@@ -270,25 +263,25 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 32px; /* 160% */
+  line-height: 32px;
   padding-left: 25px !important;
   padding-right: 25px !important;
-  overflow: hidden; /* Hide any overflow content */
-  display: -webkit-box; /* Required for line clamping */
-  -webkit-box-orient: vertical; /* Required for vertical text truncation */
-  -webkit-line-clamp: 5; /* Limit to 2 lines */
-  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  text-overflow: ellipsis;
 }
 
 .content-url-container {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: flex-start; /* Push the link to the right */
-  margin-top: 20px; /* Add some spacing from the top if needed */
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
   font-family: Lato;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
-  line-height: 32px; /* 160% */
+  line-height: 32px;
   padding-left: 25px !important;
 }
 
@@ -343,12 +336,12 @@
     text-align: left;
     font-size: 16px;
     color: #242424;
-    max-height: 98px; /* Fixed height */
-    overflow: hidden; /* Hide any overflow content */
-    display: -webkit-box; /* Required for line clamping */
-    -webkit-box-orient: vertical; /* Required for vertical text truncation */
-    -webkit-line-clamp: 4; /* Limit to 2 lines */
-    text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+    max-height: 98px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
   }
 
   .p-2.modal-clarity {
@@ -357,14 +350,14 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: 32px; /* 160% */
+    line-height: 32px;
     padding-left: 25px !important;
     padding-right: 25px !important;
-    overflow: hidden; /* Hide any overflow content */
-    display: -webkit-box; /* Required for line clamping */
-    -webkit-box-orient: vertical; /* Required for vertical text truncation */
-    -webkit-line-clamp: 5; /* Limit to 2 lines */
-    text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    text-overflow: ellipsis;
   }
 
   .cool-mood-modal {

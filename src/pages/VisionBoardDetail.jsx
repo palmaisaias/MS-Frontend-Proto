@@ -13,13 +13,10 @@ import {
   CloseButton,
 } from "react-bootstrap";
 import "./VisionBoardDetail.css";
-import Footer from "../components/Footer"; // Import the reusable Footer component
+import Footer from "../components/Footer";
 import ActiveUserNav from "../components/ActiveUserNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFolder,
-  faFolderPlus,
-  faSearch,
   faStickyNote,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
@@ -32,12 +29,12 @@ const VisionBoardDetail = () => {
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [selectedVisionBoard, setSelectedVisionBoard] = useState(null);
-  const [boardName, setBoardName] = useState(""); // Initialize state for board name
-  const [boardDescription, setBoardDescription] = useState(""); // Initialize state for board description
+  const [boardName, setBoardName] = useState("");
+  const [boardDescription, setBoardDescription] = useState("");
   const [selectedImageUrl, setSelectedImageUrl] = useState("");
   const navigate = useNavigate();
 
-  // Consolidated useEffect to handle fetching both content and board details
+  // this is  a consolidated call for both fetching board details and content(articles)
   useEffect(() => {
     const fetchVisionBoardData = async () => {
       try {
@@ -58,7 +55,7 @@ const VisionBoardDetail = () => {
         setBoardDescription(description);
         console.log("Fetched Vision Board Details:", { name, description });
 
-        setLoading(false); // Set loading to false after fetching all data
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching vision board data:", error);
         setError("Failed to load vision board.");
@@ -66,24 +63,23 @@ const VisionBoardDetail = () => {
       }
     };
 
-    fetchVisionBoardData(); // Call the function to fetch data
+    fetchVisionBoardData();
   }, [id]);
 
   const handleCloseModal = () => setShowModal(false);
 
   const handleAddToBoard = () => {
-    setShowModal(false); // Close the modal
+    setShowModal(false);
 
-    // Log the data being navigated with
+    // troubleshooting log for testing. Seeing what data we're navigating with
     console.log("Navigating with data:", { visionBoard: selectedVisionBoard });
 
     navigate("/personal-vision-board", {
       state: { visionBoard: selectedVisionBoard },
-    }); // Navigate with data
+    });
   };
 
   const handleShowModal = (visionBoard, imageUrl, contentUrl) => {
-    // Set visionBoard with contentUrl directly into selectedVisionBoard state
     setSelectedVisionBoard({
       ...visionBoard,
       contentUrl,
@@ -93,7 +89,7 @@ const VisionBoardDetail = () => {
     setShowModal(true);
   };
 
-  // Conditional rendering based on loading, error, or visionBoards state
+  // Conditional rendering
   if (loading) {
     return <p>Loading vision board...</p>;
   }
@@ -106,12 +102,13 @@ const VisionBoardDetail = () => {
     return <p>Vision board not found.</p>;
   }
 
-  // Function to handle note button click
+  // Function to handle note button click. To be addded at a future time.
   const handleNotesClick = () => {
     console.log("Notes clicked");
-    // Add navigation or logic for notes
+    // Add navigation or logic for notes. Future implementation
   };
 
+  // library of images to cycle through in case there is an error or failure with the scraped image
   const placeholderImages = [
     "https://www.parents.com/thmb/4kfYp_tcQH3vCpetvtT8VN1LGjo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1168925316-2000-63530182baee40cd8234c2a76019d833.jpg",
     "https://kffhealthnews.org/wp-content/uploads/sites/2/2023/12/OLaysha_Davis004.jpg",
@@ -125,15 +122,11 @@ const VisionBoardDetail = () => {
 
   return (
     <Container fluid className="vision-board-detail-page">
-      {/* Use the reusable NavBar component */}
       <ActiveUserNav />
       <Container fluid className="mt-4">
         <h1 className="board-title-message">{boardName}</h1>{" "}
-        {/* Display the name */}
         <p className="board-desc-message">{boardDescription}</p>{" "}
-        {/* Display the description */}
         <Breadcrumb>
-          {/* Link to the "All topics" page */}
           <Breadcrumb.Item
             linkAs={Link}
             linkProps={{ to: "/vision-boards" }}
@@ -141,23 +134,19 @@ const VisionBoardDetail = () => {
           >
             All topics
           </Breadcrumb.Item>
-
-          {/* Current page (example: 'Current Page') */}
           <Breadcrumb.Item active>{boardName}</Breadcrumb.Item>
         </Breadcrumb>
-        {/* Iterate over the array to display each vision board content */}
         <Row
           className="vision-board-cards"
-          style={{ paddingLeft: "50px", paddingRight: "50px" }}
+          style={{ paddingLeft: "50px", paddingRight: "50px" }} // this is a lazy fix. Have to come back and refactor
         >
           {visionBoards.map((visionBoard, index) => {
-            // Determine the image source to use
             const imageUrl =
             visionBoard.main_image_url &&
             visionBoard.main_image_url.trim() !== ""
               ? visionBoard.main_image_url
               : index === 0
-              ? "https://vakids.org/wp-content/uploads/2022/02/Untitled-design-2.jpg" // Replace with your specific default image URL
+              ? "https://vakids.org/wp-content/uploads/2022/02/Untitled-design-2.jpg"
               : placeholderImages[index % placeholderImages.length];
 
             return (
@@ -170,8 +159,8 @@ const VisionBoardDetail = () => {
                         visionBoard,
                         imageUrl,
                         visionBoard.content_url
-                      ) // Pass contentUrl
-                  } // Pass imageUrl to the handler
+                      ) // Passing contentUrl and image
+                  }
                 >
                   <Card.Img
                     variant="top"
@@ -203,7 +192,7 @@ const VisionBoardDetail = () => {
         </Row>
       </Container>
 
-      {/* Modal to display expanded content */}
+      {/* expanded content will display in this modal */}
       {selectedVisionBoard && (
         <Modal
           className="cool-mood-modal"
@@ -219,13 +208,13 @@ const VisionBoardDetail = () => {
               aria-label="Close"
             />
             <img
-              src={selectedImageUrl} // Use the selected image URL from state
+              src={selectedImageUrl} // Use the selected image URL from state for image consistency. Still not 100% fix, as the proper implementation would require backend work.
               alt={selectedVisionBoard.title}
               className="fixed-size-img-mod mb-3"
               onError={(e) => {
                 // Find the index of the current selected image URL in the placeholder images array
                 const currentIndex = placeholderImages.indexOf(e.target.src);
-                // Set the next placeholder image if the current one fails
+                // Set the next placeholder image if the current one fails. This proved to be a little troublesome. Implemented for the same attempted image fix.
                 e.target.src =
                   placeholderImages[
                     (currentIndex + 1) % placeholderImages.length
@@ -248,7 +237,6 @@ const VisionBoardDetail = () => {
                 </a>
               </div>
             )}
-            {/* Add any additional content you wish to display */}
           </Modal.Body>
           <Modal.Footer className="justify-content-start">
             <FontAwesomeIcon
@@ -270,11 +258,10 @@ const VisionBoardDetail = () => {
               title="Notes"
             />
             <div className="icon-button-wrapper">
-              {/* Button element with the FontAwesome icon */}
               <button onClick={handleAddToBoard} className="icon-button">
                 <FontAwesomeIcon icon={faPlus} size="lg" title="Add" />
               </button>
-              {/* Tooltip that appears on hover */}
+              {/* Tooltip that appears on hover. Cool little prompt that enforces the addition to a board */}
               <span className="tooltip-text">Add to Board</span>
             </div>
           </Modal.Footer>

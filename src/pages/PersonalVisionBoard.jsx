@@ -200,7 +200,7 @@ const PersonalVisionBoard = () => {
             </Col>
           </Row>
         ) : boards.length === 0 ? (
-          // User has no existing boards...prompt to create one
+          // -----------User has no existing boards...prompt to create one------------
           <Row className="justify-content-left">
             <Col md={4}>
               <Card
@@ -239,7 +239,7 @@ const PersonalVisionBoard = () => {
                   </Card>
                 </Col>
               ))}
-              {/* ------card tp create new board-------*/}
+              {/* ------card to create new board-------*/}
               <Col md={4} className="mb-4">
                 <Card
                   className="text-center newer-board-card"
@@ -257,7 +257,6 @@ const PersonalVisionBoard = () => {
         )}
       </Container>
 
-      {/* CreateBoardModal component */}
       <CreateBoardModal
         show={showCreateBoardModal}
         handleClose={handleCloseCreateBoardModal}

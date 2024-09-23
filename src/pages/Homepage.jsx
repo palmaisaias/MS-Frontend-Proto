@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Homepage.css";
 import VisionBoards from "./VisionBoards";
 import SignUpModal from "../components/SignUpModal";
-import LoginModal from "../components/LoginModal"; // Import the login modal component
+import LoginModal from "../components/LoginModal";
 import UserDetails from "../components/UserDetails";
 import AccountCreated from "../components/AccountCreated";
 import NavBar from "../components/NavBar";
@@ -13,31 +13,29 @@ import Footer from "../components/Footer";
 // modal states
 const Homepage = () => { 
   const [showSignUp, setShowSignUp] = useState(false);
-  const [showLogin, setShowLogin] = useState(false); // State for login modal
+  const [showLogin, setShowLogin] = useState(false);
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [showAccountCreated, setShowAccountCreated] = useState(false);
 
   const handleCloseSignUp = () => setShowSignUp(false);
-  const handleCloseLogin = () => setShowLogin(false); // Close login modal
+  const handleCloseLogin = () => setShowLogin(false);
   const handleCloseUserDetails = () => setShowUserDetails(false);
   const handleCloseAccountCreated = () => setShowAccountCreated(false);
 
-  //showing of SignUp and Login modals
   const handleShowSignUp = () => setShowSignUp(true);
-  const handleShowLogin = () => setShowLogin(true); // Show login modal
+  const handleShowLogin = () => setShowLogin(true);
 
-  //sign-up form submission and show the user details modal
+  //sign-up form submission and show the user details modal. 2 step process due to backend setup
   const handleSignUpSubmit = () => {
     setShowSignUp(false);
     setShowUserDetails(true);
   };
 
-  //login form submission
   const handleLoginSubmit = () => {
     setShowLogin(false);
   };
 
-  //user details submission and show the account created modal
+  //third modal in the process. placeholder modal per designer wants
   const handleUserDetailsSubmit = () => {
     setShowUserDetails(false);
     setShowAccountCreated(true);
@@ -50,7 +48,7 @@ const Homepage = () => {
         handleShowLogin={handleShowLogin}
       />
 
-      {/* Header Section */}
+      {/* -----Header-----*/}
       <Container fluid className="px-0">
         <Row
           className="header-section mx-0 d-flex align-items-center"
@@ -101,7 +99,7 @@ const Homepage = () => {
         </Row>
       </Container>
 
-      {/* Main Content Sections */}
+      {/* -----Main Content Sections------ */}
       <Container fluid className="px-0">
         <Row className="content-section section-1 mx-0">
           <Col md={5} className="section-image">
@@ -154,28 +152,28 @@ const Homepage = () => {
       </Container>
       <Footer />
 
-      {/* Sign-Up Modal */}
+      {/* -----Sign-Up Modal----- */}
       <SignUpModal
         show={showSignUp}
         handleClose={handleCloseSignUp}
         onSubmit={handleSignUpSubmit}
       />
 
-      {/* Login Modal */}
+      {/* -----Login Modal----- */}
       <LoginModal
         show={showLogin}
         handleClose={handleCloseLogin}
         onSubmit={handleLoginSubmit}
       />
 
-      {/* User Details Modal */}
+      {/* -----User Details Modal------ */}
       <UserDetails
         show={showUserDetails}
         handleClose={handleCloseUserDetails}
         onSubmit={handleUserDetailsSubmit}
       />
 
-      {/* Account Created Modal */}
+      {/* ------Account Created Modal------ */}
       <AccountCreated
         show={showAccountCreated}
         handleClose={handleCloseAccountCreated}

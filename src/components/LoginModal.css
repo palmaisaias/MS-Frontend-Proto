@@ -156,3 +156,8 @@ select.custom-form-control::placeholder {
 .shake {
   animation: shake 0.5s;
 }
+
+@media (max-width: 480px)
+{
+
+}

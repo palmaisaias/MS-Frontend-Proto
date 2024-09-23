@@ -1,4 +1,3 @@
-/* Homepage.css */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 /* reset the margins */
@@ -18,25 +17,25 @@ body, html {
 }
 
 .header-section {
-  background-color: #643AFD; /* Background color as shown in the PDF */
+  background-color: #643AFD;
   color: #FBB3A8 !important;
   text-align: left !important;
-  max-height: 550px; /* Limit the maximum height */
-  overflow: hidden; /* Ensure no content overflows beyond 550px */
-  position: relative; /* Allow child elements to use absolute positioning */
-  padding-right: 0; /* Ensure there's no padding that may restrict overflow */
+  max-height: 550px;
+  overflow: hidden; 
+  position: relative;
+  padding-right: 0; 
 }
 
 .header-text h1,
 .header-text p {
   color: #FBB3A8 !important;
   font-family: 'Lato', sans-serif;
-  margin-left: 20px; /* Adjust left margin for better responsiveness */
-  margin-right: 20px; /* Adjust right margin for better responsiveness */
-  max-width: calc(100% - 40px); /* Ensure text stays within bounds */
-  word-wrap: break-word; /* Wrap text properly */
-  position: relative; /* Positioning to handle z-index */
-  z-index: 1; /* Make sure it is above the image */
+  margin-left: 20px;
+  margin-right: 20px;
+  max-width: calc(100% - 40px);
+  word-wrap: break-word;
+  position: relative; 
+  z-index: 1;
 }
 
 .header-text h1 {
@@ -137,6 +136,9 @@ body, html {
   justify-content: right !important;
 }
 
+
+/* -----Mobile responsive edits. Most of these were purely for testing */
+/* -----The onyl real size that was configured thoroughly is 480 */
 @media (max-width: 1180px) {
   .header-text h1,
   .header-text p {

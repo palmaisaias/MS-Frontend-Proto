@@ -9,13 +9,13 @@
 
 .vision-board-card {
   border-radius: 25px !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .vision-board-card:hover {
   transform: translateY(-10px); /* Raises the card */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .welcome-message {
@@ -41,33 +41,32 @@
 .fixed-size-img {
   border-top-right-radius: 25px !important;
   border-top-left-radius: 25px !important;
-  width: 415px; /* Fixed width */
-  height: 415px; /* Fixed height */
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  overflow: hidden; /* Hides overflow of the image */
+  width: 415px;
+  height: 415px;
+  object-fit: cover;
+  overflow: hidden;
 }
 
-/* Fixed height for card text */
 .fixed-height-texting {
   text-align: left;
   font-size: 16px;
   color: #242424;
-  height: 150px; /* Fixed height */
-  overflow: hidden; /* Hide any overflow content */
-  display: -webkit-box; /* Required for line clamping */
-  -webkit-box-orient: vertical; /* Required for vertical text truncation */
-  -webkit-line-clamp: 5; /* Number of lines to show */
-  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+  height: 150px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  text-overflow: ellipsis;
 }
 
 .fixed-height-text-p {
   color: #fdf7e7;
-  height: 150px; /* Fixed height */
-  overflow: hidden; /* Hide any overflow content */
-  display: -webkit-box; /* Required for line clamping */
-  -webkit-box-orient: vertical; /* Required for vertical text truncation */
-  -webkit-line-clamp: 7; /* Number of lines to show */
-  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+  height: 150px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  text-overflow: ellipsis;
 }
 
 .card-overlay {
@@ -87,7 +86,7 @@
   font-size: 40px !important;
   font-style: normal !important;
   font-weight: 700 !important;
-  line-height: 33px !important; /* 82.5% */
+  line-height: 33px !important;
   text-align: left;
 }
 
@@ -98,7 +97,7 @@
   font-size: 40px !important;
   font-style: normal !important;
   font-weight: 700 !important;
-  line-height: 33px !important; /* 82.5% */
+  line-height: 33px !important;
 }
 
 .purple-overlay {
@@ -124,7 +123,7 @@
 
 .card-link {
   text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit the color from the parent */
+  color: inherit;
 }
 .card-body {
   min-height: 150px !important;
@@ -133,8 +132,8 @@
 @media (max-width: 480px) {
   .vision-board-card {
     border-radius: 25px !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
   }
 
