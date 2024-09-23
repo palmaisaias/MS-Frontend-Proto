@@ -372,4 +372,8 @@
     padding-right: 15px;
   }
 
+  .colorific.modal-title.h4 {
+    line-height: 46px;
+  }
+
 }
