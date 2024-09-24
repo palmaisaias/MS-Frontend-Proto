@@ -119,7 +119,7 @@ const Sanctuary = () => {
       <ActiveUserNav />
       <Container fluid className="mt-4" style={{ paddingLeft: "30px" }}>
         <h1 className="board-title-message">Your Vision Boards</h1>
-        <p className="sanct-message">This is your personal sanctuary...</p>
+        <p className="sanct-message">This is your personal sanctuary—a dedicated space to store and organize the resources you discover.<br /> Create your own boards and keep the articles that resonate with you, all in one place.</p>
         {boards.length === 0 ? (
           <p className="sanct-message">
             As you craft your sanctuary, your boards will start to take shape
