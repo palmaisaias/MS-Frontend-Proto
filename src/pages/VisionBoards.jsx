@@ -26,7 +26,8 @@ const VisionBoards = () => {
 
     if (userName) {
       setUserData({
-        name: `${userName} ${userLastName || ""}`.trim(),
+        fullName: `${userName} ${userLastName || ""}`.trim(),  // Full name with first and last name
+        firstName: userName,  // Only the first name
         dueDate: dueDate || "",
       });
     }
@@ -66,8 +67,8 @@ const VisionBoards = () => {
       <Container fluid className="px-4 vision-boards-content">
         {userData ? (
           <>
-            <h2 className="welcome-message">Welcome, {userData.name}</h2>
-            <p className="rec-info">This is your resource library...</p>
+            <h2 className="welcome-message">Welcome {userData.firstName},</h2>
+            <p className="rec-info">This is your resource library, where you'll find the best articles for your pregnancy journey.<br /> Curate your own collection along the way. </p>
             <Button variant="link" className="all-topics-link">
               All topics
             </Button>
