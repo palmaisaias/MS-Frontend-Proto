@@ -25,6 +25,7 @@
   color: #f0edfa !important;
   font-size: 1.1rem !important;
   line-height: 18px;
+  z-index: 2;
 }
 
 .form-control-news {
