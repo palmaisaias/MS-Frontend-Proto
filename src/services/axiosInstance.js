@@ -1,7 +1,6 @@
-// axiosInstance.js
 import axios from 'axios';
 
-// **Hardcode the base URL to your live backend URL**
+// Hardcode the base URL to your live backend URL. This was strictly troubleshooting. Not necessary for live application
 const baseURL = 'https://backend.melanatedsanctuary.com:5000';
 
 const axiosInstance = axios.create({
@@ -33,7 +32,6 @@ export const setAxiosInterceptor = () => {
   );
 };
 
-// Set the interceptor when the axios instance is first created
 setAxiosInterceptor();
 
 export default axiosInstance;
