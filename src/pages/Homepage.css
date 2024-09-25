@@ -204,9 +204,11 @@ body, html {
   }
 }
 
-.un-link {
+p.un-link {
   text-decoration: none !important;
   margin-top: 20px !important;
+  color: #fdf7e7 !important;
+  font-weight: 400;
 }
 
 @media (max-width: 1024px) {
