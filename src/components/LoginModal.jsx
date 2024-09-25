@@ -18,6 +18,7 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
 
   const [errors, setErrors] = useState({});
   const [shake, setShake] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
