@@ -17,7 +17,12 @@ const NavBar = ({ handleShowSignUp, handleShowLogin }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto home-links">
-            <Nav.Link className="nav-link-aboutus" as={Link} to="/about-us">
+            <Nav.Link
+              className="nav-link-aboutus disabled-link"
+              as={Link}
+              to="/about-us"
+              style={{ pointerEvents: "none", color: "gray", opacity: 0.5 }}
+            >
               About Us
             </Nav.Link>
             <Nav.Link className="nav-link-login" onClick={handleShowLogin}>
