@@ -1,10 +1,10 @@
 .account-created-modal {
-    left: 120px; /* Adjust this value as needed to scoot the modal to the left */
+    left: 120px; /* allows movement to the left */
   }
   
   @media (max-width: 768px) {
     .account-created-modal {
-      left: 0; /* Ensures it stays centered on smaller screens */
+      left: 0; /* For better centering on small screens */
     }
   }
   
@@ -41,8 +41,8 @@
     animation: fadeIn 7s ease-in-out;
     font-family: 'Lato' !important;
     margin-top: 50px !important;
-    padding: 0.5rem 1.5rem !important; /* Adjust padding for height and width control */
-    font-size: 1rem !important; /* Although the text size has a specific px size in the wireframes, it is not necessarily conducive when thinking about the responsive needs */
+    padding: 0.5rem 1.5rem !important; /* adjust padding for height and width control */
+    font-size: 1rem !important; /* although the text size has a specific px size in the wireframes, it is not necessarily conducive when thinking about the responsive needs */
     background-color: #4823D1 !important;
     color: #fff !important;
     border: none !important;

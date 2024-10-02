@@ -13,7 +13,7 @@ const AccountCreated = ({ show, handleClose }) => {
         navigate('/vision-boards'); // Navigate to VisionBoards page immaditely after the clock runs out
       }, 4000); // 4 seconds delay
 
-      return () => clearTimeout(timer); // Clean up the timeout
+      return () => clearTimeout(timer); // Clean up the timer
     }
   }, [show, handleClose, navigate]); // Dependencies for useEffect
 

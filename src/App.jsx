@@ -15,19 +15,12 @@ function App() {
         {/* Existing routes */}
         <Route path="/" element={<Homepage />} />
         <Route path="/vision-boards" element={<VisionBoards />} />
-        <Route
-          path="/personal-vision-board"
-          element={<PersonalVisionBoard />}
-        />
+        <Route path="/personal-vision-board" element={<PersonalVisionBoard />} />
         <Route path="/sanctuary" element={<Sanctuary />} />
         <Route path="/vision-board/:boardId" element={<SingleBoardDetail />} />
-        <Route
-          path="/vision-boards/:id/content"
-          element={<VisionBoardDetail />}
-        />
+        <Route path="/vision-boards/:id/content" element={<VisionBoardDetail />} />
 
-
-        {/* OAuth Callback Route */}
+        {/* OAuth Callback Route...still working on implementing this. Need more research */}
         <Route path="/auth/callback" element={<OAuthCallback />} />
       </Routes>
     </Router>
