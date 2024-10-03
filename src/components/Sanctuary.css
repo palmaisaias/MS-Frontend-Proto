@@ -84,7 +84,6 @@
   display: block;
 }
 
-
 .fixed-size-img {
   border-top-right-radius: 25px !important;
   border-top-left-radius: 25px !important;
@@ -265,9 +264,8 @@ footer {
   z-index: 1 !important;
 }
 
-@media (max-width: 480px)
-{
-  .board-title-message{
+@media (max-width: 480px) {
+  .board-title-message {
     padding-left: 10px !important;
   }
 
@@ -277,7 +275,6 @@ footer {
   .mobile-v {
     padding-left: 20px !important;
     padding-right: 35px !important;
-
   }
 
   .padded-body {

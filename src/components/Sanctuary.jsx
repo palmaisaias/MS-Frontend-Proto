@@ -23,7 +23,7 @@ const Sanctuary = () => {
       const authToken = localStorage.getItem("authToken");
 
       if (!authToken) {
-        // if no token is found the user gets kicked to the homepage. 
+        // if no token is found the user gets kicked to the homepage.
         // Need to add a message that prompts 'please log-in'
         navigate("/login");
         return;
@@ -90,7 +90,10 @@ const Sanctuary = () => {
         description: newBoardDescription,
       });
 
-      console.log('Token being passed:', axiosInstance.defaults.headers.common['Authorization']);
+      console.log(
+        "Token being passed:",
+        axiosInstance.defaults.headers.common["Authorization"]
+      );
 
       const response = await axiosInstance.post("/vision-boards", {
         name: newBoardName,
@@ -119,7 +122,12 @@ const Sanctuary = () => {
       <ActiveUserNav />
       <Container fluid className="mt-4" style={{ paddingLeft: "30px" }}>
         <h1 className="board-title-message">Your Vision Boards</h1>
-        <p className="sanct-message">This is your personal sanctuary—a dedicated space to store and organize the resources you discover.<br /> Create your own boards and keep the articles that resonate with you, all in one place.</p>
+        <p className="sanct-message">
+          This is your personal sanctuary—a dedicated space to store and
+          organize the resources you discover.
+          <br /> Create your own boards and keep the articles that resonate with
+          you, all in one place.
+        </p>
         {boards.length === 0 ? (
           <p className="sanct-message">
             As you craft your sanctuary, your boards will start to take shape
@@ -171,19 +179,14 @@ const Sanctuary = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Card.Body className="newbie-board-card">
-                  <Card.Title>
-                    Create NEW Board
-                  </Card.Title>
-                  <Card.Text>
-                    Click Here to Make a New Board
-                  </Card.Text>
+                  <Card.Title>Create NEW Board</Card.Title>
+                  <Card.Text>Click Here to Make a New Board</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
           </Row>
         )}
       </Container>
-
       <CreateBoardModal
         show={showCreateBoardModal}
         handleClose={handleCloseCreateBoardModal}

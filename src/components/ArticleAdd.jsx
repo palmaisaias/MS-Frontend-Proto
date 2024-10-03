@@ -40,12 +40,12 @@ const ArticleAdd = ({
         <Modal.Title>Add a New Resource</Modal.Title>
       </Modal.Header>
       <Modal.Body className="new-article-bod">
-        {/* Dropdown for selecting resource type */}
+        {/* Dropdown */}
         <Form.Group className="mb-3">
           <Form.Label>Select Resource Type</Form.Label>
           <Form.Control
             as="select"
-            value={articleType} // Correct binding to reflect current state
+            value={articleType}
             onChange={handleTypeChange}
             className="form-control"
             style={{ color: articleType ? 'black' : '#6c757d' }} // Ensure correct text color
@@ -57,16 +57,16 @@ const ArticleAdd = ({
           </Form.Control>
         </Form.Group>
 
-        {/* Input for URL or string */}
+        {/* Input for URL */}
         <Form.Group className="mb-3">
           <Form.Label>Enter URL or Text</Form.Label>
           <Form.Control
-            type="text" // Changed to text to match backend requirements
+            type="text" // Changed to text to match backend
             placeholder="Paste or type here"
-            value={articleURL} // Ensure correct binding
+            value={articleURL}
             onChange={handleURLChange}
             className="form-control"
-            style={{ color: articleURL ? 'black' : '#6c757d' }} // Ensure text is displayed correctly
+            style={{ color: articleURL ? 'black' : '#6c757d' }}
           />
         </Form.Group>
       </Modal.Body>

@@ -18,7 +18,7 @@ const VisionBoards = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Retrieve user data from localStorage
+  // retrieves user data from localStorage
   useEffect(() => {
     const userName = localStorage.getItem("userName");
     const userLastName = localStorage.getItem("userLastName");
@@ -33,12 +33,12 @@ const VisionBoards = () => {
     }
   }, []);
 
-  // Fetch vision boards data
+  // fetch vision boards data
   useEffect(() => {
     axiosInstance
       .get("/users/vision-boards/all")
       .then((response) => {
-        // Filter boards with created_by value of null since this is the value of all the admin created boards
+        // filter boards with created_by value of null since this is the value of all the admin created boards
         const filteredBoards = response.data.filter(
           (board) => board.created_by === null
         );
@@ -52,7 +52,7 @@ const VisionBoards = () => {
       });
   }, []);
 
-  // Function to handle note button click. Not in use.
+  // function to handle note button click. NOT IN USE..
   const handleNotesClick = () => {
     console.log("Notes clicked");
   };

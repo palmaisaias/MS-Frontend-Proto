@@ -21,12 +21,12 @@ const Footer = () => {
           </form>
         </Col>
 
-        {/* Column 3: Disclaimer */}
+        {/* We were going to use this for disclaimer but didnt get to drafting one*/}
         <Col md={4} className="text-center text-md-start">
           <p className="mb-0"></p>
         </Col>
 
-        {/* Column 2 custom-link: Navigation Links. We may have to add some dummy data to these. */}
+        {/* Navigation Links. We may have to add some dummy data to these. */}
         <Col
           md={4}
           className="text-center text-md-start section-links limitless-position"

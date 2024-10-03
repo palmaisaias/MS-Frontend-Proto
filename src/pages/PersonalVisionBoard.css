@@ -161,7 +161,6 @@
   text-decoration: underline;
 }
 
-
 /* CSS for the "EXISTING" card */
 .existing-board-card {
   position: relative !important;
@@ -198,9 +197,7 @@
 }
 
 .existing-board-card:hover {
-  transform: translateY(
-    -10px
-  ) !important;
+  transform: translateY(-10px) !important;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
   border-color: #331b96 !important;
 }
@@ -244,7 +241,6 @@
   z-index: 1 !important;
 }
 
-
 /* CSS for the "CREATE NEW" card */
 .newer-board-card {
   position: relative !important;
@@ -280,9 +276,7 @@
 }
 
 .newer-board-card:hover {
-  transform: translateY(
-    -10px
-  ) !important;
+  transform: translateY(-10px) !important;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
   border-color: #331b96 !important;
 }
@@ -319,10 +313,9 @@
 
 .explore-your-board {
   border-radius: 25px !important;
-  font-family: 'Lato' !important;
-  background-color: #643AFD !important;
+  font-family: "Lato" !important;
+  background-color: #643afd !important;
   font-weight: 300 !important;
-
 }
 
 @media (max-width: 480px) {
@@ -336,7 +329,7 @@
     height: 450px !important;
     max-width: 400px;
     display: flex !important;
-    align-items: center !important; 
+    align-items: center !important;
     justify-content: center !important;
     overflow: hidden !important;
     z-index: 1 !important;
@@ -377,6 +370,4 @@
   .newer-board-card .card-text {
     font-size: 1.5rem !important;
   }
-
-
 }

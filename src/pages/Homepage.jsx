@@ -10,7 +10,7 @@ import AccountCreated from "../components/AccountCreated";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
-// modal states
+// modal states!
 const Homepage = () => { 
   const [showSignUp, setShowSignUp] = useState(false);
   const [showLogin, setShowLogin] = useState(false);

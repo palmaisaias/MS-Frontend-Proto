@@ -121,6 +121,7 @@ select.custom-form-control {
   text-decoration: underline;
 }
 
+/* ended up using bootstrap close button */
 .close-button {
   position: absolute !important;
   top: 10px !important;

@@ -45,6 +45,7 @@ select.custom-form-control::placeholder {
   opacity: 1;
 }
 
+/* used to make the calendar icon's color look better on different backgrounds. inverts the colors */
 input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
@@ -111,6 +112,7 @@ input[type="date"].custom-form-control-date::-webkit-calendar-picker-indicator {
   text-decoration: underline;
 }
 
+/* this was so bulky and troublesome, I ended up using default bootstrap close button */
 .close-button {
   position: absolute !important;
   top: 10px !important;

@@ -99,7 +99,7 @@ select.custom-form-control::placeholder {
   position: absolute !important;
   top: 10px !important;
   right: 10px !important;
-  background-color: #ffffff00 !important; /* Adjust transparency as needed */
+  background-color: #ffffff00 !important;
   border: none !important;
   font-size: 18px !important;
   width: 30px !important;
@@ -118,8 +118,8 @@ select.custom-form-control::placeholder {
 }
 
 .custom-form-control.is-invalid {
-  border-color: #dc3545 !important; /* Bootstrap's danger color */
-  background-color: #f5c6cb !important; /* Light red background */
+  border-color: #dc3545 !important;
+  background-color: #f5c6cb !important;
   color: #000000 !important;
 }
 

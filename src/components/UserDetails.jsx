@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, CloseButton } from "react-bootstrap";
-import axios from "axios"; //If time allows, come back and replace this with axiosInstance
 import "./UserDetails.css";
 import axiosInstance from "../services/axiosInstance";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

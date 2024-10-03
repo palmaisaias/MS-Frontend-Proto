@@ -42,7 +42,7 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
     console.log("Interceptor Clear");
 
     try {
-      // Send login request to the backend
+      // shoot the login request to the backend
       console.log("Sending data to backend:", formData);
       const response = await axiosInstance.post("/login", formData, {
         headers: { "Content-Type": "application/json" },
@@ -50,29 +50,29 @@ const LoginModal = ({ show, handleClose, onSubmit }) => {
 
       console.log("Login successful:", response.data);
 
-      // Store the authToken in localStorage
-      const { token, first_name, last_name } = response.data; // Directly access first_name and last_name
+      // store the authToken in localStorage
+      const { token, first_name, last_name } = response.data; // access first_name and last_name
       if (token) {
         localStorage.setItem("authToken", token);
         console.log("Token stored successfully:", token);
 
-        // Store the user's first and last name in localStorage
+        // store the user's first and last name in local
         if (first_name) {
-          localStorage.setItem("userName", first_name); // Store first name
+          localStorage.setItem("userName", first_name);
           console.log("User name stored successfully:", first_name);
         }
 
         if (last_name) {
-          localStorage.setItem("userLastName", last_name); // Store last name
+          localStorage.setItem("userLastName", last_name);
           console.log("User last name stored successfully:", last_name);
         }
 
-        // Clear any previous error messages
+        // clear any previous error messages
         setErrorMessage("");
 
-        // Close the modal and navigate to vision boards
+        // close the modal and navigate to vision boards
         handleClose();
-        onSubmit(); // If we need to add any more actions upon the submittal of the form
+        onSubmit(); // if we need to add any more actions upon the submittal of the form
         navigate("/vision-boards");
       } else {
         console.error("No token received from the server");

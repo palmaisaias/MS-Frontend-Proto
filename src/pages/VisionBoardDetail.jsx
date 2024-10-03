@@ -14,10 +14,7 @@ import "./VisionBoardDetail.css";
 import Footer from "../components/Footer";
 import ActiveUserNav from "../components/ActiveUserNav";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStickyNote,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
+import { faStickyNote, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faShareSquare, faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 const VisionBoardDetail = () => {
@@ -140,12 +137,12 @@ const VisionBoardDetail = () => {
         >
           {visionBoards.map((visionBoard, index) => {
             const imageUrl =
-            visionBoard.main_image_url &&
-            visionBoard.main_image_url.trim() !== ""
-              ? visionBoard.main_image_url
-              : index === 0
-              ? "https://vakids.org/wp-content/uploads/2022/02/Untitled-design-2.jpg"
-              : placeholderImages[index % placeholderImages.length];
+              visionBoard.main_image_url &&
+              visionBoard.main_image_url.trim() !== ""
+                ? visionBoard.main_image_url
+                : index === 0
+                ? "https://vakids.org/wp-content/uploads/2022/02/Untitled-design-2.jpg"
+                : placeholderImages[index % placeholderImages.length];
 
             return (
               <Col key={visionBoard.id} md={4} className="mb-4">
@@ -157,7 +154,7 @@ const VisionBoardDetail = () => {
                         visionBoard,
                         imageUrl,
                         visionBoard.content_url
-                      ) // Passing contentUrl and image
+                      ) // Passing contentUrl and image. Turned out pointless due to backend logic that I overlooked
                   }
                 >
                   <Card.Img
@@ -222,7 +219,9 @@ const VisionBoardDetail = () => {
             <Modal.Title className="p-2 colorific">
               {selectedVisionBoard.title}
             </Modal.Title>
-            <p className="p-2 modal-clarity">{selectedVisionBoard.description}</p>
+            <p className="p-2 modal-clarity">
+              {selectedVisionBoard.description}
+            </p>
             {selectedVisionBoard.contentUrl && (
               <div className="content-url-container">
                 <a
@@ -259,7 +258,7 @@ const VisionBoardDetail = () => {
               <button onClick={handleAddToBoard} className="icon-button">
                 <FontAwesomeIcon icon={faPlus} size="lg" title="Add" />
               </button>
-              {/* Tooltip that appears on hover. Cool little prompt that enforces the addition to a board */}
+              {/* Tooltip that appears on hover. Cool little prompt that reenforces the addition to a board */}
               <span className="tooltip-text">Add to Board</span>
             </div>
           </Modal.Footer>

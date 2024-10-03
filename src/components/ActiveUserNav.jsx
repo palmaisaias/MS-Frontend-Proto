@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -13,7 +13,7 @@ import "./ActiveUserNav.css";
 const ActiveUserNav = () => {
   const navigate = useNavigate(); // Initialize navigate
 
-  //LOGOUT. Clears the stored token.
+  //LOGOUT. Clears the stored token. Tokens and locally stored/cached names are also cleared at login and sign up
   const handleLogout = () => {
 
     console.log("Clearing auth token");

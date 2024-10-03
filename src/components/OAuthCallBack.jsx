@@ -1,4 +1,5 @@
-// This is a work in progress. We are trying to implement google auth, so just picture some 'Construction' signs
+// This is a work in progress. We are trying to implement google auth, 
+// so just picture some 'Construction' signs
 
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";

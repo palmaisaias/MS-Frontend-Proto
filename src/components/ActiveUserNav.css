@@ -85,24 +85,24 @@
 
 .folder-link::after {
   text-align: center;
-  content: "Your Sanctuary"; /* Text to display */
-  position: absolute; /* Absolute positioning */
-  bottom: 42px !important; /* Position above the button */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center adjustment */
-  font-size: 14px; /* Text size */
-  color: rgb(255, 255, 255); /* Text color */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
-  pointer-events: none; /* Prevent text from interfering with hover */
+  content: "Your Sanctuary";
+  position: absolute;
+  bottom: 42px !important;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+  pointer-events: none;
 }
 
 .library-link::after {
   text-align: center;
-  content: "Resource Library"; /* Text to display */
-  position: absolute; /* Absolute positioning */
-  bottom: 42px !important; /* Position above the button */
-  left: 50%; /* Center horizontally */
+  content: "Resource Library";
+  position: absolute; /* Absolute positioning which essentially makes other elements disregard the position */
+  bottom: 42px !important;
+  left: 50%;
   transform: translateX(-50%); /* Center adjustment */
   font-size: 14px; /* Text size */
   color: rgb(255, 255, 255); /* Text color */
@@ -113,24 +113,24 @@
 
 .logout-link::after {
   text-align: center;
-  content: "Log Out"; /* Text to display */
-  position: absolute; /* Absolute positioning */
-  bottom: 42px !important; /* Position above the button */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center adjustment */
-  font-size: 14px; /* Text size */
-  color: rgb(255, 255, 255); /* Text color */
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth transition */
-  pointer-events: none; /* Prevent text from interfering with hover */
+  content: "Log Out";
+  position: absolute;
+  bottom: 42px !important;
+  left: 50%; 
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+  pointer-events: none;
 }
 
 .notes-link:hover::after,
 .folder-link:hover::after,
 .library-link:hover::after,
 .logout-link:hover::after {
-  opacity: 1; /* Make text visible */
-  bottom: 55px !important; /* Move text further up smoothly */
+  opacity: 1;
+  bottom: 55px !important;
 }
 
 .navbar-custom .notes-link,
